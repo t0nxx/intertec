@@ -1,0 +1,10 @@
+.ant-layout-header {
+    color: #fff;
+    background: white;
+    margin: 15px 20px;
+}
+
+.ant-btn {
+    width: 120px;
+    border-radius: 5px;
+}
