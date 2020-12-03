@@ -1,8 +1,7 @@
+@import "./sass/variables";
 
-$breadcrumb-divider: quote(">");
 @import "~bootstrap/scss/bootstrap";
 
 .custom_btn {
-  background-color: black
-  ;
+  background-color: black;
 }

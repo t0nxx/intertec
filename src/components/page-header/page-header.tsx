@@ -8,14 +8,14 @@ import { Breadcrumb, Col, Container, Row } from 'react-bootstrap';
 export default function PageHeaderComponent() {
 
     return (
-        <Container fluid>
+        <Container fluid >
             <Row>
                 <Col>
                     <h4 > New License Pharmaceutical Establishment</h4>
 
                 </Col>
                 <Col md="auto">
-                    <Breadcrumb >
+                    <Breadcrumb className="breadcrumb">
                         <Breadcrumb.Item >
                             <FontAwesomeIcon icon={faHome} size="lg" color="black" />
                         </Breadcrumb.Item>
