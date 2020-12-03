@@ -9,7 +9,7 @@ export default function PageHeaderComponent() {
 
     return (
         <Container fluid >
-            <Row>
+            <Row className="mt-2">
                 <Col>
                     <h4 > New License Pharmaceutical Establishment</h4>
 
