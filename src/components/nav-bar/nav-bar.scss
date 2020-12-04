@@ -1,3 +1,7 @@
+.navbar {
+  background-color: #ffffff !important;
+  box-shadow: 0 -2px 4px #000000;
+}
 .user,
 .notifications {
   position: relative;
@@ -103,8 +107,8 @@
     a {
       padding-left: 3px !important;
       padding-right: 3px !important;
-      padding-top: 5px !important;
-      padding-bottom: 5px !important;
+      padding-top: 4px !important;
+      padding-bottom: 4px !important;
       border-left: 2pt solid #f0efef;
       svg {
         color: #666666;

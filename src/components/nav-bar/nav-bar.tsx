@@ -1,6 +1,5 @@
 import React from "react";
 import "./nav-bar.scss";
-import logo from "../../logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMicrophone,
@@ -12,6 +11,7 @@ import {
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
 import { Badge, Dropdown, Nav, Navbar, Image } from "react-bootstrap";
+import logo from "../../logo.png";
 
 // Import images
 import name from "../../assets/name.jpg";
@@ -31,7 +31,7 @@ export default function NavBarComponent() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
-        <Nav className="mr-auto"></Nav>
+        <Nav className="mr-auto" />
         <Nav>
           <div className="toggleLang">
             <a>عربي</a>
