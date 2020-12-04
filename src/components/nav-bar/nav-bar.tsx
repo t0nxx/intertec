@@ -11,17 +11,7 @@ import {
   faVolumeUp,
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  Badge,
-  Dropdown,
-  Nav,
-  Navbar,
-  Image,
-  NavDropdown,
-  FormControl,
-  Button,
-  Form,
-} from "react-bootstrap";
+import { Badge, Dropdown, Nav, Navbar, Image } from "react-bootstrap";
 
 // Import images
 import name from "../../assets/name.jpg";
@@ -29,13 +19,7 @@ import bell from "../../assets/bell.png";
 
 export default function NavBarComponent() {
   return (
-    <Navbar
-      collapseOnSelect
-      expand="lg"
-      variant="light"
-      bg="light"
-      sticky="top"
-    >
+    <Navbar collapseOnSelect expand="lg" variant="light" bg="light" sticky="top">
       <Navbar.Brand href="#home">
         <img
           src={logo}
@@ -46,10 +30,7 @@ export default function NavBarComponent() {
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse
-        className="justify-content-end"
-        id="responsive-navbar-nav"
-      >
+      <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
         <Nav className="mr-auto"></Nav>
         <Nav>
           <div className="toggleLang">
@@ -58,32 +39,17 @@ export default function NavBarComponent() {
           <Nav className="headerIcons">
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon
-                  icon={faVolumeUp}
-                  size="sm"
-                  color="black"
-                  className="mr-2 ml-2"
-                />
+                <FontAwesomeIcon icon={faVolumeUp} size="sm" color="black" className="mr-2 ml-2" />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon
-                  icon={faSitemap}
-                  size="sm"
-                  color="black"
-                  className="mr-2 ml-2"
-                />
+                <FontAwesomeIcon icon={faSitemap} size="sm" color="black" className="mr-2 ml-2" />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon
-                  icon={faPhoneAlt}
-                  size="sm"
-                  color="black"
-                  className="mr-2 ml-2"
-                />
+                <FontAwesomeIcon icon={faPhoneAlt} size="sm" color="black" className="mr-2 ml-2" />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -98,22 +64,12 @@ export default function NavBarComponent() {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon
-                  icon={faLowVision}
-                  size="sm"
-                  color="black"
-                  className="mr-2 ml-2"
-                />
+                <FontAwesomeIcon icon={faLowVision} size="sm" color="black" className="mr-2 ml-2" />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon
-                  icon={faSearch}
-                  size="sm"
-                  color="black"
-                  className="mr-2 ml-2"
-                />
+                <FontAwesomeIcon icon={faSearch} size="sm" color="black" className="mr-2 ml-2" />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -129,11 +85,7 @@ export default function NavBarComponent() {
           </Nav>
           {/* Notifications drop menu */}
           <Dropdown>
-            <Dropdown.Toggle
-              variant="success"
-              id="dropdown-basic"
-              className="notifications"
-            >
+            <Dropdown.Toggle variant="success" id="dropdown-basic" className="notifications">
               <Image src={bell} />
               <Badge pill variant="danger">
                 4
@@ -141,33 +93,21 @@ export default function NavBarComponent() {
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="#/action-1">test action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">
-                test Another action
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                test Something else
-              </Dropdown.Item>
+              <Dropdown.Item href="#/action-2">test Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">test Something else</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
           {/* User drop menu */}
           <Dropdown>
-            <Dropdown.Toggle
-              variant="success"
-              id="dropdown-basic"
-              className="user"
-            >
+            <Dropdown.Toggle variant="success" id="dropdown-basic" className="user">
               <strong>User Name</strong>
               <Image src={name} roundedCircle />
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="#/action-1">test action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">
-                test Another action
-              </Dropdown.Item>
-              <Dropdown.Item href="#/action-3">
-                test Something else
-              </Dropdown.Item>
+              <Dropdown.Item href="#/action-2">test Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">test Something else</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Nav>
