@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/intertec/static/css/main.97ccdfd1.chunk.css",
+    "main.js": "/intertec/static/js/main.c214c1eb.chunk.js",
+    "main.js.map": "/intertec/static/js/main.c214c1eb.chunk.js.map",
+    "runtime-main.js": "/intertec/static/js/runtime-main.034f69c6.js",
+    "runtime-main.js.map": "/intertec/static/js/runtime-main.034f69c6.js.map",
+    "static/js/2.5899d7b6.chunk.js": "/intertec/static/js/2.5899d7b6.chunk.js",
+    "static/js/2.5899d7b6.chunk.js.map": "/intertec/static/js/2.5899d7b6.chunk.js.map",
+    "static/js/3.68f1d6fc.chunk.js": "/intertec/static/js/3.68f1d6fc.chunk.js",
+    "static/js/3.68f1d6fc.chunk.js.map": "/intertec/static/js/3.68f1d6fc.chunk.js.map",
+    "index.html": "/intertec/index.html",
+    "static/css/main.97ccdfd1.chunk.css.map": "/intertec/static/css/main.97ccdfd1.chunk.css.map",
+    "static/js/2.5899d7b6.chunk.js.LICENSE.txt": "/intertec/static/js/2.5899d7b6.chunk.js.LICENSE.txt",
+    "static/media/logo.a2340e53.png": "/intertec/static/media/logo.a2340e53.png",
+    "static/media/name.36ab5e22.jpg": "/intertec/static/media/name.36ab5e22.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.034f69c6.js",
+    "static/js/2.5899d7b6.chunk.js",
+    "static/css/main.97ccdfd1.chunk.css",
+    "static/js/main.c214c1eb.chunk.js"
+  ]
+}
