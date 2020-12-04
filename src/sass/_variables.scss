@@ -1,9 +1,7 @@
-
 /*
 * breadcrumber seperator
 */
 $breadcrumb-divider: quote(">");
-
 
 /*
 * main colors here , from design guide line
@@ -16,13 +14,12 @@ $breadcrumb-divider: quote(">");
 // black : #000000
 
 // Font Family : Helvetica Neue
-// Droid Arabic Kufi 
+// Droid Arabic Kufi
 
-
- $body-bg: #EEEEEE;
+$body-bg: #eeeeee;
 
 $theme-colors: (
   "primary": #0074d9,
-  "danger": #D02239,
-  "success" : #127F46
+  "danger": #d02239,
+  "success": #127f46,
 );
