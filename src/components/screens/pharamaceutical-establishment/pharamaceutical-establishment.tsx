@@ -9,6 +9,7 @@ import checkImage from "../../../assets/check.png";
 
 import ContactInformationComponent from "./contact-inforamtion/contact-information";
 import EstablishmentInformationComponent from "./etablishment-inforamtion/establishment-information";
+import OwnerDetailComponent from "./owner-detail/owner-detail";
 
 const PharamaceuticalEstablishmentScreen = () => {
   return (
@@ -72,7 +73,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="3">
-            <ContactInformationComponent />
+            <OwnerDetailComponent />
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
