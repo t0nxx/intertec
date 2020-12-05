@@ -16,7 +16,7 @@ export default function FooterComponent() {
         <Image src={info} className="infoIc" />
         <Image src={flag} className="flagIc" />
       </div>
-      <ProgressBar variant="success" now={70} className="progress" />
+      <ProgressBar variant="success" now={20} className="progress" />
       <Row className="statistics-container">
         <div>
           <Image src={applicationIc} />

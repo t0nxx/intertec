@@ -15,7 +15,7 @@ import LocationInformationComponent from "./location-inforamtion/location-inform
 const PharamaceuticalEstablishmentScreen = () => {
   return (
     <Container fluid>
-      <Accordion defaultActiveKey="0">
+      <Accordion>
         <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="0">
             <Row>
