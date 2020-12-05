@@ -14,6 +14,21 @@
     right: 0;
   }
 
+  .stickyIcons {
+    img {
+      cursor: pointer;
+      position: absolute;
+      top: -60px;
+      width: 40px;
+      &.infoIc {
+        left: 10px;
+      }
+      &.flagIc {
+        right: 10px;
+      }
+    }
+  }
+
   .statistics-container {
     width: 100%;
     margin-top: 15px;
