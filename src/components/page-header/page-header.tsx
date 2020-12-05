@@ -7,7 +7,7 @@ import { Breadcrumb, Col, Container, Row } from "react-bootstrap";
 export default function PageHeaderComponent() {
   return (
     <Container fluid>
-      <Row className="mt-2">
+      <Row className="mb-5 pt-3 pr-5 pl-5 bg-white ">
         <Col>
           <h4> New License Pharmaceutical Establishment</h4>
         </Col>

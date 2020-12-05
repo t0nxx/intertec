@@ -11,7 +11,6 @@ import email from "../../../../assets/mail.png";
 import phone from "../../../../assets/phone.png";
 import arrow from "../../../../assets/arrow.png";
 
-
 const ContactInformationComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
@@ -195,10 +194,12 @@ const ContactInformationComponent = () => {
                 <span className="text-danger">{errors.fax?.message}</span>
               </Form.Group>
             </Form.Row>
-            <Button variant="success" size="lg" className="submittion-btn" type="submit">
-              <strong>Next</strong>
-              <Image src={arrow} className="submittion-btn__img" />
-            </Button>
+            <Row className="justify-content-center">
+              <Button variant="success" size="lg" className="submittion-btn" type="submit">
+                <strong>Next</strong>
+                <Image src={arrow} className="submittion-btn__img" />
+              </Button>
+            </Row>
           </Form>
         </Container>
       </Card.Body>

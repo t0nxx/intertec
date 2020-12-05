@@ -151,10 +151,12 @@ const LocationInformationComponent = () => {
               <span className="text-danger">{errors.mapUrl?.message}</span>
             </Form.Group>
           </Form.Row>
-          <Button variant="success" size="lg" className="submittion-btn" type="submit">
-            <strong>Next</strong>
-            <Image src={arrow} className="submittion-btn__img" />
-          </Button>
+          <Row className="justify-content-center">
+            <Button variant="success" size="lg" className="submittion-btn" type="submit">
+              <strong>Next</strong>
+              <Image src={arrow} className="submittion-btn__img" />
+            </Button>
+          </Row>
         </Form>
       </Card.Body>
     </Card>
