@@ -11,7 +11,7 @@ import userPhoto from "../../../../assets/userPhoto.png";
 import upload from "../../../../assets/upload.png";
 import email from "../../../../assets/mail.png";
 import phone from "../../../../assets/phone.png";
-import arrow from "../../../../assets/arrow.png";
+import arrow from "../../../../assets/arrow-white.png";
 
 const OwnerDetailComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({

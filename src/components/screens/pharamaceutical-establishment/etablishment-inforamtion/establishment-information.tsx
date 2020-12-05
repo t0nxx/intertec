@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormInputsInterface, formSchema } from "./establishment-information-helper";
-import arrow from "../../../../assets/arrow.png";
+import arrow from "../../../../assets/arrow-white.png";
 import "./establishment-information.scss";
 
 const EstablishmentInformationComponent = () => {

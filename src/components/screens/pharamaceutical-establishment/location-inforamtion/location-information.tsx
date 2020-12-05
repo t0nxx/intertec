@@ -3,8 +3,8 @@ import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormInputsInterface, formSchema } from "./location-information-helper";
-import arrow from "../../../../assets/arrow.png";
-import map from "../../../../assets/phone.png";
+import arrow from "../../../../assets/arrow-white.png";
+import map from "../../../../assets/map.png";
 
 import "./location-information.scss";
 
