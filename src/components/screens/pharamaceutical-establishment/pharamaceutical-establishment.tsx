@@ -13,12 +13,12 @@ import OwnerDetailComponent from "./owner-detail/owner-detail";
 
 const PharamaceuticalEstablishmentScreen = () => {
   return (
-    <Container className="wrapper">
+    <Container fluid>
       <Accordion defaultActiveKey="0">
-        <Card>
+        <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="0">
             <Row>
-              <img src={penImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
+              <img src={penImage} className="ml-3 mr-4" alt="card icon" />
               <h3 className="text-success">Establishment Information </h3>
             </Row>
           </Accordion.Toggle>
@@ -29,7 +29,7 @@ const PharamaceuticalEstablishmentScreen = () => {
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
-        <Card>
+        <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="1">
             <Row>
               <img
@@ -47,7 +47,7 @@ const PharamaceuticalEstablishmentScreen = () => {
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
-        <Card>
+        <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="2">
             <Row>
               <img
@@ -65,7 +65,7 @@ const PharamaceuticalEstablishmentScreen = () => {
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
-        <Card>
+        <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="3">
             <Row>
               <img src={ownerImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
@@ -77,7 +77,7 @@ const PharamaceuticalEstablishmentScreen = () => {
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
-        <Card>
+        <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="4">
             <Row>
               <img src={ownerImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
@@ -89,7 +89,7 @@ const PharamaceuticalEstablishmentScreen = () => {
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
-        <Card>
+        <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="5">
             <Row>
               <img src={checkImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
