@@ -10,32 +10,34 @@ import {
   faVolumeUp,
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  Badge,
-  Dropdown,
-  Nav,
-  Navbar,
-  Image,
-  Button,
-  ProgressBar,
-  Row,
-  Col,
-} from "react-bootstrap";
-import logo from "../../logo.png";
+import { Col, Dropdown, Nav, Navbar, Image, ProgressBar, Row } from "react-bootstrap";
+
+// Import images
+import applicationIc from "../../assets/applicationIc.png";
+import attachmentIc from "../../assets/attachmentIc.png";
+import previewIc from "../../assets/previewIc.png";
 
 export default function FooterComponent() {
   return (
     <Navbar expand="lg" fixed="bottom" className="footer">
-      <Row className="progress-container">
-        <ProgressBar variant="success" now={70} className="progress" />
-        <Row className="statistics-container">
-          <Col>
-            <Button variant="success"> only test</Button>
-          </Col>
-          <Col>
-            <Button variant="success"> only test</Button>
-          </Col>
-        </Row>
+      <ProgressBar variant="success" now={70} className="progress" />
+      <Row className="statistics-container">
+        <div>
+          <Image src={applicationIc} />
+          <span className="active">Application form</span>
+        </div>
+        <div>
+          <Image src={attachmentIc} />
+          <span>Attachement</span>
+        </div>
+        <div>
+          <Image src={previewIc} />
+          <span>Preview </span>
+        </div>
+        <div className="complete">
+          <span>Complete progress</span>
+          <strong>8 %</strong>
+        </div>
       </Row>
     </Navbar>
   );
