@@ -1,5 +1,9 @@
 import React from "react";
 import { Button, Card, Col, Container, Form, Row, Image } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FormInputsInterface, formSchema } from "./contact-information-helper";
+
 import "./contact-information.scss";
 import "../shared/shared.scss";
 
@@ -7,6 +11,19 @@ import email from "../../../../assets/mail.png";
 import phone from "../../../../assets/phone.png";
 
 const ContactInformationComponent = () => {
+  const { register, handleSubmit, errors, formState } = useForm({
+    resolver: yupResolver(formSchema),
+    mode: "all",
+  });
+
+  const onSubmit = (data: FormInputsInterface) => {
+    if (formState.isValid) {
+      // eslint-disable-next-line no-alert
+      alert("first form is valid and submited");
+    }
+    // eslint-disable-next-line no-console
+    console.log(data);
+  };
   return (
     /**
      * this should be abstacted  . later i will bake a style for card only usin styled component
@@ -14,7 +31,7 @@ const ContactInformationComponent = () => {
     <Card>
       <Card.Body>
         <Container>
-          <Form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Retrieve information contact from your profile</Form.Label>
@@ -26,6 +43,8 @@ const ContactInformationComponent = () => {
                         type="radio"
                         id="getContactData"
                         className="form-check-input"
+                        ref={register}
+                        value="yes"
                       />
                       Yes
                       <i className="checkMark"> </i>
@@ -38,6 +57,9 @@ const ContactInformationComponent = () => {
                         type="radio"
                         id="getContactData2"
                         className="form-check-input"
+                        value="no"
+                        ref={register}
+                        checked
                       />
                       No
                       <i className="checkMark"> </i>
@@ -51,14 +73,30 @@ const ContactInformationComponent = () => {
                 <Form.Label>
                   Contact Name <span className="required">*</span>{" "}
                 </Form.Label>
-                <Form.Control type="text" placeholder=" Contact Name" />
+                <Form.Control
+                  type="text"
+                  placeholder=" Contact Name"
+                  name="contactName"
+                  ref={register}
+                  isValid={formState.touched.contactName && !errors.contactName}
+                  isInvalid={errors.contactName}
+                />
+                <span className="text-danger">{errors.contactName?.message}</span>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>
                   Designation <span className="required">*</span>{" "}
                 </Form.Label>
-                <Form.Control type="text" placeholder=" Designation " />
+                <Form.Control
+                  type="text"
+                  placeholder=" Designation "
+                  name="designation"
+                  ref={register}
+                  isValid={formState.touched.designation && !errors.designation}
+                  isInvalid={errors.designation}
+                />
+                <span className="text-danger">{errors.designation?.message}</span>
               </Form.Group>
             </Form.Row>
 
@@ -68,9 +106,17 @@ const ContactInformationComponent = () => {
                   Primary Email <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
-                  <Form.Control type="text" placeholder="Primary Email" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Primary Email"
+                    name="primaryEmail"
+                    ref={register}
+                    isValid={formState.touched.primaryEmail && !errors.primaryEmail}
+                    isInvalid={errors.primaryEmail}
+                  />
                   <Image src={email} />
                 </div>
+                <span className="text-danger">{errors.primaryEmail?.message}</span>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
@@ -78,9 +124,17 @@ const ContactInformationComponent = () => {
                   Alternative Email <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
-                  <Form.Control type="text" placeholder="  Alternative Email " />
+                  <Form.Control
+                    type="text"
+                    placeholder="  Alternative Email "
+                    name="alternativeEmail"
+                    ref={register}
+                    isValid={formState.touched.alternativeEmail && !errors.alternativeEmail}
+                    isInvalid={errors.alternativeEmail}
+                  />
                   <Image src={email} />
                 </div>
+                <span className="text-danger">{errors.alternativeEmail?.message}</span>
               </Form.Group>
             </Form.Row>
 
@@ -90,9 +144,17 @@ const ContactInformationComponent = () => {
                   Contact Number <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
-                  <Form.Control type="text" placeholder=" +971 000 000 " />
+                  <Form.Control
+                    type="text"
+                    placeholder=" +971 000 000 "
+                    name="contactNumber"
+                    ref={register}
+                    isValid={formState.touched.contactNumber && !errors.contactNumber}
+                    isInvalid={errors.contactNumber}
+                  />
                   <Image src={phone} />
                 </div>
+                <span className="text-danger">{errors.contactNumber?.message}</span>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
@@ -100,18 +162,40 @@ const ContactInformationComponent = () => {
                   Alternative Contact Number <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
-                  <Form.Control type="text" placeholder=" +971 000 000  " />
+                  <Form.Control
+                    type="text"
+                    placeholder=" +971 000 000  "
+                    name="alternativeContactNumber"
+                    ref={register}
+                    // eslint-disable-next-line max-len
+                    isValid={
+                      formState.touched.alternativeContactNumber && !errors.alternativeContactNumber
+                    }
+                    isInvalid={errors.alternativeContactNumber}
+                  />
                   <Image src={phone} />
                 </div>
+                <span className="text-danger">{errors.alternativeContactNumber?.message}</span>
               </Form.Group>
             </Form.Row>
 
             <Form.Row>
               <Form.Group as={Col} xs="6" controlId="formGridEmail">
                 <Form.Label> Fax </Form.Label>
-                <Form.Control type="text" placeholder="Fax" />
+                <Form.Control
+                  type="text"
+                  placeholder="Fax"
+                  name="fax"
+                  ref={register}
+                  isValid={formState.touched.fax && !errors.fax}
+                  isInvalid={errors.fax}
+                />
+                <span className="text-danger">{errors.fax?.message}</span>
               </Form.Group>
             </Form.Row>
+            <Button variant="success" size="lg" className="rounded-pill" type="submit">
+              Next
+            </Button>
           </Form>
         </Container>
       </Card.Body>

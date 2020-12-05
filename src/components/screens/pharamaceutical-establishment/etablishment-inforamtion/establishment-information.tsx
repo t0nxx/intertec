@@ -2,27 +2,8 @@ import React from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { FormInputsInterface, formSchema } from "./establishment-information-helper";
 import "./establishment-information.scss";
-
-/**
- * Form interface for type definations
- */
-interface IFormInputs {
-  establishmentName: string;
-  establishmentNameArabic: string;
-  establishmentType: string;
-  Category: string;
-}
-/**
- * Validation Schema with  err msg en or ar..
- */
-const formSchema = yup.object().shape({
-  establishmentName: yup.string().required("this is required "),
-  establishmentNameArabic: yup.string().required("this is required "),
-  establishmentType: yup.string().required("this is required "),
-  Category: yup.string().required("this is required "),
-});
 
 const EstablishmentInformationComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -30,7 +11,7 @@ const EstablishmentInformationComponent = () => {
     mode: "all",
   });
 
-  const onSubmit = (data: IFormInputs) => {
+  const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
       // eslint-disable-next-line no-alert
       alert("first form is valid and submited");
@@ -123,8 +104,8 @@ const EstablishmentInformationComponent = () => {
               <span className="text-danger">{errors.Category?.message}</span>
             </Form.Group>
           </Form.Row>
-          <Button variant="success" type="submit">
-            Submit form
+          <Button variant="success" size="lg" className="rounded-pill" type="submit">
+            Next
           </Button>
         </Form>
       </Card.Body>
