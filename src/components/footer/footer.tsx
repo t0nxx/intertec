@@ -1,41 +1,39 @@
 import React from "react";
 import "./footer.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMicrophone,
-  faPhoneAlt,
-  faQuestionCircle,
-  faSearch,
-  faSitemap,
-  faVolumeUp,
-  faLowVision,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  Badge,
-  Dropdown,
-  Nav,
-  Navbar,
-  Image,
-  Button,
-  ProgressBar,
-  Row,
-  Col,
-} from "react-bootstrap";
-import logo from "../../logo.png";
+import { Navbar, Image, ProgressBar, Row, Button } from "react-bootstrap";
+
+// Import images
+import applicationIc from "../../assets/applicationIc.png";
+import attachmentIc from "../../assets/attachmentIc.png";
+import previewIc from "../../assets/previewIc.png";
+import info from "../../assets/info.png";
+import flag from "../../assets/flag.png";
 
 export default function FooterComponent() {
   return (
     <Navbar expand="lg" fixed="bottom" className="footer">
-      <Row className="progress-container">
-        <ProgressBar variant="success" now={70} className="progress" />
-        <Row className="statistics-container">
-          <Col>
-            <Button variant="success"> only test</Button>
-          </Col>
-          <Col>
-            <Button variant="success"> only test</Button>
-          </Col>
-        </Row>
+      <div className="stickyIcons">
+        <Image src={info} className="infoIc" />
+        <Image src={flag} className="flagIc" />
+      </div>
+      <ProgressBar variant="success" now={70} className="progress" />
+      <Row className="statistics-container">
+        <div>
+          <Image src={applicationIc} />
+          <span className="active">Application form</span>
+        </div>
+        <div>
+          <Image src={attachmentIc} />
+          <span>Attachement</span>
+        </div>
+        <div>
+          <Image src={previewIc} />
+          <span>Preview </span>
+        </div>
+        <div className="complete">
+          <span>Complete progress</span>
+          <strong>8 %</strong>
+        </div>
       </Row>
     </Navbar>
   );
