@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormInputsInterface, formSchema } from "./establishment-information-helper";
+import arrow from "../../../../assets/arrow.png";
 import "./establishment-information.scss";
 
 const EstablishmentInformationComponent = () => {
@@ -104,8 +105,9 @@ const EstablishmentInformationComponent = () => {
               <span className="text-danger">{errors.Category?.message}</span>
             </Form.Group>
           </Form.Row>
-          <Button variant="success" size="lg" className="rounded-pill" type="submit">
-            Next
+          <Button variant="success" size="lg" className="submittion-btn" type="submit">
+            <strong>Next</strong>
+            <Image src={arrow} className="submittion-btn__img" />
           </Button>
         </Form>
       </Card.Body>

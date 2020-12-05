@@ -9,6 +9,8 @@ import "../shared/shared.scss";
 
 import email from "../../../../assets/mail.png";
 import phone from "../../../../assets/phone.png";
+import arrow from "../../../../assets/arrow.png";
+
 
 const ContactInformationComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -193,8 +195,9 @@ const ContactInformationComponent = () => {
                 <span className="text-danger">{errors.fax?.message}</span>
               </Form.Group>
             </Form.Row>
-            <Button variant="success" size="lg" className="rounded-pill" type="submit">
-              Next
+            <Button variant="success" size="lg" className="submittion-btn" type="submit">
+              <strong>Next</strong>
+              <Image src={arrow} className="submittion-btn__img" />
             </Button>
           </Form>
         </Container>
