@@ -4,24 +4,33 @@ import { useSelector } from "react-redux";
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
 import penImage from "../../../assets/pen.svg";
+import penImageWhite from "../../../assets/pen-white.svg";
 import contactImage from "../../../assets/contact.svg";
+import contactImageWhite from "../../../assets/contact-white.svg";
 import locationImage from "../../../assets/location.svg";
+import locationImageWhite from "../../../assets/location-white.svg";
 import ownerImage from "../../../assets/owner.svg";
+import ownerImageWhite from "../../../assets/owner-white.svg";
 import checkImage from "../../../assets/check.svg";
+import checkImageWhite from "../../../assets/check-white.svg";
 import checked from "../../../assets/checked.svg";
 
 import ContactInformationComponent from "./contact-inforamtion/contact-information";
 import EstablishmentInformationComponent from "./etablishment-inforamtion/establishment-information";
 import OwnerDetailComponent from "./owner-detail/owner-detail";
 import LocationInformationComponent from "./location-inforamtion/location-information";
+import SelfEvaluationComponent from "./self-evaluation/self-evaluation";
 
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+  const handelOnClick = (e: any) => {
+    console.log(e);
+  };
   return (
     <Container fluid>
-      <Accordion activeKey={state.stepNumberReducer.toString()}>
+      {/* <Accordion activeKey={state.stepNumberReducer.toString()}> */}
+      <Accordion>
         <Card className="headCard">
           <Accordion.Toggle
             as={Card.Header}
@@ -29,7 +38,8 @@ const PharamaceuticalEstablishmentScreen = () => {
             eventKey="0"
           >
             <Row>
-              <img src={penImage} className="ml-3 mr-4" alt="card icon" />
+              <Image src={penImage} className="ml-3 mr-4 greenIc" />
+              <Image src={penImageWhite} className="ml-3 mr-4 whiteIc" />
               <h3 className="text-success">Establishment Information </h3>
               <Image src={checked} className="checked" />
             </Row>
@@ -48,13 +58,8 @@ const PharamaceuticalEstablishmentScreen = () => {
             eventKey="1"
           >
             <Row>
-              <img
-                src={contactImage}
-                width="30"
-                height="35"
-                className="ml-3 mr-4"
-                alt="card icon"
-              />
+              <Image src={contactImage} className="ml-3 mr-4 greenIc" />
+              <Image src={contactImageWhite} className="ml-3 mr-4 whiteIc" />
               <h3 className="text-success">Contact Information </h3>
               <Image src={checked} className="checked" />
             </Row>
@@ -71,13 +76,8 @@ const PharamaceuticalEstablishmentScreen = () => {
             eventKey="2"
           >
             <Row>
-              <img
-                src={locationImage}
-                width="30"
-                height="35"
-                className="ml-3 mr-4"
-                alt="card icon"
-              />
+              <Image src={locationImage} className="ml-3 mr-4 greenIc" />
+              <Image src={locationImageWhite} className="ml-3 mr-4 whiteIc" />
               <h3 className="text-success">Location Information </h3>
               <Image src={checked} className="checked" />
             </Row>
@@ -94,7 +94,8 @@ const PharamaceuticalEstablishmentScreen = () => {
             eventKey="3"
           >
             <Row>
-              <img src={ownerImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
+              <Image src={ownerImage} className="ml-3 mr-4 greenIc" />
+              <Image src={ownerImageWhite} className="ml-3 mr-4 whiteIc" />
               <h3 className="text-success">Owner Details </h3>
               <Image src={checked} className="checked" />
             </Row>
@@ -107,7 +108,8 @@ const PharamaceuticalEstablishmentScreen = () => {
         <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="4">
             <Row>
-              <img src={ownerImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
+              <Image src={ownerImage} className="ml-3 mr-4 greenIc" />
+              <Image src={ownerImageWhite} className="ml-3 mr-4 whiteIc" />
               <h3 className="text-success">Partner Details </h3>
               <Image src={checked} className="checked" />
             </Row>
@@ -120,13 +122,14 @@ const PharamaceuticalEstablishmentScreen = () => {
         <Card className="headCard">
           <Accordion.Toggle as={Card.Header} eventKey="5">
             <Row>
-              <img src={checkImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
+              <Image src={checkImage} className="ml-3 mr-4 greenIc" />
+              <Image src={checkImageWhite} className="ml-3 mr-4 whiteIc" />
               <h3 className="text-success">Self Evaluation </h3>
               <Image src={checked} className="checked" />
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="5">
-            <ContactInformationComponent />
+            <SelfEvaluationComponent />
           </Accordion.Collapse>
         </Card>
       </Accordion>

@@ -16,19 +16,22 @@
         img {
           width: 30px;
           height: 30px;
+          &.whiteIc {
+            display: none;
+          }
+          &.checked {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
         }
         h3 {
           font-size: 26px;
           font-weight: normal;
           line-height: 40px;
           margin: 0 10px;
-        }
-        .checked {
-          display: none;
-          position: absolute;
-          right: 20px;
-          top: 50%;
-          transform: translateY(-50%);
         }
       }
     }
