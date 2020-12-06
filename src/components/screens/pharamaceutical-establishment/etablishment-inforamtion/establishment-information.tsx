@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import { ActionTypes } from "../../../../redux/reducers/helper";
 import { FormInputsInterface, formSchema } from "./establishment-information-helper";
-import arrow from "../../../../assets/arrow-white.png";
+import arrow from "../../../../assets/arrow-white.svg";
 import "./establishment-information.scss";
 
 const EstablishmentInformationComponent = () => {

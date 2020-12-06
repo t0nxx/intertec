@@ -5,6 +5,9 @@
   border: 0;
   border-radius: 0;
   box-shadow: none;
+  .card-header {
+    padding: 15px 20px !important;
+  }
   .card-body {
     padding: 10px 25px;
     input::placeholder {
@@ -25,7 +28,7 @@
           input {
             visibility: hidden;
             &:checked ~ .checkMark {
-              background-image: url(../../../../assets/checkedColored.png);
+              background-image: url(../../../../assets/checkedColored.svg);
               background-repeat: no-repeat;
               background-position: center;
               background-size: cover;
@@ -93,12 +96,17 @@
 
 .done {
   background: #127f46 !important;
+  border-radius: 10px !important;
+  position: relative;
   .row {
     img {
-      background-color: white;
+      // background-color: white;
     }
     h3 {
-      background-color: white;
+      color: white !important;
+    }
+    .checked {
+      display: block !important;
     }
   }
 }
