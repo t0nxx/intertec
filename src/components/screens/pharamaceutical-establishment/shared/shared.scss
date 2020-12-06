@@ -28,7 +28,7 @@
           input {
             visibility: hidden;
             &:checked ~ .checkMark {
-              background-image: url(../../../../assets/checkedColored.png);
+              background-image: url(../../../../assets/checkedColored.svg);
               background-repeat: no-repeat;
               background-position: center;
               background-size: cover;

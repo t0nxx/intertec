@@ -8,9 +8,9 @@ import { FormInputsInterface, formSchema } from "./contact-information-helper";
 import "./contact-information.scss";
 import "../shared/shared.scss";
 
-import email from "../../../../assets/mail.png";
-import phone from "../../../../assets/phone.png";
-import arrow from "../../../../assets/arrow-white.png";
+import email from "../../../../assets/mail.svg";
+import phone from "../../../../assets/phone.svg";
+import arrow from "../../../../assets/arrow-white.svg";
 import { ActionTypes } from "../../../../redux/reducers/helper";
 
 const ContactInformationComponent = () => {

@@ -4,8 +4,8 @@ import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormInputsInterface, formSchema } from "./location-information-helper";
-import arrow from "../../../../assets/arrow-white.png";
-import map from "../../../../assets/map.png";
+import arrow from "../../../../assets/arrow-white.svg";
+import map from "../../../../assets/map.svg";
 
 import "./location-information.scss";
 import { ActionTypes } from "../../../../redux/reducers/helper";

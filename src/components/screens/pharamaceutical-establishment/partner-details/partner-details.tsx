@@ -4,11 +4,11 @@ import "./partner-details.scss";
 import "../shared/shared.scss";
 
 // Import images
-import userPhoto from "../../../../assets/userPhoto.png";
-import upload from "../../../../assets/upload.png";
-import email from "../../../../assets/mail.png";
-import phone from "../../../../assets/phone.png";
-import arrow from "../../../../assets/arrow-white.png";
+import userPhoto from "../../../../assets/userPhoto.svg";
+import upload from "../../../../assets/upload.svg";
+import email from "../../../../assets/mail.svg";
+import phone from "../../../../assets/phone.svg";
+import arrow from "../../../../assets/arrow-white.svg";
 
 const partnerDetailsComponent = () => {
   return (

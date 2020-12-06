@@ -3,11 +3,11 @@ import "./footer.scss";
 import { Navbar, Image, ProgressBar, Row, Button } from "react-bootstrap";
 
 // Import images
-import applicationIc from "../../assets/applicationIc.png";
-import attachmentIc from "../../assets/attachmentIc.png";
-import previewIc from "../../assets/previewIc.png";
-import info from "../../assets/info.png";
-import flag from "../../assets/flag.png";
+import applicationIc from "../../assets/applicationIc.svg";
+import attachmentIc from "../../assets/attachmentIc.svg";
+import previewIc from "../../assets/previewIc.svg";
+import info from "../../assets/info.svg";
+import flag from "../../assets/flag.svg";
 
 export default function FooterComponent() {
   return (

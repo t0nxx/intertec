@@ -11,11 +11,11 @@ import {
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
 import { Badge, Dropdown, Nav, Navbar, Image } from "react-bootstrap";
-import logo from "../../logo.png";
+import logo from "../../logo.svg";
 
 // Import images
 import name from "../../assets/name.jpg";
-import bell from "../../assets/bell.png";
+import bell from "../../assets/bell.svg";
 
 export default function NavBarComponent() {
   return (

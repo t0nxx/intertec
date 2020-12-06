@@ -3,12 +3,12 @@ import { Accordion, Card, Container, Row, Image } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
-import penImage from "../../../assets/pen.png";
-import contactImage from "../../../assets/contact.png";
-import locationImage from "../../../assets/location.png";
-import ownerImage from "../../../assets/owner.png";
-import checkImage from "../../../assets/check.png";
-import checked from "../../../assets/checked.png";
+import penImage from "../../../assets/pen.svg";
+import contactImage from "../../../assets/contact.svg";
+import locationImage from "../../../assets/location.svg";
+import ownerImage from "../../../assets/owner.svg";
+import checkImage from "../../../assets/check.svg";
+import checked from "../../../assets/checked.svg";
 
 import ContactInformationComponent from "./contact-inforamtion/contact-information";
 import EstablishmentInformationComponent from "./etablishment-inforamtion/establishment-information";
