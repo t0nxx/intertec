@@ -100,7 +100,12 @@
   position: relative;
   .row {
     img {
-      // background-color: white;
+      &.whiteIc {
+        display: inline !important;
+      }
+      &.greenIc {
+        display: none !important;
+      }
     }
     h3 {
       color: white !important;
