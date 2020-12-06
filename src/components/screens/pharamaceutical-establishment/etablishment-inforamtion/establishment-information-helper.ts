@@ -8,6 +8,13 @@ export interface FormInputsInterface {
   establishmentType: string;
   Category: string;
 }
+
+export const establishmentInformationIntialState: FormInputsInterface = {
+  establishmentName: "",
+  establishmentNameArabic: "",
+  establishmentType: "",
+  Category: "",
+};
 /**
  * Validation Schema with  err msg en or ar..
  */
@@ -17,4 +24,3 @@ export const formSchema = yup.object().shape({
   establishmentType: yup.string().required("this is required "),
   Category: yup.string().required("this is required "),
 });
-

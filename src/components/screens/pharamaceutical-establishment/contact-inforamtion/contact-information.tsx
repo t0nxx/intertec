@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Button, Card, Col, Container, Form, Row, Image } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,6 +11,7 @@ import "../shared/shared.scss";
 import email from "../../../../assets/mail.png";
 import phone from "../../../../assets/phone.png";
 import arrow from "../../../../assets/arrow-white.png";
+import { ActionTypes } from "../../../../redux/reducers/helper";
 
 const ContactInformationComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -17,13 +19,14 @@ const ContactInformationComponent = () => {
     mode: "all",
   });
 
+  const dispatch = useDispatch();
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
-      // eslint-disable-next-line no-alert
-      alert("first form is valid and submited");
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_CONTACT_INFORMATION,
+        payload: data,
+      });
     }
-    // eslint-disable-next-line no-console
-    console.log(data);
   };
   return (
     /**

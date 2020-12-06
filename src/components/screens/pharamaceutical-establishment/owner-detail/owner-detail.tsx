@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,6 +13,7 @@ import upload from "../../../../assets/upload.png";
 import email from "../../../../assets/mail.png";
 import phone from "../../../../assets/phone.png";
 import arrow from "../../../../assets/arrow-white.png";
+import { ActionTypes } from "../../../../redux/reducers/helper";
 
 const OwnerDetailComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -19,13 +21,14 @@ const OwnerDetailComponent = () => {
     mode: "all",
   });
 
+  const dispatch = useDispatch();
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
-      // eslint-disable-next-line no-alert
-      alert("first form is valid and submited");
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
+        payload: data,
+      });
     }
-    // eslint-disable-next-line no-console
-    console.log(data);
   };
   return (
     /**

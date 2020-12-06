@@ -90,3 +90,15 @@
     margin-left: 10px;
   }
 }
+
+.done {
+  background: #127f46 !important;
+  .row {
+    img {
+      background-color: white;
+    }
+    h3 {
+      background-color: white;
+    }
+  }
+}

@@ -11,6 +11,16 @@ export interface FormInputsInterface {
   buildingNo: string;
   mapUrl: string;
 }
+
+export const locationInformationInitialState: FormInputsInterface = {
+  emirate: "",
+  area: "",
+  street: "",
+  poBox: "",
+  buildingName: "",
+  buildingNo: "",
+  mapUrl: "",
+};
 /**
  * Validation Schema with  err msg en or ar..
  */
@@ -21,6 +31,5 @@ export const formSchema = yup.object().shape({
   poBox: yup.string().required("this is required "),
   buildingName: yup.string().required("this is required "),
   buildingNo: yup.string().required("this is required "),
-  mapUrl: yup.string().required("this is required "),  
+  mapUrl: yup.string().required("this is required "),
 });
-

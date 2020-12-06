@@ -1,7 +1,10 @@
 import React from "react";
-import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { Button, Card, Col, Form, Image, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+
+import { ActionTypes } from "../../../../redux/reducers/helper";
 import { FormInputsInterface, formSchema } from "./establishment-information-helper";
 import arrow from "../../../../assets/arrow-white.png";
 import "./establishment-information.scss";
@@ -12,13 +15,14 @@ const EstablishmentInformationComponent = () => {
     mode: "all",
   });
 
+  const dispatch = useDispatch();
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
-      // eslint-disable-next-line no-alert
-      alert("first form is valid and submited");
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_ESTABLISHMENT_INFORMATION,
+        payload: data,
+      });
     }
-    // eslint-disable-next-line no-console
-    console.log(data);
   };
 
   return (
