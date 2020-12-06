@@ -1,5 +1,11 @@
 import React from "react";
-import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { Image, Card, Col, Container, Form, Row, Button, Table } from "react-bootstrap";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+
+import { FormInputsInterface, formSchema } from "./self-evaluation-helper";
+
 import "./self-evaluation.scss";
 import "../shared/shared.scss";
 
@@ -9,56 +15,107 @@ import upload from "../../../../assets/upload.svg";
 import email from "../../../../assets/mail.svg";
 import phone from "../../../../assets/phone.svg";
 import arrow from "../../../../assets/arrow-white.svg";
+import { ActionTypes } from "../../../../redux/reducers/helper";
 
 const SelfEvaluationComponent = () => {
+  const { register, handleSubmit, errors, formState } = useForm({
+    resolver: yupResolver(formSchema),
+    mode: "all",
+  });
+
+  const dispatch = useDispatch();
+  const onSubmit = (data: FormInputsInterface) => {
+    if (formState.isValid) {
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_LOACTION_INFORMATION,
+        payload: data,
+      });
+      // move to next step
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+      });
+    }
+  };
+
   return (
     /**
      * this should be abstacted  . later i will bake a style for card only usin styled component
      */
-    <Container fluid>
-      {/* <Card>
-        <Card.Body>
-          <Form>
-            <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Retrieve information contact from your profile</Form.Label>
-                <div className="radioButtons">
-                  <div className="form-check">
-                    <label htmlFor="getContactData">
-                      <input
-                        name="getContactData"
-                        type="radio"
-                        id="getContactData"
-                        className="form-check-input"
-                        value="yes"
-                        ref={register}
-                      />
-                      Yes
-                      <i className="checkMark"> </i>
-                    </label>
+    <Card>
+      <Card.Body>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Table>
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Yes</th>
+                <th>No</th>
+                <th>N/a</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quod exercitationem
+                  reiciendis fugiat et esse enim, qui laborum dignissimos, saepe voluptas error
+                  alias, possimus harum aut repellat. In, fugit delectus!
+                </td>
+                <td>
+                  <div className="radioButtons">
+                    <div className="form-check">
+                      <label htmlFor="q1-y">
+                        <input
+                          name="q1"
+                          type="radio"
+                          id="q1-y"
+                          className="form-check-input"
+                          value="yes"
+                          ref={register}
+                        />
+                        <i className="checkMark"> </i>
+                      </label>
+                    </div>
+
+                    <div className="form-check">
+                      <label htmlFor="q1-n">
+                        <input
+                          name="q1"
+                          type="radio"
+                          id="q1-n"
+                          className="form-check-input"
+                          value="no"
+                          ref={register}
+                        />
+                        <i className="checkMark"> </i>
+                      </label>
+                    </div>
+
+                    <div className="form-check">
+                      <label htmlFor="q1-na">
+                        <input
+                          name="q1"
+                          type="radio"
+                          id="q1-na"
+                          className="form-check-input"
+                          value="na"
+                          ref={register}
+                        />
+                        <i className="checkMark"> </i>
+                      </label>
+                    </div>
                   </div>
-                  <div className="form-check">
-                    <label htmlFor="getContactData2">
-                      <input
-                        name="getContactData"
-                        type="radio"
-                        id="getContactData2"
-                        className="form-check-input"
-                        value="no"
-                        ref={register}
-                        checked
-                      />
-                      No
-                      <i className="checkMark"> </i>
-                    </label>
-                  </div>
-                </div>
-              </Form.Group>
-            </Form.Row>
-          </Form>
-        </Card.Body>
-      </Card> */}
-    </Container>
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+          <Row className="justify-content-center">
+            <Button variant="success" size="lg" className="submittion-btn" type="submit">
+              <strong>Go To Attachment</strong>
+            </Button>
+          </Row>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 };
 
