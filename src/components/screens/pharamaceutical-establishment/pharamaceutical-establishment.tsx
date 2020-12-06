@@ -1,5 +1,7 @@
 import React from "react";
 import { Accordion, Card, Container, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
 import penImage from "../../../assets/pen.png";
 import contactImage from "../../../assets/contact.png";
@@ -13,11 +15,17 @@ import OwnerDetailComponent from "./owner-detail/owner-detail";
 import LocationInformationComponent from "./location-inforamtion/location-information";
 
 const PharamaceuticalEstablishmentScreen = () => {
+  const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
+
   return (
     <Container fluid>
       <Accordion>
         <Card className="headCard">
-          <Accordion.Toggle as={Card.Header} eventKey="0">
+          <Accordion.Toggle
+            as={Card.Header}
+            className={state.establishmentInformationsReducer.isComplete ? "done" : ""}
+            eventKey="0"
+          >
             <Row>
               <img src={penImage} className="ml-3 mr-4" alt="card icon" />
               <h3 className="text-success">Establishment Information </h3>
@@ -31,7 +39,11 @@ const PharamaceuticalEstablishmentScreen = () => {
         </Card>
         <div className="divider" />
         <Card className="headCard">
-          <Accordion.Toggle as={Card.Header} eventKey="1">
+          <Accordion.Toggle
+            as={Card.Header}
+            className={state.contactInformationsReducer.isComplete ? "done" : ""}
+            eventKey="1"
+          >
             <Row>
               <img
                 src={contactImage}
@@ -49,7 +61,11 @@ const PharamaceuticalEstablishmentScreen = () => {
         </Card>
         <div className="divider" />
         <Card className="headCard">
-          <Accordion.Toggle as={Card.Header} eventKey="2">
+          <Accordion.Toggle
+            as={Card.Header}
+            className={state.locationInformationsReducer.isComplete ? "done" : ""}
+            eventKey="2"
+          >
             <Row>
               <img
                 src={locationImage}
@@ -67,7 +83,11 @@ const PharamaceuticalEstablishmentScreen = () => {
         </Card>
         <div className="divider" />
         <Card className="headCard">
-          <Accordion.Toggle as={Card.Header} eventKey="3">
+          <Accordion.Toggle
+            as={Card.Header}
+            className={state.ownerDetailsReducer.isComplete ? "done" : ""}
+            eventKey="3"
+          >
             <Row>
               <img src={ownerImage} width="30" height="35" className="ml-3 mr-4" alt="card icon" />
               <h3 className="text-success">Owner Details </h3>

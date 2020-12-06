@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,6 +8,7 @@ import arrow from "../../../../assets/arrow-white.png";
 import map from "../../../../assets/map.png";
 
 import "./location-information.scss";
+import { ActionTypes } from "../../../../redux/reducers/helper";
 
 const LocationInformationComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -14,13 +16,14 @@ const LocationInformationComponent = () => {
     mode: "all",
   });
 
+  const dispatch = useDispatch();
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
-      // eslint-disable-next-line no-alert
-      alert("first form is valid and submited");
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_LOACTION_INFORMATION,
+        payload: data,
+      });
     }
-    // eslint-disable-next-line no-console
-    console.log(data);
   };
 
   return (

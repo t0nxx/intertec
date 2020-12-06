@@ -3,22 +3,32 @@ import * as yup from "yup";
  * Form interface for type def
  */
 export interface FormInputsInterface {
-  getInfoFromProfile : string;
+  getInfoFromProfile: string;
   contactName: string;
   designation: string;
   primaryEmail: string;
   alternativeEmail: string;
-  contactNumber : string;
-  alternativeContactNumber : string;
-  fax : string;
-
+  contactNumber: string;
+  alternativeContactNumber: string;
+  fax: string;
 }
+
+export const contactInformationInitailState: FormInputsInterface = {
+  getInfoFromProfile: "",
+  contactName: "",
+  designation: "",
+  primaryEmail: "",
+  alternativeEmail: "",
+  contactNumber: "",
+  alternativeContactNumber: "",
+  fax: "",
+};
 /**
  * Validation Schema with  err msg en or ar..
  */
 export const formSchema = yup.object().shape({
   // i'm not setting validation for getInfoFromProfile cause it by default selected one from the 2 radio buttons
-  getInfoFromProfile : yup.string().optional(),
+  getInfoFromProfile: yup.string().optional(),
   contactName: yup.string().required("this is required "),
   designation: yup.string().required("this is required "),
   primaryEmail: yup.string().email().required("this is required "),
@@ -27,4 +37,3 @@ export const formSchema = yup.object().shape({
   alternativeContactNumber: yup.string().required("this is required "),
   fax: yup.string().optional(),
 });
-

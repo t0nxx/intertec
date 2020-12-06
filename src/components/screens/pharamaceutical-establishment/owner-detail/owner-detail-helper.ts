@@ -21,6 +21,26 @@ export interface FormInputsInterface {
   contactNo: string;
   primaryEmail: string;
 }
+
+export const ownerDetailInitialState: FormInputsInterface = {
+  getInfoFromProfile: "",
+  tite: "",
+  gender: "",
+  fName: "",
+  mName: "",
+  lName: "",
+  fNameAr: "",
+  mNameAr: "",
+  lNameAr: "",
+  sharePercentage: "",
+  uaeCitzen: "",
+  nationality: "",
+  passportNo: "",
+  emiratesId: "",
+  familyBookNo: "",
+  contactNo: "",
+  primaryEmail: "",
+};
 /**
  * Validation Schema with  err msg en or ar..
  */
