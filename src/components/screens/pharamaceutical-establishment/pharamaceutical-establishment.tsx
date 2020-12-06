@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Card, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
@@ -19,7 +19,7 @@ const PharamaceuticalEstablishmentScreen = () => {
 
   return (
     <Container fluid>
-      <Accordion>
+      <Accordion activeKey={state.stepNumberReducer.toString()}>
         <Card className="headCard">
           <Accordion.Toggle
             as={Card.Header}

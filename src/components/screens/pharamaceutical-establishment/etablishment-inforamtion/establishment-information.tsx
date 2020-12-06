@@ -22,6 +22,10 @@ const EstablishmentInformationComponent = () => {
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_ESTABLISHMENT_INFORMATION,
         payload: data,
       });
+      // move to next step
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+      });
     }
   };
 
