@@ -20,6 +20,7 @@ import EstablishmentInformationComponent from "./etablishment-inforamtion/establ
 import OwnerDetailComponent from "./owner-detail/owner-detail";
 import LocationInformationComponent from "./location-inforamtion/location-information";
 import SelfEvaluationComponent from "./self-evaluation/self-evaluation";
+import PartnerDetailsComponent from "./partner-details/partner-details";
 
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
@@ -31,6 +32,7 @@ const PharamaceuticalEstablishmentScreen = () => {
     <Container fluid>
       {/* <Accordion activeKey={state.stepNumberReducer.toString()}> */}
       <Accordion>
+        <span className="column"> </span>
         <Card className="headCard">
           <Accordion.Toggle
             as={Card.Header}
@@ -115,7 +117,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="4">
-            <ContactInformationComponent />
+            <PartnerDetailsComponent />
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
