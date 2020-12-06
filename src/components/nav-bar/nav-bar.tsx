@@ -10,7 +10,7 @@ import {
   faVolumeUp,
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
-import { Badge, Dropdown, Nav, Navbar, Image  } from "react-bootstrap";
+import { Badge, Dropdown, Nav, Navbar, Image } from "react-bootstrap";
 import logo from "../../logo.svg";
 
 // Import images

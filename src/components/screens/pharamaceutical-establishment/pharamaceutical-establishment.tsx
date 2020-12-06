@@ -17,6 +17,7 @@ import LocationInformationComponent from "./location-inforamtion/location-inform
 
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   return (
     <Container fluid>
