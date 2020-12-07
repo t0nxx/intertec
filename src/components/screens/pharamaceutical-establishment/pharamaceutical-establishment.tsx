@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Accordion, Card, Container, Row, Image } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { StateSelectorInterface } from "../../../redux/reducers/helper";
+import { useDispatch, useSelector } from "react-redux";
+import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
 import penImage from "../../../assets/pen.svg";
 import penImageWhite from "../../../assets/pen-white.svg";
@@ -25,19 +25,25 @@ import PartnerDetailsComponent from "./partner-details/partner-details";
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handelOnClick = (e: any) => {
-    console.log(e);
+  const dispatch = useDispatch();
+  const setCurrentStep = (step: string) => {
+    // set current step in global state
+    dispatch({
+      type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+      payload: step,
+    });
   };
   return (
     <Container fluid>
-      {/* <Accordion activeKey={state.stepNumberReducer.toString()}> */}
-      <Accordion>
+      <Accordion activeKey={state.stepNumberReducer.toString()}>
+        {/* <Accordion> */}
         <span className="column"> </span>
         <Card className="headCard">
           <Accordion.Toggle
             as={Card.Header}
             className={state.establishmentInformationsReducer.isComplete ? "done" : ""}
             eventKey="0"
+            onClick={() => setCurrentStep("0")}
           >
             <Row>
               <Image src={penImage} className="ml-3 mr-4 greenIc" />
@@ -58,6 +64,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             as={Card.Header}
             className={state.contactInformationsReducer.isComplete ? "done" : ""}
             eventKey="1"
+            onClick={() => setCurrentStep("1")}
           >
             <Row>
               <Image src={contactImage} className="ml-3 mr-4 greenIc" />
@@ -76,6 +83,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             as={Card.Header}
             className={state.locationInformationsReducer.isComplete ? "done" : ""}
             eventKey="2"
+            onClick={() => setCurrentStep("2")}
           >
             <Row>
               <Image src={locationImage} className="ml-3 mr-4 greenIc" />
@@ -94,6 +102,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             as={Card.Header}
             className={state.ownerDetailsReducer.isComplete ? "done" : ""}
             eventKey="3"
+            onClick={() => setCurrentStep("3")}
           >
             <Row>
               <Image src={ownerImage} className="ml-3 mr-4 greenIc" />
@@ -108,7 +117,12 @@ const PharamaceuticalEstablishmentScreen = () => {
         </Card>
         <div className="divider" />
         <Card className="headCard">
-          <Accordion.Toggle as={Card.Header} eventKey="4">
+          <Accordion.Toggle
+            as={Card.Header}
+            className={state.partnerDetailsReducer.isComplete ? "done" : ""}
+            eventKey="4"
+            onClick={() => setCurrentStep("4")}
+          >
             <Row>
               <Image src={ownerImage} className="ml-3 mr-4 greenIc" />
               <Image src={ownerImageWhite} className="ml-3 mr-4 whiteIc" />
@@ -122,7 +136,12 @@ const PharamaceuticalEstablishmentScreen = () => {
         </Card>
         <div className="divider" />
         <Card className="headCard">
-          <Accordion.Toggle as={Card.Header} eventKey="5">
+          <Accordion.Toggle
+            as={Card.Header}
+            className={state.selfEvaluationsReducer.isComplete ? "done" : ""}
+            eventKey="5"
+            onClick={() => setCurrentStep("5")}
+          >
             <Row>
               <Image src={checkImage} className="ml-3 mr-4 greenIc" />
               <Image src={checkImageWhite} className="ml-3 mr-4 whiteIc" />

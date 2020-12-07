@@ -46,7 +46,7 @@ export const ownerDetailInitialState: FormInputsInterface = {
  */
 export const formSchema = yup.object().shape({
   // i'm not setting validation for getInfoFromProfile cause it by default selected one from the 2 radio buttons
-  getInfoFromProfile: yup.string().optional(),
+  getInfoFromProfile: yup.string().required("this is required "),
   tite: yup.string().required("this is required "),
   gender: yup.string().required("this is required "),
   fName: yup.string().required("this is required "),

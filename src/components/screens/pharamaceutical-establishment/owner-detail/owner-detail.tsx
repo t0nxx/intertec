@@ -31,7 +31,7 @@ const OwnerDetailComponent = () => {
       });
       // move to next step
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
     }
   };
@@ -51,7 +51,7 @@ const OwnerDetailComponent = () => {
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
-              <Form.Group as={Col} controlId="retrieveInformation">
+              <Form.Group as={Col}>
                 <Form.Label>Retrieve information contact from your profile</Form.Label>
                 <Form.Label>
                   <Form.Check type="radio" id="testX" label="" />
@@ -60,12 +60,13 @@ const OwnerDetailComponent = () => {
                   <div className="form-check">
                     <label htmlFor="getContactData">
                       <input
-                        name="getContactData"
+                        name="getInfoFromProfile"
                         type="radio"
                         id="getContactData"
                         className="form-check-input"
                         value="yes"
                         ref={register}
+                        checked
                       />
                       Yes
                       <i className="checkMark"> </i>
@@ -74,13 +75,12 @@ const OwnerDetailComponent = () => {
                   <div className="form-check">
                     <label htmlFor="getContactData2">
                       <input
-                        name="getContactData"
+                        name="getInfoFromProfile"
                         type="radio"
                         id="getContactData2"
                         className="form-check-input"
                         value="no"
                         ref={register}
-                        checked
                       />
                       No
                       <i className="checkMark"> </i>
@@ -120,7 +120,7 @@ const OwnerDetailComponent = () => {
                 </Form.Group>
               </Col>
               <Col md={4}>
-                <Form.Group controlId="formGridEmail">
+                <Form.Group>
                   <Form.Label>
                     Gender <span className="required">*</span>
                   </Form.Label>

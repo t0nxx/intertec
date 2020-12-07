@@ -24,7 +24,7 @@ const EstablishmentInformationComponent = () => {
       });
       // move to next step
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
     }
   };
