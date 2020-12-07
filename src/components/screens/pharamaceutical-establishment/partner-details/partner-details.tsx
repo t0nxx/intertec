@@ -1,12 +1,18 @@
-import React from "react";
-import { Image, Card, Table, Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Image, Card, Table, Container, Row, Modal, Button } from "react-bootstrap";
 import "./partner-details.scss";
 import "../shared/shared.scss";
+import AddPartnerComponent from "./add-partner/add-partner";
 
 // Import images
 import add from "../../../../assets/add.svg";
+import leftArrow from "../../../../assets/leftArrow.svg";
 
 const PartnerDetailsComponent = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     /**
      * this should be abstacted  . later i will bake a style for card only usin styled component
@@ -16,10 +22,25 @@ const PartnerDetailsComponent = () => {
         <Card.Body>
           <Row>
             <div className="addpartnerBtn">
-              <Image src={add} />
+              <Image src={add} onClick={handleShow} />
               <p> add Partner</p>
             </div>
           </Row>
+          <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+            <Modal.Header closeButton>
+              <Modal.Title>
+                <div className="back">
+                  <Image src={leftArrow} />
+                </div>
+                <div className="title">
+                  <h1> add new Partner</h1>
+                </div>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <AddPartnerComponent />
+            </Modal.Body>
+          </Modal>
           <Row>
             <Table>
               <thead>
