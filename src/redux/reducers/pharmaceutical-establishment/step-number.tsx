@@ -9,11 +9,13 @@ const stepNumberReducer = (state = initalState, action: { type: string; payload:
   const { type, payload } = action;
 
   switch (type) {
-    case PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER:
+    case PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER:
       if (state < 6) {
         return state + 1;
       }
       return state;
+    case PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER:
+      return payload;
     default:
       return state;
   }

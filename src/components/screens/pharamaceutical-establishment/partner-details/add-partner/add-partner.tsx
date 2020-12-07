@@ -3,19 +3,19 @@ import { useDispatch } from "react-redux";
 import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { FormInputsInterface, formSchema } from "./owner-detail-helper";
-import "./owner-detail.scss";
-import "../shared/shared.scss";
+import { FormInputsInterface, formSchema } from "./add-partner-helper";
+import "./add-partner.scss";
+import "../../shared/shared.scss";
 
 // Import images
-import userPhoto from "../../../../assets/userPhoto.svg";
-import upload from "../../../../assets/upload.svg";
-import email from "../../../../assets/mail.svg";
-import phone from "../../../../assets/phone.svg";
-import arrow from "../../../../assets/arrow-white.svg";
-import { ActionTypes } from "../../../../redux/reducers/helper";
+import userPhoto from "../../../../../assets/userPhoto.svg";
+import upload from "../../../../../assets/upload.svg";
+import email from "../../../../../assets/mail.svg";
+import phone from "../../../../../assets/phone.svg";
+import arrow from "../../../../../assets/arrow-white.svg";
+import { ActionTypes } from "../../../../../redux/reducers/helper";
 
-const OwnerDetailComponent = () => {
+const AddPartnerComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -28,10 +28,6 @@ const OwnerDetailComponent = () => {
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
         payload: data,
       });
-      // move to next step
-      dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-      });
     }
   };
   return (
@@ -40,29 +36,21 @@ const OwnerDetailComponent = () => {
      */
     <Container fluid>
       <Card>
-        {/* <Card.Header>
-          <Row>
-            <Image src={owner} />
-            <h5 className="text-success">owner Details</h5>
-          </Row>
-        </Card.Header> */}
-
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
-              <Form.Group as={Col}>
+              <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Retrieve information contact from your profile</Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
                     <label htmlFor="getContactData">
                       <input
-                        name="getInfoFromProfile"
+                        name="getContactData"
                         type="radio"
                         id="getContactData"
                         className="form-check-input"
                         value="yes"
                         ref={register}
-                        checked
                       />
                       Yes
                       <i className="checkMark"> </i>
@@ -71,12 +59,13 @@ const OwnerDetailComponent = () => {
                   <div className="form-check">
                     <label htmlFor="getContactData2">
                       <input
-                        name="getInfoFromProfile"
+                        name="getContactData"
                         type="radio"
                         id="getContactData2"
                         className="form-check-input"
                         value="no"
                         ref={register}
+                        checked
                       />
                       No
                       <i className="checkMark"> </i>
@@ -116,7 +105,7 @@ const OwnerDetailComponent = () => {
                 </Form.Group>
               </Col>
               <Col md={4}>
-                <Form.Group>
+                <Form.Group controlId="formGridEmail">
                   <Form.Label>
                     Gender <span className="required">*</span>
                   </Form.Label>
@@ -423,4 +412,4 @@ const OwnerDetailComponent = () => {
   );
 };
 
-export default OwnerDetailComponent;
+export default AddPartnerComponent;

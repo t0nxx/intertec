@@ -18,6 +18,8 @@ export interface StateSelectorInterface {
     contactInformationsReducer: StateNode;
     locationInformationsReducer: StateNode;
     ownerDetailsReducer: StateNode;
+    partnerDetailsReducer: StateNode;
+    selfEvaluationsReducer: StateNode;
     stepNumberReducer: number;
   };
 }
