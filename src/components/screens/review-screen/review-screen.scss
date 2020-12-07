@@ -1,0 +1,64 @@
+.container-fluid {
+  .screenContent {
+    width: 60%;
+    margin: 0 auto;
+    .block {
+      background-color: white;
+      width: 100%;
+      border-radius: 7px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      .card {
+        .card-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 25px !important;
+          cursor: pointer;
+          h1 {
+            font-size: 20px;
+            margin: 0;
+          }
+          img {
+            width: 20px;
+          }
+        }
+        .card-body {
+          padding: 0 40px;
+          position: relative;
+          img.edit {
+            position: absolute;
+            top: 0;
+            right: 40px;
+            width: 25px;
+            cursor: pointer;
+          }
+          .row {
+            margin-bottom: 25px;
+          }
+          p {
+            margin: 0;
+            font-size: 16px;
+          }
+          span {
+            font-size: 14px;
+            display: block;
+            color: #646e76;
+            &.mapBtn {
+              background-color: #d02239;
+              display: inline-block;
+              color: white;
+              padding: 7px 20px;
+              border-radius: 7px;
+              cursor: pointer;
+              img {
+                width: 15px;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

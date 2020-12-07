@@ -7,7 +7,7 @@ import AddPartnerComponent from "./add-partner/add-partner";
 // Import images
 import add from "../../../../assets/add.svg";
 import leftArrow from "../../../../assets/leftArrow.svg";
-import pen from "../../../../assets/pen.svg";
+import pen from "../../../../assets/editPen.svg";
 
 const PartnerDetailsComponent = () => {
   const [show, setShow] = useState(false);
