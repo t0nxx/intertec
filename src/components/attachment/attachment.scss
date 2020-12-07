@@ -27,16 +27,23 @@
       transform: translateY(-50%);
       margin: 0 auto;
     }
-    .step {
+    .step,
+    .step:active,
+    .step:focus,
+    .step:hover {
       display: flex;
       align-items: center;
       flex-direction: column;
       z-index: 1;
       background-color: white;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
       cursor: pointer;
       span {
         display: block;
         font-size: 13px;
+        color: #262521;
       }
       img {
         width: 60px;
