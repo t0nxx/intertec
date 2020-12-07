@@ -55,6 +55,7 @@ const PharamaceuticalEstablishmentScreen = () => {
           <Accordion.Collapse eventKey="0">
             <Card.Body>
               <EstablishmentInformationComponent />
+              {/* <span className="ta7nika"> </span> */}
             </Card.Body>
           </Accordion.Collapse>
         </Card>

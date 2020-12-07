@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Image, Card, Col, Container, Form, Row, Button, Table } from "react-bootstrap";
+import { Card, Form, Row, Button, Table } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
@@ -10,11 +10,6 @@ import "./self-evaluation.scss";
 import "../shared/shared.scss";
 
 // Import images
-import userPhoto from "../../../../assets/userPhoto.svg";
-import upload from "../../../../assets/upload.svg";
-import email from "../../../../assets/mail.svg";
-import phone from "../../../../assets/phone.svg";
-import arrow from "../../../../assets/arrow-white.svg";
 import { ActionTypes } from "../../../../redux/reducers/helper";
 
 const SelfEvaluationComponent = () => {

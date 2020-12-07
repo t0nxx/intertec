@@ -43,36 +43,26 @@ const ContactInformationComponent = () => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Retrieve information contact from your profile</Form.Label>
-                <div className="radioButtons">
-                  <div className="form-check">
-                    <label htmlFor="getContactData">
-                      <input
-                        name="getContactData"
-                        type="radio"
-                        id="getContactData"
-                        className="form-check-input"
-                        ref={register}
-                        value="yes"
-                      />
-                      Yes
-                      <i className="checkMark"> </i>
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <label htmlFor="getContactData2">
-                      <input
-                        name="getContactData"
-                        type="radio"
-                        id="getContactData2"
-                        className="form-check-input"
-                        value="no"
-                        ref={register}
-                        checked
-                      />
-                      No
-                      <i className="checkMark"> </i>
-                    </label>
-                  </div>
+                <div className="radioBtns">
+                  <Form.Check
+                    type="radio"
+                    name="retrieveInformation"
+                    label="Yes"
+                    id="ri"
+                    value="yes"
+                    ref={register}
+                    custom
+                  />
+                  <Form.Check
+                    type="radio"
+                    name="retrieveInformation"
+                    label="No"
+                    id="ri2"
+                    value="no"
+                    ref={register}
+                    custom
+                    checked
+                  />
                 </div>
               </Form.Group>
             </Form.Row>
