@@ -14,6 +14,7 @@ import email from "../../../../assets/mail.svg";
 import phone from "../../../../assets/phone.svg";
 import arrow from "../../../../assets/arrow-white.svg";
 import { ActionTypes } from "../../../../redux/reducers/helper";
+import AttachmentComponent from "../../../attachment/attachment";
 
 const OwnerDetailComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -50,8 +51,11 @@ const OwnerDetailComponent = () => {
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Group as={Col} controlId="retrieveInformation">
                 <Form.Label>Retrieve information contact from your profile</Form.Label>
+                <Form.Label>
+                  <Form.Check type="radio" id="testX" label="" />
+                </Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
                     <label htmlFor="getContactData">
@@ -410,6 +414,10 @@ const OwnerDetailComponent = () => {
                 </div>
               </Form.Group>
             </Form.Row>
+            <Form.Row className="splitTitle">
+              <h5>Attachments</h5>
+            </Form.Row>
+            <AttachmentComponent />
             <Row className="justify-content-center">
               <Button variant="success" size="lg" className="submittion-btn" type="submit">
                 <strong>Next</strong>
