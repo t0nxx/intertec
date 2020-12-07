@@ -10,9 +10,6 @@ import leftArrow from "../../../../assets/leftArrow.svg";
 
 const PartnerDetailsComponent = () => {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
     /**
      * this should be abstacted  . later i will bake a style for card only usin styled component
@@ -22,15 +19,15 @@ const PartnerDetailsComponent = () => {
         <Card.Body>
           <Row>
             <div className="addpartnerBtn">
-              <Image src={add} onClick={handleShow} />
+              <Image src={add} onClick={() => setShow(!show)} />
               <p> add Partner</p>
             </div>
           </Row>
-          <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+          <Modal show={show} onHide={() => setShow(!show)} backdrop="static" keyboard={false}>
             <Modal.Header closeButton>
               <Modal.Title>
                 <div className="back">
-                  <Image src={leftArrow} />
+                  <Image src={leftArrow} onClick={() => setShow(!show)} />
                 </div>
                 <div className="title">
                   <h1> add new Partner</h1>
