@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Card, Container, Row, Image } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
@@ -19,13 +19,18 @@ import ContactInformationComponent from "./contact-inforamtion/contact-informati
 import EstablishmentInformationComponent from "./etablishment-inforamtion/establishment-information";
 import OwnerDetailComponent from "./owner-detail/owner-detail";
 import LocationInformationComponent from "./location-inforamtion/location-information";
+import SelfEvaluationComponent from "./self-evaluation/self-evaluation";
 import PartnerDetailsComponent from "./partner-details/partner-details";
 
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handelOnClick = (e: any) => {
+    console.log(e);
+  };
   return (
     <Container fluid>
+      {/* <Accordion activeKey={state.stepNumberReducer.toString()}> */}
       <Accordion>
         <span className="column"> </span>
         <Card className="headCard">
@@ -126,7 +131,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="5">
-            <ContactInformationComponent />
+            <SelfEvaluationComponent />
           </Accordion.Collapse>
         </Card>
       </Accordion>

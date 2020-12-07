@@ -28,6 +28,10 @@ const OwnerDetailComponent = () => {
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
         payload: data,
       });
+      // move to next step
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+      });
     }
   };
   return (

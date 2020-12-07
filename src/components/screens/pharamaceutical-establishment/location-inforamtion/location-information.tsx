@@ -23,6 +23,10 @@ const LocationInformationComponent = () => {
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_LOACTION_INFORMATION,
         payload: data,
       });
+      // move to next step
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+      });
     }
   };
 

@@ -26,6 +26,10 @@ const ContactInformationComponent = () => {
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_CONTACT_INFORMATION,
         payload: data,
       });
+      // move to next step
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER,
+      });
     }
   };
   return (

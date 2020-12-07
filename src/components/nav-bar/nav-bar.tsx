@@ -11,7 +11,7 @@ import {
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
 import { Badge, Dropdown, Nav, Navbar, Image } from "react-bootstrap";
-import logo from "../../logo.svg";
+import logo from "../../logo.png";
 
 // Import images
 import name from "../../assets/name.jpg";
