@@ -27,6 +27,10 @@
           padding: 5px 0 5px 40px;
           margin: 0 30px 0 0;
           z-index: 99;
+          &.noText {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
           cursor: pointer;
           input {
             visibility: hidden;
