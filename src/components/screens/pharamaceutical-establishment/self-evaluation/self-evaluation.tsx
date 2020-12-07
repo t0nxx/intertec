@@ -37,6 +37,10 @@ const SelfEvaluationComponent = () => {
     }
   };
 
+  function onSuccess(files) {
+    console.log(files);
+  }
+
   return (
     /**
      * this should be abstacted  . later i will bake a style for card only usin styled component
