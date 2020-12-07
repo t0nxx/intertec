@@ -41,21 +41,11 @@ const OwnerDetailComponent = () => {
      */
     <Container fluid>
       <Card>
-        {/* <Card.Header>
-          <Row>
-            <Image src={owner} />
-            <h5 className="text-success">owner Details</h5>
-          </Row>
-        </Card.Header> */}
-
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col}>
                 <Form.Label>Retrieve information contact from your profile</Form.Label>
-                <Form.Label>
-                  <Form.Check type="radio" id="testX" label="" />
-                </Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
                     <label htmlFor="getContactData">

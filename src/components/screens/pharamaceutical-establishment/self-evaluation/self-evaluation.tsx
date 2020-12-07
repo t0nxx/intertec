@@ -67,7 +67,7 @@ const SelfEvaluationComponent = () => {
                 <td>
                   <div className="radioButtons">
                     <div className="form-check">
-                      <label htmlFor="q1-y">
+                      <label className="noText" htmlFor="q1-y">
                         <input
                           name="q1"
                           type="radio"
@@ -79,29 +79,35 @@ const SelfEvaluationComponent = () => {
                         <i className="checkMark"> </i>
                       </label>
                     </div>
-
+                  </div>
+                </td>
+                <td>
+                  <div className="radioButtons">
                     <div className="form-check">
-                      <label htmlFor="q1-n">
+                      <label className="noText" htmlFor="q1-y">
                         <input
                           name="q1"
                           type="radio"
-                          id="q1-n"
+                          id="q1-y"
                           className="form-check-input"
-                          value="no"
+                          value="yes"
                           ref={register}
                         />
                         <i className="checkMark"> </i>
                       </label>
                     </div>
-
+                  </div>
+                </td>
+                <td>
+                  <div className="radioButtons">
                     <div className="form-check">
-                      <label htmlFor="q1-na">
+                      <label className="noText" htmlFor="q1-y">
                         <input
                           name="q1"
                           type="radio"
-                          id="q1-na"
+                          id="q1-y"
                           className="form-check-input"
-                          value="na"
+                          value="yes"
                           ref={register}
                         />
                         <i className="checkMark"> </i>
