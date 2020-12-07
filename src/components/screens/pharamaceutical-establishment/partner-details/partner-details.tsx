@@ -7,6 +7,7 @@ import AddPartnerComponent from "./add-partner/add-partner";
 // Import images
 import add from "../../../../assets/add.svg";
 import leftArrow from "../../../../assets/leftArrow.svg";
+import pen from "../../../../assets/pen.svg";
 
 const PartnerDetailsComponent = () => {
   const [show, setShow] = useState(false);
@@ -50,6 +51,7 @@ const PartnerDetailsComponent = () => {
                   <th>Emirates ID</th>
                   <th>Passport NO</th>
                   <th>Nationality</th>
+                  <th> </th>
                 </tr>
               </thead>
               <tbody>
@@ -59,6 +61,9 @@ const PartnerDetailsComponent = () => {
                   <td>12313-1231-456</td>
                   <td>#number</td>
                   <td>Nationality</td>
+                  <td>
+                    <Image src={pen} />
+                  </td>
                 </tr>
 
                 <tr>
@@ -67,6 +72,9 @@ const PartnerDetailsComponent = () => {
                   <td>12313-1231-456</td>
                   <td>#number</td>
                   <td>Nationality</td>
+                  <td>
+                    <Image src={pen} />
+                  </td>
                 </tr>
 
                 <tr>
@@ -75,6 +83,9 @@ const PartnerDetailsComponent = () => {
                   <td>12313-1231-456</td>
                   <td>#number</td>
                   <td>Nationality</td>
+                  <td>
+                    <Image src={pen} />
+                  </td>
                 </tr>
               </tbody>
             </Table>
