@@ -65,7 +65,7 @@ const AddPartnerComponent = () => {
                         className="form-check-input"
                         value="no"
                         ref={register}
-                        checked
+                        defaultChecked
                       />
                       No
                       <i className="checkMark"> </i>
@@ -133,7 +133,7 @@ const AddPartnerComponent = () => {
                           className="form-check-input"
                           value="female"
                           ref={register}
-                          checked
+                          defaultChecked
                         />
                         Female
                         <i className="checkMark"> </i>
@@ -268,7 +268,7 @@ const AddPartnerComponent = () => {
                         className="form-check-input"
                         value="yes"
                         ref={register}
-                        checked
+                        defaultChecked
                       />
                       Yes
                       <i className="checkMark"> </i>

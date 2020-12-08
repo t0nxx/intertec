@@ -23,7 +23,7 @@ import expand from "../../../assets/expand.svg";
 export default function ReviewScreenComponent() {
   const [isEditEstablish, setIsEditEstablish] = useState(false);
   const [isEditContact, setIsEditContact] = useState(false);
-  const [isEditLocation, setIsEditLocationInformation] = useState(false);
+  const [isEditLocation, setIsEditLocation] = useState(false);
   const [isEditOwner, setIsEditOwner] = useState(false);
   const [isEditPartner, setIsEditPartner] = useState(false);
 
@@ -40,6 +40,7 @@ export default function ReviewScreenComponent() {
   useEffect(() => {
     console.log(collapseAllState);
   }, [collapseAllState]);
+  
   return (
     <Container fluid>
       <div className="screenContent">
@@ -124,45 +125,56 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
-                  <Card.Body>
-                    <Image src={editPen} className="edit" />
-                    <Row>
-                      <Col>
-                        <p>Contact Name</p>
-                        <span>Contact Name</span>
-                      </Col>
-                      <Col>
-                        <p>Designation</p>
-                        <span>Designation</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Primary Email</p>
-                        <span>A@a.com</span>
-                      </Col>
-                      <Col>
-                        <p>Alternative email</p>
-                        <span>A@a.com</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Contact Number</p>
-                        <span>+971 000 000</span>
-                      </Col>
-                      <Col>
-                        <p>Alternate Contact No</p>
-                        <span>+971 000 000</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Fax</p>
-                        <span>Fax</span>
-                      </Col>
-                    </Row>
-                  </Card.Body>
+                  {isEditContact ? (
+                    <ContactInformationComponent
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditContact(!isEditContact)}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image
+                        src={editPen}
+                        className="edit"
+                        onClick={() => setIsEditContact(!isEditContact)}
+                      />
+                      <Row>
+                        <Col>
+                          <p>Contact Name</p>
+                          <span>Contact Name</span>
+                        </Col>
+                        <Col>
+                          <p>Designation</p>
+                          <span>Designation</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Primary Email</p>
+                          <span>A@a.com</span>
+                        </Col>
+                        <Col>
+                          <p>Alternative email</p>
+                          <span>A@a.com</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Contact Number</p>
+                          <span>+971 000 000</span>
+                        </Col>
+                        <Col>
+                          <p>Alternate Contact No</p>
+                          <span>+971 000 000</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Fax</p>
+                          <span>Fax</span>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
                 </Accordion.Collapse>
               </Card>
             </Accordion>
@@ -178,50 +190,61 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
-                  <Card.Body>
-                    <Image src={editPen} className="edit" />
-                    <Row>
-                      <Col>
-                        <p>Emirate</p>
-                        <span>Emirate</span>
-                      </Col>
-                      <Col>
-                        <p>Area</p>
-                        <span>Area</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Street</p>
-                        <span>Street</span>
-                      </Col>
-                      <Col>
-                        <p>Building Name</p>
-                        <span>PO Box</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>PO Box</p>
-                        <span>PO Box</span>
-                      </Col>
-                      <Col>
-                        <p>Building NO</p>
-                        <span>Building NO</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Google Map URL</p>
-                        <a href="">
-                          <span className="mapBtn">
-                            <Image src={locationWhite} />
-                            Google Map URL
-                          </span>
-                        </a>
-                      </Col>
-                    </Row>
-                  </Card.Body>
+                  {isEditLocation ? (
+                    <LocationInformationComponent
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditLocation(!isEditLocation)}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image
+                        src={editPen}
+                        className="edit"
+                        onClick={() => setIsEditLocation(!isEditLocation)}
+                      />
+                      <Row>
+                        <Col>
+                          <p>Emirate</p>
+                          <span>Emirate</span>
+                        </Col>
+                        <Col>
+                          <p>Area</p>
+                          <span>Area</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Street</p>
+                          <span>Street</span>
+                        </Col>
+                        <Col>
+                          <p>Building Name</p>
+                          <span>PO Box</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>PO Box</p>
+                          <span>PO Box</span>
+                        </Col>
+                        <Col>
+                          <p>Building NO</p>
+                          <span>Building NO</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Google Map URL</p>
+                          <a href="">
+                            <span className="mapBtn">
+                              <Image src={locationWhite} />
+                              Google Map URL
+                            </span>
+                          </a>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
                 </Accordion.Collapse>
               </Card>
             </Accordion>
@@ -237,91 +260,102 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
-                  <Card.Body>
-                    <Image src={editPen} className="edit" />
-                    <Row>
-                      <Col>
-                        <Image src={userPhoto} />
-                      </Col>
-                      <Col>
-                        <p>Gender</p>
-                        <span>Male</span>
-                      </Col>
-                      <Col>
-                        <p>UAE Citzen</p>
-                        <span>Yes</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>First name</p>
-                        <span>First name</span>
-                      </Col>
-                      <Col>
-                        <p>middle name</p>
-                        <span>middle name</span>
-                      </Col>
-                      <Col>
-                        <p>Last Name</p>
-                        <span>Last Name</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>First name (arabic)</p>
-                        <span>First name (arabic)</span>
-                      </Col>
-                      <Col>
-                        <p>middle name (arabic)</p>
-                        <span>middle name (arabic)</span>
-                      </Col>
-                      <Col>
-                        <p>Last Name (arabic)</p>
-                        <span>Last Name (arabic)</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Nationality</p>
-                        <span>Nationality</span>
-                      </Col>
-                      <Col>
-                        <p>Passport No</p>
-                        <span>Passport No</span>
-                      </Col>
-                      <Col>
-                        <p>Emirates ID</p>
-                        <span>Emirates ID</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Family Book No</p>
-                        <span>Family Book No</span>
-                      </Col>
-                      <Col>
-                        <p>Share Percentage</p>
-                        <span>Share Percentage</span>
-                      </Col>
-                      <Col> </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <Col className="grayBg">
-                          <Row>
-                            <Col>
-                              <p>Contact Number</p>
-                              <span>+971 000 000</span>
-                            </Col>
-                            <Col>
-                              <p>Primary Email</p>
-                              <span>Email@mail.com</span>
-                            </Col>
-                          </Row>
+                  {isEditOwner ? (
+                    <OwnerDetailComponent
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditOwner(!isEditOwner)}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image
+                        src={editPen}
+                        className="edit"
+                        onClick={() => setIsEditOwner(!isEditOwner)}
+                      />
+                      <Row>
+                        <Col>
+                          <Image src={userPhoto} />
                         </Col>
-                      </Col>
-                    </Row>
-                  </Card.Body>
+                        <Col>
+                          <p>Gender</p>
+                          <span>Male</span>
+                        </Col>
+                        <Col>
+                          <p>UAE Citzen</p>
+                          <span>Yes</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>First name</p>
+                          <span>First name</span>
+                        </Col>
+                        <Col>
+                          <p>middle name</p>
+                          <span>middle name</span>
+                        </Col>
+                        <Col>
+                          <p>Last Name</p>
+                          <span>Last Name</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>First name (arabic)</p>
+                          <span>First name (arabic)</span>
+                        </Col>
+                        <Col>
+                          <p>middle name (arabic)</p>
+                          <span>middle name (arabic)</span>
+                        </Col>
+                        <Col>
+                          <p>Last Name (arabic)</p>
+                          <span>Last Name (arabic)</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Nationality</p>
+                          <span>Nationality</span>
+                        </Col>
+                        <Col>
+                          <p>Passport No</p>
+                          <span>Passport No</span>
+                        </Col>
+                        <Col>
+                          <p>Emirates ID</p>
+                          <span>Emirates ID</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Family Book No</p>
+                          <span>Family Book No</span>
+                        </Col>
+                        <Col>
+                          <p>Share Percentage</p>
+                          <span>Share Percentage</span>
+                        </Col>
+                        <Col> </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <Col className="grayBg">
+                            <Row>
+                              <Col>
+                                <p>Contact Number</p>
+                                <span>+971 000 000</span>
+                              </Col>
+                              <Col>
+                                <p>Primary Email</p>
+                                <span>Email@mail.com</span>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
                 </Accordion.Collapse>
               </Card>
             </Accordion>
@@ -337,73 +371,80 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
-                  <Card.Body>
-                    <Row>
-                      <Table>
-                        <thead>
-                          <tr>
-                            <th>Full Name _EN</th>
-                            <th>Full Name _AR</th>
-                            <th>Emirates ID</th>
-                            <th>Passport NO</th>
-                            <th>Nationality</th>
-                            <th>Share %</th>
-                            <th> </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mohamed Elzayat</td>
-                            <td>محمد الزيات</td>
-                            <td>12313-1231-456</td>
-                            <td>#number</td>
-                            <td>Nationality</td>
-                            <td>20%</td>
-                            <td>
-                              <Image src={editPen} />
-                            </td>
-                          </tr>
+                  {isEditPartner ? (
+                    <PartnerDetailsComponent />
+                  ) : (
+                    // isForReviewPage={true}
+                    // onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
+                    // />
+                    <Card.Body>
+                      <Row>
+                        <Table>
+                          <thead>
+                            <tr>
+                              <th>Full Name _EN</th>
+                              <th>Full Name _AR</th>
+                              <th>Emirates ID</th>
+                              <th>Passport NO</th>
+                              <th>Nationality</th>
+                              <th>Share %</th>
+                              <th> </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Mohamed Elzayat</td>
+                              <td>محمد الزيات</td>
+                              <td>12313-1231-456</td>
+                              <td>#number</td>
+                              <td>Nationality</td>
+                              <td>20%</td>
+                              <td>
+                                <Image src={editPen} />
+                              </td>
+                            </tr>
 
-                          <tr>
-                            <td>Mohamed Elzayat</td>
-                            <td>محمد الزيات</td>
-                            <td>12313-1231-456</td>
-                            <td>#number</td>
-                            <td>Nationality</td>
-                            <td>20%</td>
-                            <td>
-                              <Image src={editPen} />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Mohamed Elzayat</td>
-                            <td>محمد الزيات</td>
-                            <td>12313-1231-456</td>
-                            <td>#number</td>
-                            <td>Nationality</td>
-                            <td>20%</td>
-                            <td>
-                              <Image src={editPen} />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Mohamed Elzayat</td>
-                            <td>محمد الزيات</td>
-                            <td>12313-1231-456</td>
-                            <td>#number</td>
-                            <td>Nationality</td>
-                            <td>20%</td>
-                            <td>
-                              <Image src={editPen} />
-                            </td>
-                          </tr>
-                        </tbody>
-                      </Table>
-                    </Row>
-                    <Row className="addMore">
-                      <Image src={addMore} /> Click here to add more Partner
-                    </Row>
-                  </Card.Body>
+                            <tr>
+                              <td>Mohamed Elzayat</td>
+                              <td>محمد الزيات</td>
+                              <td>12313-1231-456</td>
+                              <td>#number</td>
+                              <td>Nationality</td>
+                              <td>20%</td>
+                              <td>
+                                <Image src={editPen} />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Mohamed Elzayat</td>
+                              <td>محمد الزيات</td>
+                              <td>12313-1231-456</td>
+                              <td>#number</td>
+                              <td>Nationality</td>
+                              <td>20%</td>
+                              <td>
+                                <Image src={editPen} />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Mohamed Elzayat</td>
+                              <td>محمد الزيات</td>
+                              <td>12313-1231-456</td>
+                              <td>#number</td>
+                              <td>Nationality</td>
+                              <td>20%</td>
+                              <td>
+                                <Image src={editPen} />
+                              </td>
+                            </tr>
+                          </tbody>
+                        </Table>
+                      </Row>
+                      <Row className="addMore">
+                        <Image src={addMore} /> Click here to add more Partner
+                      </Row>
+                    </Card.Body>
+                  )}
                 </Accordion.Collapse>
               </Card>
             </Accordion>
@@ -467,7 +508,7 @@ export default function ReviewScreenComponent() {
           </div>
           {/* End Attachment */}
 
-          {/* Submit */}
+          {/* Submit */}          
           <div className="submit">
             <Button>Submit</Button>
           </div>

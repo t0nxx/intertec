@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Card, Form, Row, Button, Table } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 import { FormInputsInterface, formSchema } from "./self-evaluation-helper";
 
@@ -114,9 +115,18 @@ const SelfEvaluationComponent = () => {
             </tbody>
           </Table>
           <Row className="justify-content-center">
-            <Button variant="success" size="lg" className="submittion-btn" type="submit">
-              <strong>Go To Attachment</strong>
-            </Button>
+            {/* f
+            or test only , remember to remove it */}
+            <Link to="/attachment">
+              <Button variant="success" size="lg" className="submittion-btn" type="submit">
+                <strong>Go To Attachment</strong>
+              </Button>
+            </Link>
+            <Link to="/review">
+              <Button variant="success" size="lg" className="submittion-btn" type="submit">
+                <strong>test only review</strong>
+              </Button>
+            </Link>
           </Row>
         </Form>
       </Card.Body>

@@ -76,7 +76,7 @@ const OwnerDetailComponent = (props: IProps) => {
                         className="form-check-input"
                         value="yes"
                         ref={register}
-                        checked
+                        defaultChecked
                       />
                       Yes
                       <i className="checkMark"> </i>
@@ -158,7 +158,7 @@ const OwnerDetailComponent = (props: IProps) => {
                           className="form-check-input"
                           value="female"
                           ref={register}
-                          checked
+                          defaultChecked
                         />
                         Female
                         <i className="checkMark"> </i>
@@ -293,7 +293,7 @@ const OwnerDetailComponent = (props: IProps) => {
                         className="form-check-input"
                         value="yes"
                         ref={register}
-                        checked
+                        defaultChecked
                       />
                       Yes
                       <i className="checkMark"> </i>

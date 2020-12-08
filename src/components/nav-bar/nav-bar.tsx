@@ -20,7 +20,7 @@ import bell from "../../assets/bell.svg";
 export default function NavBarComponent() {
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" bg="light" sticky="top">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img
           src={logo}
           width="200"

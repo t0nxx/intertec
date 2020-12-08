@@ -82,7 +82,7 @@ const ContactInformationComponent = (props: IProps) => {
                     value="no"
                     ref={register}
                     custom
-                    checked
+                    defaultChecked
                   />
                 </div>
               </Form.Group>
