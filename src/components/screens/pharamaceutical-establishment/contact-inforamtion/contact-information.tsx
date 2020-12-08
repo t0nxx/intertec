@@ -50,6 +50,11 @@ const ContactInformationComponent = (props: IProps) => {
       dispatch({
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
+      // set progress bar  +10 %
+      dispatch({
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PROGRESS_PERSENTAGE,
+        payload: 10,
+      });
       changeParentToggleEvent();
     }
   };

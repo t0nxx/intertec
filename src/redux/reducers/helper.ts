@@ -21,5 +21,6 @@ export interface StateSelectorInterface {
     partnerDetailsReducer: StateNode;
     selfEvaluationsReducer: StateNode;
     stepNumberReducer: number;
+    progressBarPersentageReducer: number;
   };
 }

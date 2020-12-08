@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./footer.scss";
 import { Navbar, Image, ProgressBar, Row, Button } from "react-bootstrap";
 
@@ -8,15 +9,20 @@ import attachmentIc from "../../assets/attachmentIc.svg";
 import previewIc from "../../assets/previewIc.svg";
 import info from "../../assets/info.svg";
 import flag from "../../assets/flag.svg";
+import { StateSelectorInterface } from "../../redux/reducers/helper";
 
 export default function FooterComponent() {
+  // progress bar state
+  const progressPersentage = useSelector(
+    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.progressBarPersentageReducer
+  );
   return (
     <Navbar expand="lg" fixed="bottom" className="footer">
       <div className="stickyIcons">
         <Image src={info} className="infoIc" />
         <Image src={flag} className="flagIc" />
       </div>
-      <ProgressBar variant="success" now={20} className="progress" />
+      <ProgressBar variant="success" now={progressPersentage} className="progress" />
       <Row className="statistics-container">
         <div>
           <Image src={applicationIc} />
@@ -32,7 +38,7 @@ export default function FooterComponent() {
         </div>
         <div className="complete">
           <span>Complete progress</span>
-          <strong>8 %</strong>
+          <strong>{progressPersentage} %</strong>
         </div>
       </Row>
     </Navbar>
