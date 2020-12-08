@@ -1,17 +1,34 @@
 import React from "react";
 import "./review-screen.scss";
-import { Container, Accordion, Card, Image, Row, Col } from "react-bootstrap";
+import { Container, Accordion, Card, Image, Row, Col, Table, Button } from "react-bootstrap";
 
 // Import images
 import upArrow4Collaps from "../../../assets/upArrow4Collaps.svg";
 import editPen from "../../../assets/editPen.svg";
 import locationWhite from "../../../assets/location-white.svg";
+import file from "../../../assets/file.svg";
+import del from "../../../assets/delete.svg";
+import addMore from "../../../assets/addMore.svg";
+import userPhoto from "../../../assets/userPhoto.svg";
 
 export default function ReviewScreenComponent() {
   return (
     <Container fluid>
       <div className="screenContent">
         <Row>
+          {/* Screen Head */}
+          <div className="screenHead">
+            <Col>
+              <Row>
+                <Col>tt</Col>
+                <Col className="submit">
+                  <Button>Submit</Button>
+                </Col>
+              </Row>
+            </Col>
+          </div>
+          {/* Screen Head */}
+
           {/* Start Establishment Information */}
           <div className="block">
             <Accordion defaultActiveKey="0">
@@ -162,6 +179,251 @@ export default function ReviewScreenComponent() {
             </Accordion>
           </div>
           {/* End Location information */}
+
+          {/* Start owner Details */}
+          <div className="block">
+            <Accordion defaultActiveKey="0">
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                  <h1>owner Details</h1>
+                  <Image src={upArrow4Collaps} />
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <Image src={editPen} className="edit" />
+                    <Row>
+                      <Col>
+                        <Image src={userPhoto} />
+                      </Col>
+                      <Col>
+                        <p>Gender</p>
+                        <span>Male</span>
+                      </Col>
+                      <Col>
+                        <p>UAE Citzen</p>
+                        <span>Yes</span>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <p>First name</p>
+                        <span>First name</span>
+                      </Col>
+                      <Col>
+                        <p>middle name</p>
+                        <span>middle name</span>
+                      </Col>
+                      <Col>
+                        <p>Last Name</p>
+                        <span>Last Name</span>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <p>First name (arabic)</p>
+                        <span>First name (arabic)</span>
+                      </Col>
+                      <Col>
+                        <p>middle name (arabic)</p>
+                        <span>middle name (arabic)</span>
+                      </Col>
+                      <Col>
+                        <p>Last Name (arabic)</p>
+                        <span>Last Name (arabic)</span>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <p>Nationality</p>
+                        <span>Nationality</span>
+                      </Col>
+                      <Col>
+                        <p>Passport No</p>
+                        <span>Passport No</span>
+                      </Col>
+                      <Col>
+                        <p>Emirates ID</p>
+                        <span>Emirates ID</span>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <p>Family Book No</p>
+                        <span>Family Book No</span>
+                      </Col>
+                      <Col>
+                        <p>Share Percentage</p>
+                        <span>Share Percentage</span>
+                      </Col>
+                      <Col> </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                        <Col className="grayBg">
+                          <Row>
+                            <Col>
+                              <p>Contact Number</p>
+                              <span>+971 000 000</span>
+                            </Col>
+                            <Col>
+                              <p>Primary Email</p>
+                              <span>Email@mail.com</span>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Col>
+                    </Row>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </div>
+          {/* End owner Details */}
+
+          {/* Start Partner Details */}
+          <div className="block">
+            <Accordion defaultActiveKey="0">
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                  <h1>Partner Details</h1>
+                  <Image src={upArrow4Collaps} />
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <Row>
+                      <Table>
+                        <thead>
+                          <tr>
+                            <th>Full Name _EN</th>
+                            <th>Full Name _AR</th>
+                            <th>Emirates ID</th>
+                            <th>Passport NO</th>
+                            <th>Nationality</th>
+                            <th>Share %</th>
+                            <th> </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Mohamed Elzayat</td>
+                            <td>محمد الزيات</td>
+                            <td>12313-1231-456</td>
+                            <td>#number</td>
+                            <td>Nationality</td>
+                            <td>20%</td>
+                            <td>
+                              <Image src={editPen} />
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>Mohamed Elzayat</td>
+                            <td>محمد الزيات</td>
+                            <td>12313-1231-456</td>
+                            <td>#number</td>
+                            <td>Nationality</td>
+                            <td>20%</td>
+                            <td>
+                              <Image src={editPen} />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Mohamed Elzayat</td>
+                            <td>محمد الزيات</td>
+                            <td>12313-1231-456</td>
+                            <td>#number</td>
+                            <td>Nationality</td>
+                            <td>20%</td>
+                            <td>
+                              <Image src={editPen} />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Mohamed Elzayat</td>
+                            <td>محمد الزيات</td>
+                            <td>12313-1231-456</td>
+                            <td>#number</td>
+                            <td>Nationality</td>
+                            <td>20%</td>
+                            <td>
+                              <Image src={editPen} />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </Table>
+                    </Row>
+                    <Row className="addMore">
+                      <Image src={addMore} /> Click here to add more Partner
+                    </Row>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </div>
+          {/* End Partner Details */}
+
+          {/* Start Attachment */}
+          <div className="block">
+            <Accordion defaultActiveKey="0">
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                  <h1>Attachment</h1>
+                  <Image src={upArrow4Collaps} />
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="0">
+                  <Card.Body>
+                    <Row>
+                      <div className="files">
+                        <div className="file">
+                          <div className="leftData">
+                            <Image src={file} />
+                            <div className="fileData">
+                              <p>Passport</p>
+                              <span>65 Kb</span>
+                            </div>
+                          </div>
+                          <div className="rightData">
+                            <Image src={del} />
+                          </div>
+                        </div>
+                        <div className="file">
+                          <div className="leftData">
+                            <Image src={file} />
+                            <div className="fileData">
+                              <p>Passport</p>
+                              <span>65 Kb</span>
+                            </div>
+                          </div>
+                          <div className="rightData">
+                            <Image src={del} />
+                          </div>
+                        </div>
+                        <div className="file">
+                          <div className="leftData">
+                            <Image src={file} />
+                            <div className="fileData">
+                              <p>Passport</p>
+                              <span>65 Kb</span>
+                            </div>
+                          </div>
+                          <div className="rightData">
+                            <Image src={del} />
+                          </div>
+                        </div>
+                      </div>
+                    </Row>
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </div>
+          {/* End Attachment */}
+
+          {/* Submit */}
+          <div className="submit">
+            <Button>Submit</Button>
+          </div>
+          {/* Submit */}
         </Row>
       </div>
     </Container>
