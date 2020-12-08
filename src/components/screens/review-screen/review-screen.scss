@@ -4,7 +4,34 @@
     margin: 0 auto;
     .screenHead {
       width: 100%;
-      margin: 0 0 10px 0;
+      margin: 0 0 15px 0;
+      .btnsContainer {
+        background-color: #dbdbdb;
+        border-radius: 5px;
+        padding: 7px;
+        display: flex;
+        width: fit-content;
+        button {
+          color: #000000;
+          border: 0;
+          box-shadow: none !important;
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 20px;
+            margin-right: 5px;
+          }
+          &.collaps {
+            background-color: transparent;
+          }
+          &.expand {
+            background-color: #ffffff;
+            border-radius: 3px;
+          }
+        }
+      }
       .submit {
         display: flex;
         justify-content: flex-end;

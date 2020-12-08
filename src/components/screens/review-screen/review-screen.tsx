@@ -10,6 +10,8 @@ import file from "../../../assets/file.svg";
 import del from "../../../assets/delete.svg";
 import addMore from "../../../assets/addMore.svg";
 import userPhoto from "../../../assets/userPhoto.svg";
+import collaps from "../../../assets/collaps.svg";
+import expand from "../../../assets/expand.svg";
 
 export default function ReviewScreenComponent() {
   return (
@@ -18,14 +20,23 @@ export default function ReviewScreenComponent() {
         <Row>
           {/* Screen Head */}
           <div className="screenHead">
-            <Col>
-              <Row>
-                <Col>tt</Col>
-                <Col className="submit">
-                  <Button>Submit</Button>
-                </Col>
-              </Row>
-            </Col>
+            <Row>
+              <Col>
+                <div className="btnsContainer">
+                  <Button className="collaps">
+                    <Image src={collaps} />
+                    Collaps all
+                  </Button>
+                  <Button className="expand">
+                    <Image src={expand} />
+                    expand all
+                  </Button>
+                </div>
+              </Col>
+              <Col className="submit">
+                <Button>Submit</Button>
+              </Col>
+            </Row>
           </div>
           {/* Screen Head */}
 
