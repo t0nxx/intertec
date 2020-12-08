@@ -2,6 +2,50 @@
   .screenContent {
     width: 60%;
     margin: 0 auto;
+    .screenHead {
+      width: 100%;
+      margin: 0 0 15px 0;
+      .btnsContainer {
+        background-color: #dbdbdb;
+        border-radius: 5px;
+        padding: 7px;
+        display: flex;
+        width: fit-content;
+        button {
+          color: #000000;
+          border: 0;
+          box-shadow: none !important;
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 20px;
+            margin-right: 5px;
+          }
+          &.collaps {
+            background-color: transparent;
+          }
+          &.expand {
+            background-color: #ffffff;
+            border-radius: 3px;
+          }
+        }
+      }
+      .submit {
+        display: flex;
+        justify-content: flex-end;
+        Button,
+        Button:hover,
+        Button:focus,
+        Button:active {
+          border-radius: 50px;
+          background-color: #127f46;
+          padding: 10px 60px;
+          box-shadow: none !important;
+        }
+      }
+    }
     .block {
       background-color: white;
       width: 100%;
@@ -18,6 +62,7 @@
           h1 {
             font-size: 20px;
             margin: 0;
+            font-weight: bold;
           }
           img {
             width: 20px;
@@ -32,33 +77,111 @@
             right: 40px;
             width: 25px;
             cursor: pointer;
-            z-index: 999;
+            z-index: 99;
           }
           .row {
             margin-bottom: 25px;
-          }
-          p {
-            margin: 0;
-            font-size: 16px;
-          }
-          span {
-            font-size: 14px;
-            display: block;
-            color: #646e76;
-            &.mapBtn {
-              background-color: #d02239;
-              display: inline-block;
-              color: white;
-              padding: 7px 20px;
-              border-radius: 7px;
+            .grayBg {
+              background-color: #eeeeee;
+              border-radius: 10px;
+              padding: 15px 20px;
+              .row {
+                margin: 0;
+              }
+            }
+            .table {
+              th,
+              td {
+                font-size: 11px;
+              }
+            }
+            &.addMore {
+              display: flex;
+              align-items: center;
+              text-decoration: underline;
               cursor: pointer;
+              margin-top: 0px;
               img {
-                width: 15px;
                 margin-right: 10px;
+                width: 35px;
+              }
+            }
+            p {
+              margin: 0;
+              font-size: 16px;
+            }
+            span {
+              font-size: 14px;
+              display: block;
+              color: #646e76;
+              &.mapBtn {
+                background-color: #d02239;
+                display: inline-block;
+                color: white;
+                padding: 7px 20px;
+                border-radius: 7px;
+                cursor: pointer;
+                img {
+                  width: 15px;
+                  margin-right: 10px;
+                }
+              }
+            }
+            .files {
+              width: 100%;
+              .file {
+                width: 100%;
+                border: 1pt solid #eeeeee;
+                border-radius: 10px;
+                padding: 10px 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                margin: 10px 0;
+                .leftData {
+                  display: flex;
+                  align-items: center;
+                  img {
+                    width: 70px;
+                  }
+                  .fileData {
+                    padding: 0 10px;
+                    p {
+                      margin: 0;
+                      line-height: 18px;
+                    }
+                    span {
+                      color: #636467;
+                      display: block;
+                      font-size: 11px;
+                    }
+                  }
+                }
+                .rightData {
+                  img {
+                    width: 20px;
+                  }
+                }
               }
             }
           }
         }
+      }
+    }
+    .submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      Button,
+      Button:hover,
+      Button:focus,
+      Button:active {
+        border-radius: 50px;
+        background-color: #127f46;
+        padding: 6px 60px;
+        box-shadow: none !important;
       }
     }
   }
