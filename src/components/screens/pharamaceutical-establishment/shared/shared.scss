@@ -1,3 +1,4 @@
+@import "../../../../sass/variables";
 .card {
   overflow: unset !important;
   border: 0;
@@ -136,7 +137,6 @@
 
 .submittion-btn {
   width: 250px;
-  width: 300px;
   border-radius: 50rem;
   z-index: 1;
   // margin-bottom: -90px;
@@ -273,6 +273,20 @@
       margin: 0 auto;
     }
   }
+}
+.required {
+  color: $custom-red;
+  margin-left: 10px;
+}
+.save-edit-btn,
+.cancel-edit-btn {
+  width: 150px;
+  border-radius: 50rem;
+  z-index: 1;
+  // margin-bottom: -90px;
+  height: 40px;
+  font-size: 16px;
+  margin: 10px;
 }
 
 // .ta7nika {

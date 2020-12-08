@@ -54,7 +54,7 @@ const PharamaceuticalEstablishmentScreen = () => {
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
-              <EstablishmentInformationComponent />
+              <EstablishmentInformationComponent isForReviewPage={false} />
               {/* <span className="ta7nika"> </span> */}
             </Card.Body>
           </Accordion.Collapse>
@@ -75,7 +75,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="1">
-            <ContactInformationComponent />
+            <ContactInformationComponent isForReviewPage={false} />
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
@@ -94,7 +94,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="2">
-            <LocationInformationComponent />
+            <LocationInformationComponent isForReviewPage={false} />
           </Accordion.Collapse>
         </Card>
         <div className="divider" />
@@ -113,7 +113,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="3">
-            <OwnerDetailComponent />
+            <OwnerDetailComponent isForReviewPage={false} />
           </Accordion.Collapse>
         </Card>
         <div className="divider" />

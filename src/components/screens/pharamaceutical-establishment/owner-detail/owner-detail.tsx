@@ -1,5 +1,5 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,26 +13,46 @@ import upload from "../../../../assets/upload.svg";
 import email from "../../../../assets/mail.svg";
 import phone from "../../../../assets/phone.svg";
 import arrow from "../../../../assets/arrow-white.svg";
-import { ActionTypes } from "../../../../redux/reducers/helper";
+import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
 import AttachmentComponent from "../../../attachment/attachment";
+import { IProps } from "../shared/components-props";
+import SubmissionButton from "../../../submission-buttons/submission";
+import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
 
-const OwnerDetailComponent = () => {
-  const { register, handleSubmit, errors, formState } = useForm({
+const OwnerDetailComponent = (props: IProps) => {
+  const { data } = useSelector(
+    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.ownerDetailsReducer
+  );
+
+  const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
   });
+  const changeParentToggleEvent = () => {
+    if (props.isForReviewPage) {
+      props.onSubmitOrCancelEvent();
+    }
+  };
+  const onCancelHandler = () => changeParentToggleEvent();
 
+  useEffect(() => {
+    // bind inputs values with it's state
+    // this will be very helpfull when we want reuse the component with its values
+    reset(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reset]);
   const dispatch = useDispatch();
-  const onSubmit = (data: FormInputsInterface) => {
+  const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
-        payload: data,
+        payload: values,
       });
       // move to next step
       dispatch({
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
+      changeParentToggleEvent();
     }
   };
   return (
@@ -408,12 +428,11 @@ const OwnerDetailComponent = () => {
               <h5>Attachments</h5>
             </Form.Row>
             <AttachmentComponent />
-            <Row className="justify-content-center">
-              <Button variant="success" size="lg" className="submittion-btn" type="submit">
-                <strong>Next</strong>
-                <Image src={arrow} className="submittion-btn__img" />
-              </Button>
-            </Row>
+            {props.isForReviewPage ? (
+              <SubmissionButtonWithCancel onCancel={onCancelHandler} />
+            ) : (
+              <SubmissionButton />
+            )}
           </Form>
         </Card.Body>
       </Card>

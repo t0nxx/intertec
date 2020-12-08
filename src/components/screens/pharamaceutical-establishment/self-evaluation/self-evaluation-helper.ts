@@ -22,8 +22,8 @@ export const ownerDetailInitialState: FormInputsInterface = {
  */
 export const formSchema = yup.object().shape({
   q1: yup.string().required("this is required "),
-  q2: yup.string().required("this is required "),
-  q3: yup.string().required("this is required "),
-  q4: yup.string().required("this is required "),
-  q5: yup.string().required("this is required "),
+  // q2: yup.string().required("this is required "),
+  // q3: yup.string().required("this is required "),
+  // q4: yup.string().required("this is required "),
+  // q5: yup.string().required("this is required "),
 });

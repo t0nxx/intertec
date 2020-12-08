@@ -1,5 +1,5 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -8,25 +8,45 @@ import arrow from "../../../../assets/arrow-white.svg";
 import map from "../../../../assets/map.svg";
 
 import "./location-information.scss";
-import { ActionTypes } from "../../../../redux/reducers/helper";
+import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
+import { IProps } from "../shared/components-props";
+import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
+import SubmissionButton from "../../../submission-buttons/submission";
 
-const LocationInformationComponent = () => {
-  const { register, handleSubmit, errors, formState } = useForm({
+const LocationInformationComponent = (props: IProps) => {
+  const { data } = useSelector(
+    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.locationInformationsReducer
+  );
+
+  const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
   });
+  const changeParentToggleEvent = () => {
+    if (props.isForReviewPage) {
+      props.onSubmitOrCancelEvent();
+    }
+  };
+  const onCancelHandler = () => changeParentToggleEvent();
 
+  useEffect(() => {
+    // bind inputs values with it's state
+    // this will be very helpfull when we want reuse the component with its values
+    reset(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reset]);
   const dispatch = useDispatch();
-  const onSubmit = (data: FormInputsInterface) => {
+  const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_LOACTION_INFORMATION,
-        payload: data,
+        payload: values,
       });
       // move to next step
       dispatch({
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
+      changeParentToggleEvent();
     }
   };
 
@@ -158,12 +178,11 @@ const LocationInformationComponent = () => {
               <span className="text-danger">{errors.mapUrl?.message}</span>
             </Form.Group>
           </Form.Row>
-          <Row className="justify-content-center">
-            <Button variant="success" size="lg" className="submittion-btn" type="submit">
-              <strong>Next</strong>
-              <Image src={arrow} className="submittion-btn__img" />
-            </Button>
-          </Row>
+          {props.isForReviewPage ? (
+            <SubmissionButtonWithCancel onCancel={onCancelHandler} />
+          ) : (
+            <SubmissionButton />
+          )}
         </Form>
       </Card.Body>
     </Card>

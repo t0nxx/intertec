@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./review-screen.scss";
 import { Container, Accordion, Card, Image, Row, Col } from "react-bootstrap";
 
@@ -6,8 +6,20 @@ import { Container, Accordion, Card, Image, Row, Col } from "react-bootstrap";
 import upArrow4Collaps from "../../../assets/upArrow4Collaps.svg";
 import editPen from "../../../assets/editPen.svg";
 import locationWhite from "../../../assets/location-white.svg";
+import EstablishmentInformationComponent from "../pharamaceutical-establishment/etablishment-inforamtion/establishment-information";
+
+// screens to edit
 
 export default function ReviewScreenComponent() {
+  const [isEditEstablishment, setIsEditEstablishment] = useState(false);
+
+  const handelChangeEdit = () => {
+    console.log(isEditEstablishment);
+    setIsEditEstablishment(!isEditEstablishment);
+    console.log("afterrrrrr");
+
+    console.log(isEditEstablishment);
+  };
   return (
     <Container fluid>
       <div className="screenContent">
@@ -21,29 +33,36 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="0">
-                  <Card.Body>
-                    <Image src={editPen} className="edit" />
-                    <Row>
-                      <Col>
-                        <p>Establishment Name (English)</p>
-                        <span>Establishment Name (English)</span>
-                      </Col>
-                      <Col>
-                        <p>Establishment Name (Arabic)</p>
-                        <span>Establishment Name (Arabic)</span>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <p>Establishment Type</p>
-                        <span>Establishment Type</span>
-                      </Col>
-                      <Col>
-                        <p>Category</p>
-                        <span>Category</span>
-                      </Col>
-                    </Row>
-                  </Card.Body>
+                  {isEditEstablishment ? (
+                    <EstablishmentInformationComponent
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={handelChangeEdit}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image src={editPen} className="edit" onClick={handelChangeEdit} />
+                      <Row>
+                        <Col>
+                          <p>Establishment Name (English)</p>
+                          <span>Establishment Name (English)</span>
+                        </Col>
+                        <Col>
+                          <p>Establishment Name (Arabic)</p>
+                          <span>Establishment Name (Arabic)</span>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <p>Establishment Type</p>
+                          <span>Establishment Type</span>
+                        </Col>
+                        <Col>
+                          <p>Category</p>
+                          <span>Category</span>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
                 </Accordion.Collapse>
               </Card>
             </Accordion>

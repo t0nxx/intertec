@@ -22,7 +22,7 @@ const SelfEvaluationComponent = () => {
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_LOACTION_INFORMATION,
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_SELF_EVALUATION,
         payload: data,
       });
       // move to next step
