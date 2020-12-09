@@ -60,15 +60,30 @@
       }
       img {
         width: 60px;
-        &.checked {
+        &.checked,
+        &.semiChecked {
           display: none;
         }
       }
       &.doneStep {
-        img.check {
+        img.check,
+        img.semiChecked {
           display: none !important;
         }
         img.checked {
+          display: inline;
+        }
+        span {
+          color: #127f46;
+          font-weight: bold;
+        }
+      }
+      &.currentStep {
+        img.check,
+        img.checked {
+          display: none !important;
+        }
+        img.semiChecked {
           display: inline;
         }
         span {
