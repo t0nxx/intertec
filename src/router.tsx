@@ -4,6 +4,7 @@ import ReviewScreenComponent from "./components/screens/review-screen/review-scr
 import AttachmentScreenComponent from "./components/screens/attachment-screen/attachment-screen";
 import PharamaceuticalEstablishmentScreen from "./components/screens/pharamaceutical-establishment/pharamaceutical-establishment";
 import SuccessScreenComponent from "./components/screens/success-screen/success-screen";
+import PaymentScreenComponent from "./components/screens/payment-screen/payment-screen";
 
 function Routes() {
   return (
@@ -12,6 +13,7 @@ function Routes() {
       <Route path="/attachment" component={AttachmentScreenComponent} />
       <Route path="/review" component={ReviewScreenComponent} />
       <Route path="/success" component={SuccessScreenComponent} />
+      <Route path="/payment" component={PaymentScreenComponent} />
     </Switch>
   );
 }
