@@ -1,7 +1,7 @@
 .container-fluid {
   .screenContent {
     width: 60%;
-    margin: 0 auto;
+    margin: 30px auto;
     .screenHead {
       width: 100%;
       margin: 0 0 15px 0;
@@ -183,6 +183,20 @@
         padding: 6px 60px;
         box-shadow: none !important;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .screenContent {
+    width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .screenContent {
+    .col-md-6 {
+      margin-bottom: 10px;
     }
   }
 }

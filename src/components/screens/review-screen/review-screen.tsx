@@ -89,21 +89,21 @@ export default function ReviewScreenComponent() {
                         onClick={() => setIsEditEstablish(!isEditEstablish)}
                       />
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Establishment Name (English)</p>
                           <span>Establishment Name (English)</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Establishment Name (Arabic)</p>
                           <span>Establishment Name (Arabic)</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Establishment Type</p>
                           <span>Establishment Type</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Category</p>
                           <span>Category</span>
                         </Col>
@@ -138,31 +138,31 @@ export default function ReviewScreenComponent() {
                         onClick={() => setIsEditContact(!isEditContact)}
                       />
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Contact Name</p>
                           <span>Contact Name</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Designation</p>
                           <span>Designation</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Primary Email</p>
                           <span>A@a.com</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Alternative email</p>
                           <span>A@a.com</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Contact Number</p>
                           <span>+971 000 000</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Alternate Contact No</p>
                           <span>+971 000 000</span>
                         </Col>
@@ -203,31 +203,31 @@ export default function ReviewScreenComponent() {
                         onClick={() => setIsEditLocation(!isEditLocation)}
                       />
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Emirate</p>
                           <span>Emirate</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Area</p>
                           <span>Area</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Street</p>
                           <span>Street</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Building Name</p>
                           <span>PO Box</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>PO Box</p>
                           <span>PO Box</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Building NO</p>
                           <span>Building NO</span>
                         </Col>
@@ -273,66 +273,66 @@ export default function ReviewScreenComponent() {
                         onClick={() => setIsEditOwner(!isEditOwner)}
                       />
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <Image src={userPhoto} />
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Gender</p>
                           <span>Male</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>UAE Citzen</p>
                           <span>Yes</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>First name</p>
                           <span>First name</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>middle name</p>
                           <span>middle name</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Last Name</p>
                           <span>Last Name</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>First name (arabic)</p>
                           <span>First name (arabic)</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>middle name (arabic)</p>
                           <span>middle name (arabic)</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Last Name (arabic)</p>
                           <span>Last Name (arabic)</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Nationality</p>
                           <span>Nationality</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Passport No</p>
                           <span>Passport No</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Emirates ID</p>
                           <span>Emirates ID</span>
                         </Col>
                       </Row>
                       <Row>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Family Book No</p>
                           <span>Family Book No</span>
                         </Col>
-                        <Col>
+                        <Col md="6" sm="12">
                           <p>Share Percentage</p>
                           <span>Share Percentage</span>
                         </Col>
@@ -342,11 +342,11 @@ export default function ReviewScreenComponent() {
                         <Col>
                           <Col className="grayBg">
                             <Row>
-                              <Col>
+                              <Col md="6" sm="12">
                                 <p>Contact Number</p>
                                 <span>+971 000 000</span>
                               </Col>
-                              <Col>
+                              <Col md="6" sm="12">
                                 <p>Primary Email</p>
                                 <span>Email@mail.com</span>
                               </Col>
@@ -378,7 +378,7 @@ export default function ReviewScreenComponent() {
                     />
                   ) : (
                     <Card.Body>
-                      <Row>
+                      <Row className="tableParent">
                         <Table>
                           <thead>
                             <tr>

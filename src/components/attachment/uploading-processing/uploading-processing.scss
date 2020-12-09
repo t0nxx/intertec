@@ -36,13 +36,29 @@
       justify-content: flex-start;
       flex-direction: row;
       p {
-        font-size: 11px;
+        font-size: 9px;
         margin: 0;
         padding: 5px 5px 5px 0;
         img {
           margin: 5px;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .uploadingProcessing .processing .processingDetails {
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .uploadingProcessing .processing .processingDetails {
+    flex-direction: column;
+    align-items: end;
+    p {
+      padding: 0;
     }
   }
 }
