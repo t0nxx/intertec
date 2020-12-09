@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Accordion, Card, Container, Row, Image } from "react-bootstrap";
+import { Accordion, Card, Container, Row, Image, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
@@ -53,6 +53,7 @@ const PharamaceuticalEstablishmentScreen = () => {
                 <Image src={penImageWhite} className="ml-3 mr-4 whiteIc" />
                 <h3 className="text-success">Establishment Information </h3>
                 <Image src={checked} className="checked" />
+                <Button className="start">Start</Button>
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
