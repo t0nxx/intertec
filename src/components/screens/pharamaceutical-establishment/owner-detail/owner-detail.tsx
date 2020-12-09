@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "react-i18next";
 import { FormInputsInterface, formSchema } from "./owner-detail-helper";
 import "./owner-detail.scss";
 import "../shared/shared.scss";
@@ -20,6 +21,7 @@ import SubmissionButton from "../../../submission-buttons/submission";
 import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
 
 const OwnerDetailComponent = (props: IProps) => {
+  const { t } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.ownerDetailsReducer
   );
@@ -70,7 +72,7 @@ const OwnerDetailComponent = (props: IProps) => {
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col}>
-                <Form.Label>Retrieve information contact from your profile</Form.Label>
+                <Form.Label>{t("Titles.Retrieve information contact from your profile")}</Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
                     <label htmlFor="getContactData">
@@ -109,14 +111,14 @@ const OwnerDetailComponent = (props: IProps) => {
                 <Form.Group controlId="formGridEmail" className="uploadPhoto">
                   <Image src={userPhoto} />
                   <Button variant="success">
-                    <Image src={upload} /> Upload
+                    <Image src={upload} /> {t("Forms.Upload")}
                   </Button>
                 </Form.Group>
               </Col>
               <Col md={4}>
                 <Form.Group controlId="formGridEmail">
                   <Form.Label>
-                    Title <span className="required">*</span>
+                    {t("Forms.Title")} <span className="required">*</span>
                   </Form.Label>
                   <Form.Control
                     as="select"
@@ -126,7 +128,7 @@ const OwnerDetailComponent = (props: IProps) => {
                     isInvalid={errors.tite}
                   >
                     <option disabled selected value="">
-                      Title
+                      {t("Forms.Title")}
                     </option>
                     <option>...</option>
                     <option>...</option>
@@ -137,7 +139,7 @@ const OwnerDetailComponent = (props: IProps) => {
               <Col md={4}>
                 <Form.Group>
                   <Form.Label>
-                    Gender <span className="required">*</span>
+                    {t("Forms.Gender")} <span className="required">*</span>
                   </Form.Label>
                   <div className="radioButtons">
                     <div className="form-check">
@@ -150,7 +152,7 @@ const OwnerDetailComponent = (props: IProps) => {
                           value="male"
                           ref={register}
                         />
-                        Male
+                        {t("Forms.Male")}
                         <i className="checkMark"> </i>
                       </label>
                     </div>
@@ -165,7 +167,7 @@ const OwnerDetailComponent = (props: IProps) => {
                           ref={register}
                           defaultChecked
                         />
-                        Female
+                        {t("Forms.Female")}
                         <i className="checkMark"> </i>
                       </label>
                     </div>
@@ -177,7 +179,7 @@ const OwnerDetailComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
-                  First name <span className="required">*</span>
+                  {t("Forms.First name")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -192,7 +194,7 @@ const OwnerDetailComponent = (props: IProps) => {
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Middle name <span className="required">*</span>
+                  {t("Forms.Middle name")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -207,7 +209,7 @@ const OwnerDetailComponent = (props: IProps) => {
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Last Name <span className="required">*</span>
+                  {t("Forms.Last name")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -224,7 +226,7 @@ const OwnerDetailComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
-                  First name (Arabic) <span className="required">*</span>
+                  {t("Forms.First name (Arabic)")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -239,7 +241,7 @@ const OwnerDetailComponent = (props: IProps) => {
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Middle name (Arabic) <span className="required">*</span>
+                  {t("Forms.Middle name (Arabic)")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -254,7 +256,7 @@ const OwnerDetailComponent = (props: IProps) => {
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Last Name (Arabic) <span className="required">*</span>
+                  {t("Forms.Last Name (Arabic)")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -271,7 +273,7 @@ const OwnerDetailComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Share Percentage <span className="required">*</span>
+                  {t("Forms.Share Percentage")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="number"
@@ -286,7 +288,7 @@ const OwnerDetailComponent = (props: IProps) => {
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>
-                  UAE Citzen <span className="required">*</span>
+                  {t("Forms.UAE Citzen")} <span className="required">*</span>
                 </Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
@@ -325,7 +327,7 @@ const OwnerDetailComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
                 <Form.Label>
-                  Nationality <span className="required">*</span>
+                  {t("Forms.Nationality")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   as="select"
@@ -335,7 +337,7 @@ const OwnerDetailComponent = (props: IProps) => {
                   isInvalid={errors.nationality}
                 >
                   <option disabled selected value="">
-                    Nationality
+                    {t("Forms.Nationality")}
                   </option>
                   <option>...</option>
                   <option>...</option>
@@ -345,7 +347,7 @@ const OwnerDetailComponent = (props: IProps) => {
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Passport No <span className="required">*</span>
+                  {t("Forms.Passport No")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -361,7 +363,7 @@ const OwnerDetailComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Emirates ID <span className="required">*</span>
+                  {t("Forms.Emirates ID")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -375,7 +377,7 @@ const OwnerDetailComponent = (props: IProps) => {
               </Form.Group>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Family Book No <span className="required">*</span>
+                  {t("Forms.Family Book No")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -389,12 +391,12 @@ const OwnerDetailComponent = (props: IProps) => {
               </Form.Group>
             </Form.Row>
             <Form.Row className="splitTitle">
-              <h5>Contact information</h5>
+              <h5>{t("Forms.Contact information")} </h5>
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
-                  Contact Number <span className="required">*</span>
+                  {t("Forms.Contact Number")} <span className="required">*</span>
                 </Form.Label>
                 <div className="inputWithIcon">
                   <Form.Control
@@ -412,7 +414,7 @@ const OwnerDetailComponent = (props: IProps) => {
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Primary Email
+                  {t("Forms.Primary Email")}
                   <span className="required">*</span>
                 </Form.Label>
                 <div className="inputWithIcon">
@@ -430,7 +432,7 @@ const OwnerDetailComponent = (props: IProps) => {
               </Form.Group>
             </Form.Row>
             <Form.Row className="splitTitle">
-              <h5>Attachments</h5>
+              <h5>{t("Buttons.Attachments")}</h5>
             </Form.Row>
             <AttachmentComponent />
             {props.isForReviewPage ? (

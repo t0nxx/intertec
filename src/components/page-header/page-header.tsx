@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./page-header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { Breadcrumb, Navbar, Col, Container, Row } from "react-bootstrap";
+import { Breadcrumb, Col, Container, Row, Navbar } from "react-bootstrap";
 
 export default function PageHeaderComponent() {
+  const { t } = useTranslation();
   return (
     <Navbar
       collapseOnSelect
@@ -17,7 +19,7 @@ export default function PageHeaderComponent() {
       <Container fluid>
         <Row className="">
           <Col lg="6" md="12" sm="12" className="d-inline-block align-top">
-            <h4> New License Pharmaceutical Establishment</h4>
+            <h4> {t("Titles.New License Pharmaceutical Establishment")}</h4>
           </Col>
           <Col lg="6" md="12" sm="12">
             <Breadcrumb className="breadcrumb">
@@ -25,9 +27,12 @@ export default function PageHeaderComponent() {
                 <FontAwesomeIcon icon={faHome} size="lg" color="black" />
               </Breadcrumb.Item>
 
-              <Breadcrumb.Item>Services</Breadcrumb.Item>
+              <Breadcrumb.Item>{t("Titles.Services")}</Breadcrumb.Item>
 
-              <Breadcrumb.Item>New License Pharmaceutical Establishment</Breadcrumb.Item>
+              <Breadcrumb.Item>
+                {" "}
+                {t("Titles.New License Pharmaceutical Establishment")}
+              </Breadcrumb.Item>
             </Breadcrumb>
           </Col>
         </Row>

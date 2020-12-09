@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./nav-bar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,6 +12,7 @@ import {
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
 import { Badge, Dropdown, Nav, Navbar, Image } from "react-bootstrap";
+import i18n from "../../i18n";
 import logo from "../../logo.png";
 
 // Import images
@@ -18,6 +20,11 @@ import name from "../../assets/name.jpg";
 import bell from "../../assets/bell.svg";
 
 export default function NavBarComponent() {
+  const { t } = useTranslation();
+  const toggleLanguage = () => {
+    const currentLang = i18n.language;
+    i18n.changeLanguage(currentLang === "ar" ? "en" : "ar");
+  };
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" bg="light">
       <Navbar.Brand href="/">
@@ -33,9 +40,9 @@ export default function NavBarComponent() {
       <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
         <Nav className="mr-auto" />
         <Nav>
-          <div className="toggleLang">
-            <a>عربي</a>
-          </div>
+          <button type="button" className="toggleLang" onClick={toggleLanguage}>
+            <a>{t("Titles.AppLanguage")}</a>
+          </button>
           <Nav className="headerIcons">
             <Nav.Item>
               <Nav.Link href="/home">

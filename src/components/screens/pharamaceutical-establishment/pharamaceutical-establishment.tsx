@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Accordion, Card, Container, Row, Image, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
 import penImage from "../../../assets/pen.svg";
@@ -24,6 +25,7 @@ import PartnerDetailsComponent from "./partner-details/partner-details";
 import RequestInformation from "../../request-information/request-information";
 
 const PharamaceuticalEstablishmentScreen = () => {
+  const { t } = useTranslation();
   const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const dispatch = useDispatch();
@@ -37,6 +39,7 @@ const PharamaceuticalEstablishmentScreen = () => {
   return (
     <div>
       <RequestInformation />
+
       <Container fluid>
         <Accordion activeKey={state.stepNumberReducer.toString()}>
           {/* <Accordion> */}
@@ -51,7 +54,7 @@ const PharamaceuticalEstablishmentScreen = () => {
               <Row>
                 <Image src={penImage} className="ml-3 mr-4 greenIc" />
                 <Image src={penImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">Establishment Information </h3>
+                <h3 className="text-success">{t("Titles.Establishment Information")} </h3>
                 <Image src={checked} className="checked" />
                 <Button className="start">Start</Button>
               </Row>
@@ -74,7 +77,7 @@ const PharamaceuticalEstablishmentScreen = () => {
               <Row>
                 <Image src={contactImage} className="ml-3 mr-4 greenIc" />
                 <Image src={contactImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">Contact Information </h3>
+                <h3 className="text-success">{t("Titles.Contact Information")} </h3>
                 <Image src={checked} className="checked" />
               </Row>
             </Accordion.Toggle>
@@ -93,7 +96,7 @@ const PharamaceuticalEstablishmentScreen = () => {
               <Row>
                 <Image src={locationImage} className="ml-3 mr-4 greenIc" />
                 <Image src={locationImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">Location Information </h3>
+                <h3 className="text-success">{t("Titles.Location Information")} </h3>
                 <Image src={checked} className="checked" />
               </Row>
             </Accordion.Toggle>
@@ -112,7 +115,7 @@ const PharamaceuticalEstablishmentScreen = () => {
               <Row>
                 <Image src={ownerImage} className="ml-3 mr-4 greenIc" />
                 <Image src={ownerImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">Owner Details </h3>
+                <h3 className="text-success">{t("Titles.Owner Details")} </h3>
                 <Image src={checked} className="checked" />
               </Row>
             </Accordion.Toggle>
@@ -131,7 +134,7 @@ const PharamaceuticalEstablishmentScreen = () => {
               <Row>
                 <Image src={ownerImage} className="ml-3 mr-4 greenIc" />
                 <Image src={ownerImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">Partner Details </h3>
+                <h3 className="text-success">{t("Titles.Partner Details")} </h3>
                 <Image src={checked} className="checked" />
               </Row>
             </Accordion.Toggle>
@@ -150,7 +153,7 @@ const PharamaceuticalEstablishmentScreen = () => {
               <Row>
                 <Image src={checkImage} className="ml-3 mr-4 greenIc" />
                 <Image src={checkImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">Self Evaluation </h3>
+                <h3 className="text-success">{t("Titles.Self Evaluation")} </h3>
                 <Image src={checked} className="checked" />
               </Row>
             </Accordion.Toggle>

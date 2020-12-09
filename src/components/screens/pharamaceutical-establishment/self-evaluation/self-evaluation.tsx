@@ -4,6 +4,7 @@ import { Card, Form, Row, Button, Table } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import { FormInputsInterface, formSchema } from "./self-evaluation-helper";
 
@@ -19,6 +20,7 @@ const SelfEvaluationComponent = () => {
     mode: "all",
   });
 
+  const { t } = useTranslation();
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -51,10 +53,10 @@ const SelfEvaluationComponent = () => {
           <Table>
             <thead>
               <tr>
-                <th>Description</th>
-                <th>Yes</th>
-                <th>No</th>
-                <th>N/a</th>
+                <th>{t("Forms.Description")}</th>
+                <th>{t("Forms.Yes")}</th>
+                <th>{t("Forms.No")}</th>
+                <th>{t("Forms.N/A")}</th>
               </tr>
             </thead>
             <tbody>
@@ -120,7 +122,7 @@ const SelfEvaluationComponent = () => {
           </Table>
           <Row className="justify-content-center">
             <Button variant="success" size="lg" className="submittion-btn" type="submit">
-              <strong>Go To Attachment</strong>
+              <strong>{t("Buttons.Go To Attachment")}</strong>
             </Button>
           </Row>
         </Form>

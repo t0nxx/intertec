@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "react-i18next";
+
 import { FormInputsInterface, formSchema } from "./location-information-helper";
 import arrow from "../../../../assets/arrow-white.svg";
 import map from "../../../../assets/map.svg";
@@ -14,6 +16,7 @@ import SubmissionButtonWithCancel from "../../../submission-buttons/submission-w
 import SubmissionButton from "../../../submission-buttons/submission";
 
 const LocationInformationComponent = (props: IProps) => {
+  const { t } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.locationInformationsReducer
   );
@@ -65,7 +68,7 @@ const LocationInformationComponent = (props: IProps) => {
           <Form.Row>
             <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
               <Form.Label>
-                Emirate <span className="required">*</span>
+                {t("Forms.Emirate")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 as="select"
@@ -75,7 +78,7 @@ const LocationInformationComponent = (props: IProps) => {
                 isInvalid={errors.emirate}
               >
                 <option disabled selected value="">
-                  Eemirate
+                  {t("Forms.Emirate")}
                 </option>
                 <option> Type 1</option>
                 <option> Type 2</option>
@@ -86,7 +89,7 @@ const LocationInformationComponent = (props: IProps) => {
 
             <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
               <Form.Label>
-                Area <span className="required">*</span>
+                {t("Forms.Area")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -103,7 +106,7 @@ const LocationInformationComponent = (props: IProps) => {
           <Form.Row>
             <Form.Group as={Col} controlId="establishmentName">
               <Form.Label>
-                Street <span className="required">*</span>
+                {t("Forms.Street")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -120,7 +123,7 @@ const LocationInformationComponent = (props: IProps) => {
           <Form.Row>
             <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
-                Po Box <span className="required">*</span>
+                {t("Forms.Po Box")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -134,7 +137,7 @@ const LocationInformationComponent = (props: IProps) => {
             </Form.Group>
             <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
-                Building Name <span className="required">*</span>
+                {t("Forms.Building Name")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -151,7 +154,7 @@ const LocationInformationComponent = (props: IProps) => {
           <Form.Row>
             <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
-                Building No <span className="required">*</span>
+                {t("Forms.Building No")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
@@ -166,7 +169,7 @@ const LocationInformationComponent = (props: IProps) => {
 
             <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
-                Google Map Url <span className="required">*</span>
+                {t("Forms.Google Map Url")} <span className="required">*</span>
               </Form.Label>
 
               <div className="inputWithIcon">

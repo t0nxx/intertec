@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Image, Card, Table, Container, Row, Modal, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import "./partner-details.scss";
 import "../shared/shared.scss";
 import AddPartnerComponent from "./add-partner/add-partner";
@@ -15,6 +16,7 @@ import SubmissionButtonWithCancel from "../../../submission-buttons/submission-w
 import SubmissionButton from "../../../submission-buttons/submission";
 
 const PartnerDetailsComponent = (props: IProps) => {
+  const { t } = useTranslation();
   const [show, setShow] = useState(false);
 
   const { data } = useSelector(
@@ -106,7 +108,7 @@ const PartnerDetailsComponent = (props: IProps) => {
           <Row>
             <div className="addpartnerBtn">
               <Image src={add} onClick={() => setShow(!show)} />
-              <p> add Partner</p>
+              <p> {t("Forms.Add Partner")}</p>
             </div>
           </Row>
           <Modal show={show} onHide={() => setShow(!show)} backdrop="static" keyboard={false}>
@@ -116,7 +118,7 @@ const PartnerDetailsComponent = (props: IProps) => {
                   <Image src={leftArrow} onClick={() => setShow(!show)} />
                 </div>
                 <div className="title">
-                  <h1> add new Partner</h1>
+                  <h1> {t("Forms.Add New Partner")}</h1>
                 </div>
               </Modal.Title>
             </Modal.Header>
@@ -128,11 +130,11 @@ const PartnerDetailsComponent = (props: IProps) => {
             <Table>
               <thead>
                 <tr>
-                  <th>Full Name _EN</th>
-                  <th>Full Name _AR</th>
-                  <th>Emirates ID</th>
-                  <th>Passport NO</th>
-                  <th>Nationality</th>
+                  <th>{t("Forms.Full Name_EN")}</th>
+                  <th>{t("Forms.Full Name_AR")}</th>
+                  <th>{t("Forms.Emirates ID")}</th>
+                  <th>{t("Forms.Passport NO")}</th>
+                  <th>{t("Forms.Nationality")}</th>
                   <th> </th>
                   <th> </th>
                 </tr>
