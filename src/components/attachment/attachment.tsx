@@ -12,6 +12,8 @@ import stepCheck from "../../assets/stepCheck.svg";
 import stepChecked from "../../assets/stepChecked.svg";
 import leftArrowBtn from "../../assets/leftArrowBtn.svg";
 import rightArrowBtn from "../../assets/rightArrowBtn.svg";
+import semiChecked from "../../assets/semiChecked.svg";
+import UploadingProcessing from "./uploading-processing/uploading-processing";
 
 export default function AttachmentComponent() {
   const [index, setIndex] = useState(0);
@@ -40,16 +42,19 @@ export default function AttachmentComponent() {
         <Button className="step doneStep" onClick={() => handleSelect(0)}>
           <Image src={stepCheck} className="check" />
           <Image src={stepChecked} className="checked" />
+          <Image src={semiChecked} className="semiChecked" />
           <span>Passport</span>
         </Button>
-        <Button className="step" onClick={() => handleSelect(1)}>
+        <Button className="step currentStep" onClick={() => handleSelect(1)}>
           <Image src={stepCheck} className="check" />
           <Image src={stepChecked} className="checked" />
+          <Image src={semiChecked} className="semiChecked" />
           <span>Emirates ID</span>
         </Button>
         <Button className="step" onClick={() => handleSelect(2)}>
           <Image src={stepCheck} className="check" />
           <Image src={stepChecked} className="checked" />
+          <Image src={semiChecked} className="semiChecked" />
           <span>Family Book</span>
         </Button>
       </div>
@@ -61,16 +66,19 @@ export default function AttachmentComponent() {
               <Button className="step doneStep" onClick={() => handleSelect(0)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
+                <Image src={semiChecked} className="semiChecked" />
                 <span>Passport</span>
               </Button>
-              <Button className="step" onClick={() => handleSelect(1)}>
+              <Button className="step currentStep" onClick={() => handleSelect(1)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
+                <Image src={semiChecked} className="semiChecked" />
                 <span>Emirates ID</span>
               </Button>
               <Button className="step" onClick={() => handleSelect(2)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
+                <Image src={semiChecked} className="semiChecked" />
                 <span>Family Book</span>
               </Button>
             </div>
@@ -108,6 +116,7 @@ export default function AttachmentComponent() {
         <Carousel.Item>
           <DragAreaComponent />
           <UploadOptionsComponent />
+          <UploadingProcessing />
           {/* Start Files List */}
           <div className="files">
             <div className="file">
@@ -152,6 +161,7 @@ export default function AttachmentComponent() {
         <Carousel.Item>
           <DragAreaComponent />
           <UploadOptionsComponent />
+          <UploadingProcessing />
           {/* Start Files List */}
           <div className="files">
             <div className="file">
@@ -196,6 +206,7 @@ export default function AttachmentComponent() {
         <Carousel.Item>
           <DragAreaComponent />
           <UploadOptionsComponent />
+          <UploadingProcessing />
           {/* Start Files List */}
           <div className="files">
             <div className="file">

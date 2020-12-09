@@ -10,6 +10,7 @@ import previewIc from "../../assets/previewIc.svg";
 import info from "../../assets/info.svg";
 import flag from "../../assets/flag.svg";
 import { StateSelectorInterface } from "../../redux/reducers/helper";
+import InfoComponent from "../sticky-info/sticky-info";
 
 export default function FooterComponent() {
   // progress bar state
@@ -18,10 +19,11 @@ export default function FooterComponent() {
   );
   return (
     <Navbar expand="lg" fixed="bottom" className="footer">
-      <div className="stickyIcons">
+      {/* <div className="stickyIcons">
         <Image src={info} className="infoIc" />
         <Image src={flag} className="flagIc" />
-      </div>
+      </div> */}
+      <InfoComponent />
       <ProgressBar variant="success" now={progressPersentage} className="progress" />
       <Row className="statistics-container">
         <div>
