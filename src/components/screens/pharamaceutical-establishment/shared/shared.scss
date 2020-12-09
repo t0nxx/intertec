@@ -136,17 +136,20 @@
 }
 
 .submittion-btn {
-  width: 250px;
-  border-radius: 50rem;
+  width: 170px;
+  border-radius: 50px;
   z-index: 1;
-  // margin-bottom: -90px;
-  height: 50px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
   strong {
     font-weight: normal;
   }
   img {
-    width: 20px;
-    margin-left: 10px;
+    width: 15px;
+    margin-left: 5px;
   }
 }
 
@@ -171,11 +174,18 @@
     }
   }
 }
+.tableParent {
+  overflow-x: scroll;
+  table {
+    width: 691px;
+  }
+}
 
 .table {
   border: 0 !important;
   border-collapse: unset;
   border-spacing: 0;
+  margin: 10px auto;
   thead {
     tr {
       th {
@@ -274,10 +284,12 @@
     }
   }
 }
+
 .required {
   color: $custom-red;
   margin-left: 10px;
 }
+
 .save-edit-btn,
 .cancel-edit-btn {
   width: 150px;

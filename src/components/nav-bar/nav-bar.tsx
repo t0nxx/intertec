@@ -26,7 +26,7 @@ export default function NavBarComponent() {
     i18n.changeLanguage(currentLang === "ar" ? "en" : "ar");
   };
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" bg="light" sticky="top">
+    <Navbar collapseOnSelect expand="lg" variant="light" bg="light">
       <Navbar.Brand href="/">
         <img
           src={logo}

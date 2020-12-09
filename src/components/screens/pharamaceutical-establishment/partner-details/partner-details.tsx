@@ -126,7 +126,7 @@ const PartnerDetailsComponent = (props: IProps) => {
               <AddPartnerComponent />
             </Modal.Body>
           </Modal>
-          <Row>
+          <Row className="tableParent">
             <Table>
               <thead>
                 <tr>

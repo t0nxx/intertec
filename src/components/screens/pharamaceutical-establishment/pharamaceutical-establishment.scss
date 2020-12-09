@@ -4,7 +4,7 @@
     span.column {
       position: absolute;
       display: block;
-      width: 4px;
+      width: 3px;
       height: 100%;
       left: 30%;
       background-color: #bebebe;
@@ -43,6 +43,19 @@
             font-weight: normal;
             line-height: 40px;
             margin: 0 10px;
+          }
+          .start {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ebeaea;
+            border-radius: 45px;
+            width: 110px;
+            color: #696666;
+            box-shadow: none !important;
+            border: 0 !important;
           }
         }
       }

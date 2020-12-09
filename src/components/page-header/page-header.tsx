@@ -1,32 +1,42 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./page-header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { Breadcrumb, Col, Container, Row } from "react-bootstrap";
-import { useTranslation } from "react-i18next";
+import { Breadcrumb, Col, Container, Row, Navbar } from "react-bootstrap";
 
 export default function PageHeaderComponent() {
   const { t } = useTranslation();
   return (
-    <Container fluid>
-      <Row className="mb-5 pt-3 pr-5 pl-5 bg-white ">
-        <Col>
-          <h4> {t("Titles.New License Pharmaceutical Establishment")}</h4>
-        </Col>
-        <Col md="auto">
-          <Breadcrumb className="breadcrumb">
-            <Breadcrumb.Item>
-              <FontAwesomeIcon icon={faHome} size="lg" color="black" />
-            </Breadcrumb.Item>
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      variant="light"
+      bg="light"
+      sticky="top"
+      className="pageHeader"
+    >
+      <Container fluid>
+        <Row className="">
+          <Col lg="6" md="12" sm="12" className="d-inline-block align-top">
+            <h4> {t("Titles.New License Pharmaceutical Establishment")}</h4>
+          </Col>
+          <Col lg="6" md="12" sm="12">
+            <Breadcrumb className="breadcrumb">
+              <Breadcrumb.Item>
+                <FontAwesomeIcon icon={faHome} size="lg" color="black" />
+              </Breadcrumb.Item>
 
-            <Breadcrumb.Item>{t("Titles.Services")}</Breadcrumb.Item>
+              <Breadcrumb.Item>{t("Titles.Services")}</Breadcrumb.Item>
 
-            <Breadcrumb.Item>
-              {t("Titles.New License Pharmaceutical Establishment")}
-            </Breadcrumb.Item>
-          </Breadcrumb>
-        </Col>
-      </Row>
-    </Container>
+              <Breadcrumb.Item>
+                {" "}
+                {t("Titles.New License Pharmaceutical Establishment")}
+              </Breadcrumb.Item>
+            </Breadcrumb>
+          </Col>
+        </Row>
+      </Container>
+    </Navbar>
   );
 }

@@ -66,7 +66,7 @@ const LocationInformationComponent = (props: IProps) => {
       <Card.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridState">
+            <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
               <Form.Label>
                 {t("Forms.Emirate")} <span className="required">*</span>
               </Form.Label>
@@ -87,7 +87,7 @@ const LocationInformationComponent = (props: IProps) => {
               <span className="text-danger">{errors.emirate?.message}</span>
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
               <Form.Label>
                 {t("Forms.Area")} <span className="required">*</span>
               </Form.Label>
@@ -121,7 +121,7 @@ const LocationInformationComponent = (props: IProps) => {
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} controlId="establishmentName">
+            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
                 {t("Forms.Po Box")} <span className="required">*</span>
               </Form.Label>
@@ -135,7 +135,7 @@ const LocationInformationComponent = (props: IProps) => {
               />
               <span className="text-danger">{errors.poBox?.message}</span>
             </Form.Group>
-            <Form.Group as={Col} controlId="establishmentName">
+            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
                 {t("Forms.Building Name")} <span className="required">*</span>
               </Form.Label>
@@ -152,7 +152,7 @@ const LocationInformationComponent = (props: IProps) => {
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} controlId="establishmentName">
+            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
                 {t("Forms.Building No")} <span className="required">*</span>
               </Form.Label>
@@ -167,7 +167,7 @@ const LocationInformationComponent = (props: IProps) => {
               <span className="text-danger">{errors.buildingNo?.message}</span>
             </Form.Group>
 
-            <Form.Group as={Col} controlId="establishmentName">
+            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
                 {t("Forms.Google Map Url")} <span className="required">*</span>
               </Form.Label>
