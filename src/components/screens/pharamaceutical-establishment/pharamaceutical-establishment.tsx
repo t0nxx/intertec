@@ -132,7 +132,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             </Row>
           </Accordion.Toggle>
           <Accordion.Collapse eventKey="4">
-            <PartnerDetailsComponent />
+            <PartnerDetailsComponent isForReviewPage={false} />
           </Accordion.Collapse>
         </Card>
         <div className="divider" />

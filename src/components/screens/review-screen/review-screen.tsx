@@ -372,11 +372,11 @@ export default function ReviewScreenComponent() {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditPartner ? (
-                    <PartnerDetailsComponent />
+                    <PartnerDetailsComponent
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
+                    />
                   ) : (
-                    // isForReviewPage={true}
-                    // onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
-                    // />
                     <Card.Body>
                       <Row>
                         <Table>

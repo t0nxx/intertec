@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Card, Form, Row, Button, Table } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { FormInputsInterface, formSchema } from "./self-evaluation-helper";
 
@@ -20,12 +20,16 @@ const SelfEvaluationComponent = () => {
   });
 
   const dispatch = useDispatch();
-  const onSubmit = (data: FormInputsInterface) => {
+  const history = useHistory();
+
+  const onSubmit = () => {
     if (formState.isValid) {
-      dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_SELF_EVALUATION,
-        payload: data,
-      });
+      // should make sure here all steps are done
+      history.push("/attachment");
+      // dispatch({
+      //   type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_SELF_EVALUATION,
+      //   payload: data,
+      // });
       // move to next step
       dispatch({
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
@@ -115,18 +119,9 @@ const SelfEvaluationComponent = () => {
             </tbody>
           </Table>
           <Row className="justify-content-center">
-            {/* f
-            or test only , remember to remove it */}
-            <Link to="/attachment">
-              <Button variant="success" size="lg" className="submittion-btn" type="submit">
-                <strong>Go To Attachment</strong>
-              </Button>
-            </Link>
-            <Link to="/review">
-              <Button variant="success" size="lg" className="submittion-btn" type="submit">
-                <strong>test only review</strong>
-              </Button>
-            </Link>
+            <Button variant="success" size="lg" className="submittion-btn" type="submit">
+              <strong>Go To Attachment</strong>
+            </Button>
           </Row>
         </Form>
       </Card.Body>
