@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Card, Col, Container, Form, Row, Image } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "react-i18next";
 import { FormInputsInterface, formSchema } from "./contact-information-helper";
 
 import "./contact-information.scss";
@@ -17,6 +18,8 @@ import SubmissionButtonWithCancel from "../../../submission-buttons/submission-w
 import { IProps } from "../shared/components-props";
 
 const ContactInformationComponent = (props: IProps) => {
+  const { t } = useTranslation();
+
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.contactInformationsReducer
   );
@@ -68,7 +71,7 @@ const ContactInformationComponent = (props: IProps) => {
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Retrieve information contact from your profile</Form.Label>
+                <Form.Label>{t("Titles.Retrieve information contact from your profile")}</Form.Label>
                 <div className="radioBtns">
                   <Form.Check
                     type="radio"
@@ -95,7 +98,7 @@ const ContactInformationComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>
-                  Contact Name <span className="required">*</span>{" "}
+                  {t("Forms.Contact Name")} <span className="required">*</span>{" "}
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -110,7 +113,7 @@ const ContactInformationComponent = (props: IProps) => {
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>
-                  Designation <span className="required">*</span>{" "}
+                  {t("Forms.Designation")} <span className="required">*</span>{" "}
                 </Form.Label>
                 <Form.Control
                   type="text"
@@ -127,7 +130,7 @@ const ContactInformationComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>
-                  Primary Email <span className="required">*</span>{" "}
+                  {t("Forms.Primary Email")} <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
                   <Form.Control
@@ -145,7 +148,7 @@ const ContactInformationComponent = (props: IProps) => {
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>
-                  Alternative Email <span className="required">*</span>{" "}
+                  {t("Forms.Alternative Email")} <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
                   <Form.Control
@@ -165,7 +168,7 @@ const ContactInformationComponent = (props: IProps) => {
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>
-                  Contact Number <span className="required">*</span>{" "}
+                  {t("Forms.Contact Number")} <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
                   <Form.Control
@@ -183,7 +186,7 @@ const ContactInformationComponent = (props: IProps) => {
 
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>
-                  Alternative Contact Number <span className="required">*</span>{" "}
+                  {t("Forms.Alternative Contact Number")} <span className="required">*</span>{" "}
                 </Form.Label>
                 <div className="inputWithIcon">
                   <Form.Control
@@ -205,7 +208,7 @@ const ContactInformationComponent = (props: IProps) => {
 
             <Form.Row>
               <Form.Group as={Col} xs="6" controlId="formGridEmail">
-                <Form.Label> Fax </Form.Label>
+                <Form.Label> {t("Forms.Fax")} </Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Fax"

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Card, Col, Form, Image, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -12,6 +13,9 @@ import SubmissionButtonWithCancel from "../../../submission-buttons/submission-w
 import SubmissionButton from "../../../submission-buttons/submission";
 
 const EstablishmentInformationComponent = (props: IProps) => {
+  // the problem here is that placeholders can't accept tfunction , it accept strings only
+  const { t }: { t: any } = useTranslation();
+
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.establishmentInformationsReducer
   );
@@ -65,11 +69,11 @@ const EstablishmentInformationComponent = (props: IProps) => {
           <Form.Row>
             <Form.Group as={Col} controlId="establishmentName">
               <Form.Label>
-                Establishment Name <span className="required">*</span>
+                {t("Forms.Establishment Name")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder=" Establishment Name"
+                placeholder={t("Forms.Establishment Name")}
                 name="establishmentName"
                 ref={register}
                 isValid={formState.touched.establishmentName && !errors.establishmentName}
@@ -80,11 +84,11 @@ const EstablishmentInformationComponent = (props: IProps) => {
 
             <Form.Group as={Col} controlId="formGridPassword">
               <Form.Label>
-                Establishment Name (Arabic) <span className="required">*</span>
+                {t("Forms.Establishment Name (Arabic)")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder=" Establishment Name"
+                placeholder={t("Forms.Establishment Name (Arabic)")}
                 name="establishmentNameArabic"
                 ref={register}
                 isValid={
@@ -99,7 +103,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
           <Form.Row>
             <Form.Group as={Col} controlId="formGridState">
               <Form.Label>
-                Establishment Type <span className="required">*</span>
+                {t("Forms.Establishment Type")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 as="select"
@@ -109,7 +113,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
                 isInvalid={errors.establishmentType}
               >
                 <option disabled selected value="">
-                  Establishment Type
+                  {t("Forms.Establishment Type")}
                 </option>
                 <option> Establishment Type 1</option>
                 <option> Establishment Type 2</option>
@@ -120,7 +124,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
 
             <Form.Group as={Col} controlId="formGridState">
               <Form.Label>
-                Category <span className="required">*</span>
+                {t("Forms.Category")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 as="select"
@@ -130,7 +134,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
                 isInvalid={errors.Category}
               >
                 <option disabled selected value="">
-                  Category
+                  {t("Forms.Category")}
                 </option>
                 <option>Category 1 </option>
                 <option>Category 2 </option>
