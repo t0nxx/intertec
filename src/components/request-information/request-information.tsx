@@ -18,7 +18,7 @@ export default function RequestInformation() {
             <Accordion defaultActiveKey="0">
               <Card>
                 <Card.Header>
-                  <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                  <Accordion.Toggle as={Button} variant="link" eventKey="1">
                     {/* <Image src={circleArrow} /> */}
                     <div>
                       <h1>Request information</h1>
@@ -26,7 +26,7 @@ export default function RequestInformation() {
                     </div>
                   </Accordion.Toggle>
                 </Card.Header>
-                <Accordion.Collapse eventKey="0">
+                <Accordion.Collapse eventKey="1">
                   <Card.Body>
                     <Row>
                       <Col>
