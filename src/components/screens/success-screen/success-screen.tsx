@@ -1,20 +1,49 @@
 import React from "react";
-import { Container, Image, Row } from "react-bootstrap";
+import { Container, Image, Row, Col, Button } from "react-bootstrap";
 import "./success-screen.scss";
 
 // Import images
-import stepChecked from "../../../assets/stepChecked.svg";
+import success from "../../../assets/success.svg";
+import happyRate from "../../../assets/happyRate.svg";
+import flag from "../../../assets/flag.svg";
 
-const SuccessScreenComponent = (props: { textVariable: string; applicationNumber: string }) => {
+export default function SuccessScreenComponent() {
   return (
-    <Container className="contentContainer" fluid>
-      <Image src={stepChecked} />
-      <p>{props?.textVariable} Successfully</p>
-      <p>
-        Application Number : <span>{props?.applicationNumber}</span>
-      </p>
+    <Container fluid>
+      <Row>
+        <Col className="succScreenContent">
+          <Image src={success} />
+          <p className="successMsg">Your application has been submitted successfully</p>
+          <p className="appNum">
+            Application number : <span>#number</span>
+          </p>
+          <Button>Go to workspace</Button>
+        </Col>
+      </Row>
+      <Container className="successScreenFooter">
+        <Row>
+          <span className="line"> </span>
+          <Col className="leftContent" md="6" sm="12">
+            <Row>
+              <Col>
+                <Image src={flag} />
+                File a complaint
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <p>
+                  if you still have any inquiries, you can call us on Hotline XXXX or using
+                  suggestion and improvement center
+                </p>
+              </Col>
+            </Row>
+          </Col>
+          <Col className="rightContent" md="6" sm="12">
+            <Image src={happyRate} />
+          </Col>
+        </Row>
+      </Container>
     </Container>
   );
-};
-
-export default SuccessScreenComponent;
+}
