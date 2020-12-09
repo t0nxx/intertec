@@ -6,7 +6,7 @@ const SubmissionButton = () => {
   return (
     <Row className="justify-content-center">
       <Button variant="success" size="lg" className="submittion-btn" type="submit">
-        <strong>Next</strong>
+        Next
         <Image src={arrowWhite} className="submittion-btn__img" />
       </Button>
     </Row>
