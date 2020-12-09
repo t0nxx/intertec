@@ -40,7 +40,7 @@ export default function ReviewScreenComponent() {
   useEffect(() => {
     console.log(collapseAllState);
   }, [collapseAllState]);
-  
+
   return (
     <Container fluid>
       <div className="screenContent">
@@ -508,7 +508,7 @@ export default function ReviewScreenComponent() {
           </div>
           {/* End Attachment */}
 
-          {/* Submit */}          
+          {/* Submit */}
           <div className="submit">
             <Button>Submit</Button>
           </div>
