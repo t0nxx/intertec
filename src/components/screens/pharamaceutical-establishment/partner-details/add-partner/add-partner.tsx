@@ -145,7 +145,7 @@ const AddPartnerComponent = () => {
             </Row>
 
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
                   First name <span className="required">*</span>
                 </Form.Label>
@@ -160,7 +160,7 @@ const AddPartnerComponent = () => {
                 <span className="text-danger">{errors.fName?.message}</span>
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Middle name <span className="required">*</span>
                 </Form.Label>
@@ -175,7 +175,7 @@ const AddPartnerComponent = () => {
                 <span className="text-danger">{errors.mName?.message}</span>
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Last Name <span className="required">*</span>
                 </Form.Label>
@@ -192,7 +192,7 @@ const AddPartnerComponent = () => {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
                   First name (Arabic) <span className="required">*</span>
                 </Form.Label>
@@ -207,7 +207,7 @@ const AddPartnerComponent = () => {
                 <span className="text-danger">{errors.fNameAr?.message}</span>
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Middle name (Arabic) <span className="required">*</span>
                 </Form.Label>
@@ -222,7 +222,7 @@ const AddPartnerComponent = () => {
                 <span className="text-danger">{errors.mNameAr?.message}</span>
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Last Name (Arabic) <span className="required">*</span>
                 </Form.Label>
@@ -239,7 +239,7 @@ const AddPartnerComponent = () => {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Share Percentage <span className="required">*</span>
                 </Form.Label>
@@ -293,7 +293,7 @@ const AddPartnerComponent = () => {
             </Form.Row>
 
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridState">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
                 <Form.Label>
                   Nationality <span className="required">*</span>
                 </Form.Label>
@@ -313,7 +313,7 @@ const AddPartnerComponent = () => {
                 </Form.Control>
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Passport No <span className="required">*</span>
                 </Form.Label>
@@ -329,7 +329,7 @@ const AddPartnerComponent = () => {
               </Form.Group>
             </Form.Row>
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Emirates ID <span className="required">*</span>
                 </Form.Label>
@@ -343,7 +343,7 @@ const AddPartnerComponent = () => {
                 />
                 <span className="text-danger">{errors.emiratesId?.message}</span>
               </Form.Group>
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Family Book No <span className="required">*</span>
                 </Form.Label>
@@ -362,7 +362,7 @@ const AddPartnerComponent = () => {
               <h5>Contact information</h5>
             </Form.Row>
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
                   Contact Number <span className="required">*</span>
                 </Form.Label>
@@ -380,7 +380,7 @@ const AddPartnerComponent = () => {
                 </div>
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
+              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
                   Primary Email
                   <span className="required">*</span>

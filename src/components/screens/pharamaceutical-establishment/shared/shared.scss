@@ -171,15 +171,18 @@
     }
   }
 }
+.tableParent {
+  overflow-x: scroll;
+  table {
+    width: 691px;
+  }
+}
 
 .table {
   border: 0 !important;
   border-collapse: unset;
   border-spacing: 0;
-  // th,
-  // td {
-  //   color: blue !important;
-  // }
+  margin: 10px auto;
   thead {
     tr {
       th {
@@ -278,10 +281,12 @@
     }
   }
 }
+
 .required {
   color: $custom-red;
   margin-left: 10px;
 }
+
 .save-edit-btn,
 .cancel-edit-btn {
   width: 150px;
