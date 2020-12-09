@@ -13,6 +13,7 @@ import stepChecked from "../../assets/stepChecked.svg";
 import leftArrowBtn from "../../assets/leftArrowBtn.svg";
 import rightArrowBtn from "../../assets/rightArrowBtn.svg";
 import semiChecked from "../../assets/semiChecked.svg";
+import UploadingProcessing from "./uploading-processing/uploading-processing";
 
 export default function AttachmentComponent() {
   const [index, setIndex] = useState(0);
@@ -115,6 +116,7 @@ export default function AttachmentComponent() {
         <Carousel.Item>
           <DragAreaComponent />
           <UploadOptionsComponent />
+          <UploadingProcessing />
           {/* Start Files List */}
           <div className="files">
             <div className="file">
@@ -159,6 +161,7 @@ export default function AttachmentComponent() {
         <Carousel.Item>
           <DragAreaComponent />
           <UploadOptionsComponent />
+          <UploadingProcessing />
           {/* Start Files List */}
           <div className="files">
             <div className="file">
@@ -203,6 +206,7 @@ export default function AttachmentComponent() {
         <Carousel.Item>
           <DragAreaComponent />
           <UploadOptionsComponent />
+          <UploadingProcessing />
           {/* Start Files List */}
           <div className="files">
             <div className="file">
