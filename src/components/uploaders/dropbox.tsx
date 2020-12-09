@@ -8,7 +8,7 @@ const appkey = "m291frc56wwfhjc";
 const DropBoxChooserComponent = (props) => {
   const onSuccess = (files) => {
     props.onChange(files);
-  };    
+  };
   return (
     <DropboxChooser appKey={appkey} multiselect={true} success={(files) => onSuccess(files)}>
       <div className="dropbox-button">Click me!</div>

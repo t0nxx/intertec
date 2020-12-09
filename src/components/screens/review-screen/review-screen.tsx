@@ -40,7 +40,7 @@ export default function ReviewScreenComponent() {
   useEffect(() => {
     console.log(collapseAllState);
   }, [collapseAllState]);
-  
+
   return (
     <Container fluid>
       <div className="screenContent">
@@ -372,11 +372,11 @@ export default function ReviewScreenComponent() {
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditPartner ? (
-                    <PartnerDetailsComponent />
+                    <PartnerDetailsComponent
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
+                    />
                   ) : (
-                    // isForReviewPage={true}
-                    // onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
-                    // />
                     <Card.Body>
                       <Row>
                         <Table>
@@ -508,7 +508,7 @@ export default function ReviewScreenComponent() {
           </div>
           {/* End Attachment */}
 
-          {/* Submit */}          
+          {/* Submit */}
           <div className="submit">
             <Button>Submit</Button>
           </div>

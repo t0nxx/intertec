@@ -1,0 +1,24 @@
+@import "../../../sass/variables";
+.contentContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: inherit;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 70%;
+  img {
+    width: 20%;
+  }
+  p {
+    display: block;
+    color: #646e76;
+    text-transform: capitalize;
+    font-size: 20px;
+    span {
+      background-color: $custom-green;
+    }
+  }
+}
