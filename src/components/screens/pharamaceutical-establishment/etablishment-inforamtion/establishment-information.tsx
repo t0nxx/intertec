@@ -63,7 +63,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
       <Card.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Row>
-            <Form.Group as={Col} controlId="establishmentName">
+            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
                 Establishment Name <span className="required">*</span>
               </Form.Label>
@@ -78,7 +78,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
               <span className="text-danger">{errors.establishmentName?.message}</span>
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
               <Form.Label>
                 Establishment Name (Arabic) <span className="required">*</span>
               </Form.Label>
@@ -97,7 +97,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} controlId="formGridState">
+            <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
               <Form.Label>
                 Establishment Type <span className="required">*</span>
               </Form.Label>
@@ -118,7 +118,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
               <span className="text-danger">{errors.establishmentType?.message}</span>
             </Form.Group>
 
-            <Form.Group as={Col} controlId="formGridState">
+            <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
               <Form.Label>
                 Category <span className="required">*</span>
               </Form.Label>

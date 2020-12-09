@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import "./footer.scss";
-import { Navbar, Image, ProgressBar, Row, Button } from "react-bootstrap";
+import { Navbar, Image, ProgressBar, Row } from "react-bootstrap";
 
 // Import images
 import applicationIc from "../../assets/applicationIc.svg";

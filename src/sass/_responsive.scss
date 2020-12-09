@@ -1,0 +1,15 @@
+@media only screen and (max-width: 1000px) {
+  .container-fluid .accordion .card.headCard {
+    width: 90% !important;
+  }
+  .container-fluid .accordion .card.headCard .card-header div.row img {
+    margin-right: 10px !important;
+  }
+  .container-fluid .accordion .card.headCard .card-header div.row h3 {
+    font-size: 23px !important;
+  }
+  span.column {
+    left: 15% !important;
+    transform: translateX(-15%) !important;
+  }
+}

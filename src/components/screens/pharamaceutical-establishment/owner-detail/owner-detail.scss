@@ -18,3 +18,13 @@
     }
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .uploadPhoto {
+    width: 200px;
+    margin: 0 auto;
+    img {
+      // width: 50% !important;
+    }
+  }
+}
