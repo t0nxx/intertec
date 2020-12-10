@@ -12,8 +12,8 @@ import "../shared/shared.scss";
 import email from "../../../../assets/mail.svg";
 import phone from "../../../../assets/phone.svg";
 import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
-import SubmissionButton from "../../../submission-buttons/submission";
-import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
+import NextButton from "../../../buttons/next-button/next-button";
+import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import { IProps } from "../shared/components-props";
 
 const ContactInformationComponent = (props: IProps) => {
@@ -221,11 +221,7 @@ const ContactInformationComponent = (props: IProps) => {
                 <span className="text-danger">{errors.fax?.message}</span>
               </Form.Group>
             </Form.Row>
-            {props.isForReviewPage ? (
-              <SubmissionButtonWithCancel onCancel={onCancelHandler} />
-            ) : (
-              <SubmissionButton />
-            )}
+            {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
           </Form>
         </Container>
       </Card.Body>

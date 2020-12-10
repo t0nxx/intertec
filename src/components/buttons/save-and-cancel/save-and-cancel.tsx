@@ -3,7 +3,7 @@ import { Button, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const SubmissionButtonWithCancel = ({ onCancel }) => {
+const SaveAndCancel = ({ onCancel }) => {
   const { t } = useTranslation();
   // this should be cancel callback
   return (
@@ -19,4 +19,4 @@ const SubmissionButtonWithCancel = ({ onCancel }) => {
   );
 };
 
-export default SubmissionButtonWithCancel;
+export default SaveAndCancel;

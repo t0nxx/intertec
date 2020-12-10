@@ -17,8 +17,8 @@ import arrow from "../../../../assets/arrow-white.svg";
 import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
 import AttachmentComponent from "../../../attachment/attachment";
 import { IProps } from "../shared/components-props";
-import SubmissionButton from "../../../submission-buttons/submission";
-import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
+import NextButton from "../../../buttons/next-button/next-button";
+import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 
 const OwnerDetailComponent = (props: IProps) => {
   const { t } = useTranslation();
@@ -72,7 +72,9 @@ const OwnerDetailComponent = (props: IProps) => {
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col}>
-                <Form.Label>{t("Titles.Retrieve information contact from your profile")}</Form.Label>
+                <Form.Label>
+                  {t("Titles.Retrieve information contact from your profile")}
+                </Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
                     <label htmlFor="getContactData">
@@ -435,11 +437,7 @@ const OwnerDetailComponent = (props: IProps) => {
               <h5>{t("Buttons.Attachments")}</h5>
             </Form.Row>
             <AttachmentComponent />
-            {props.isForReviewPage ? (
-              <SubmissionButtonWithCancel onCancel={onCancelHandler} />
-            ) : (
-              <SubmissionButton />
-            )}
+            {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
           </Form>
         </Card.Body>
       </Card>

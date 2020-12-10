@@ -9,8 +9,8 @@ import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/
 import { FormInputsInterface, formSchema } from "./establishment-information-helper";
 import "./establishment-information.scss";
 import { IProps } from "../shared/components-props";
-import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
-import SubmissionButton from "../../../submission-buttons/submission";
+import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
+import NextButton from "../../../buttons/next-button/next-button";
 
 const EstablishmentInformationComponent = (props: IProps) => {
   // the problem here is that placeholders can't accept tfunction , it accept strings only
@@ -143,11 +143,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
               <span className="text-danger">{errors.Category?.message}</span>
             </Form.Group>
           </Form.Row>
-          {props.isForReviewPage ? (
-            <SubmissionButtonWithCancel onCancel={onCancelHandler} />
-          ) : (
-            <SubmissionButton />
-          )}
+          {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
         </Form>
       </Card.Body>
     </Card>

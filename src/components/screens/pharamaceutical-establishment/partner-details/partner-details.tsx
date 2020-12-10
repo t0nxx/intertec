@@ -12,8 +12,8 @@ import leftArrow from "../../../../assets/leftArrow.svg";
 import pen from "../../../../assets/editPen.svg";
 import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
 import { IProps } from "../shared/components-props";
-import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
-import SubmissionButton from "../../../submission-buttons/submission";
+import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
+import NextButton from "../../../buttons/next-button/next-button";
 
 const PartnerDetailsComponent = (props: IProps) => {
   const { t } = useTranslation();
@@ -159,11 +159,11 @@ const PartnerDetailsComponent = (props: IProps) => {
             </Table>
           </Row>
           {props.isForReviewPage ? (
-            <SubmissionButtonWithCancel onCancel={onCancelHandler} />
+            <SaveAndCancel onCancel={onCancelHandler} />
           ) : (
             /// temp since submiss btn not has a click event
             <Row className="justify-content-center" onClick={onSubmit}>
-              <SubmissionButton />
+              <NextButton />
             </Row>
           )}
         </Card.Body>

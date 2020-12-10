@@ -12,8 +12,8 @@ import map from "../../../../assets/map.svg";
 import "./location-information.scss";
 import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
 import { IProps } from "../shared/components-props";
-import SubmissionButtonWithCancel from "../../../submission-buttons/submission-with-cancel";
-import SubmissionButton from "../../../submission-buttons/submission";
+import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
+import NextButton from "../../../buttons/next-button/next-button";
 
 const LocationInformationComponent = (props: IProps) => {
   const { t } = useTranslation();
@@ -186,11 +186,7 @@ const LocationInformationComponent = (props: IProps) => {
               <span className="text-danger">{errors.mapUrl?.message}</span>
             </Form.Group>
           </Form.Row>
-          {props.isForReviewPage ? (
-            <SubmissionButtonWithCancel onCancel={onCancelHandler} />
-          ) : (
-            <SubmissionButton />
-          )}
+          {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
         </Form>
       </Card.Body>
     </Card>
