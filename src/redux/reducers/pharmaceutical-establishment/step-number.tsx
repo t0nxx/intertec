@@ -3,14 +3,15 @@
 import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const initalState = 0;
+const initalState = -1;
 
 const stepNumberReducer = (state = initalState, action: { type: string; payload: any }) => {
   const { type, payload } = action;
 
   switch (type) {
     case PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER:
-      if (state < 6) {
+      // 0 check the collapse is closed when screen entered , 6 for maximum number of steps
+      if (state < 0 || state < 6) {
         return state + 1;
       }
       return state;

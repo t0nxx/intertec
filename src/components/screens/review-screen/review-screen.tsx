@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./review-screen.scss";
-import { Container, Accordion, Card, Image, Row, Col, Table, Button } from "react-bootstrap";
+import { Container, Accordion, Card, Image, Row, Col, Table, Button, Modal } from "react-bootstrap";
 
 // Import images
 import upArrow4Collaps from "../../../assets/upArrow4Collaps.svg";
@@ -13,6 +14,7 @@ import ContactInformationComponent from "../pharamaceutical-establishment/contac
 import LocationInformationComponent from "../pharamaceutical-establishment/location-inforamtion/location-information";
 import OwnerDetailComponent from "../pharamaceutical-establishment/owner-detail/owner-detail";
 import PartnerDetailsComponent from "../pharamaceutical-establishment/partner-details/partner-details";
+import AddPartnerComponent from "../pharamaceutical-establishment/partner-details/add-partner/add-partner";
 
 import file from "../../../assets/file.svg";
 import del from "../../../assets/delete.svg";
@@ -20,6 +22,7 @@ import addMore from "../../../assets/addMore.svg";
 import userPhoto from "../../../assets/userPhoto.svg";
 import collaps from "../../../assets/collaps.svg";
 import expand from "../../../assets/expand.svg";
+import leftArrow from "../../../assets/leftArrow.svg";
 
 export default function ReviewScreenComponent() {
   const [isEditEstablish, setIsEditEstablish] = useState(false);
@@ -27,6 +30,8 @@ export default function ReviewScreenComponent() {
   const [isEditLocation, setIsEditLocation] = useState(false);
   const [isEditOwner, setIsEditOwner] = useState(false);
   const [isEditPartner, setIsEditPartner] = useState(false);
+  const [isAddPartner, setIsAddPartner] = useState(false);
+  const { t } = useTranslation();
 
   // the logic here ... acordation take active key as string number
   // so i'll set all accordation with default 0 value which mean i our case
@@ -440,9 +445,33 @@ export default function ReviewScreenComponent() {
                           </tbody>
                         </Table>
                       </Row>
-                      <Row className="addMore">
-                        <Image src={addMore} /> Click here to add more Partner
+                      <Row className="addMore" onClick={() => setIsAddPartner(!isAddPartner)}>
+                        <Image src={addMore} />
+                        Click here to add more Partner
                       </Row>
+                      <Modal
+                        show={isAddPartner}
+                        onHide={() => setIsAddPartner(!isAddPartner)}
+                        backdrop="static"
+                        keyboard={false}
+                      >
+                        <Modal.Header closeButton>
+                          <Modal.Title>
+                            <div className="back">
+                              <Image
+                                src={leftArrow}
+                                onClick={() => setIsAddPartner(!isAddPartner)}
+                              />
+                            </div>
+                            <div className="title">
+                              <h1> {t("Forms.Add New Partner")}</h1>
+                            </div>
+                          </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                          <AddPartnerComponent />
+                        </Modal.Body>
+                      </Modal>
                     </Card.Body>
                   )}
                 </Accordion.Collapse>
@@ -510,7 +539,7 @@ export default function ReviewScreenComponent() {
 
           {/* Submit */}
           <div className="submit">
-            <Button>Submit</Button>
+            <Button onClick={() => history.push("/success")}>Submit</Button>
           </div>
           {/* Submit */}
         </Row>

@@ -3,7 +3,7 @@ import { Button, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react/require-default-props
-const SaveAndCancel = (props: { onCancel: any; customText?: any }) => {
+const SaveAndCancel = (props: { onCancel?: any; customText?: any }) => {
   const { t } = useTranslation();
   // this should be cancel callback
   return (
