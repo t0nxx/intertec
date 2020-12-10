@@ -62,7 +62,9 @@
   "Buttons": {
     "Next": "Next",
     "Go To Attachment": "Go To Attachment",
+    "Go To Preview": "Go To Preview",
     "Cancel": "Cancel",
-    "Save And Edit": "Save And Edit"
+    "Save And Edit": "Save And Edit",
+    "Add": "Add"
   }
 }

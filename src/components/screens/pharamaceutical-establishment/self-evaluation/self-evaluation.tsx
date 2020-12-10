@@ -13,6 +13,7 @@ import "../shared/shared.scss";
 
 // Import images
 import { ActionTypes } from "../../../../redux/reducers/helper";
+import NextButton from "../../../buttons/next-button/next-button";
 
 const SelfEvaluationComponent = () => {
   const { register, handleSubmit, errors, formState } = useForm({
@@ -121,9 +122,7 @@ const SelfEvaluationComponent = () => {
             </tbody>
           </Table>
           <Row className="justify-content-center">
-            <Button variant="success" size="lg" className="submittion-btn" type="submit">
-              <strong>{t("Buttons.Go To Attachment")}</strong>
-            </Button>
+            <NextButton customText={t("Buttons.Go To Attachment")} />
           </Row>
         </Form>
       </Card.Body>

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useTranslation } from "react-i18next";
 import { FormInputsInterface, formSchema } from "./add-partner-helper";
 import "./add-partner.scss";
 import "../../shared/shared.scss";
@@ -14,8 +15,10 @@ import email from "../../../../../assets/mail.svg";
 import phone from "../../../../../assets/phone.svg";
 import arrow from "../../../../../assets/arrow-white.svg";
 import { ActionTypes } from "../../../../../redux/reducers/helper";
+import SaveAndCancel from "../../../../buttons/save-and-cancel/save-and-cancel";
 
-const AddPartnerComponent = () => {
+const AddPartnerComponent = ({ onCancel }) => {
+  const { t } = useTranslation();
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -36,7 +39,7 @@ const AddPartnerComponent = () => {
      */
     <Container fluid>
       <Card>
-        <Card.Body>
+        <Card.Body className="model-card">
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
@@ -399,12 +402,9 @@ const AddPartnerComponent = () => {
                 </div>
               </Form.Group>
             </Form.Row>
-            <Row className="justify-content-center">
-              <Button variant="success" size="lg" className="submittion-btn" type="submit">
-                <strong>Next</strong>
-                <Image src={arrow} className="submittion-btn__img" />
-              </Button>
-            </Row>
+            <div className="model-fixed-footer">
+              <SaveAndCancel customText={t("Buttons.Add")} onCancel={() => onCancel} />
+            </div>
           </Form>
         </Card.Body>
       </Card>
