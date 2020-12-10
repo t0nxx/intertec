@@ -510,7 +510,7 @@ export default function ReviewScreenComponent() {
 
           {/* Submit */}
           <div className="submit">
-            <Button>Submit</Button>
+            <Button onClick={() => history.push("/success")}>Submit</Button>
           </div>
           {/* Submit */}
         </Row>
