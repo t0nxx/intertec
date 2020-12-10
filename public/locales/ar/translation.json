@@ -14,7 +14,19 @@
     "Application form" : "استمارة التقديم",
     "Complete progress" : "تقدم كامل",
     "Attachment" : "المرفق",
-    "Preview" :"معاينة"
+    "Preview" :"معاينة",
+    "Request information" :"طلب معلومات",
+    "request No" : "رقم الطلب :",
+    "Request Date" : "تاريخ الطلب",
+    "DDmmyy" : "يوم,شهر,سنه",
+    "Serviceno" : "رقم الخدمة",
+    "PMOno" :"رقم PMO",
+    "Application no" : "رقم التطبيق",
+    "Application Date" :"تاريخ التقديم",
+    "Application name" : "اسم التطبيق",
+    "Initial approval" : "موافقة مبدئية",
+    "Application status" : "حالة التطبيق",
+    "Request initiated" : "بدأ الطلب"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
@@ -71,6 +83,7 @@
     "Go To Preview": "اذهب الى المراجعه",
     "Cancel": "الغاء",
     "Save And Edit": "قم بالتحديث",
-    "Add" : "اضف"
+    "Add" : "اضف",
+    "Contact info" : "معلومات الاتصال"
   }
 }

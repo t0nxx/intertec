@@ -3,8 +3,13 @@ html[lang=ar]{
     h4{
       text-align: right;
     }
+    .saveOrCancel{
+      left: 13px;
+      right: auto;
+    }
     .breadcrumb{
-      // background: red;
+      padding-right: 0;
+      padding-left: 15px;
       .breadcrumb-item{
         + .breadcrumb-item{
           padding-left: 0;
