@@ -16,7 +16,7 @@ import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../buttons/next-button/next-button";
 
 const LocationInformationComponent = (props: IProps) => {
-  const { t } = useTranslation();
+  const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.locationInformationsReducer
   );
@@ -93,7 +93,7 @@ const LocationInformationComponent = (props: IProps) => {
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder=" Area"
+                placeholder={t("Forms.Area")}
                 name="area"
                 ref={register}
                 isValid={formState.touched.area && !errors.area}
@@ -110,7 +110,7 @@ const LocationInformationComponent = (props: IProps) => {
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder=" Street "
+                placeholder={t("Forms.Street")}
                 name="street"
                 ref={register}
                 isValid={formState.touched.street && !errors.street}
@@ -127,7 +127,7 @@ const LocationInformationComponent = (props: IProps) => {
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder=" Po Box"
+                placeholder={t("Forms.Po Box")}
                 name="poBox"
                 ref={register}
                 isValid={formState.touched.poBox && !errors.poBox}
@@ -141,7 +141,7 @@ const LocationInformationComponent = (props: IProps) => {
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder=" Building Name"
+                placeholder={t("Forms.Building Name")}
                 name="buildingName"
                 ref={register}
                 isValid={formState.touched.buildingName && !errors.buildingName}
@@ -158,7 +158,7 @@ const LocationInformationComponent = (props: IProps) => {
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder=" Building No"
+                placeholder={t("Forms.Building No")}
                 name="buildingNo"
                 ref={register}
                 isValid={formState.touched.buildingNo && !errors.buildingNo}
@@ -175,7 +175,7 @@ const LocationInformationComponent = (props: IProps) => {
               <div className="inputWithIcon">
                 <Form.Control
                   type="text"
-                  placeholder="  Google Map Url"
+                  placeholder={t("Forms.Google Map Url")}
                   name="mapUrl"
                   ref={register}
                   isValid={formState.touched.mapUrl && !errors.mapUrl}

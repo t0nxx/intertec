@@ -1,3 +1,17 @@
+html[lang=ar]{
+  .container-fluid{
+    .accordion{
+      .card.headCard{
+        .start {
+          left: 20px;
+          right: auto !important;
+        }
+      }
+    }
+
+  }
+}
+
 .container-fluid {
   .accordion {
     position: relative;

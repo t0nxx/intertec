@@ -15,4 +15,10 @@
   .modal-dialog .modal-content .modal-body {
     width: 90%;
   }
+
+  html[lang=ar] {
+    span.column{
+      right: 14% !important;
+    }
+  }
 }

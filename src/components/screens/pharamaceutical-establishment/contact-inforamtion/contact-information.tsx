@@ -17,7 +17,7 @@ import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import { IProps } from "../shared/components-props";
 
 const ContactInformationComponent = (props: IProps) => {
-  const { t } = useTranslation();
+  const { t }: { t: any } = useTranslation();
 
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.contactInformationsReducer
@@ -77,7 +77,7 @@ const ContactInformationComponent = (props: IProps) => {
                   <Form.Check
                     type="radio"
                     name="retrieveInformation"
-                    label="Yes"
+                    label={t("Forms.Yes")}
                     id="ri"
                     value="yes"
                     ref={register}
@@ -86,7 +86,7 @@ const ContactInformationComponent = (props: IProps) => {
                   <Form.Check
                     type="radio"
                     name="retrieveInformation"
-                    label="No"
+                    label={t("Forms.No")}
                     id="ri2"
                     value="no"
                     ref={register}
@@ -103,7 +103,7 @@ const ContactInformationComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder=" Contact Name"
+                  placeholder={t("Forms.Contact Name")}
                   name="contactName"
                   ref={register}
                   isValid={formState.touched.contactName && !errors.contactName}
@@ -118,7 +118,7 @@ const ContactInformationComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder=" Designation "
+                  placeholder={t("Forms.Designation")}
                   name="designation"
                   ref={register}
                   isValid={formState.touched.designation && !errors.designation}
@@ -136,7 +136,7 @@ const ContactInformationComponent = (props: IProps) => {
                 <div className="inputWithIcon">
                   <Form.Control
                     type="text"
-                    placeholder="Primary Email"
+                    placeholder={t("Forms.Primary Email")}
                     name="primaryEmail"
                     ref={register}
                     isValid={formState.touched.primaryEmail && !errors.primaryEmail}
@@ -154,7 +154,7 @@ const ContactInformationComponent = (props: IProps) => {
                 <div className="inputWithIcon">
                   <Form.Control
                     type="text"
-                    placeholder="  Alternative Email "
+                    placeholder={t("Forms.Alternative Email")}
                     name="alternativeEmail"
                     ref={register}
                     isValid={formState.touched.alternativeEmail && !errors.alternativeEmail}
@@ -212,7 +212,7 @@ const ContactInformationComponent = (props: IProps) => {
                 <Form.Label> {t("Forms.Fax")} </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Fax"
+                  placeholder={t("Forms.Fax")}
                   name="fax"
                   ref={register}
                   isValid={formState.touched.fax && !errors.fax}

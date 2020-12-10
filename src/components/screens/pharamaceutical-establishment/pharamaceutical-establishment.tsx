@@ -57,7 +57,7 @@ const PharamaceuticalEstablishmentScreen = () => {
                 <h3 className="text-success">{t("Titles.Establishment Information")} </h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
-                  Start
+                  {t("Buttons.Start")}
                 </Button>
               </Row>
             </Accordion.Toggle>

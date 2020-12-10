@@ -21,7 +21,7 @@ import NextButton from "../../../buttons/next-button/next-button";
 import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 
 const OwnerDetailComponent = (props: IProps) => {
-  const { t } = useTranslation();
+  const { t } : { t: any } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.ownerDetailsReducer
   );
@@ -67,7 +67,7 @@ const OwnerDetailComponent = (props: IProps) => {
      * this should be abstacted  . later i will bake a style for card only usin styled component
      */
     <Container fluid>
-      <Card>
+      <Card className="owner-details">
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
@@ -87,7 +87,7 @@ const OwnerDetailComponent = (props: IProps) => {
                         ref={register}
                         defaultChecked
                       />
-                      Yes
+                      {t("Forms.Yes")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -101,7 +101,7 @@ const OwnerDetailComponent = (props: IProps) => {
                         value="no"
                         ref={register}
                       />
-                      No
+                      {t("Forms.No")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -185,7 +185,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="First Name"
+                  placeholder={t("Forms.First name")}
                   name="fName"
                   ref={register}
                   isValid={formState.touched.fName && !errors.fName}
@@ -200,7 +200,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Middle name"
+                  placeholder={t("Forms.Middle name")}
                   name="mName"
                   ref={register}
                   isValid={formState.touched.mName && !errors.mName}
@@ -215,7 +215,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Last Name"
+                  placeholder={t("Forms.Last name")}
                   name="lName"
                   ref={register}
                   isValid={formState.touched.lName && !errors.lName}
@@ -232,7 +232,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="First Name (Arabic)"
+                  placeholder={t("Forms.First name (Arabic)")}
                   name="fNameAr"
                   ref={register}
                   isValid={formState.touched.fNameAr && !errors.fNameAr}
@@ -247,7 +247,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Middle name (Arabic)"
+                  placeholder={t("Forms.Middle name (Arabic)")}
                   name="mNameAr"
                   ref={register}
                   isValid={formState.touched.mNameAr && !errors.mNameAr}
@@ -262,7 +262,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Last Name (Arabic)"
+                  placeholder={t("Forms.Last Name (Arabic)")}
                   name="lNameAr"
                   ref={register}
                   isValid={formState.touched.lNameAr && !errors.lNameAr}
@@ -304,7 +304,7 @@ const OwnerDetailComponent = (props: IProps) => {
                         ref={register}
                         defaultChecked
                       />
-                      Yes
+                      {t("Forms.Yes")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -318,7 +318,7 @@ const OwnerDetailComponent = (props: IProps) => {
                         value="no"
                         ref={register}
                       />
-                      No
+                      {t("Forms.No")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -353,7 +353,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="No"
+                  placeholder={t("Forms.No")}
                   name="passportNo"
                   ref={register}
                   isValid={formState.touched.passportNo && !errors.passportNo}
@@ -369,7 +369,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Emirates ID"
+                  placeholder={t("Forms.Emirates ID")}
                   name="emiratesId"
                   ref={register}
                   isValid={formState.touched.emiratesId && !errors.emiratesId}
@@ -383,7 +383,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="No"
+                  placeholder={t("Forms.No")}
                   name="familyBookNo"
                   ref={register}
                   isValid={formState.touched.familyBookNo && !errors.familyBookNo}
@@ -403,7 +403,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 <div className="inputWithIcon">
                   <Form.Control
                     type="text"
-                    placeholder="Contact"
+                    placeholder={t("Forms.Contact Number")}
                     name="contactNo"
                     ref={register}
                     isValid={formState.touched.contactNo && !errors.contactNo}
@@ -422,7 +422,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 <div className="inputWithIcon">
                   <Form.Control
                     type="text"
-                    placeholder="Primary Email"
+                    placeholder={t("Forms.Primary Email")}
                     name="primaryEmail"
                     ref={register}
                     isValid={formState.touched.primaryEmail && !errors.primaryEmail}
