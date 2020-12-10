@@ -83,6 +83,10 @@
     "Cancel": "Cancel",
     "Save And Edit": "Save And Edit",
     "Add": "Add",
-    "Contact info" : "Contact info"
+    "Contact info" : "Contact info",
+    "Start" : "Start"
+  },
+  "Error" : {
+    "this is required" : "this is required"
   }
 }

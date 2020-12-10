@@ -19,8 +19,8 @@ export const establishmentInformationIntialState: FormInputsInterface = {
  * Validation Schema with  err msg en or ar..
  */
 export const formSchema = yup.object().shape({
-  establishmentName: yup.string().required("this is required "),
-  establishmentNameArabic: yup.string().required("this is required "),
-  establishmentType: yup.string().required("this is required "),
-  Category: yup.string().required("this is required "),
+  establishmentName: yup.string().required("Error.this is required"),
+  establishmentNameArabic: yup.string().required("Error.this is required"),
+  establishmentType: yup.string().required("Error.this is required"),
+  Category: yup.string().required("Error.this is required"),
 });

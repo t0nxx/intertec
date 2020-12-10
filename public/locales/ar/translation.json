@@ -84,6 +84,10 @@
     "Cancel": "الغاء",
     "Save And Edit": "قم بالتحديث",
     "Add" : "اضف",
-    "Contact info" : "معلومات الاتصال"
+    "Contact info" : "معلومات الاتصال",
+    "Start" : "أبدا"
+  },
+  "Error" : {
+    "this is required" : "هذا الحقل مطلوب"
   }
 }

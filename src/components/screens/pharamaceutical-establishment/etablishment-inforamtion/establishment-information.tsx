@@ -79,7 +79,10 @@ const EstablishmentInformationComponent = (props: IProps) => {
                 isValid={formState.touched.establishmentName && !errors.establishmentName}
                 isInvalid={errors.establishmentName}
               />
-              <span className="text-danger">{errors.establishmentName?.message}</span>
+              {
+                errors.establishmentName ? <span className="text-danger">{t(`${errors.establishmentName?.message}`)}</span> : null
+              }
+              
             </Form.Group>
 
             <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -96,7 +99,10 @@ const EstablishmentInformationComponent = (props: IProps) => {
                 }
                 isInvalid={errors.establishmentNameArabic}
               />
-              <span className="text-danger">{errors.establishmentNameArabic?.message}</span>
+              {
+                errors.establishmentNameArabic ? <span className="text-danger">{t(`${errors.establishmentNameArabic?.message}`)}</span> : null
+              }
+              
             </Form.Group>
           </Form.Row>
 
@@ -119,7 +125,9 @@ const EstablishmentInformationComponent = (props: IProps) => {
                 <option> Establishment Type 2</option>
                 <option> Establishment Type 3</option>
               </Form.Control>
-              <span className="text-danger">{errors.establishmentType?.message}</span>
+              {
+                errors.establishmentType ? <span className="text-danger">{t(`${errors.establishmentType?.message}`)}</span> : null
+              }
             </Form.Group>
 
             <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
@@ -140,7 +148,10 @@ const EstablishmentInformationComponent = (props: IProps) => {
                 <option>Category 2 </option>
                 <option>Category 3 </option>
               </Form.Control>
-              <span className="text-danger">{errors.Category?.message}</span>
+              {
+                errors.Category ? <span className="text-danger">{t(`${errors.Category?.message}`)}</span> : null
+              }
+              
             </Form.Group>
           </Form.Row>
           {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
