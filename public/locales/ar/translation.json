@@ -63,7 +63,9 @@
     "Next": "التالي",
     "Attachments": "المرفقات",
     "Go To Attachment": "اذهب الى المرفقات",
+    "Go To Preview": "اذهب الى المراجعه",
     "Cancel": "الغاء",
-    "Save And Edit": "قم بالتحديث"
+    "Save And Edit": "قم بالتحديث",
+    "Add" : "اضف"
   }
 }

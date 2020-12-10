@@ -21,9 +21,14 @@ import bell from "../../assets/bell.svg";
 
 export default function NavBarComponent() {
   const { t } = useTranslation();
+  const changeDirection = (lang: string) => {
+    document.getElementsByTagName("html")[0].setAttribute("lang", lang);
+    document.getElementsByTagName("body")[0].setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+  };
   const toggleLanguage = () => {
-    const currentLang = i18n.language;
-    i18n.changeLanguage(currentLang === "ar" ? "en" : "ar");
+    const nextLang = i18n.language === "ar" ? "en" : "ar";
+    i18n.changeLanguage(nextLang);
+    changeDirection(nextLang);
   };
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" bg="light">

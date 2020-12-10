@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./review-screen.scss";
 import { Container, Accordion, Card, Image, Row, Col, Table, Button } from "react-bootstrap";
 
@@ -37,9 +38,8 @@ export default function ReviewScreenComponent() {
   const collapseAll = () => setcollapseAllState("1");
   const expandAll = () => setcollapseAllState("0");
 
-  useEffect(() => {
-    console.log(collapseAllState);
-  }, [collapseAllState]);
+  const history = useHistory();
+  useEffect(() => {}, [collapseAllState]);
 
   return (
     <Container fluid>
@@ -472,7 +472,7 @@ export default function ReviewScreenComponent() {
                             </div>
                           </div>
                           <div className="rightData">
-                            <Image src={del} />
+                            <Image src={del} onClick={() => history.push("/attachment")} />
                           </div>
                         </div>
                         <div className="file">
@@ -484,7 +484,7 @@ export default function ReviewScreenComponent() {
                             </div>
                           </div>
                           <div className="rightData">
-                            <Image src={del} />
+                            <Image src={del} onClick={() => history.push("/attachment")} />
                           </div>
                         </div>
                         <div className="file">
@@ -496,7 +496,7 @@ export default function ReviewScreenComponent() {
                             </div>
                           </div>
                           <div className="rightData">
-                            <Image src={del} />
+                            <Image src={del} onClick={() => history.push("/attachment")} />
                           </div>
                         </div>
                       </div>

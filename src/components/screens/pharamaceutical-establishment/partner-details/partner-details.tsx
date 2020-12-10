@@ -129,9 +129,10 @@ const PartnerDetailsComponent = (props: IProps) => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <AddPartnerComponent />
+              <AddPartnerComponent onCancel={() => setShow(!show)} />
             </Modal.Body>
           </Modal>
+
           <Row className="tableParent">
             <Table>
               <thead>
