@@ -1,5 +1,26 @@
+html[lang=ar]{
+  .pageHeader{
+    h4{
+      text-align: right;
+    }
+    .breadcrumb{
+      // background: red;
+      .breadcrumb-item{
+        + .breadcrumb-item{
+          padding-left: 0;
+          padding-right: 0.5rem;
+          &::before{
+            padding-right: 0;
+            padding-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
 .pageHeader {
   box-shadow: 0 0px 5px -2px #000000;
+  background-color: #ffffff !important;
   min-height: 70px;
   .row {
     width: 100%;
@@ -29,5 +50,11 @@
   }
   .pageHeader .breadcrumb {
     justify-content: center;
+  }
+
+  html[lang=ar]{
+    .pageHeader h4 {
+      text-align: center;
+    }
   }
 }

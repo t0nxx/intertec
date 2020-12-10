@@ -9,7 +9,12 @@
     "Location Information": "Location Information",
     "Owner Details": "Owner Details",
     "Partner Details": "Partner Details",
-    "Self Evaluation": "Self Evaluation"
+    "Self Evaluation": "Self Evaluation",
+    "UserName" : "User Name",
+    "Application form" : "Application form",
+    "Complete progress" : "Complete progress",
+    "Attachment" :"Attachment",
+    "Preview" :"Preview"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",

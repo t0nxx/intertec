@@ -9,7 +9,12 @@
     "Location Information": "تفاصيل العنوان",
     "Owner Details": "تفاصيل المالك",
     "Partner Details": "تفاصيل الشريك",
-    "Self Evaluation": "نموذج التقييم "
+    "Self Evaluation": "نموذج التقييم ",
+    "UserName" : "إسم المستخدم",
+    "Application form" : "استمارة التقديم",
+    "Complete progress" : "تقدم كامل",
+    "Attachment" : "المرفق",
+    "Preview" :"معاينة"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",

@@ -1,7 +1,32 @@
-.navbar {
+html[lang=ar]{
+  .top-nav{
+    .user{
+      img{
+        margin-left: 0;
+        margin-right: 10px;
+      }
+      strong{
+        margin-left: 0;
+        margin-right: 20px;
+      }
+
+      &::after{
+        left: 0;
+        right: 12px;
+      }
+    }
+
+    .dropdown-menu{
+      .dropdown-item{
+        text-align: right;
+      }
+    }
+  }
+}
+
+.top-nav{
   background-color: #ffffff !important;
   box-shadow: 0 -2px 4px #000000;
-}
 .user,
 .notifications {
   position: relative;
@@ -143,3 +168,10 @@
     }
   }
 }
+.dropdown{
+  z-index: 9999;
+}
+}
+
+
+
