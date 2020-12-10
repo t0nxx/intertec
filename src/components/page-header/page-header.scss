@@ -1,6 +1,40 @@
+html[lang=ar]{
+  .pageHeader{
+    h4{
+      text-align: right;
+    }
+    .breadcrumb{
+      // background: red;
+      .breadcrumb-item{
+        + .breadcrumb-item{
+          padding-left: 0;
+          padding-right: 0.5rem;
+          &::before{
+            padding-right: 0;
+            padding-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
 .pageHeader {
   box-shadow: 0 0px 5px -2px #000000;
+  background-color: #ffffff !important;
   min-height: 70px;
+  position: relative;
+  .saveOrCancel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 13px;
+    img {
+      width: 50px;
+      cursor: pointer;
+    }
+  }
+  .exitSubmitionModal {
+  }
   .row {
     width: 100%;
   }
@@ -10,15 +44,20 @@
   .breadcrumb {
     background: inherit;
     padding: 0px;
+    padding-right: 15px;
     margin-bottom: 0;
     align-items: center;
     justify-content: flex-end;
   }
   nav {
-    a {
-      color: black;
-      text-decoration: none;
-      font-size: 15px;
+    li {
+      display: flex;
+      align-items: center;
+      a {
+        color: black;
+        text-decoration: none;
+        font-size: 13px;
+      }
     }
   }
 }
@@ -29,5 +68,11 @@
   }
   .pageHeader .breadcrumb {
     justify-content: center;
+  }
+
+  html[lang=ar]{
+    .pageHeader h4 {
+      text-align: center;
+    }
   }
 }
