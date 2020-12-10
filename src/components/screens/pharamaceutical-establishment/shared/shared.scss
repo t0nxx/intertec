@@ -234,56 +234,58 @@ body {
   }
 }
 
-.modal-dialog {
-  width: 100%;
-  max-width: none;
-  top: 0;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  .modal-content {
-    border-radius: 0 !important;
-    .modal-header {
-      border: 0;
-      border-radius: 0;
-      box-shadow: 0px -7px 23px #00000066;
-      padding: 0;
-      .modal-title {
-        display: block;
-        width: 90%;
-        .back {
-          height: 60px;
-          width: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-right: 1pt solid #e3e0e0;
-          cursor: pointer;
-          float: left;
-          img {
-            width: 17px;
+.fullScreenModal {
+  .modal-dialog {
+    width: 100%;
+    max-width: none;
+    top: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    .modal-content {
+      border-radius: 0 !important;
+      .modal-header {
+        border: 0;
+        border-radius: 0;
+        box-shadow: 0px -7px 23px #00000066;
+        padding: 0;
+        .modal-title {
+          display: block;
+          width: 90%;
+          .back {
+            height: 60px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-right: 1pt solid #e3e0e0;
+            cursor: pointer;
+            float: left;
+            img {
+              width: 17px;
+            }
+          }
+          .title {
+            padding: 0 25%;
+            h1 {
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 60px;
+              margin: 0;
+              text-transform: capitalize;
+            }
           }
         }
-        .title {
-          padding: 0 25%;
-          h1 {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 60px;
-            margin: 0;
-            text-transform: capitalize;
-          }
+        .close {
+          display: none;
         }
       }
-      .close {
-        display: none;
+      .modal-body {
+        padding-left: 0;
+        padding-right: 0;
+        width: 55%;
+        margin: 0 auto;
       }
-    }
-    .modal-body {
-      padding-left: 0;
-      padding-right: 0;
-      width: 55%;
-      margin: 0 auto;
     }
   }
 }

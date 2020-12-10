@@ -111,7 +111,13 @@ const PartnerDetailsComponent = (props: IProps) => {
               <p> {t("Forms.Add Partner")}</p>
             </div>
           </Row>
-          <Modal show={show} onHide={() => setShow(!show)} backdrop="static" keyboard={false}>
+          <Modal
+            show={show}
+            onHide={() => setShow(!show)}
+            backdrop="static"
+            keyboard={false}
+            className="fullScreenModal"
+          >
             <Modal.Header closeButton>
               <Modal.Title>
                 <div className="back">
