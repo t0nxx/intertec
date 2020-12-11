@@ -21,13 +21,13 @@ export default function SuccessScreenComponent() {
       <Modal
         show={show}
         onHide={handleClose}
-        backdrop="static"
+        backdrop="true"
         keyboard={false}
         className="happyRate"
       >
-        <div className="smClose">
+        {/* <div className="smClose">
           <Image src={smCloseButton} onClick={handleClose} />
-        </div>
+        </div> */}
 
         <div className="modalBody">
           <Modal.Body>

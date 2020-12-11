@@ -44,10 +44,10 @@ export default function PageHeaderComponent() {
         <div className="modalBody">
           <Modal.Body>
             <Button variant="secondary" size="lg">
-              Save As Draft
+              {t("Buttons.SaveAsDraft")}
             </Button>
             <Button variant="secondary" size="lg">
-              Discard
+              {t("Buttons.Discard")}
             </Button>
           </Modal.Body>
         </div>
