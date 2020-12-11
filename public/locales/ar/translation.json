@@ -27,7 +27,30 @@
     "Initial approval": "موافقة مبدئية",
     "Application status": "حالة التطبيق",
     "Request initiated": "بدأ الطلب",
-    "Click here to add more Partner" : "انقر هنا لإضافة المزيد من الشريك"
+    "Click here to add more Partner" : "انقر هنا لإضافة المزيد من الشريك",
+    "completed" : "تم إنجاز",
+    "Passport" : "جواز سفر",
+    "Family Book" : "دفتر العائلة",
+    "of" : "من",
+    "Processing please wait a moment" : "جاري المعالجة ، يرجى الانتظار قليلاً ..",
+    "Uploading Document(s)" : "تحميل المستند (المستندات)",
+    "Checking Document(s) for viruses" : "فحص المستند (المستندات) بحثًا عن الفيروسات",
+    "Drag and Drop Documents Here to Get Started" : "قم بسحب وإسقاط المستندات هنا للبدء!",
+    "Use the button below to upload your documents it supports" : "استخدم الزر أدناه لتحميل المستندات التي يدعمها",
+    "File size" : "حجم الملف",
+    "Collapse all" : "انهيار جميع",
+    "expand all" : "توسيع الكل",
+    "Establishment Name (English)" : "اسم المؤسسة (انجليزي)",
+    "Your application has been submitted successfully" : "تم تقديم طلبك بنجاح",
+    "Application number" : "رقم الطلب",
+    "File a complaint" : "تقديم شكوى",
+    "Fees Details" : "تفاصيل الرسوم",
+    "application Fees" : "رسوم التقديم",
+    "Tax" : "3% ضريبة ",
+    "Total" : "مجموع :",
+    "Amount" : "كمية",
+    "Select payment method" : "اختار طريقة الدفع",
+    "Accept terms and condition" : "اقبل الشروط والأحكام"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
@@ -75,7 +98,9 @@
     "Description": "الوصف",
     "Yes": "نعم",
     "No": "لا",
-    "N/A": "لا اجابة"
+    "N/A": "لا اجابة",
+    "Disclaimer" : "تنصل",
+    "Alternative Contact No" : "رقم جهة اتصال بديلة"
   },
   "Buttons": {
     "Next": "التالي",
@@ -88,10 +113,18 @@
     "Contact info": "معلومات الاتصال",
     "Start": "أبدا",
     "SaveAsDraft": "حفظ كمسودة",
-    "Discard": "تخطي"
+    "Discard": "تخطي",
+    "Browse for document on your computer" : "تصفح للوصول إلى مستند على جهاز الكمبيوتر الخاص بك",
+    "Submit" : "إرسال",
+    "Google Map URL" : "رابط خريطه جوجل",
+    "Go to workspace" : "اذهب إلى مساحة العمل",
+    "Process For Payment" : "عملية الدفع"
   },
   "Error": {
     "Requird": "هذا الحقل مطلوب",
     "MustBeValidEmail" : "يجب أن يكون بريدًا إلكترونيًا صالحًا"
+  },
+  "Texts" : {
+    "if you still have any inquiries" : " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين"
   }
 }

@@ -60,16 +60,16 @@ export default function ReviewScreenComponent() {
                 <div className="btnsContainer">
                   <Button className="collaps" onClick={collapseAll}>
                     <Image src={collaps} />
-                    Collaps all
+                    {t("Titles.Collapse all")}
                   </Button>
                   <Button className="expand" onClick={expandAll}>
                     <Image src={expand} />
-                    expand all
+                    {t("Titles.expand all")}
                   </Button>
                 </div>
               </Col>
               <Col className="submit">
-                <Button>Submit</Button>
+                <Button>{t("Buttons.Submit")}</Button>
               </Col>
             </Row>
           </div>
@@ -80,7 +80,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>Establishment Information</h1>
+                  <h1>{t("Titles.Establishment Information")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
@@ -98,21 +98,21 @@ export default function ReviewScreenComponent() {
                       />
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Establishment Name (English)</p>
+                          <p> {t("Titles.Establishment Name (English)")}</p>
                           <span>Establishment Name (English)</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Establishment Name (Arabic)</p>
+                          <p> {t("Forms.Establishment Name (Arabic)")}</p>
                           <span>Establishment Name (Arabic)</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Establishment Type</p>
+                          <p> {t("Forms.Establishment Type")}</p>
                           <span>Establishment Type</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Category</p>
+                          <p> {t("Forms.Category")}</p>
                           <span>Category</span>
                         </Col>
                       </Row>
@@ -129,7 +129,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>Contact information</h1>
+                  <h1>{t("Forms.Contact information")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
@@ -147,37 +147,37 @@ export default function ReviewScreenComponent() {
                       />
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Contact Name</p>
+                          <p>{t("Forms.Contact Name")}</p>
                           <span>Contact Name</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Designation</p>
+                          <p> {t("Forms.Designation")}</p>
                           <span>Designation</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Primary Email</p>
+                          <p> {t("Forms.Primary Email")}</p>
                           <span>A@a.com</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Alternative email</p>
+                          <p> {t("Forms.Alternative Email")}</p>
                           <span>A@a.com</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Contact Number</p>
+                          <p> {t("Forms.Contact Number")}</p>
                           <span>+971 000 000</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Alternate Contact No</p>
+                          <p> {t("Forms.Alternative Contact No")}</p>
                           <span>+971 000 000</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
-                          <p>Fax</p>
+                          <p>{t("Forms.Fax")}</p>
                           <span>Fax</span>
                         </Col>
                       </Row>
@@ -194,7 +194,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>Location information</h1>
+                  <h1>{t("Titles.Location Information")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
@@ -212,41 +212,41 @@ export default function ReviewScreenComponent() {
                       />
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Emirate</p>
+                          <p>{t("Forms.Emirate")}</p>
                           <span>Emirate</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Area</p>
+                          <p>{t("Forms.Area")}</p>
                           <span>Area</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Street</p>
+                          <p>{t("Forms.Street")}</p>
                           <span>Street</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Building Name</p>
+                          <p>{t("Forms.Building Name")}</p>
                           <span>PO Box</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>PO Box</p>
+                          <p>{t("Forms.Po Box")}</p>
                           <span>PO Box</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Building NO</p>
+                          <p>{t("Forms.Building No")}</p>
                           <span>Building NO</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col>
-                          <p>Google Map URL</p>
+                          <p>{t("Buttons.Google Map URL")}</p>
                           <a href="">
                             <span className="mapBtn">
                               <Image src={locationWhite} />
-                              Google Map URL
+                              {t("Buttons.Google Map URL")}
                             </span>
                           </a>
                         </Col>
@@ -264,7 +264,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>owner Details</h1>
+                  <h1>{t("Titles.Owner Details")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
@@ -285,63 +285,63 @@ export default function ReviewScreenComponent() {
                           <Image src={userPhoto} />
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Gender</p>
+                          <p>{t("Forms.Gender")}</p>
                           <span>Male</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>UAE Citzen</p>
+                          <p>{t("Forms.UAE Citzen")}</p>
                           <span>Yes</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>First name</p>
+                          <p>{t("Forms.First name")}</p>
                           <span>First name</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>middle name</p>
+                          <p>{t("Forms.Middle name")}</p>
                           <span>middle name</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Last Name</p>
+                          <p>{t("Forms.Last name")}</p>
                           <span>Last Name</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>First name (arabic)</p>
+                          <p>{t("Forms.First name (Arabic)")}</p>
                           <span>First name (arabic)</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>middle name (arabic)</p>
+                          <p>{t("Forms.Middle name (Arabic)")}</p>
                           <span>middle name (arabic)</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Last Name (arabic)</p>
+                          <p>{t("Forms.Last Name (Arabic)")}</p>
                           <span>Last Name (arabic)</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Nationality</p>
+                          <p>{t("Forms.Nationality")}</p>
                           <span>Nationality</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Passport No</p>
+                          <p>{t("Forms.Passport No")}</p>
                           <span>Passport No</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Emirates ID</p>
+                          <p>{t("Forms.Emirates ID")}</p>
                           <span>Emirates ID</span>
                         </Col>
                       </Row>
                       <Row>
                         <Col md="6" sm="12">
-                          <p>Family Book No</p>
+                          <p>{t("Forms.Family Book No")}</p>
                           <span>Family Book No</span>
                         </Col>
                         <Col md="6" sm="12">
-                          <p>Share Percentage</p>
+                          <p>{t("Forms.Share Percentage")}</p>
                           <span>Share Percentage</span>
                         </Col>
                         <Col> </Col>
@@ -351,11 +351,11 @@ export default function ReviewScreenComponent() {
                           <Col className="grayBg">
                             <Row>
                               <Col md="6" sm="12">
-                                <p>Contact Number</p>
+                                <p>{t("Forms.Contact Number")}</p>
                                 <span>+971 000 000</span>
                               </Col>
                               <Col md="6" sm="12">
-                                <p>Primary Email</p>
+                                <p>{t("Forms.Primary Email")}</p>
                                 <span>Email@mail.com</span>
                               </Col>
                             </Row>
@@ -375,7 +375,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>Partner Details</h1>
+                  <h1> {t("Titles.Partner Details")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
@@ -496,7 +496,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>Attachment</h1>
+                  <h1> {t("Titles.Attachment")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
@@ -550,7 +550,7 @@ export default function ReviewScreenComponent() {
 
           {/* Submit */}
           <div className="submit">
-            <Button onClick={() => history.push("/success")}>Submit</Button>
+            <Button onClick={() => history.push("/success")}>{t("Buttons.Submit")}</Button>
           </div>
           {/* Submit */}
         </Row>
