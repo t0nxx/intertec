@@ -8,6 +8,18 @@
   background-color: black;
 }
 
+html[lang=ar]{
+  body{
+    font-family: DroidKufi-Regular;
+  }
+}
+html[lang=en]{
+  body{
+    font-family: HelveticaNeueMedium;
+  }
+
+}
+
 @font-face {
   font-family: DroidKufi-Regular;
 
@@ -18,4 +30,33 @@
   font-family: DroidKufi-Bold;
 
   src: url(fonts/DroidKufi/DroidKufi-Bold.ttf);
+}
+
+@font-face {
+  font-family: HelveticaNeuBold;
+
+  src: url(fonts/HelveticaNeue/HelveticaNeuBold.ttf);
+}
+
+@font-face {
+  font-family: HelveticaNeueMedium;
+
+  src: url(fonts/HelveticaNeue/HelveticaNeueMedium.ttf);
+}
+
+@font-face {
+  font-family: HelveticaNeueThin;
+
+  src: url(fonts/HelveticaNeue/HelveticaNeueThin.ttf);
+}
+
+@font-face {
+  font-family: HelveticaNeueLight;
+
+  src: url(fonts/HelveticaNeue/HelveticaNeueLight.ttf);
+}
+@font-face {
+  font-family: HelveticaNeueLight;
+
+  src: url(fonts/HelveticaNeue/HelveticaNeueLight.ttf);
 }
