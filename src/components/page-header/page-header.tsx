@@ -7,6 +7,7 @@ import { Image, Breadcrumb, Col, Container, Row, Button, Modal, Navbar } from "r
 
 // Import images
 import close from "../../assets/close.svg";
+import smCloseButton from "../../assets/smallCloseButton.svg";
 
 export default function PageHeaderComponent() {
   const { t } = useTranslation();
@@ -36,18 +37,20 @@ export default function PageHeaderComponent() {
         keyboard={false}
         className="exitSubmitionModal"
       >
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          I will not close if you click outside me. Don't even try to press escape key.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary">Understood</Button>
-        </Modal.Footer>
+        <div className="smClose">
+          <Image src={smCloseButton} onClick={handleClose} />
+        </div>
+
+        <div className="modalBody">
+          <Modal.Body>
+            <Button variant="secondary" size="lg">
+              Save As Draft
+            </Button>
+            <Button variant="secondary" size="lg">
+              Discard
+            </Button>
+          </Modal.Body>
+        </div>
       </Modal>
 
       <Container fluid>
