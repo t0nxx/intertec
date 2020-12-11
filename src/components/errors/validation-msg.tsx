@@ -1,3 +1,4 @@
-export interface IValidationMsg {
-  Required: "Requird";
+export enum ValidationMsgEnum {
+  Required = "Error.Requird",
+  MustBeValidEmail = "Error.MustBeValidEmail"
 }

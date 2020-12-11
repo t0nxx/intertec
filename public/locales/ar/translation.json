@@ -88,6 +88,6 @@
     "Start" : "أبدا"
   },
   "Error" : {
-    "this is required" : "هذا الحقل مطلوب"
+    "Requird" : "هذا الحقل مطلوب"
   }
 }

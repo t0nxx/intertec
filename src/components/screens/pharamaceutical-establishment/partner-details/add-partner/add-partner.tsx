@@ -4,6 +4,7 @@ import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 import { FormInputsInterface, formSchema } from "./add-partner-helper";
 import "./add-partner.scss";
 import "../../shared/shared.scss";
@@ -18,8 +19,9 @@ import { ActionTypes } from "../../../../../redux/reducers/helper";
 import SaveAndCancel from "../../../../buttons/save-and-cancel/save-and-cancel";
 import AttachmentComponent from "../../../../attachment/attachment";
 
-const AddPartnerComponent = () => {
+const AddPartnerComponent = (props: { closeModal: any }) => {
   const { t } = useTranslation();
+  const history = useHistory();
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -33,6 +35,10 @@ const AddPartnerComponent = () => {
         payload: data,
       });
     }
+  };
+  const closeModalHandler = () => {
+    // pass this event to parent to close the modal
+    props.closeModal();
   };
   return (
     /**
@@ -408,7 +414,7 @@ const AddPartnerComponent = () => {
             </Form.Row>
             <AttachmentComponent />
             <div className="model-fixed-footer">
-              <SaveAndCancel customText={t("Buttons.Add")} />
+              <SaveAndCancel customText={t("Buttons.Add")} onCancel={closeModalHandler} />
             </div>
           </Form>
         </Card.Body>

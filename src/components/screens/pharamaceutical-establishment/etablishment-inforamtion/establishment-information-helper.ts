@@ -1,4 +1,5 @@
 import * as yup from "yup";
+import { ValidationMsgEnum } from "../../../errors/validation-msg";
 /**
  * Form interface for type def
  */
@@ -19,8 +20,8 @@ export const establishmentInformationIntialState: FormInputsInterface = {
  * Validation Schema with  err msg en or ar..
  */
 export const formSchema = yup.object().shape({
-  establishmentName: yup.string().required("Error.this is required"),
-  establishmentNameArabic: yup.string().required("Error.this is required"),
-  establishmentType: yup.string().required("Error.this is required"),
-  Category: yup.string().required("Error.this is required"),
+  establishmentName: yup.string().required(ValidationMsgEnum.Required),
+  establishmentNameArabic: yup.string().required(ValidationMsgEnum.Required),
+  establishmentType: yup.string().required(ValidationMsgEnum.Required),
+  Category: yup.string().required(ValidationMsgEnum.Required),
 });
