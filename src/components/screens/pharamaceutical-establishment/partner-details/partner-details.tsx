@@ -16,7 +16,6 @@ import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../buttons/next-button/next-button";
 import addMore from "../../../../assets/addMore.svg";
 
-
 const PartnerDetailsComponent = (props: IProps) => {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
@@ -57,48 +56,48 @@ const PartnerDetailsComponent = (props: IProps) => {
   const tableData = [
     {
       index: 0,
-      nameEn: "Mohamed Elzayat",
-      nameAr: "محمد الزيات",
-      emirateId: "12313-1231-456",
-      passport: "#number",
+      fName: "Mohamed Elzayat",
+      fNameAr: "محمد الزيات",
+      emiratesId: "12313-1231-456",
+      passportNo: "#number",
       nationality: "Nationality",
     },
     {
       index: 1,
-      nameEn: "Mohamed Elzayat",
-      nameAr: "محمد الزيات",
-      emirateId: "12313-1231-456",
-      passport: "#number",
+      fName: "Mohamed Elzayat",
+      fNameAr: "محمد الزيات",
+      emiratesId: "12313-1231-456",
+      passportNo: "#number",
       nationality: "Nationality",
     },
     {
       index: 2,
-      nameEn: "Mohamed Elzayat",
-      nameAr: "محمد الزيات",
-      emirateId: "12313-1231-456",
-      passport: "#number",
+      fName: "Mohamed Elzayat",
+      fNameAr: "محمد الزيات",
+      emiratesId: "12313-1231-456",
+      passportNo: "#number",
       nationality: "Nationality",
     },
     {
       index: 3,
-      nameEn: "Mohamed Elzayat",
-      nameAr: "محمد الزيات",
-      emirateId: "12313-1231-456",
-      passport: "#number",
+      fName: "Mohamed Elzayat",
+      fNameAr: "محمد الزيات",
+      emiratesId: "12313-1231-456",
+      passportNo: "#number",
       nationality: "Nationality",
     },
     {
       index: 4,
-      nameEn: "Mohamed Elzayat",
-      nameAr: "محمد الزيات",
-      emirateId: "12313-1231-456",
-      passport: "#number",
+      fName: "Mohamed Elzayat",
+      fNameAr: "محمد الزيات",
+      emiratesId: "12313-1231-456",
+      passportNo: "#number",
       nationality: "Nationality",
     },
   ];
   const [tableD, setTable] = useState(tableData);
   const removeFromTable = (index) => {
-    const afterRemove = tableData.filter((e) => e.index !== index);
+    const afterRemove = tableD.filter((e) => e.index !== index);
     setTable([...afterRemove]);
   };
 
@@ -153,10 +152,10 @@ const PartnerDetailsComponent = (props: IProps) => {
               <tbody>
                 {tableD.map((row) => (
                   <tr key={row.index}>
-                    <td>{row.nameEn}</td>
-                    <td> {row.nameAr}</td>
-                    <td> {row.nameAr}</td>
-                    <td> {row.nameAr}</td>
+                    <td>{row.fName}</td>
+                    <td> {row.fNameAr}</td>
+                    <td> {row.emiratesId}</td>
+                    <td> {row.passportNo}</td>
                     <td> {row.nationality}</td>
                     <td>
                       <Image src={pen} />
