@@ -1,4 +1,10 @@
-.card-header {
-  background-color: #fff;
-  border-bottom: none;
+.estaplishmentInformation {
+  .card-header {
+    background-color: #fff;
+    border-bottom: none;
+  }
+  .nextBtn::before,
+  .nextBtn::after {
+    top: 20px;
+  }
 }

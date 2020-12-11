@@ -9,13 +9,13 @@ import AddPartnerComponent from "./add-partner/add-partner";
 // Import images
 import add from "../../../../assets/add.svg";
 import leftArrow from "../../../../assets/leftArrow.svg";
-import pen from "../../../../assets/editPen.svg";
 import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../buttons/next-button/next-button";
 import addMore from "../../../../assets/addMore.svg";
-
+import edit from "../../../../assets/enditPenInCircle.png";
+import remove from "../../../../assets/deleteIconInCircle.png";
 
 const PartnerDetailsComponent = (props: IProps) => {
   const { t } = useTranslation();
@@ -159,10 +159,10 @@ const PartnerDetailsComponent = (props: IProps) => {
                     <td> {row.nameAr}</td>
                     <td> {row.nationality}</td>
                     <td>
-                      <Image src={pen} />
+                      <Image src={edit} />
                     </td>
                     <td>
-                      <Image src={pen} onClick={(e) => removeFromTable(row.index)} />
+                      <Image src={remove} onClick={(e) => removeFromTable(row.index)} />
                     </td>
                   </tr>
                 ))}
