@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation, BrowserRouter as Router } from "react-router-dom";
 import ReviewScreenComponent from "./components/screens/review-screen/review-screen";
 import AttachmentScreenComponent from "./components/screens/attachment-screen/attachment-screen";
 import PharamaceuticalEstablishmentScreen from "./components/screens/pharamaceutical-establishment/pharamaceutical-establishment";
