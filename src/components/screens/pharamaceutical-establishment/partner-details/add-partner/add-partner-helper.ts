@@ -24,7 +24,7 @@ export interface FormInputsInterface {
   primaryEmail: string;
 }
 
-export const ownerDetailInitialState: FormInputsInterface = {
+export const partnerDetailInitialState: FormInputsInterface = {
   getInfoFromProfile: "",
   tite: "",
   gender: "",
