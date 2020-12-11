@@ -80,6 +80,13 @@ html[lang="ar"] {
   }
 }
 .exitSubmitionModal {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  display: flex !important;
+  align-items: center;
   .smClose {
     position: absolute;
     right: -32px;
@@ -90,11 +97,9 @@ html[lang="ar"] {
   }
   .modal-content {
     border-radius: 15px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
+
     width: fit-content;
-    transform: translate(-50%, -50%);
+
     .modal-header {
       border-bottom: 0px !important;
     }
