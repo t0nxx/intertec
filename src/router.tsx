@@ -17,7 +17,7 @@ function Routes() {
       <Route path="/success" component={SuccessScreenComponent} />
       <Route path="/payment" component={PaymentScreenComponent} />
       <Route path="/add-partner" component={AddPartnerComponent} />
-      <Route path="/sr2/home" component={RelocationLicenseScreen} />
+      <Route path="/sr3/home" component={RelocationLicenseScreen} />
     </Switch>
   );
 }
