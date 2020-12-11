@@ -26,7 +26,8 @@
     "Application name": "اسم التطبيق",
     "Initial approval": "موافقة مبدئية",
     "Application status": "حالة التطبيق",
-    "Request initiated": "بدأ الطلب"
+    "Request initiated": "بدأ الطلب",
+    "Click here to add more Partner" : "انقر هنا لإضافة المزيد من الشريك"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
@@ -90,6 +91,7 @@
     "Discard": "تخطي"
   },
   "Error": {
-    "Requird": "هذا الحقل مطلوب"
+    "Requird": "هذا الحقل مطلوب",
+    "MustBeValidEmail" : "يجب أن يكون بريدًا إلكترونيًا صالحًا"
   }
 }
