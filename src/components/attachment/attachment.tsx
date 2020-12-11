@@ -5,6 +5,7 @@ import { Image, Button, Carousel } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import DragAreaComponent from "./drag-area/drag-area";
 import UploadOptionsComponent from "./upload-options/upload-options";
+import UploadingProcessing from "./uploading-processing/uploading-processing";
 
 // Import images
 import file from "../../assets/file.svg";
@@ -14,7 +15,7 @@ import stepChecked from "../../assets/stepChecked.svg";
 import leftArrowBtn from "../../assets/leftArrowBtn.svg";
 import rightArrowBtn from "../../assets/rightArrowBtn.svg";
 import semiChecked from "../../assets/semiChecked.svg";
-import UploadingProcessing from "./uploading-processing/uploading-processing";
+import warning from "../../assets/warning.svg";
 
 export default function AttachmentComponent() {
   const { t } = useTranslation();
@@ -252,6 +253,14 @@ export default function AttachmentComponent() {
         </Carousel.Item>
       </Carousel>
       {/* Eng slider  */}
+      <div className="warning">
+        <Image src={warning} />
+        <p>
+          Your staff criteria needs to be fulfilled to continue submitting the application. <br />
+          Kindly refer to email sent for staff criteria or view the online service card
+        </p>
+        <Button>Close</Button>
+      </div>
     </div>
   );
 }

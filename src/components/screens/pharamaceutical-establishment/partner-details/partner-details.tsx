@@ -116,6 +116,7 @@ const PartnerDetailsComponent = (props: IProps) => {
             </div>
           </Row>
           <Modal
+            scrollable={true}
             show={show}
             onHide={() => setShow(!show)}
             backdrop="static"
