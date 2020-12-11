@@ -14,7 +14,7 @@ import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../buttons/next-button/next-button";
 import addMore from "../../../../assets/addMore.svg";
-import edit from "../../../../assets/enditPenInCircle.png";
+import edit from "../../../../assets/editPen.svg";
 import remove from "../../../../assets/deleteIconInCircle.png";
 
 const PartnerDetailsComponent = (props: IProps) => {
@@ -163,7 +163,7 @@ const PartnerDetailsComponent = (props: IProps) => {
                       <Image src={edit} />
                     </td>
                     <td>
-                      <Image src={remove} onClick={(e) => removeFromTable(row.index)} />
+                      <Image src={edit} onClick={(e) => removeFromTable(row.index)} />
                     </td>
                   </tr>
                 ))}
