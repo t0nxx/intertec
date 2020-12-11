@@ -26,7 +26,8 @@
     "Application name": "Application name",
     "Initial approval": "Initial approval",
     "Application status": "Application status",
-    "Request initiated": "Request initiated"
+    "Request initiated": "Request initiated",
+    "Click here to add more Partner" : "Click here to add more Partner"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -89,6 +90,7 @@
     "Discard": "Discard"
   },
   "Error": {
-    "Requird": "this is required"
+    "Requird": "This is required",
+    "MustBeValidEmail" : "Must be valid email"
   }
 }

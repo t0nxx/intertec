@@ -109,7 +109,9 @@ const ContactInformationComponent = (props: IProps) => {
                   isValid={formState.touched.contactName && !errors.contactName}
                   isInvalid={errors.contactName}
                 />
-                <span className="text-danger">{errors.contactName?.message}</span>
+                {
+                  errors.contactName ? <span className="text-danger">{t(`${errors.contactName?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -124,7 +126,9 @@ const ContactInformationComponent = (props: IProps) => {
                   isValid={formState.touched.designation && !errors.designation}
                   isInvalid={errors.designation}
                 />
-                <span className="text-danger">{errors.designation?.message}</span>
+                {
+                  errors.designation ? <span className="text-danger">{t(`${errors.designation?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
 
@@ -144,7 +148,9 @@ const ContactInformationComponent = (props: IProps) => {
                   />
                   <Image src={email} />
                 </div>
-                <span className="text-danger">{errors.primaryEmail?.message}</span>
+                {
+                  errors.primaryEmail ? <span className="text-danger">{t(`${errors.primaryEmail?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -162,7 +168,9 @@ const ContactInformationComponent = (props: IProps) => {
                   />
                   <Image src={email} />
                 </div>
-                <span className="text-danger">{errors.alternativeEmail?.message}</span>
+                {
+                  errors.alternativeEmail ? <span className="text-danger">{t(`${errors.alternativeEmail?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
 
@@ -182,7 +190,9 @@ const ContactInformationComponent = (props: IProps) => {
                   />
                   <Image src={phone} />
                 </div>
-                <span className="text-danger">{errors.contactNumber?.message}</span>
+                {
+                  errors.contactNumber ? <span className="text-danger">{t(`${errors.contactNumber?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -203,7 +213,9 @@ const ContactInformationComponent = (props: IProps) => {
                   />
                   <Image src={phone} />
                 </div>
-                <span className="text-danger">{errors.alternativeContactNumber?.message}</span>
+                {
+                  errors.alternativeContactNumber ? <span className="text-danger">{t(`${errors.alternativeContactNumber?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
 
@@ -218,7 +230,9 @@ const ContactInformationComponent = (props: IProps) => {
                   isValid={formState.touched.fax && !errors.fax}
                   isInvalid={errors.fax}
                 />
-                <span className="text-danger">{errors.fax?.message}</span>
+                {
+                  errors.fax ? <span className="text-danger">{t(`${errors.fax?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
             {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
