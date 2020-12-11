@@ -20,7 +20,7 @@ import SaveAndCancel from "../../../../buttons/save-and-cancel/save-and-cancel";
 import AttachmentComponent from "../../../../attachment/attachment";
 
 const AddPartnerComponent = (props: { closeModal: any }) => {
-  const { t } = useTranslation();
+  const { t }: { t: any } = useTranslation();
   const history = useHistory();
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
@@ -45,12 +45,12 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
      * this should be abstacted  . later i will bake a style for card only usin styled component
      */
     <Container fluid>
-      <Card>
+      <Card className="add-partner">
         <Card.Body className="model-card">
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Retrieve information contact from your profile</Form.Label>
+                <Form.Label>{t("Titles.Retrieve information contact from your profile")}</Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
                     <label htmlFor="getContactData">
@@ -62,7 +62,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                         value="yes"
                         ref={register}
                       />
-                      Yes
+                      {t("Forms.Yes")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -77,7 +77,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                         ref={register}
                         defaultChecked
                       />
-                      No
+                      {t("Forms.No")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -89,14 +89,14 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                 <Form.Group controlId="formGridEmail" className="uploadPhoto">
                   <Image src={userPhoto} />
                   <Button variant="success">
-                    <Image src={upload} /> Upload
+                    <Image src={upload} /> {t("Forms.Upload")}
                   </Button>
                 </Form.Group>
               </Col>
               <Col md={4}>
                 <Form.Group controlId="formGridEmail">
                   <Form.Label>
-                    Title <span className="required">*</span>
+                    {t("Forms.Title")} <span className="required">*</span>
                   </Form.Label>
                   <Form.Control
                     as="select"
@@ -106,7 +106,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                     isInvalid={errors.tite}
                   >
                     <option disabled selected value="">
-                      Title
+                      {t("Forms.Title")}
                     </option>
                     <option>...</option>
                     <option>...</option>
@@ -117,7 +117,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
               <Col md={4}>
                 <Form.Group controlId="formGridEmail">
                   <Form.Label>
-                    Gender <span className="required">*</span>
+                    {t("Forms.Gender")} <span className="required">*</span>
                   </Form.Label>
                   <div className="radioButtons">
                     <div className="form-check">
@@ -130,7 +130,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                           value="male"
                           ref={register}
                         />
-                        Male
+                        {t("Forms.Male")}
                         <i className="checkMark"> </i>
                       </label>
                     </div>
@@ -145,7 +145,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                           ref={register}
                           defaultChecked
                         />
-                        Female
+                        {t("Forms.Female")}
                         <i className="checkMark"> </i>
                       </label>
                     </div>
@@ -157,101 +157,113 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
-                  First name <span className="required">*</span>
+                  {t("Forms.First name")}<span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="First Name"
+                  placeholder={t("Forms.First name")}
                   name="fName"
                   ref={register}
                   isValid={formState.touched.fName && !errors.fName}
                   isInvalid={errors.fName}
                 />
-                <span className="text-danger">{errors.fName?.message}</span>
+                {
+                  errors.fName ? <span className="text-danger">{t(`${errors.fName?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Middle name <span className="required">*</span>
+                  {t("Forms.Middle name")}<span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Middle name"
+                  placeholder={t("Forms.Middle name")}
                   name="mName"
                   ref={register}
                   isValid={formState.touched.mName && !errors.mName}
                   isInvalid={errors.mName}
                 />
-                <span className="text-danger">{errors.mName?.message}</span>
+                {
+                  errors.mName ? <span className="text-danger">{t(`${errors.mName?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Last Name <span className="required">*</span>
+                  {t("Forms.Last name")}<span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Last Name"
+                  placeholder={t("Forms.Last name")}
                   name="lName"
                   ref={register}
                   isValid={formState.touched.lName && !errors.lName}
                   isInvalid={errors.lName}
                 />
-                <span className="text-danger">{errors.lName?.message}</span>
+                {
+                  errors.lName ? <span className="text-danger">{t(`${errors.lName?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
 
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
-                  First name (Arabic) <span className="required">*</span>
+                  {t("Forms.First name (Arabic)")}<span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="First Name (Arabic)"
+                  placeholder={t("Forms.First name (Arabic)")}
                   name="fNameAr"
                   ref={register}
                   isValid={formState.touched.fNameAr && !errors.fNameAr}
                   isInvalid={errors.fNameAr}
                 />
-                <span className="text-danger">{errors.fNameAr?.message}</span>
+                {
+                  errors.fNameAr ? <span className="text-danger">{t(`${errors.fNameAr?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Middle name (Arabic) <span className="required">*</span>
+                  {t("Forms.Middle name (Arabic)")}<span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Middle name (Arabic)"
+                  placeholder={t("Forms.Middle name (Arabic)")}
                   name="mNameAr"
                   ref={register}
                   isValid={formState.touched.mNameAr && !errors.mNameAr}
                   isInvalid={errors.mNameAr}
                 />
-                <span className="text-danger">{errors.mNameAr?.message}</span>
+                {
+                  errors.mNameAr ? <span className="text-danger">{t(`${errors.mNameAr?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Last Name (Arabic) <span className="required">*</span>
+                  {t("Forms.Last Name (Arabic)")}<span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Last Name (Arabic)"
+                  placeholder={t("Forms.Last Name (Arabic)")}
                   name="lNameAr"
                   ref={register}
                   isValid={formState.touched.lNameAr && !errors.lNameAr}
                   isInvalid={errors.lNameAr}
                 />
-                <span className="text-danger">{errors.lNameAr?.message}</span>
+                {
+                  errors.lNameAr ? <span className="text-danger">{t(`${errors.lNameAr?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
 
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Share Percentage <span className="required">*</span>
+                  {t("Forms.Share Percentage")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="number"
@@ -262,11 +274,13 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                   isValid={formState.touched.sharePercentage && !errors.sharePercentage}
                   isInvalid={errors.sharePercentage}
                 />
-                <span className="text-danger">{errors.sharePercentage?.message}</span>
+                {
+                  errors.sharePercentage ? <span className="text-danger">{t(`${errors.sharePercentage?.message}`)}</span> : null
+                }
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>
-                  UAE Citzen <span className="required">*</span>
+                  {t("Forms.UAE Citzen")} <span className="required">*</span>
                 </Form.Label>
                 <div className="radioButtons">
                   <div className="form-check">
@@ -280,7 +294,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                         ref={register}
                         defaultChecked
                       />
-                      Yes
+                      {t("Forms.Yes")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -294,7 +308,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                         value="no"
                         ref={register}
                       />
-                      No
+                      {t("Forms.No")}
                       <i className="checkMark"> </i>
                     </label>
                   </div>
@@ -305,7 +319,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
                 <Form.Label>
-                  Nationality <span className="required">*</span>
+                  {t("Forms.Nationality")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   as="select"
@@ -315,7 +329,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
                   isInvalid={errors.nationality}
                 >
                   <option disabled selected value="">
-                    Nationality
+                    {t("Forms.Nationality")}
                   </option>
                   <option>...</option>
                   <option>...</option>
@@ -325,86 +339,95 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Passport No <span className="required">*</span>
+                  {t("Forms.Passport No")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="No"
+                  placeholder={t("Forms.No")}
                   name="passportNo"
                   ref={register}
                   isValid={formState.touched.passportNo && !errors.passportNo}
                   isInvalid={errors.passportNo}
                 />
-                <span className="text-danger">{errors.passportNo?.message}</span>
+                {
+                  errors.passportNo ? <span className="text-danger">{t(`${errors.passportNo?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Emirates ID <span className="required">*</span>
+                  {t("Forms.Emirates ID")}<span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="Emirates ID"
+                  placeholder={t("Forms.Emirates ID")}
                   name="emiratesId"
                   ref={register}
                   isValid={formState.touched.emiratesId && !errors.emiratesId}
                   isInvalid={errors.emiratesId}
                 />
-                <span className="text-danger">{errors.emiratesId?.message}</span>
+                {
+                  errors.emiratesId ? <span className="text-danger">{t(`${errors.emiratesId?.message}`)}</span> : null
+                }
               </Form.Group>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Family Book No <span className="required">*</span>
+                  {t("Forms.Family Book No")} <span className="required">*</span>
                 </Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="No"
+                  placeholder={t("Forms.No")}
                   name="familyBookNo"
                   ref={register}
                   isValid={formState.touched.familyBookNo && !errors.familyBookNo}
                   isInvalid={errors.familyBookNo}
                 />
-                <span className="text-danger">{errors.familyBookNo?.message}</span>
+                {
+                  errors.familyBookNo ? <span className="text-danger">{t(`${errors.familyBookNo?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
             <Form.Row className="splitTitle">
-              <h5>Contact information</h5>
+              <h5>{t("Forms.Contact information")}</h5>
             </Form.Row>
             <Form.Row>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
                 <Form.Label>
-                  Contact Number <span className="required">*</span>
+                  {t("Forms.Contact Number")} <span className="required">*</span>
                 </Form.Label>
                 <div className="inputWithIcon">
                   <Form.Control
                     type="text"
-                    placeholder="Contact"
+                    placeholder={t("Forms.Contact Number")}
                     name="contactNo"
                     ref={register}
                     isValid={formState.touched.contactNo && !errors.contactNo}
                     isInvalid={errors.contactNo}
                   />
-                  <span className="text-danger">{errors.contactNo?.message}</span>
+                  {
+                    errors.contactNo ? <span className="text-danger">{t(`${errors.contactNo?.message}`)}</span> : null
+                  }
                   <Image src={phone} />
                 </div>
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
-                  Primary Email
-                  <span className="required">*</span>
+                  {t("Forms.Primary Email")}                  <span className="required">*</span>
                 </Form.Label>
                 <div className="inputWithIcon">
                   <Form.Control
                     type="text"
-                    placeholder="Primary Email"
+                    placeholder={t("Forms.Primary Email")}
                     name="primaryEmail"
                     ref={register}
                     isValid={formState.touched.primaryEmail && !errors.primaryEmail}
                     isInvalid={errors.primaryEmail}
                   />
-                  <span className="text-danger">{errors.primaryEmail?.message}</span>
+                  {
+                    errors.primaryEmail ? <span className="text-danger">{t(`${errors.primaryEmail?.message}`)}</span> : null
+                  }
                   <Image src={email} />
                 </div>
               </Form.Group>

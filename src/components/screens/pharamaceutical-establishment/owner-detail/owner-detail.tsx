@@ -21,7 +21,7 @@ import NextButton from "../../../buttons/next-button/next-button";
 import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 
 const OwnerDetailComponent = (props: IProps) => {
-  const { t } : { t: any } = useTranslation();
+  const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.ownerDetailsReducer
   );
@@ -191,7 +191,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.fName && !errors.fName}
                   isInvalid={errors.fName}
                 />
-                <span className="text-danger">{errors.fName?.message}</span>
+                {
+                  errors.fName ? <span className="text-danger">{t(`${errors.fName?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -206,7 +208,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.mName && !errors.mName}
                   isInvalid={errors.mName}
                 />
-                <span className="text-danger">{errors.mName?.message}</span>
+                {
+                  errors.mName ? <span className="text-danger">{t(`${errors.mName?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -221,7 +225,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.lName && !errors.lName}
                   isInvalid={errors.lName}
                 />
-                <span className="text-danger">{errors.lName?.message}</span>
+                {
+                  errors.lName ? <span className="text-danger">{t(`${errors.lName?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
 
@@ -238,7 +244,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.fNameAr && !errors.fNameAr}
                   isInvalid={errors.fNameAr}
                 />
-                <span className="text-danger">{errors.fNameAr?.message}</span>
+                {
+                  errors.fNameAr ? <span className="text-danger">{t(`${errors.fNameAr?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -253,7 +261,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.mNameAr && !errors.mNameAr}
                   isInvalid={errors.mNameAr}
                 />
-                <span className="text-danger">{errors.mNameAr?.message}</span>
+                {
+                  errors.mNameAr ? <span className="text-danger">{t(`${errors.mNameAr?.message}`)}</span> : null
+                }
               </Form.Group>
 
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -268,7 +278,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.lNameAr && !errors.lNameAr}
                   isInvalid={errors.lNameAr}
                 />
-                <span className="text-danger">{errors.lNameAr?.message}</span>
+                {
+                  errors.lNameAr ? <span className="text-danger">{t(`${errors.lNameAr?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
 
@@ -286,7 +298,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.sharePercentage && !errors.sharePercentage}
                   isInvalid={errors.sharePercentage}
                 />
-                <span className="text-danger">{errors.sharePercentage?.message}</span>
+                {
+                  errors.sharePercentage ? <span className="text-danger">{t(`${errors.sharePercentage?.message}`)}</span> : null
+                }
               </Form.Group>
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>
@@ -359,7 +373,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.passportNo && !errors.passportNo}
                   isInvalid={errors.passportNo}
                 />
-                <span className="text-danger">{errors.passportNo?.message}</span>
+                {
+                  errors.passportNo ? <span className="text-danger">{t(`${errors.passportNo?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
             <Form.Row>
@@ -375,7 +391,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.emiratesId && !errors.emiratesId}
                   isInvalid={errors.emiratesId}
                 />
-                <span className="text-danger">{errors.emiratesId?.message}</span>
+                {
+                  errors.emiratesId ? <span className="text-danger">{t(`${errors.emiratesId?.message}`)}</span> : null
+                }
               </Form.Group>
               <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
                 <Form.Label>
@@ -389,7 +407,9 @@ const OwnerDetailComponent = (props: IProps) => {
                   isValid={formState.touched.familyBookNo && !errors.familyBookNo}
                   isInvalid={errors.familyBookNo}
                 />
-                <span className="text-danger">{errors.familyBookNo?.message}</span>
+                {
+                  errors.familyBookNo ? <span className="text-danger">{t(`${errors.familyBookNo?.message}`)}</span> : null
+                }
               </Form.Group>
             </Form.Row>
             <Form.Row className="splitTitle">
@@ -409,7 +429,9 @@ const OwnerDetailComponent = (props: IProps) => {
                     isValid={formState.touched.contactNo && !errors.contactNo}
                     isInvalid={errors.contactNo}
                   />
-                  <span className="text-danger">{errors.contactNo?.message}</span>
+                  {
+                    errors.contactNo ? <span className="text-danger">{t(`${errors.contactNo?.message}`)}</span> : null
+                  }
                   <Image src={phone} />
                 </div>
               </Form.Group>
@@ -428,7 +450,9 @@ const OwnerDetailComponent = (props: IProps) => {
                     isValid={formState.touched.primaryEmail && !errors.primaryEmail}
                     isInvalid={errors.primaryEmail}
                   />
-                  <span className="text-danger">{errors.primaryEmail?.message}</span>
+                  {
+                    errors.primaryEmail ? <span className="text-danger">{t(`${errors.primaryEmail?.message}`)}</span> : null
+                  }
                   <Image src={email} />
                 </div>
               </Form.Group>

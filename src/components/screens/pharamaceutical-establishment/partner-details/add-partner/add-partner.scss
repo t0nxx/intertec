@@ -22,6 +22,14 @@
   margin-bottom: 80px;
 }
 
+.add-partner{
+  .inputWithIcon {
+    input.is-invalid ~ img {
+      top: 30%;
+    }
+  }
+}
+
 .model-fixed-footer {
   position: fixed;
   width: 100%;

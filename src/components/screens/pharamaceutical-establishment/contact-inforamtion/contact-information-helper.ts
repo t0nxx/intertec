@@ -1,4 +1,6 @@
 import * as yup from "yup";
+import { ValidationMsgEnum } from "../../../errors/validation-msg";
+
 /**
  * Form interface for type def
  */
@@ -29,11 +31,11 @@ export const contactInformationInitailState: FormInputsInterface = {
 export const formSchema = yup.object().shape({
   // i'm not setting validation for getInfoFromProfile cause it by default selected one from the 2 radio buttons
   getInfoFromProfile: yup.string().optional(),
-  contactName: yup.string().required("this is required "),
-  designation: yup.string().required("this is required "),
-  primaryEmail: yup.string().email().required("this is required "),
-  alternativeEmail: yup.string().email().required("this is required "),
-  contactNumber: yup.string().required("this is required "),
-  alternativeContactNumber: yup.string().required("this is required "),
+  contactName: yup.string().required(ValidationMsgEnum.Required),
+  designation: yup.string().required(ValidationMsgEnum.Required),
+  primaryEmail: yup.string().email(ValidationMsgEnum.MustBeValidEmail).required(ValidationMsgEnum.Required),
+  alternativeEmail: yup.string().email(ValidationMsgEnum.MustBeValidEmail).required(ValidationMsgEnum.Required),
+  contactNumber: yup.string().required(ValidationMsgEnum.Required),
+  alternativeContactNumber: yup.string().required(ValidationMsgEnum.Required),
   fax: yup.string().optional(),
 });

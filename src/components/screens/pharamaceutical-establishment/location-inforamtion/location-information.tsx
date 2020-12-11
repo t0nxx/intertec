@@ -84,7 +84,9 @@ const LocationInformationComponent = (props: IProps) => {
                 <option> Type 2</option>
                 <option> Type 3</option>
               </Form.Control>
-              <span className="text-danger">{errors.emirate?.message}</span>
+              {
+                errors.emirate ? <span className="text-danger">{t(`${errors.emirate?.message}`)}</span> : null
+              }
             </Form.Group>
 
             <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
@@ -99,7 +101,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isValid={formState.touched.area && !errors.area}
                 isInvalid={errors.area}
               />
-              <span className="text-danger">{errors.area?.message}</span>
+              {
+                errors.area ? <span className="text-danger">{t(`${errors.area?.message}`)}</span> : null
+              }
             </Form.Group>
           </Form.Row>
 
@@ -116,7 +120,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isValid={formState.touched.street && !errors.street}
                 isInvalid={errors.street}
               />
-              <span className="text-danger">{errors.street?.message}</span>
+              {
+                errors.street ? <span className="text-danger">{t(`${errors.street?.message}`)}</span> : null
+              }
             </Form.Group>
           </Form.Row>
 
@@ -133,7 +139,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isValid={formState.touched.poBox && !errors.poBox}
                 isInvalid={errors.poBox}
               />
-              <span className="text-danger">{errors.poBox?.message}</span>
+              {
+                errors.poBox ? <span className="text-danger">{t(`${errors.poBox?.message}`)}</span> : null
+              }
             </Form.Group>
             <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
               <Form.Label>
@@ -147,7 +155,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isValid={formState.touched.buildingName && !errors.buildingName}
                 isInvalid={errors.buildingName}
               />
-              <span className="text-danger">{errors.buildingName?.message}</span>
+              {
+                errors.buildingName ? <span className="text-danger">{t(`${errors.buildingName?.message}`)}</span> : null
+              }
             </Form.Group>
           </Form.Row>
 
@@ -164,7 +174,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isValid={formState.touched.buildingNo && !errors.buildingNo}
                 isInvalid={errors.buildingNo}
               />
-              <span className="text-danger">{errors.buildingNo?.message}</span>
+              {
+                errors.buildingNo ? <span className="text-danger">{t(`${errors.buildingNo?.message}`)}</span> : null
+              }
             </Form.Group>
 
             <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
@@ -183,7 +195,9 @@ const LocationInformationComponent = (props: IProps) => {
                 />
                 <Image src={map} />
               </div>
-              <span className="text-danger">{errors.mapUrl?.message}</span>
+              {
+                errors.mapUrl ? <span className="text-danger">{t(`${errors.mapUrl?.message}`)}</span> : null
+              }
             </Form.Group>
           </Form.Row>
           {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}

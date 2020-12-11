@@ -174,7 +174,7 @@ const PartnerDetailsComponent = (props: IProps) => {
             // <SaveAndCancel onCancel={onCancelHandler} />
             <Row className="addMore" onClick={() => setShow(!show)}>
               <Image src={addMore} />
-              Click here to add more Partner
+              {t("Titles.Click here to add more Partner")}
             </Row>
           ) : (
             /// temp since submiss btn not has a click event
