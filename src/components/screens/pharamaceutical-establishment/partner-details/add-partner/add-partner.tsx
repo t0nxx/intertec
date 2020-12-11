@@ -16,8 +16,9 @@ import phone from "../../../../../assets/phone.svg";
 import arrow from "../../../../../assets/arrow-white.svg";
 import { ActionTypes } from "../../../../../redux/reducers/helper";
 import SaveAndCancel from "../../../../buttons/save-and-cancel/save-and-cancel";
+import AttachmentComponent from "../../../../attachment/attachment";
 
-const AddPartnerComponent = ({ onCancel }) => {
+const AddPartnerComponent = () => {
   const { t } = useTranslation();
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
@@ -402,8 +403,12 @@ const AddPartnerComponent = ({ onCancel }) => {
                 </div>
               </Form.Group>
             </Form.Row>
+            <Form.Row className="splitTitle">
+              <h5>{t("Buttons.Attachments")}</h5>
+            </Form.Row>
+            <AttachmentComponent />
             <div className="model-fixed-footer">
-              <SaveAndCancel customText={t("Buttons.Add")} onCancel={() => onCancel} />
+              <SaveAndCancel customText={t("Buttons.Add")} />
             </div>
           </Form>
         </Card.Body>

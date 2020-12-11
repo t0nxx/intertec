@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./sticky-info.scss";
 import { Button, Accordion, Card, Image } from "react-bootstrap";
 
@@ -7,9 +7,10 @@ import upArrow from "../../assets/upArrow4Collaps.svg";
 import rightArrow from "../../assets/rightArrow.svg";
 
 export default function InfoComponent() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="stickyInfo">
-      <div className="infoContent">
+      <div className="infoContent" hidden={!isOpen}>
         <Accordion defaultActiveKey="0">
           <Card>
             <Card.Header>
@@ -53,7 +54,13 @@ export default function InfoComponent() {
         </Accordion>
       </div>
       {/* <div className="infoIcon opened"> </div> */}
-      <div className="infoIcon"> </div>
+      <div
+        className={isOpen ? "infoIcon opened" : "infoIcon"}
+        role="presentation"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {" "}
+      </div>
     </div>
   );
 }

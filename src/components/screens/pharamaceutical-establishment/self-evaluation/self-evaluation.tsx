@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Card, Form, Row, Button, Table } from "react-bootstrap";
+import { Card, Form, Row, Button, Table, ToggleButton } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
@@ -16,6 +16,8 @@ import { ActionTypes } from "../../../../redux/reducers/helper";
 import NextButton from "../../../buttons/next-button/next-button";
 
 const SelfEvaluationComponent = () => {
+  const [checked, setChecked] = useState(false);
+
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -87,13 +89,13 @@ const SelfEvaluationComponent = () => {
                 <td>
                   <div className="radioButtons">
                     <div className="form-check">
-                      <label className="noText" htmlFor="q1-y">
+                      <label className="noText" htmlFor="q1-no">
                         <input
                           name="q1"
                           type="radio"
-                          id="q1-y"
+                          id="q1-no"
                           className="form-check-input"
-                          value="yes"
+                          value="no"
                           ref={register}
                         />
                         <i className="checkMark"> </i>
@@ -104,13 +106,13 @@ const SelfEvaluationComponent = () => {
                 <td>
                   <div className="radioButtons">
                     <div className="form-check">
-                      <label className="noText" htmlFor="q1-y">
+                      <label className="noText" htmlFor="q1-na">
                         <input
                           name="q1"
                           type="radio"
-                          id="q1-y"
+                          id="q1-na"
                           className="form-check-input"
-                          value="yes"
+                          value="na"
                           ref={register}
                         />
                         <i className="checkMark"> </i>
@@ -121,6 +123,15 @@ const SelfEvaluationComponent = () => {
               </tr>
             </tbody>
           </Table>
+          <ToggleButton
+            type="checkbox"
+            variant="light"
+            checked={checked}
+            value="1"
+            onChange={(e) => setChecked(e.currentTarget.checked)}
+          />
+
+          {t("Forms.Disclaimer")}
           <Row className="justify-content-center">
             <NextButton customText={t("Buttons.Go To Attachment")} />
           </Row>

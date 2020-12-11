@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import "./footer.scss";
 import { Navbar, Image, ProgressBar, Row } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 // Import images
 import applicationIc from "../../assets/applicationIc.svg";
@@ -13,6 +14,7 @@ import { StateSelectorInterface } from "../../redux/reducers/helper";
 import InfoComponent from "../sticky-info/sticky-info";
 
 export default function FooterComponent() {
+  const { t } = useTranslation();
   // progress bar state
   const progressPersentage = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.progressBarPersentageReducer
@@ -25,18 +27,18 @@ export default function FooterComponent() {
       <Row className="statistics-container">
         <div>
           <Image src={applicationIc} />
-          <span className="active">Application form</span>
+          <span className="active">{t("Titles.Application form")}</span>
         </div>
         <div>
           <Image src={attachmentIc} />
-          <span>Attachement</span>
+          <span> {t("Titles.Attachment")}</span>
         </div>
         <div>
           <Image src={previewIc} />
-          <span>Preview </span>
+          <span>  {t("Titles.Preview")}</span>
         </div>
         <div className="complete">
-          <span>Complete progress</span>
+          <span> {t("Titles.Complete progress")}</span>
           <strong>{progressPersentage} %</strong>
         </div>
       </Row>

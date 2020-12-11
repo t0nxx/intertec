@@ -1,3 +1,36 @@
+html[lang=ar]{
+.requestInformationContent{
+  .accordion{
+    .card{
+      .card-header,.collapse{
+        text-align: right;
+      }
+
+      .card-header{
+        h1{
+          text-align: right;
+        }
+      }
+
+      .card-body{
+        .appC {
+          .row{
+            flex-direction: row-reverse;
+          }
+          .leftAppC{
+            justify-content: flex-end;
+            img{
+              margin-left: 10px;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}
+}
+
 .requestInformationContent {
   position: relative;
   span.column {

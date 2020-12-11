@@ -9,7 +9,24 @@
     "Location Information": "Location Information",
     "Owner Details": "Owner Details",
     "Partner Details": "Partner Details",
-    "Self Evaluation": "Self Evaluation"
+    "Self Evaluation": "Self Evaluation",
+    "UserName" : "User Name",
+    "Application form" : "Application form",
+    "Complete progress" : "Complete progress",
+    "Attachment" :"Attachment",
+    "Preview" :"Preview",
+    "Request information" : "Request information",
+    "request No" : "request No :",
+    "Request Date" : "Request Date",
+    "DDmmyy" : "DD,mm,yy",
+    "Serviceno" : "Service no",
+    "PMOno" : "PMO no",
+    "Application no" : "Application no",
+    "Application Date" : "Application Date",
+    "Application name" : "Application name",
+    "Initial approval" : "Initial approval",
+    "Application status" : "Application status",
+    "Request initiated" : "Request initiated"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -65,6 +82,11 @@
     "Go To Preview": "Go To Preview",
     "Cancel": "Cancel",
     "Save And Edit": "Save And Edit",
-    "Add": "Add"
+    "Add": "Add",
+    "Contact info" : "Contact info",
+    "Start" : "Start"
+  },
+  "Error" : {
+    "this is required" : "this is required"
   }
 }

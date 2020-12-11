@@ -56,7 +56,9 @@ const PharamaceuticalEstablishmentScreen = () => {
                 <Image src={penImageWhite} className="ml-3 mr-4 whiteIc" />
                 <h3 className="text-success">{t("Titles.Establishment Information")} </h3>
                 <Image src={checked} className="checked" />
-                <Button className="start">Start</Button>
+                <Button className="start" hidden={state.stepNumberReducer > 0}>
+                  {t("Buttons.Start")}
+                </Button>
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">

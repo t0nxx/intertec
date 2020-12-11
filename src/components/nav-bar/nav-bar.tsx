@@ -31,7 +31,7 @@ export default function NavBarComponent() {
     changeDirection(nextLang);
   };
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" bg="light">
+    <Navbar collapseOnSelect expand="lg" variant="light" bg="light" className="top-nav">
       <Navbar.Brand href="/">
         <img
           src={logo}
@@ -113,7 +113,7 @@ export default function NavBarComponent() {
           {/* User drop menu */}
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic" className="user">
-              <strong>User Name</strong>
+              <strong> {t("Titles.UserName")}</strong>
               <Image src={name} roundedCircle />
             </Dropdown.Toggle>
             <Dropdown.Menu>

@@ -19,6 +19,15 @@
   }
 }
 
+.owner-details{
+  .inputWithIcon {
+    input.is-invalid ~ img {
+      top: 30%;
+    }
+  }
+}
+
+
 @media only screen and (max-width: 1000px) {
   .uploadPhoto {
     width: 200px;

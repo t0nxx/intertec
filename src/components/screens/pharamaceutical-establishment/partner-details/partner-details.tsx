@@ -129,7 +129,7 @@ const PartnerDetailsComponent = (props: IProps) => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <AddPartnerComponent onCancel={() => setShow(!show)} />
+              <AddPartnerComponent />
             </Modal.Body>
           </Modal>
 
