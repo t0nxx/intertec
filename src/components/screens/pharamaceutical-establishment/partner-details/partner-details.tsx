@@ -14,6 +14,8 @@ import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../buttons/next-button/next-button";
+import addMore from "../../../../assets/addMore.svg";
+
 
 const PartnerDetailsComponent = (props: IProps) => {
   const { t } = useTranslation();
@@ -29,6 +31,8 @@ const PartnerDetailsComponent = (props: IProps) => {
     }
   };
   const onCancelHandler = () => changeParentToggleEvent();
+
+  const onCloseModal = () => setShow(false);
 
   const dispatch = useDispatch();
 
@@ -105,7 +109,7 @@ const PartnerDetailsComponent = (props: IProps) => {
     <Container fluid>
       <Card>
         <Card.Body>
-          <Row>
+          <Row hidden={props.isForReviewPage}>
             <div className="addpartnerBtn">
               <Image src={add} onClick={() => setShow(!show)} />
               <p> {t("Forms.Add Partner")}</p>
@@ -129,7 +133,7 @@ const PartnerDetailsComponent = (props: IProps) => {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <AddPartnerComponent />
+              <AddPartnerComponent closeModal={onCloseModal} />
             </Modal.Body>
           </Modal>
 
@@ -165,8 +169,13 @@ const PartnerDetailsComponent = (props: IProps) => {
               </tbody>
             </Table>
           </Row>
+
           {props.isForReviewPage ? (
-            <SaveAndCancel onCancel={onCancelHandler} />
+            // <SaveAndCancel onCancel={onCancelHandler} />
+            <Row className="addMore" onClick={() => setShow(!show)}>
+              <Image src={addMore} />
+              Click here to add more Partner
+            </Row>
           ) : (
             /// temp since submiss btn not has a click event
             <Row className="justify-content-center" onClick={onSubmit}>

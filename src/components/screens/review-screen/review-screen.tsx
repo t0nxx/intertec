@@ -29,8 +29,11 @@ export default function ReviewScreenComponent() {
   const [isEditContact, setIsEditContact] = useState(false);
   const [isEditLocation, setIsEditLocation] = useState(false);
   const [isEditOwner, setIsEditOwner] = useState(false);
-  const [isEditPartner, setIsEditPartner] = useState(false);
+  const [isEditPartner, setIsEditPartner] = useState(true);
   const [isAddPartner, setIsAddPartner] = useState(false);
+  const [showAddPartnerModal, setShowAddPartnerModal] = useState(false);
+
+  const onCloseAddPartnerModal = () => setShowAddPartnerModal(false);
   const { t } = useTranslation();
 
   // the logic here ... acordation take active key as string number
@@ -376,7 +379,11 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
-                  {isEditPartner ? (
+                  <PartnerDetailsComponent
+                    isForReviewPage={true}
+                    onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
+                  />
+                  {/* {isEditPartner ? (
                     <PartnerDetailsComponent
                       isForReviewPage={true}
                       onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
@@ -445,22 +452,26 @@ export default function ReviewScreenComponent() {
                           </tbody>
                         </Table>
                       </Row>
-                      <Row className="addMore" onClick={() => setIsAddPartner(!isAddPartner)}>
+                      <Row
+                        className="addMore"
+                        onClick={() => setShowAddPartnerModal(!showAddPartnerModal)}
+                      >
                         <Image src={addMore} />
                         Click here to add more Partner
                       </Row>
                       <Modal
-                        show={isAddPartner}
-                        onHide={() => setIsAddPartner(!isAddPartner)}
+                        show={showAddPartnerModal}
+                        onHide={() => setShowAddPartnerModal(!showAddPartnerModal)}
                         backdrop="static"
                         keyboard={false}
+                        className="fullScreenModal"
                       >
                         <Modal.Header closeButton>
                           <Modal.Title>
                             <div className="back">
                               <Image
                                 src={leftArrow}
-                                onClick={() => setIsAddPartner(!isAddPartner)}
+                                onClick={() => setShowAddPartnerModal(!showAddPartnerModal)}
                               />
                             </div>
                             <div className="title">
@@ -469,11 +480,11 @@ export default function ReviewScreenComponent() {
                           </Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                          <AddPartnerComponent />
+                          <AddPartnerComponent closeModal={onCloseAddPartnerModal} />
                         </Modal.Body>
                       </Modal>
                     </Card.Body>
-                  )}
+                  )} */}
                 </Accordion.Collapse>
               </Card>
             </Accordion>
