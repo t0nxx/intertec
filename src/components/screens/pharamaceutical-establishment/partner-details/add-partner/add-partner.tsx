@@ -34,6 +34,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
         type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
         payload: data,
       });
+      props.closeModal();
     }
   };
   const closeModalHandler = () => {
