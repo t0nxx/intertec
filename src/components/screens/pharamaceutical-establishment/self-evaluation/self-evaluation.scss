@@ -1,0 +1,28 @@
+.accept {
+  font-size: 18px;
+  color: #646e76;
+  .custom-control {
+    display: flex;
+    align-items: center;
+  }
+  label {
+    text-decoration: underline;
+    padding-left: 10px;
+    &::before,
+    &::after {
+      border: 1pt solid #127f46;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      box-shadow: none !important;
+      background-color: white;
+    }
+  }
+  input:checked ~ label::after {
+    background-color: #127f46 !important;
+    background-image: url(../../../../assets/rightMark2.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center center;
+  }
+}
