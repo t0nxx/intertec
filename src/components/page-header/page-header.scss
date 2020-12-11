@@ -79,12 +79,30 @@ html[lang="ar"] {
     }
   }
 }
+@media only screen and (max-width: 560px) {
+  .modalBody {
+    padding: 35px !important;
+    .modal-body {
+      display: contents;
+      justify-content: center;
+      button {
+        width: 100% !important;
+        height: 45px !important;
+        font-size: 16px !important;
+        padding: 0px 42px !important;
+      }
+    }
+  }
+}
 .exitSubmitionModal {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex !important;
   align-items: center;
+  justify-content: center;
+  // width: 100%;
+  //height: unset;
   .smClose {
     position: absolute;
     right: -32px;
@@ -103,15 +121,15 @@ html[lang="ar"] {
     }
 
     .modalBody {
-      padding: 65px !important;
+      padding: 65px;
       .modal-body {
         display: contents;
         justify-content: center;
         button {
           display: block;
           margin: auto;
-          min-width: 300px;
-          min-height: 53px;
+          width: 250px;
+          height: 53px;
           border-radius: 35px;
           border: 0;
           color: #000000;
