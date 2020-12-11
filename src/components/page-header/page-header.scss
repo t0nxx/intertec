@@ -80,16 +80,18 @@ html[lang="ar"] {
   }
 }
 @media only screen and (max-width: 560px) {
-  .modalBody {
-    padding: 35px !important;
-    .modal-body {
-      display: contents;
-      justify-content: center;
-      button {
-        width: 100% !important;
-        height: 45px !important;
-        font-size: 16px !important;
-        padding: 0px 42px !important;
+  .exitSubmitionModal {
+    .modalBody {
+      padding: 35px !important;
+      .modal-body {
+        display: contents;
+        justify-content: center;
+        button {
+          width: 100% !important;
+          height: 45px !important;
+          font-size: 16px !important;
+          padding: 0px 42px !important;
+        }
       }
     }
   }
