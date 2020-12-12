@@ -179,9 +179,7 @@ const PartnerDetailsComponent = (props: IProps) => {
             </Row>
           ) : (
             /// temp since submiss btn not has a click event
-            <Row className="justify-content-center" onClick={onSubmit}>
-              <NextButton />
-            </Row>
+            <NextButton />
           )}
         </Card.Body>
       </Card>

@@ -1,6 +1,7 @@
 @import "../../../../sass/variables";
 body {
   background-color: #f7f7f7 !important;
+  padding-bottom: 200px;
 }
 .card {
   overflow: unset !important;
@@ -177,6 +178,7 @@ body {
     }
   }
 }
+
 .tableParent {
   overflow-x: scroll;
   table {
@@ -306,16 +308,31 @@ body {
   margin: 10px;
 }
 
-// .ta7nika {
-//   background-image: url(../../../../assets/cardFooter.png);
-//   width: 50%;
-//   height: 50px;
-//   position: absolute;
-//   bottom: 0;
-//   margin: 0 auto;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: bottom;
-// }
+.custom-control.custom-checkbox {
+  input:checked ~ label::after {
+    background-color: #127f46 !important;
+    background-image: url(../../../../assets/rightMark2.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center center;
+  }
+  label {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    // width: 20px;
+    padding-top: 2px;
+    padding-left: 5px;
+    &::before,
+    &::after {
+      width: 20px;
+      height: 20px;
+      border-radius: 0;
+      border: 1pt solid #707070;
+      box-shadow: none !important;
+    }
+    &::before {
+      background-color: white;
+    }
+  }
+}

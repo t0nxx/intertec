@@ -135,9 +135,7 @@ const SelfEvaluationComponent = () => {
               />
             </Col>
           </Row>
-          <Row className="justify-content-center">
-            <NextButton customText={t("Buttons.Go To Attachment")} />
-          </Row>
+          <NextButton customText={t("Buttons.Go To Attachment")} />
         </Form>
       </Card.Body>
     </Card>

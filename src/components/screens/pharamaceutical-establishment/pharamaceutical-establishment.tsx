@@ -62,10 +62,7 @@ const PharamaceuticalEstablishmentScreen = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <EstablishmentInformationComponent isForReviewPage={false} />
-                {/* <span className="ta7nika"> </span> */}
-              </Card.Body>
+              <EstablishmentInformationComponent isForReviewPage={false} />
             </Accordion.Collapse>
           </Card>
           <div className="divider" />
