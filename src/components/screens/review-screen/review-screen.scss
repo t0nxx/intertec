@@ -1,3 +1,25 @@
+
+html[lang=ar]{
+  .accordion > .card{
+    text-align: right;
+  }
+
+  .container-fluid .screenContent .block .card .card-body img.edit{
+    left: 40px;
+    right: auto;
+  }
+
+  .container-fluid .screenContent .block .card .card-body .row span.mapBtn img{
+    margin-right: 0;
+    margin-left: 10px;
+  }
+
+  .container-fluid .screenContent .screenHead .btnsContainer button img{
+    margin-right: 0;
+    margin-left: 5px;
+  }
+}
+
 .container-fluid {
   .screenContent {
     width: 60%;

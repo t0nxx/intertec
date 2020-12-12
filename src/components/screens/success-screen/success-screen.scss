@@ -1,3 +1,18 @@
+html[lang=ar]{
+  .successScreenFooter .rightContent{
+    text-align: left;
+  }
+
+  .successScreenFooter .leftContent{
+    text-align: right;
+  }
+
+  .successScreenFooter .leftContent img{
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
 .succScreenContent {
   display: flex;
   align-items: center;

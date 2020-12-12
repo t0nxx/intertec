@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Form, Image, Row, Col, Button } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import "./payment-screen.scss";
 
 // Import images
@@ -8,6 +9,7 @@ import visaAndMaster from "../../../assets/visaAndMaster.svg";
 import RequestInformation from "../../request-information/request-information";
 
 export default function PaymentScreenComponent() {
+  const { t } = useTranslation();
   return (
     <Container fluid className="topScreen">
       <Row>
@@ -23,20 +25,20 @@ export default function PaymentScreenComponent() {
                 <Col>
                   <Col>
                     <Row className="head">
-                      <Col className="left-align">Fees Details</Col>
-                      <Col className="right-align">Amount</Col>
+                      <Col className="left-align">{t("Titles.Fees Details")}</Col>
+                      <Col className="right-align">{t("Titles.Amount")}</Col>
                     </Row>
                     <Row className="child">
-                      <Col className="left-align">application Fees</Col>
+                      <Col className="left-align">{t("Titles.application Fees")}</Col>
                       <Col className="right-align">500 AED</Col>
                     </Row>
                     <Row className="child">
-                      <Col className="left-align">Tax 3%</Col>
+                      <Col className="left-align"> {t("Titles.Tax")}</Col>
                       <Col className="right-align">10 AED </Col>
                     </Row>
                     <Row className="head">
                       <Col className="left-align"> </Col>
-                      <Col className="right-align">Total : 510 AED</Col>
+                      <Col className="right-align">{t("Titles.Total")} 510 AED</Col>
                     </Row>
                   </Col>
                 </Col>
@@ -48,7 +50,7 @@ export default function PaymentScreenComponent() {
                     type="checkbox"
                     name="hi"
                     id="test"
-                    label="Accept terms and condition "
+                    label={t("Titles.Accept terms and condition")}
                     custom
                   />
                 </Col>
@@ -57,7 +59,7 @@ export default function PaymentScreenComponent() {
               <Row className="selectPayment">
                 <Row>
                   <Col>
-                    <p>Select payment method</p>
+                    <p>{t("Titles.Select payment method")}</p>
                   </Col>
                 </Row>
 
@@ -72,7 +74,7 @@ export default function PaymentScreenComponent() {
 
                 <Row className="proceed">
                   <Col>
-                    <Button variant="success">Process For Payment</Button>
+                    <Button variant="success">{t("Buttons.Process For Payment")}</Button>
                   </Col>
                 </Row>
               </Row>

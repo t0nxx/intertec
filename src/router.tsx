@@ -6,6 +6,7 @@ import PharamaceuticalEstablishmentScreen from "./components/screens/pharamaceut
 import SuccessScreenComponent from "./components/screens/success-screen/success-screen";
 import PaymentScreenComponent from "./components/screens/payment-screen/payment-screen";
 import AddPartnerComponent from "./components/screens/pharamaceutical-establishment/partner-details/add-partner/add-partner";
+import RelocationLicenseScreen from "./components/screens/relocation-license-screen/relocation-license-screen";
 
 function Routes() {
   return (
@@ -16,6 +17,7 @@ function Routes() {
       <Route path="/success" component={SuccessScreenComponent} />
       <Route path="/payment" component={PaymentScreenComponent} />
       <Route path="/add-partner" component={AddPartnerComponent} />
+      <Route path="/sr2/home" component={RelocationLicenseScreen} />
     </Switch>
   );
 }

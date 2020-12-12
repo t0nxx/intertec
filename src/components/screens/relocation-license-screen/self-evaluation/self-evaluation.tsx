@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Card, Col, Form, Row, Button, Table, ToggleButton } from "react-bootstrap";
+import { Card, Form, Row, Button, Table, ToggleButton, Col } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
@@ -131,6 +131,7 @@ const SelfEvaluationComponent = () => {
                 id="disclaimer"
                 label={t("Forms.Disclaimer")}
                 custom
+                className="disclaimer"
                 onChange={(e) => setChecked(e.currentTarget.checked)}
               />
             </Col>
