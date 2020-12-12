@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Card, Form, Row, Button, Table, ToggleButton } from "react-bootstrap";
+import { Card, Col, Form, Row, Button, Table, ToggleButton } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
@@ -123,15 +123,19 @@ const SelfEvaluationComponent = () => {
               </tr>
             </tbody>
           </Table>
-          <ToggleButton
-            type="checkbox"
-            variant="light"
-            checked={checked}
-            value="1"
-            onChange={(e) => setChecked(e.currentTarget.checked)}
-          />
-
-          {t("Forms.Disclaimer")}
+          <Row>
+            <Col>
+              <Form.Check
+                type="checkbox"
+                name="disclaimer"
+                id="disclaimer"
+                label={t("Forms.Disclaimer")}
+                custom
+                className="disclaimer"
+                onChange={(e) => setChecked(e.currentTarget.checked)}
+              />
+            </Col>
+          </Row>
           <Row className="justify-content-center">
             <NextButton customText={t("Buttons.Go To Attachment")} />
           </Row>

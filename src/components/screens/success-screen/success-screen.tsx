@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Image, Row, Col, Button, Modal } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import "./success-screen.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Import images
@@ -13,6 +14,7 @@ import bigHappyRate from "../../../assets/bigHappyRate.svg";
 
 export default function SuccessScreenComponent() {
   const [show, setShow] = useState(false);
+  const { t } = useTranslation();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -39,11 +41,11 @@ export default function SuccessScreenComponent() {
       <Row>
         <Col className="succScreenContent">
           <Image src={success} />
-          <p className="successMsg">Your application has been submitted successfully</p>
+          <p className="successMsg">{t("Titles.Your application has been submitted successfully")}</p>
           <p className="appNum">
-            Application number : <span>#number</span>
+            {t("Titles.Application number")} : <span>#number</span>
           </p>
-          <Button>Go to workspace</Button>
+          <Button>{t("Buttons.Go to workspace")}</Button>
         </Col>
       </Row>
       <Container className="successScreenFooter">
@@ -53,14 +55,13 @@ export default function SuccessScreenComponent() {
             <Row>
               <Col>
                 <Image src={flag} />
-                File a complaint
+                {t("Titles.File a complaint")}
               </Col>
             </Row>
             <Row>
               <Col>
                 <p>
-                  if you still have any inquiries, you can call us on Hotline XXXX or using
-                  suggestion and improvement center
+                  {t("Texts.if you still have any inquiries")}
                 </p>
               </Col>
             </Row>

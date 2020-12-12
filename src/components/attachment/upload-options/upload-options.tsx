@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./upload-options.scss";
 import { Image } from "react-bootstrap";
 
@@ -9,6 +10,7 @@ import cloud from "../../../assets/cloud.png";
 import box from "../../../assets/box.png";
 
 export default function UploadOptionsComponent() {
+  const { t } = useTranslation();
   return (
     <div className="uploadOptions">
       <Image src={fromPc} />

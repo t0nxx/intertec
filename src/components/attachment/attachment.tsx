@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./attachment.scss";
 import { Image, Button, Carousel } from "react-bootstrap";
 
+import { useTranslation } from "react-i18next";
 import DragAreaComponent from "./drag-area/drag-area";
 import UploadOptionsComponent from "./upload-options/upload-options";
+import UploadingProcessing from "./uploading-processing/uploading-processing";
 
 // Import images
 import file from "../../assets/file.svg";
@@ -13,9 +15,10 @@ import stepChecked from "../../assets/stepChecked.svg";
 import leftArrowBtn from "../../assets/leftArrowBtn.svg";
 import rightArrowBtn from "../../assets/rightArrowBtn.svg";
 import semiChecked from "../../assets/semiChecked.svg";
-import UploadingProcessing from "./uploading-processing/uploading-processing";
+import warning from "../../assets/warning.svg";
 
 export default function AttachmentComponent() {
+  const { t } = useTranslation();
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
 
@@ -34,7 +37,7 @@ export default function AttachmentComponent() {
     <div className="content">
       <div className="state">
         <p>
-          completeted <span>1 of 3</span>
+          {t("Titles.completed")} <span>1 {t("Titles.of")} 3</span>
         </p>
       </div>
       <div className="steps">
@@ -43,19 +46,19 @@ export default function AttachmentComponent() {
           <Image src={stepCheck} className="check" />
           <Image src={stepChecked} className="checked" />
           <Image src={semiChecked} className="semiChecked" />
-          <span>Passport</span>
+          <span> {t("Titles.Passport")}</span>
         </Button>
         <Button className="step currentStep" onClick={() => handleSelect(1)}>
           <Image src={stepCheck} className="check" />
           <Image src={stepChecked} className="checked" />
           <Image src={semiChecked} className="semiChecked" />
-          <span>Emirates ID</span>
+          <span> {t("Forms.Emirates ID")}</span>
         </Button>
         <Button className="step" onClick={() => handleSelect(2)}>
           <Image src={stepCheck} className="check" />
           <Image src={stepChecked} className="checked" />
           <Image src={semiChecked} className="semiChecked" />
-          <span>Family Book</span>
+          <span> {t("Titles.Family Book")}</span>
         </Button>
       </div>
       <div className="steps">
@@ -67,19 +70,19 @@ export default function AttachmentComponent() {
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
                 <Image src={semiChecked} className="semiChecked" />
-                <span>Passport</span>
+                <span>{t("Titles.Passport")}</span>
               </Button>
               <Button className="step currentStep" onClick={() => handleSelect(1)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
                 <Image src={semiChecked} className="semiChecked" />
-                <span>Emirates ID</span>
+                <span>{t("Forms.Emirates ID")}</span>
               </Button>
               <Button className="step" onClick={() => handleSelect(2)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
                 <Image src={semiChecked} className="semiChecked" />
-                <span>Family Book</span>
+                <span>{t("Titles.Family Book")}</span>
               </Button>
             </div>
           </Carousel.Item>
@@ -94,12 +97,12 @@ export default function AttachmentComponent() {
               <Button className="step" onClick={() => handleSelect(1)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
-                <span>Emirates ID</span>
+                <span>{t("Forms.Emirates ID")}</span>
               </Button>
               <Button className="step" onClick={() => handleSelect(2)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
-                <span>Family Book</span>
+                <span>{t("Titles.Family Book")}</span>
               </Button>
             </div>
           </Carousel.Item>
@@ -250,6 +253,14 @@ export default function AttachmentComponent() {
         </Carousel.Item>
       </Carousel>
       {/* Eng slider  */}
+      <div className="warning">
+        <Image src={warning} />
+        <p>
+          Your staff criteria needs to be fulfilled to continue submitting the application. <br />
+          Kindly refer to email sent for staff criteria or view the online service card
+        </p>
+        <Button>Close</Button>
+      </div>
     </div>
   );
 }

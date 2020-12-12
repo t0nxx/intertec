@@ -1,4 +1,6 @@
 import * as yup from "yup";
+import { ValidationMsgEnum } from "../../../../errors/validation-msg";
+
 /**
  * Form interface for type def
  */
@@ -47,20 +49,20 @@ export const ownerDetailInitialState: FormInputsInterface = {
 export const formSchema = yup.object().shape({
   // i'm not setting validation for getInfoFromProfile cause it by default selected one from the 2 radio buttons
   getInfoFromProfile: yup.string().optional(),
-  tite: yup.string().required("this is required "),
-  gender: yup.string().required("this is required "),
-  fName: yup.string().required("this is required "),
-  mName: yup.string().required("this is required "),
-  lName: yup.string().required("this is required "),
-  fNameAr: yup.string().required("this is required "),
-  mNameAr: yup.string().required("this is required "),
-  lNameAr: yup.string().required("this is required "),
-  sharePercentage: yup.string().required("this is required "),
-  uaeCitzen: yup.string().required("this is required "),
-  nationality: yup.string().required("this is required "),
-  passportNo: yup.string().required("this is required "),
-  emiratesId: yup.string().required("this is required "),
-  familyBookNo: yup.string().required("this is required "),
-  contactNo: yup.string().required("this is required "),
-  primaryEmail: yup.string().email().required("this is required "),
+  tite: yup.string().required(ValidationMsgEnum.Required),
+  gender: yup.string().required(ValidationMsgEnum.Required),
+  fName: yup.string().required(ValidationMsgEnum.Required),
+  mName: yup.string().required(ValidationMsgEnum.Required),
+  lName: yup.string().required(ValidationMsgEnum.Required),
+  fNameAr: yup.string().required(ValidationMsgEnum.Required),
+  mNameAr: yup.string().required(ValidationMsgEnum.Required),
+  lNameAr: yup.string().required(ValidationMsgEnum.Required),
+  sharePercentage: yup.string().required(ValidationMsgEnum.Required),
+  uaeCitzen: yup.string().required(ValidationMsgEnum.Required),
+  nationality: yup.string().required(ValidationMsgEnum.Required),
+  passportNo: yup.string().required(ValidationMsgEnum.Required),
+  emiratesId: yup.string().required(ValidationMsgEnum.Required),
+  familyBookNo: yup.string().required(ValidationMsgEnum.Required),
+  contactNo: yup.string().required(ValidationMsgEnum.Required),
+  primaryEmail: yup.string().email(ValidationMsgEnum.MustBeValidEmail).required(ValidationMsgEnum.Required),
 });
