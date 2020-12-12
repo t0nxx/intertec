@@ -27,30 +27,30 @@
     "Initial approval": "Initial approval",
     "Application status": "Application status",
     "Request initiated": "Request initiated",
-    "Click here to add more Partner" : "Click here to add more Partner",
-    "completed" : "completed",
-    "Passport" : "Passport",
-    "Family Book" : "Family Book",
-    "of" : "of",
-    "Processing please wait a moment" : "Processing, please wait a moment..",
-    "Uploading Document(s)" : "Uploading Document(s)",
-    "Checking Document(s) for viruses" : "Checking Document(s) for viruses",
-    "Drag and Drop Documents Here to Get Started" : "Drag and Drop Documents Here to Get Started!",
-    "Use the button below to upload your documents it supports" : "Use the button below to upload your documents it supports",
-    "File size" : "File size",
-    "Collapse all" : "Collapse all",
-    "expand all" : "expand all",
-    "Establishment Name (English)" : "Establishment Name (English)",
-    "Your application has been submitted successfully" : "Your application has been submitted successfully",
-    "Application number" : "Application number",
-    "File a complaint" : "File a complaint",
-    "Fees Details" : "Fees Details",
-    "application Fees" : "application Fees",
-    "Tax" : "Tax 3%",
-    "Total" : "Total :",
-    "Amount" : "Amount",
-    "Select payment method" : "Select payment method",
-    "Accept terms and condition" : "Accept terms and condition"
+    "Click here to add more Partner": "Click here to add more Partner",
+    "completed": "completed",
+    "Passport": "Passport",
+    "Family Book": "Family Book",
+    "of": "of",
+    "Processing please wait a moment": "Processing, please wait a moment..",
+    "Uploading Document(s)": "Uploading Document(s)",
+    "Checking Document(s) for viruses": "Checking Document(s) for viruses",
+    "Drag and Drop Documents Here to Get Started": "Drag and Drop Documents Here to Get Started!",
+    "Use the button below to upload your documents it supports": "Use the button below to upload your documents it supports",
+    "File size": "File size",
+    "Collapse all": "Collapse all",
+    "expand all": "expand all",
+    "Establishment Name (English)": "Establishment Name (English)",
+    "Your application has been submitted successfully": "Your application has been submitted successfully",
+    "Application number": "Application number",
+    "File a complaint": "File a complaint",
+    "Fees Details": "Fees Details",
+    "application Fees": "application Fees",
+    "Tax": "Tax 3%",
+    "Total": "Total :",
+    "Amount": "Amount",
+    "Select payment method": "Select payment method",
+    "Accept terms and condition": "Accept terms and condition"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -99,8 +99,8 @@
     "Yes": "Yes",
     "No": "No",
     "N/A": "N/A",
-    "Disclaimer" : "Disclaimer",
-    "Alternative Contact No" : "Alternative Contact No"
+    "Disclaimer": "Disclaimer",
+    "Alternative Contact No": "Alternative Contact No"
   },
   "Buttons": {
     "Next": "Next",
@@ -113,17 +113,18 @@
     "Start": "Start",
     "SaveAsDraft": "Save As Draft",
     "Discard": "Discard",
-    "Browse for document on your computer" : "Browse for document on your computer",
-    "Google Map URL" : "Google Map URL",
-    "Submit" : "Submit",
-    "Go to workspace" : "Go to workspace",
-    "Process For Payment" : "Process For Payment"
+    "Browse for document on your computer": "Browse for document on your computer",
+    "Google Map URL": "Google Map URL",
+    "Submit": "Submit",
+    "Go to workspace": "Go to workspace",
+    "Process For Payment": "Process For Payment",
+    "Go To Payment": "Go To Payment"
   },
   "Error": {
     "Requird": "This is required",
-    "MustBeValidEmail" : "Must be valid email"
+    "MustBeValidEmail": "Must be valid email"
   },
-  "Texts" : {
-    "if you still have any inquiries" : " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center"
+  "Texts": {
+    "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center"
   }
 }

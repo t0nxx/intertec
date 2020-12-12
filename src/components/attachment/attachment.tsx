@@ -253,7 +253,7 @@ export default function AttachmentComponent() {
         </Carousel.Item>
       </Carousel>
       {/* Eng slider  */}
-      <div className="warning">
+      <div className="warning" hidden={true}>
         <Image src={warning} />
         <p>
           Your staff criteria needs to be fulfilled to continue submitting the application. <br />

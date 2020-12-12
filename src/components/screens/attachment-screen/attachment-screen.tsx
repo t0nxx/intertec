@@ -1,24 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next/";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import AttachmentComponent from "../../attachment/attachment";
 import NextButton from "../../buttons/next-button/next-button";
 import "./attachment-screen.scss";
 
 // Import images
 
-const AttachmentScreenComponent = () => {
+const AttachmentScreenComponent = ({ whereToGo }) => {
   const { t } = useTranslation();
+  const history = useHistory();
+  const location: any = useLocation();
+
+  const [nextButtonText, setNextButtonText] = useState("Go To Preview");
+  const [nextButtonToGoRoute, setNextButtonToGoRoute] = useState("/review");
+
+  const decidedToGoHandler = () => {
+    history.push(nextButtonToGoRoute);
+  };
+
+  useEffect(() => {
+    if (location.state.wherToGo === "/payment") {
+      setNextButtonText("Go To Payment");
+      setNextButtonToGoRoute(location.state.wherToGo);
+    }
+  }, []);
+
   return (
     <Container fluid>
       <Row>
         <div className="contentContainer">
           <AttachmentComponent />
-          <Row className="justify-content-center">
-            <Link to="/review">
-              <NextButton customText={t("Buttons.Go To Preview")} />
-            </Link>
+          <Row className="justify-content-center" onClick={decidedToGoHandler}>
+            <NextButton customText={t(`Buttons.${nextButtonText}`)} />
           </Row>
         </div>
       </Row>
