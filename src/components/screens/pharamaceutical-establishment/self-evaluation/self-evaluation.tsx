@@ -25,12 +25,17 @@ const SelfEvaluationComponent = () => {
 
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const history = useHistory();
+  const history: any = useHistory();
 
   const onSubmit = () => {
     if (formState.isValid) {
       // should make sure here all steps are done
-      history.push("/attachment");
+      history.push({
+        pathname: "/attachment",
+        state: {
+          withslidercarosel: true,
+        },
+      });
       // dispatch({
       //   type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_SELF_EVALUATION,
       //   payload: data,

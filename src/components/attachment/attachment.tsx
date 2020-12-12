@@ -17,10 +17,12 @@ import rightArrowBtn from "../../assets/rightArrowBtn.svg";
 import semiChecked from "../../assets/semiChecked.svg";
 import warning from "../../assets/warning.svg";
 
-export default function AttachmentComponent() {
+export default function AttachmentComponent({ withslidercarosel }) {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
+
+  const [withSliderCarosel, setWithSliderCarosel] = useState(withslidercarosel || false);
 
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
@@ -40,7 +42,7 @@ export default function AttachmentComponent() {
           {t("Titles.completed")} <span>1 {t("Titles.of")} 3</span>
         </p>
       </div>
-      <div className="steps">
+      <div className="steps" hidden={withSliderCarosel}>
         <span className="backRow"> </span>
         <Button className="step doneStep" onClick={() => handleSelect(0)}>
           <Image src={stepCheck} className="check" />
@@ -61,7 +63,7 @@ export default function AttachmentComponent() {
           <span> {t("Titles.Family Book")}</span>
         </Button>
       </div>
-      <div className="steps">
+      <div className="steps" hidden={!withSliderCarosel}>
         <Carousel controls={false} interval={null} activeIndex={index2}>
           <Carousel.Item>
             <div className="stepsContainer">

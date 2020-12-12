@@ -21,6 +21,7 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
   };
 
   useEffect(() => {
+    /// to handel multiple carosels or not it the attachement component
     if (location.state?.wherToGo === "/payment") {
       setNextButtonText("Go To Payment");
       setNextButtonToGoRoute(location.state.wherToGo);
@@ -31,7 +32,7 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
     <Container fluid>
       <Row>
         <div className="contentContainer">
-          <AttachmentComponent />
+          <AttachmentComponent withslidercarosel={location.state.withslidercarosel} />
           <Row className="justify-content-center" onClick={decidedToGoHandler}>
             <NextButton customText={t(`Buttons.${nextButtonText}`)} />
           </Row>
