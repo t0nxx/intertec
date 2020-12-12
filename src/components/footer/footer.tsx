@@ -41,6 +41,15 @@ export default function FooterComponent() {
           <span> {t("Titles.Complete progress")}</span>
           <strong>{progressPersentage} %</strong>
         </div> */}
+        <Col xs={3} className="hideOnTaplet">
+          <Row xs={12} sm={12}>
+            <Col className="image1 prog">
+              <p>Complete progress</p>
+              <span>95 %</span>
+            </Col>
+          </Row>
+        </Col>
+
         <Col xs={3}>
           <Row xs={12} sm={4}>
             <Col className="image1">

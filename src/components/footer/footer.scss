@@ -11,7 +11,7 @@ html[lang="ar"] {
   background-color: #ffffff !important;
   padding-top: 0px;
   box-shadow: none;
-  height: 120px !important;
+  height: 90px !important;
 
   .progress {
     width: 100%;
@@ -70,6 +70,23 @@ html[lang="ar"] {
       justify-content: center;
     }
 
+    .image1.prog {
+      flex-direction: column;
+      padding: 0 15px;
+      p,
+      span {
+        width: 100%;
+        display: block;
+        text-align: left;
+      }
+      p {
+        color: #596269;
+        text-transform: capitalize;
+      }
+      span {
+        color: #127f46;
+      }
+    }
     .image1,
     .col-sm-4 {
       padding: 0px;
@@ -97,6 +114,15 @@ html[lang="ar"] {
       }
     }
   }
+
+  @media only screen and (max-width: 767px) {
+    .statistics-container {
+      .hideOnTaplet {
+        display: none !important;
+      }
+    }
+  }
+
   div {
     // margin: 0 15px;
     img {
