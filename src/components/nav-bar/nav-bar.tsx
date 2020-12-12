@@ -30,8 +30,19 @@ export default function NavBarComponent() {
     i18n.changeLanguage(nextLang);
     changeDirection(nextLang);
   };
+  let show = false;
+
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" bg="light" className="top-nav">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      variant="light"
+      bg="light"
+      className="top-nav"
+      // onToggle={() => {
+      //   show = !show;
+      // }}
+    >
       <Navbar.Brand href="/">
         <img
           src={logo}
@@ -41,6 +52,8 @@ export default function NavBarComponent() {
           alt="React Bootstrap logo"
         />
       </Navbar.Brand>
+
+      {show ? <DropDownUserComponent /> : null}
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
         <Nav className="mr-auto" />
@@ -111,7 +124,7 @@ export default function NavBarComponent() {
           </Dropdown>
 
           {/* User drop menu */}
-          <Dropdown>
+          {/* <Dropdown className="dropDownUser">
             <Dropdown.Toggle variant="success" id="dropdown-basic" className="user">
               <strong> {t("Titles.UserName")}</strong>
               <Image src={name} roundedCircle />
@@ -121,9 +134,27 @@ export default function NavBarComponent() {
               <Dropdown.Item href="#/action-2">test Another action</Dropdown.Item>
               <Dropdown.Item href="#/action-3">test Something else</Dropdown.Item>
             </Dropdown.Menu>
-          </Dropdown>
+          </Dropdown> */}
+          <DropDownUserComponent />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+  );
+}
+function DropDownUserComponent() {
+  const { t } = useTranslation();
+
+  return (
+    <Dropdown className="dropDownUser">
+      <Dropdown.Toggle variant="success" id="dropdown-basic" className="user">
+        <strong> {t("Titles.UserName")}</strong>
+        <Image src={name} roundedCircle />
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">test action</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">test Another action</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">test Something else</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
   );
 }
