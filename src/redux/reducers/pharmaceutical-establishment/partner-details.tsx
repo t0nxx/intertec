@@ -1,11 +1,9 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
-
-// import { partnerDetailInitialState } from "../../../components/screens/pharamaceutical-establishment/partner-detail/partner-detail-helper";
+import { partnerDetailInitialState } from "../../../components/screens/pharamaceutical-establishment/partner-details/add-partner/add-partner-helper";
 import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 const initalState = {
-  data: {},
+  data: [partnerDetailInitialState],
   isComplete: false,
 };
 
