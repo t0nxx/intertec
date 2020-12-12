@@ -81,7 +81,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>Reason for area extention</h1>
+                  <h1> {t("Texts.Reason For Area Extention")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>

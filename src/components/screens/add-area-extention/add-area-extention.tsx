@@ -48,7 +48,7 @@ const AddAreaExtention = () => {
               <Row>
                 <Image src={expand} className="ml-3 mr-4 greenIc" />
                 <Image src={expand} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">Reason For Area Extention</h3>
+                <h3 className="text-success">{t("Texts.Reason For Area Extention")}</h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
                   {t("Buttons.Start")}

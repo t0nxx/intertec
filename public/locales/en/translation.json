@@ -128,6 +128,11 @@
     "MustBeValidEmail": "Must be valid email"
   },
   "Texts": {
-    "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center"
+    "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center",
+    "Initial Licence Number": "Initial Licence Number",
+    "Area": "Area",
+    "Expiry Date": "Expiry Date",
+    "Issue Date": "Issue Date",
+    "Reason For Area Extention": "Reason For Area Extention"
   }
 }

@@ -72,23 +72,23 @@ const ReasonForAreaExtention = (props: IProps) => {
                 <div className="staticDataContent">
                   <Row>
                     <Col md="4" sm="6" xs="12">
-                      <p>Initial licence number</p>
-                      <span>Initial licence number</span>
+                      <p>{t("Texts.Initial Licence Number")}</p>
+                      <span>{t("Texts.Initial Licence Number")}</span>
                     </Col>
                     <Col md="4" sm="6" xs="12">
-                      <p>Area</p>
-                      <span>Area</span>
+                      <p>{t("Texts.Area")}</p>
+                      <span>{t("Texts.Area")}</span>
                     </Col>
                     <Col> </Col>
                   </Row>
                   <Row>
                     <Col md="4" sm="6" xs="12">
-                      <p>Issue date</p>
-                      <span>Issue date</span>
+                      <p>{t("Texts.Issue Date")}</p>
+                      <span>{t("Texts.Issue Date")}</span>
                     </Col>
                     <Col md="4" sm="6" xs="12">
-                      <p>Expiry date</p>
-                      <span>Expiry date</span>
+                      <p>{t("Texts.Expiry Date")}</p>
+                      <span>{t("Texts.Expiry Date")}</span>
                     </Col>
                     <Col> </Col>
                   </Row>
@@ -97,12 +97,12 @@ const ReasonForAreaExtention = (props: IProps) => {
             </Form.Group>
             <Form.Group as={Col} md="12" sm="12" controlId="establishmentName">
               <Form.Label>
-                Reason For Area Extention <span className="required">*</span>
+                {t("Texts.Reason For Area Extention")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 as="textarea"
                 type="text"
-                placeholder="Write the reason"
+                placeholder=""
                 name="buildingName"
                 ref={register}
                 isValid={formState.touched.buildingName && !errors.buildingName}
