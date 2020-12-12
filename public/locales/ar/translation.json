@@ -51,7 +51,8 @@
     "Amount": "كمية",
     "Select payment method": "اختار طريقة الدفع",
     "Accept terms and condition": "اقبل الشروط والأحكام",
-    "Payment successfully": "تمت عملية الدفع بنجاح"
+    "Payment successfully": "تمت عملية الدفع بنجاح",
+    "New Location Information": "تفاصيل العنوان الجديد"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
@@ -99,7 +100,7 @@
     "Description": "الوصف",
     "Yes": "نعم",
     "No": "لا",
-    "N/A": "لا اجابة",
+    "N/A": "لا ينطبق",
     "Disclaimer": "تنصل",
     "Alternative Contact No": "رقم جهة اتصال بديلة"
   },

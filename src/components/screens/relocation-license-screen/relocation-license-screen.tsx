@@ -50,7 +50,7 @@ const RelocationLicenseScreen = () => {
               <Row>
                 <Image src={locationImage} className="ml-3 mr-4 greenIc" />
                 <Image src={locationImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">New Location Information</h3>
+                <h3 className="text-success">{t("Titles.New Location Information")}</h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
                   {t("Buttons.Start")}
@@ -72,7 +72,7 @@ const RelocationLicenseScreen = () => {
               <Row>
                 <Image src={checkImage} className="ml-3 mr-4 greenIc" />
                 <Image src={checkImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">self evaluation </h3>
+                <h3 className="text-success">{t("Titles.Self Evaluation")} </h3>
                 <Image src={checked} className="checked" />
               </Row>
             </Accordion.Toggle>
