@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Image, Card, Table, Container, Row, Modal, Button } from "react-bootstrap";
+import { Image, Card, Table, Container, Row, Modal, Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useForm } from "react-hook-form";
 import "./partner-details.scss";
 import "../shared/shared.scss";
 import AddPartnerComponent from "./add-partner/add-partner";
@@ -30,6 +31,8 @@ const PartnerDetailsComponent = (props: IProps) => {
       props.onSubmitOrCancelEvent();
     }
   };
+  const { register, handleSubmit } = useForm();
+
   const onCancelHandler = () => changeParentToggleEvent();
 
   const onCloseModal = () => setShow(false);
@@ -40,7 +43,6 @@ const PartnerDetailsComponent = (props: IProps) => {
     // set step is complete without add any data
     dispatch({
       type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PARTNER_DETAILS,
-      payload: [],
     });
     // move to next step
     dispatch({
@@ -54,52 +56,11 @@ const PartnerDetailsComponent = (props: IProps) => {
     changeParentToggleEvent();
   };
 
-  const tableData = [
-    {
-      index: 0,
-      fName: "Mohamed Elzayat",
-      fNameAr: "محمد الزيات",
-      emiratesId: "12313-1231-456",
-      passportNo: "#number",
-      nationality: "Nationality",
-    },
-    {
-      index: 1,
-      fName: "Mohamed Elzayat",
-      fNameAr: "محمد الزيات",
-      emiratesId: "12313-1231-456",
-      passportNo: "#number",
-      nationality: "Nationality",
-    },
-    {
-      index: 2,
-      fName: "Mohamed Elzayat",
-      fNameAr: "محمد الزيات",
-      emiratesId: "12313-1231-456",
-      passportNo: "#number",
-      nationality: "Nationality",
-    },
-    {
-      index: 3,
-      fName: "Mohamed Elzayat",
-      fNameAr: "محمد الزيات",
-      emiratesId: "12313-1231-456",
-      passportNo: "#number",
-      nationality: "Nationality",
-    },
-    {
-      index: 4,
-      fName: "Mohamed Elzayat",
-      fNameAr: "محمد الزيات",
-      emiratesId: "12313-1231-456",
-      passportNo: "#number",
-      nationality: "Nationality",
-    },
-  ];
-  const [tableD, setTable] = useState(tableData);
   const removeFromTable = (index) => {
-    const afterRemove = tableD.filter((e) => e.index !== index);
-    setTable([...afterRemove]);
+    dispatch({
+      type: ActionTypes.PharmaceuticalEstablishmentActionTypes.Remove_New_PARTNER,
+      payload: index,
+    });
   };
 
   return (
@@ -109,78 +70,80 @@ const PartnerDetailsComponent = (props: IProps) => {
     <Container fluid>
       <Card>
         <Card.Body>
-          <Row hidden={props.isForReviewPage}>
-            <div className="addpartnerBtn">
-              <Image src={add} onClick={() => setShow(!show)} />
-              <p> {t("Forms.Add Partner")}</p>
-            </div>
-          </Row>
-          <Modal
-            scrollable={true}
-            show={show}
-            onHide={() => setShow(!show)}
-            backdrop="static"
-            keyboard={false}
-            className="fullScreenModal"
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>
-                <div className="back">
-                  <Image src={leftArrow} onClick={() => setShow(!show)} />
-                </div>
-                <div className="title">
-                  <h1> {t("Forms.Add New Partner")}</h1>
-                </div>
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <AddPartnerComponent closeModal={onCloseModal} />
-            </Modal.Body>
-          </Modal>
-
-          <Row className="tableParent">
-            <Table>
-              <thead>
-                <tr>
-                  <th>{t("Forms.Full Name_EN")}</th>
-                  <th>{t("Forms.Full Name_AR")}</th>
-                  <th>{t("Forms.Emirates ID")}</th>
-                  <th>{t("Forms.Passport NO")}</th>
-                  <th>{t("Forms.Nationality")}</th>
-                  <th> </th>
-                  <th> </th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableD.map((row) => (
-                  <tr key={row.index}>
-                    <td>{row.fName}</td>
-                    <td> {row.fNameAr}</td>
-                    <td> {row.emiratesId}</td>
-                    <td> {row.passportNo}</td>
-                    <td> {row.nationality}</td>
-                    <td>
-                      <Image src={edit} />
-                    </td>
-                    <td>
-                      <Image src={edit} onClick={(e) => removeFromTable(row.index)} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </Row>
-
-          {props.isForReviewPage ? (
-            // <SaveAndCancel onCancel={onCancelHandler} />
-            <Row className="addMore" onClick={() => setShow(!show)}>
-              <Image src={addMore} />
-              {t("Titles.Click here to add more Partner")}
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Row hidden={props.isForReviewPage}>
+              <div className="addpartnerBtn">
+                <Image src={add} onClick={() => setShow(!show)} />
+                <p> {t("Forms.Add Partner")}</p>
+              </div>
             </Row>
-          ) : (
-            /// temp since submiss btn not has a click event
-            <NextButton />
-          )}
+            <Modal
+              scrollable={true}
+              show={show}
+              onHide={() => setShow(!show)}
+              backdrop="static"
+              keyboard={false}
+              className="fullScreenModal"
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>
+                  <div className="back">
+                    <Image src={leftArrow} onClick={() => setShow(!show)} />
+                  </div>
+                  <div className="title">
+                    <h1> {t("Forms.Add New Partner")}</h1>
+                  </div>
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <AddPartnerComponent closeModal={onCloseModal} />
+              </Modal.Body>
+            </Modal>
+
+            <Row className="tableParent">
+              <Table>
+                <thead>
+                  <tr>
+                    <th>{t("Forms.Full Name_EN")}</th>
+                    <th>{t("Forms.Full Name_AR")}</th>
+                    <th>{t("Forms.Emirates ID")}</th>
+                    <th>{t("Forms.Passport NO")}</th>
+                    <th>{t("Forms.Nationality")}</th>
+                    <th> </th>
+                    <th> </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.map((row) => (
+                    <tr key={row.passportNo}>
+                      <td>{row.fName}</td>
+                      <td> {row.fNameAr}</td>
+                      <td> {row.emiratesId}</td>
+                      <td> {row.passportNo}</td>
+                      <td> {row.nationality}</td>
+                      <td>
+                        <Image src={edit} />
+                      </td>
+                      <td>
+                        <Image src={edit} onClick={(e) => removeFromTable(row.passportNo)} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </Row>
+
+            {props.isForReviewPage ? (
+              // <SaveAndCancel onCancel={onCancelHandler} />
+              <Row className="addMore" onClick={() => setShow(!show)}>
+                <Image src={addMore} />
+                {t("Titles.Click here to add more Partner")}
+              </Row>
+            ) : (
+              /// temp since submiss btn not has a click event
+              <NextButton />
+            )}
+          </Form>
         </Card.Body>
       </Card>
     </Container>

@@ -119,7 +119,8 @@
     "Submit": "Submit",
     "Go to workspace": "Go to workspace",
     "Process For Payment": "Process For Payment",
-    "Go To Payment": "Go To Payment"
+    "Go To Payment": "Go To Payment",
+    "Attachments": "Attachments"
   },
   "Error": {
     "Requird": "This is required",

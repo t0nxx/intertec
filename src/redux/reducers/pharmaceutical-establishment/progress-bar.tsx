@@ -13,7 +13,7 @@ const progressBarPersentageReducer = (
 
   switch (type) {
     case PharmaceuticalEstablishmentActionTypes.SET_PROGRESS_PERSENTAGE:
-      return state + payload;
+      return state + payload > 90 ? 90 : state + payload;
     default:
       return state;
   }

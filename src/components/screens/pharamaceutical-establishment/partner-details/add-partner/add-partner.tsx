@@ -31,7 +31,7 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
+        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.Add_New_PARTNER,
         payload: data,
       });
       props.closeModal();

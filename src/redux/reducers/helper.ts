@@ -20,6 +20,8 @@ export interface StateSelectorInterface {
     ownerDetailsReducer: StateNode;
     partnerDetailsReducer: StateNode;
     selfEvaluationsReducer: StateNode;
+    Add_New_PARTNER: StateNode;
+    Remove_New_PARTNER: StateNode;
     stepNumberReducer: number;
     progressBarPersentageReducer: number;
   };
