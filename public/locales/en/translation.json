@@ -138,6 +138,11 @@
   "Texts" : {
     "if you still have any inquiries" : " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center",
     "Your staff criteria needs to be fulfilled to continue submitting the application." : "Your staff criteria needs to be fulfilled to continue submitting the application.",
-    "Kindly refer to email sent for staff criteria or view the online service card" : "Kindly refer to email sent for staff criteria or view the online service card"
+    "Kindly refer to email sent for staff criteria or view the online service card" : "Kindly refer to email sent for staff criteria or view the online service card",
+    "Initial Licence Number": "Initial Licence Number",
+    "Area": "Area",
+    "Expiry Date": "Expiry Date",
+    "Issue Date": "Issue Date",
+    "Reason For Area Extention": "Reason For Area Extention"
   }
 }

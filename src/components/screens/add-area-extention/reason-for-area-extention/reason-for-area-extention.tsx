@@ -97,7 +97,7 @@ const ReasonForAreaExtention = (props: IProps) => {
             </Form.Group>
             <Form.Group as={Col} md="12" sm="12" controlId="establishmentName">
               <Form.Label>
-                {t("Titles.Reason For Area Extension")} <span className="required">*</span>
+                {t("Texts.Reason For Area Extention")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 as="textarea"

@@ -102,7 +102,10 @@
     "No": "لا",
     "N/A": "لا ينطبق",
     "Disclaimer": "تنصل",
-    "Alternative Contact No": "رقم جهة اتصال بديلة"
+    "Alternative Contact No": "رقم جهة اتصال بديلة",
+    "Expiry Date": "تاريخ الانتهاء",
+    "Issue Date": "تاريخ الاصدار",
+    "Write the reason" : "اكتب السبب"
   },
   "Buttons": {
     "Next": "التالي",
@@ -131,6 +134,11 @@
   "Texts" : {
     "if you still have any inquiries" : " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين",
     "Your staff criteria needs to be fulfilled to continue submitting the application" : "يجب استيفاء معايير موظفيك لمواصلة تقديم الطلب.",
-    "Kindly refer to email sent for staff criteria or view the online service card" : "يرجى الرجوع إلى البريد الإلكتروني المرسل لمعايير الموظفين أو عرض بطاقة الخدمة عبر الإنترنت"
+    "Kindly refer to email sent for staff criteria or view the online service card" : "يرجى الرجوع إلى البريد الإلكتروني المرسل لمعايير الموظفين أو عرض بطاقة الخدمة عبر الإنترنت",
+    "Initial Licence Number": "رقم الرخصه المبدأي",
+    "Area": "المنطقة",
+    "Expiry Date": "تاريخ الانتهاء",
+    "Issue Date": "تاريخ الاصدار",
+    "Reason For Area Extention": "سبب توسيع المنطقة"
   }
 }
