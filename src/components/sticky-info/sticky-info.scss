@@ -1,6 +1,9 @@
+html[lang="ar"] {
+}
+
 .stickyInfo {
   position: absolute;
-  bottom: 100px;
+  bottom: 125px;
   left: 10px;
   width: fit-content;
   .infoIcon {
@@ -67,5 +70,12 @@
         }
       }
     }
+  }
+}
+@media only screen and (max-width: 786px) {
+  .stickyInfo {
+    right: 10px;
+    left: unset;
+    bottom: 170px;
   }
 }
