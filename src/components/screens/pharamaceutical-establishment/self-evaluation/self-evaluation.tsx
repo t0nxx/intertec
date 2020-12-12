@@ -131,14 +131,11 @@ const SelfEvaluationComponent = () => {
                 id="disclaimer"
                 label={t("Forms.Disclaimer")}
                 custom
-                className="disclaimer"
                 onChange={(e) => setChecked(e.currentTarget.checked)}
               />
             </Col>
           </Row>
-          <Row className="justify-content-center">
-            <NextButton customText={t("Buttons.Go To Attachment")} />
-          </Row>
+          <NextButton customText={t("Buttons.Go To Attachment")} />
         </Form>
       </Card.Body>
     </Card>

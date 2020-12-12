@@ -1,20 +1,23 @@
-html[lang=ar]{
-  .paymentScreenContent .paymentComponent .row.head .col.left-align, .paymentScreenContent .paymentComponent .row.child .col.left-align{
+html[lang="ar"] {
+  .paymentScreenContent .paymentComponent .row.head .col.left-align,
+  .paymentScreenContent .paymentComponent .row.child .col.left-align {
     text-align: right;
   }
-  .paymentScreenContent .paymentComponent .row.head .col.right-align, .paymentScreenContent .paymentComponent .row.child .col.right-align{
+  .paymentScreenContent .paymentComponent .row.head .col.right-align,
+  .paymentScreenContent .paymentComponent .row.child .col.right-align {
     text-align: left;
   }
 
-  .paymentScreenContent .paymentComponent .row.accept .custom-control{
+  .paymentScreenContent .paymentComponent .row.accept .custom-control {
     padding-left: 0;
     padding-right: 1.5rem;
   }
-  .paymentScreenContent .paymentComponent .row.accept label::before, .paymentScreenContent .paymentComponent .row.accept label::after{
+  .paymentScreenContent .paymentComponent .row.accept label::before,
+  .paymentScreenContent .paymentComponent .row.accept label::after {
     right: -1.5rem;
     left: auto;
   }
-  .paymentScreenContent .paymentComponent .row.accept label{
+  .paymentScreenContent .paymentComponent .row.accept label {
     padding-left: 0;
     padding-right: 10px;
   }
@@ -59,10 +62,6 @@ html[lang=ar]{
     .row.accept {
       font-size: 18px;
       color: #646e76;
-      .custom-control {
-        display: flex;
-        align-items: center;
-      }
       label {
         text-decoration: underline;
         padding-left: 10px;
@@ -72,16 +71,7 @@ html[lang=ar]{
           width: 22px;
           height: 22px;
           border-radius: 4px;
-          box-shadow: none !important;
-          background-color: white;
         }
-      }
-      input:checked ~ label::after {
-        background-color: #127f46 !important;
-        background-image: url(../../../assets/rightMark2.svg);
-        background-repeat: no-repeat;
-        background-size: 80%;
-        background-position: center center;
       }
     }
     .row.selectPayment {

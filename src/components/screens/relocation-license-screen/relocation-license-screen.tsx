@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./relocation-license-screen.scss";
+import "./shared/shared.scss";
 
 // Import images
 import penImage from "../../../assets/pen.svg";
@@ -19,7 +20,7 @@ import checkImageWhite from "../../../assets/check-white.svg";
 import checked from "../../../assets/checked.svg";
 
 import LocationInformationComponent from "./location-inforamtion/location-information";
-import SelfEvaluationComponent from "./self-evaluation/self-evaluation";
+import SelfEvaluationComponent from "../pharamaceutical-establishment/self-evaluation/self-evaluation";
 import RequestInformation from "../../request-information/request-information";
 
 const RelocationLicenseScreen = () => {
@@ -60,10 +61,7 @@ const RelocationLicenseScreen = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                <LocationInformationComponent isForReviewPage={false} />
-                {/* <span className="ta7nika"> </span> */}
-              </Card.Body>
+              <LocationInformationComponent isForReviewPage={false} />
             </Accordion.Collapse>
           </Card>
           <div className="divider" />
