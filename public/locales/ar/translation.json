@@ -50,7 +50,8 @@
     "Total": "مجموع :",
     "Amount": "كمية",
     "Select payment method": "اختار طريقة الدفع",
-    "Accept terms and condition": "اقبل الشروط والأحكام"
+    "Accept terms and condition": "اقبل الشروط والأحكام",
+    "Payment successfully": "تمت عملية الدفع بنجاح"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",

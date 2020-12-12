@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Form, Image, Row, Col, Button } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./payment-screen.scss";
 
@@ -10,6 +11,15 @@ import RequestInformation from "../../request-information/request-information";
 
 export default function PaymentScreenComponent() {
   const { t } = useTranslation();
+  const history = useHistory();
+  const handelSuccessPayment = () => {
+    history.push({
+      pathname: "/success",
+      state: {
+        successVariable: "payment",
+      },
+    });
+  };
   return (
     <Container fluid className="topScreen">
       <Row>
@@ -74,7 +84,9 @@ export default function PaymentScreenComponent() {
 
                 <Row className="proceed">
                   <Col>
-                    <Button variant="success">{t("Buttons.Process For Payment")}</Button>
+                    <Button variant="success" onClick={handelSuccessPayment}>
+                      {t("Buttons.Process For Payment")}
+                    </Button>
                   </Col>
                 </Row>
               </Row>

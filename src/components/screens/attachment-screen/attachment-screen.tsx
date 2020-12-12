@@ -21,11 +21,11 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
   };
 
   useEffect(() => {
-    if (location.state.wherToGo === "/payment") {
+    if (location.state?.wherToGo === "/payment") {
       setNextButtonText("Go To Payment");
       setNextButtonToGoRoute(location.state.wherToGo);
     }
-  }, []);
+  }, [location.state?.wherToGo]);
 
   return (
     <Container fluid>

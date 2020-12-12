@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import { Container, Image, Row, Col, Button, Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import "./success-screen.scss";
@@ -13,11 +14,26 @@ import smCloseButton from "../../../assets/smallCloseButton.svg";
 import bigHappyRate from "../../../assets/bigHappyRate.svg";
 
 export default function SuccessScreenComponent() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const { t } = useTranslation();
-
+  const history = useHistory();
+  const location: any = useLocation();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [successText, setSuccessText] = useState(
+    "Your application has been submitted successfully"
+  );
+
+  useEffect(() => {
+    if (location.state?.successVariable === "payment") {
+      setSuccessText("Payment successfully");
+    }
+  }, [location.state?.successVariable]);
+
+  const goToWorkSapce = () => {
+    history.push("/");
+  };
   return (
     <Container fluid>
       <Modal
@@ -41,11 +57,11 @@ export default function SuccessScreenComponent() {
       <Row>
         <Col className="succScreenContent">
           <Image src={success} />
-          <p className="successMsg">{t("Titles.Your application has been submitted successfully")}</p>
+          <p className="successMsg">{t(`Titles.${successText}`)}</p>
           <p className="appNum">
             {t("Titles.Application number")} : <span>#number</span>
           </p>
-          <Button>{t("Buttons.Go to workspace")}</Button>
+          <Button onClick={goToWorkSapce}>{t("Buttons.Go to workspace")}</Button>
         </Col>
       </Row>
       <Container className="successScreenFooter">
@@ -60,9 +76,7 @@ export default function SuccessScreenComponent() {
             </Row>
             <Row>
               <Col>
-                <p>
-                  {t("Texts.if you still have any inquiries")}
-                </p>
+                <p>{t("Texts.if you still have any inquiries")}</p>
               </Col>
             </Row>
           </Col>
