@@ -13,11 +13,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Badge, Dropdown, Nav, Navbar, Image } from "react-bootstrap";
 import i18n from "../../../i18n";
-import logo from "../../logo.png";
+import logo from "../../../logo.png";
 
 // Import images
-import name from "../../assets/name.jpg";
-import bell from "../../assets/bell.svg";
+import name from "../../../assets/name.jpg";
+import bell from "../../../assets/bell.svg";
 
 export default function NavBarComponent() {
   const { t } = useTranslation();

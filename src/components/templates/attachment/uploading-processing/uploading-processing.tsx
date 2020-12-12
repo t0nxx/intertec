@@ -4,9 +4,9 @@ import "./uploading-processing.scss";
 import { Image } from "react-bootstrap";
 
 // Import images
-import fileProcessing from "../../../assets/fileProcessing.svg";
-import rightMark from "../../../assets/rightMark.svg";
-import checkVairus from "../../../assets/checkVairus.svg";
+import fileProcessing from "../../../../assets/fileProcessing.svg";
+import rightMark from "../../../../assets/rightMark.svg";
+import checkVairus from "../../../../assets/checkVairus.svg";
 
 export default function UploadingProcessing() {
   const { t } = useTranslation();

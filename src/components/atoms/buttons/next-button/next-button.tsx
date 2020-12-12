@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Image, Row } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import arrowWhite from "../../../assets/arrow-white.svg";
+import arrowWhite from "../../../../assets/arrow-white.svg";
 import "./next-button.scss";
 
 // eslint-disable-next-line react/require-default-props

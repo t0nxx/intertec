@@ -4,7 +4,7 @@ import "./drag-area.scss";
 import { Image, Button } from "react-bootstrap";
 
 // Import images
-import upArrow from "../../../assets/upArrow.svg";
+import upArrow from "../../../../assets/upArrow.svg";
 
 export default function DragAreaComponent() {
   const { t } = useTranslation();

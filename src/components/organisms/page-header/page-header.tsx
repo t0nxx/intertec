@@ -6,8 +6,8 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { Image, Breadcrumb, Col, Container, Row, Button, Modal, Navbar } from "react-bootstrap";
 
 // Import images
-import close from "../../assets/close.svg";
-import smCloseButton from "../../assets/smallCloseButton.svg";
+import close from "../../../assets/close.svg";
+import smCloseButton from "../../../assets/smallCloseButton.svg";
 
 export default function PageHeaderComponent() {
   const { t } = useTranslation();

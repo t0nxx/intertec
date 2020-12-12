@@ -4,10 +4,10 @@ import "./upload-options.scss";
 import { Image } from "react-bootstrap";
 
 // Import images
-import fromPc from "../../../assets/fromPc.svg";
-import dropbox from "../../../assets/dropbox.png";
-import cloud from "../../../assets/cloud.png";
-import box from "../../../assets/box.png";
+import fromPc from "../../../../assets/fromPc.svg";
+import dropbox from "../../../../assets/dropbox.png";
+import cloud from "../../../../assets/cloud.png";
+import box from "../../../../assets/box.png";
 
 export default function UploadOptionsComponent() {
   const { t } = useTranslation();

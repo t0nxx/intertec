@@ -8,13 +8,13 @@ import { StateSelectorInterface } from "../../../redux/reducers/helper";
 import InfoComponent from "../../molecules/sticky-info/sticky-info";
 
 // Import images
-import applicationIc from "../../assets/applicationIc.svg";
-import attachmentIc from "../../assets/attachmentIc.svg";
-import attachmentIcGreen from "../../assets/attachmentIcGreen.svg";
-import previewIc from "../../assets/previewIc.svg";
-import previewIcGreen from "../../assets/previewIcGreen.svg";
+import applicationIc from "../../../assets/applicationIc.svg";
+import attachmentIc from "../../../assets/attachmentIc.svg";
+import attachmentIcGreen from "../../../assets/attachmentIcGreen.svg";
+import previewIc from "../../../assets/previewIc.svg";
+import previewIcGreen from "../../../assets/previewIcGreen.svg";
 
-import back from "../../assets/back.svg";
+import back from "../../../assets/back.svg";
 
 export default function FooterComponent() {
   const { t } = useTranslation();

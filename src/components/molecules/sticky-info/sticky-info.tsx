@@ -3,8 +3,8 @@ import "./sticky-info.scss";
 import { Button, Accordion, Card, Image } from "react-bootstrap";
 
 // Import image
-import upArrow from "../../assets/upArrow4Collaps.svg";
-import rightArrow from "../../assets/rightArrow.svg";
+import upArrow from "../../../assets/upArrow4Collaps.svg";
+import rightArrow from "../../../assets/rightArrow.svg";
 
 export default function InfoComponent() {
   const [isOpen, setIsOpen] = useState(false);

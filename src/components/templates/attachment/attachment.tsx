@@ -8,14 +8,14 @@ import UploadOptionsComponent from "./upload-options/upload-options";
 import UploadingProcessing from "./uploading-processing/uploading-processing";
 
 // Import images
-import file from "../../assets/file.svg";
-import del from "../../assets/delete.svg";
-import stepCheck from "../../assets/stepCheck.svg";
-import stepChecked from "../../assets/stepChecked.svg";
-import leftArrowBtn from "../../assets/leftArrowBtn.svg";
-import rightArrowBtn from "../../assets/rightArrowBtn.svg";
-import semiChecked from "../../assets/semiChecked.svg";
-import warning from "../../assets/warning.svg";
+import file from "../../../assets/file.svg";
+import del from "../../../assets/delete.svg";
+import stepCheck from "../../../assets/stepCheck.svg";
+import stepChecked from "../../../assets/stepChecked.svg";
+import leftArrowBtn from "../../../assets/leftArrowBtn.svg";
+import rightArrowBtn from "../../../assets/rightArrowBtn.svg";
+import semiChecked from "../../../assets/semiChecked.svg";
+import warning from "../../../assets/warning.svg";
 
 export default function AttachmentComponent({ withslidercarosel }) {
   const { t } = useTranslation();
