@@ -30,7 +30,7 @@ export default function NavBarComponent() {
     i18n.changeLanguage(nextLang);
     changeDirection(nextLang);
   };
-  let show = false;
+  const show = false;
 
   return (
     <Navbar
