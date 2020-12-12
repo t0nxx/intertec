@@ -1,9 +1,9 @@
-html[lang=ar] {
-  .stickyInfo .infoContent .card .card-body .showMore{
+html[lang="ar"] {
+  .stickyInfo .infoContent .card .card-body .showMore {
     flex-direction: row-reverse;
   }
 
-  .stickyInfo .infoIcon.opened{
+  .stickyInfo .infoIcon.opened {
     left: auto;
     right: 4%;
   }
@@ -15,7 +15,7 @@ html[lang=ar] {
   left: 10px;
   width: fit-content;
   z-index: 9;
-  .content{
+  .content {
     position: relative;
     background-color: transparent;
   }
@@ -28,7 +28,7 @@ html[lang=ar] {
     cursor: pointer;
     // transition: width 0.5s ease-in-out;
     &:hover {
-      .infoContent{
+      .infoContent {
         background-color: transparent;
       }
       //   transition: width 0.5s ease-in-out;
@@ -55,10 +55,10 @@ html[lang=ar] {
     margin-left: 14px;
     margin-bottom: -25px;
     padding: 20px;
-    .arrow{
+    .arrow {
       width: 30px;
     }
-    .arrow.rotate{
+    .arrow.rotate {
       transform: rotate(180deg);
     }
     .card {
@@ -108,5 +108,8 @@ html[lang=ar] {
     right: 10px;
     left: unset;
     bottom: 170px;
+    .infoIcon {
+      background-position: right;
+    }
   }
 }
