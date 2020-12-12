@@ -50,7 +50,10 @@
     "Total" : "Total :",
     "Amount" : "Amount",
     "Select payment method" : "Select payment method",
-    "Accept terms and condition" : "Accept terms and condition"
+    "Accept terms and condition" : "Accept terms and condition",
+    "Services Description" : "Services Description",
+    "show More" : "show More",
+    "Service fees" : "Service fees"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",

@@ -50,7 +50,10 @@
     "Total" : "مجموع :",
     "Amount" : "كمية",
     "Select payment method" : "اختار طريقة الدفع",
-    "Accept terms and condition" : "اقبل الشروط والأحكام"
+    "Accept terms and condition" : "اقبل الشروط والأحكام",
+    "Services Description" : "وصف الخدمات",
+    "show More" : "أظهر المزيد",
+    "Service fees" : "رسوم الخدمة"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
