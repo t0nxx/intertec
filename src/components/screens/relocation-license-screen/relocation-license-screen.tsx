@@ -7,11 +7,14 @@ import "./relocation-license-screen.scss";
 import "./shared/shared.scss";
 
 // Import images
-import penImage from "../../../assets/pen.svg";
-import penImageWhite from "../../../assets/pen-white.svg";
+import locationImage from "../../../assets/location.svg";
+import locationImageWhite from "../../../assets/location-white.svg";
+
 import contactImage from "../../../assets/contact.svg";
 import contactImageWhite from "../../../assets/contact-white.svg";
 import checked from "../../../assets/checked.svg";
+import checkImage from "../../../assets/check.svg";
+import checkImageWhite from "../../../assets/check-white.svg";
 
 import LocationInformationComponent from "./location-inforamtion/location-information";
 import SelfEvaluationComponent from "../pharamaceutical-establishment/self-evaluation/self-evaluation";
@@ -45,8 +48,8 @@ const RelocationLicenseScreen = () => {
               onClick={() => setCurrentStep("0")}
             >
               <Row>
-                <Image src={penImage} className="ml-3 mr-4 greenIc" />
-                <Image src={penImageWhite} className="ml-3 mr-4 whiteIc" />
+                <Image src={locationImage} className="ml-3 mr-4 greenIc" />
+                <Image src={locationImageWhite} className="ml-3 mr-4 whiteIc" />
                 <h3 className="text-success">New Location Information</h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
@@ -67,8 +70,8 @@ const RelocationLicenseScreen = () => {
               onClick={() => setCurrentStep("1")}
             >
               <Row>
-                <Image src={contactImage} className="ml-3 mr-4 greenIc" />
-                <Image src={contactImageWhite} className="ml-3 mr-4 whiteIc" />
+                <Image src={checkImage} className="ml-3 mr-4 greenIc" />
+                <Image src={checkImageWhite} className="ml-3 mr-4 whiteIc" />
                 <h3 className="text-success">self evaluation </h3>
                 <Image src={checked} className="checked" />
               </Row>
