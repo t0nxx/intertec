@@ -53,7 +53,12 @@
     "Accept terms and condition" : "Accept terms and condition",
     "Services Description" : "Services Description",
     "show More" : "show More",
-    "Service fees" : "Service fees"
+    "Service fees" : "Service fees",
+    "New Location Information" : "New Location Information",
+    "self evaluation" : "self evaluation",
+    "Old building information" : "Old building information",
+    "Reason For Area Extension" : "Reason For Area Extension",
+    "Initial licence number" : "Initial licence number"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -103,7 +108,10 @@
     "No": "No",
     "N/A": "N/A",
     "Disclaimer" : "Disclaimer",
-    "Alternative Contact No" : "Alternative Contact No"
+    "Alternative Contact No" : "Alternative Contact No",
+    "Issue date" : "Issue date",
+    "Expiry date" : "Expiry date",
+    "Write the reason" : "Write the reason"
   },
   "Buttons": {
     "Next": "Next",
@@ -120,13 +128,16 @@
     "Google Map URL" : "Google Map URL",
     "Submit" : "Submit",
     "Go to workspace" : "Go to workspace",
-    "Process For Payment" : "Process For Payment"
+    "Process For Payment" : "Process For Payment",
+    "Close" : "Close"
   },
   "Error": {
     "Requird": "This is required",
     "MustBeValidEmail" : "Must be valid email"
   },
   "Texts" : {
-    "if you still have any inquiries" : " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center"
+    "if you still have any inquiries" : " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center",
+    "Your staff criteria needs to be fulfilled to continue submitting the application." : "Your staff criteria needs to be fulfilled to continue submitting the application.",
+    "Kindly refer to email sent for staff criteria or view the online service card" : "Kindly refer to email sent for staff criteria or view the online service card"
   }
 }

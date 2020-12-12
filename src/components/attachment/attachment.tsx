@@ -256,10 +256,11 @@ export default function AttachmentComponent() {
       <div className="warning">
         <Image src={warning} />
         <p>
-          Your staff criteria needs to be fulfilled to continue submitting the application. <br />
-          Kindly refer to email sent for staff criteria or view the online service card
+          {t("Texts.Your staff criteria needs to be fulfilled to continue submitting the application")}
+          <br />
+          {t("Texts.Kindly refer to email sent for staff criteria or view the online service card")}
         </p>
-        <Button>Close</Button>
+        <Button>{t("Buttons.Close")}</Button>
       </div>
     </div>
   );

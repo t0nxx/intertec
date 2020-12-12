@@ -53,7 +53,12 @@
     "Accept terms and condition" : "اقبل الشروط والأحكام",
     "Services Description" : "وصف الخدمات",
     "show More" : "أظهر المزيد",
-    "Service fees" : "رسوم الخدمة"
+    "Service fees" : "رسوم الخدمة",
+    "New Location Information" : "معلومات الموقع الجديدة",
+    "self evaluation" : "التقييم الذاتي",
+    "Old building information" : "معلومات المبنى القديم",
+    "Reason For Area Extension" : "سبب تمديد المنطقة",
+    "Initial licence number" : "رقم الترخيص الأولي"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
@@ -103,7 +108,10 @@
     "No": "لا",
     "N/A": "لا اجابة",
     "Disclaimer" : "تنصل",
-    "Alternative Contact No" : "رقم جهة اتصال بديلة"
+    "Alternative Contact No" : "رقم جهة اتصال بديلة",
+    "Issue date" : "تاريخ الاصدار",
+    "Expiry date" : "تاريخ انتهاء الصلاحية",
+    "Write the reason" : "اكتب السبب"
   },
   "Buttons": {
     "Next": "التالي",
@@ -121,13 +129,16 @@
     "Submit" : "إرسال",
     "Google Map URL" : "رابط خريطه جوجل",
     "Go to workspace" : "اذهب إلى مساحة العمل",
-    "Process For Payment" : "عملية الدفع"
+    "Process For Payment" : "عملية الدفع",
+    "Close" : "قريب"
   },
   "Error": {
     "Requird": "هذا الحقل مطلوب",
     "MustBeValidEmail" : "يجب أن يكون بريدًا إلكترونيًا صالحًا"
   },
   "Texts" : {
-    "if you still have any inquiries" : " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين"
+    "if you still have any inquiries" : " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين",
+    "Your staff criteria needs to be fulfilled to continue submitting the application" : "يجب استيفاء معايير موظفيك لمواصلة تقديم الطلب.",
+    "Kindly refer to email sent for staff criteria or view the online service card" : "يرجى الرجوع إلى البريد الإلكتروني المرسل لمعايير الموظفين أو عرض بطاقة الخدمة عبر الإنترنت"
   }
 }
