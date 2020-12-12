@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 
-import { ownerDetailInitialState } from "../../../components/screens/pharamaceutical-establishment/owner-detail/owner-detail-helper";
+import { ownerDetailInitialState } from "../../../components/pages/pharamaceutical-establishment-screen/owner-detail/owner-detail-helper";
 import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */

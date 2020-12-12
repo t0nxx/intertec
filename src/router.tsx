@@ -1,13 +1,13 @@
 import React from "react";
 import { Route, Switch, useLocation, BrowserRouter as Router } from "react-router-dom";
-import ReviewScreenComponent from "./components/screens/review-screen/review-screen";
-import AttachmentScreenComponent from "./components/screens/attachment-screen/attachment-screen";
-import PharamaceuticalEstablishmentScreen from "./components/screens/pharamaceutical-establishment/pharamaceutical-establishment";
-import SuccessScreenComponent from "./components/screens/success-screen/success-screen";
-import PaymentScreenComponent from "./components/screens/payment-screen/payment-screen";
-import AddPartnerComponent from "./components/screens/pharamaceutical-establishment/partner-details/add-partner/add-partner";
-import RelocationLicenseScreen from "./components/screens/relocation-license-screen/relocation-license-screen";
-import AddAreaExtention from "./components/screens/add-area-extention/add-area-extention";
+import ReviewScreenComponent from "./components/pages/review-screen/review-screen";
+import AttachmentScreenComponent from "./components/pages/attachment-screen/attachment-screen";
+import PharamaceuticalEstablishmentScreen from "./components/pages/pharamaceutical-establishment-screen/pharamaceutical-establishment";
+import SuccessScreenComponent from "./components/pages/success-screen/success-screen";
+import PaymentScreenComponent from "./components/pages/payment-screen/payment-screen";
+import AddPartnerComponent from "./components/pages/pharamaceutical-establishment-screen/partner-details/add-partner/add-partner";
+import RelocationLicenseScreen from "./components/pages/relocation-license-screen/relocation-license-screen";
+import AddAreaExtention from "./components/pages/add-area-extention/add-area-extention";
 
 function Routes() {
   return (
