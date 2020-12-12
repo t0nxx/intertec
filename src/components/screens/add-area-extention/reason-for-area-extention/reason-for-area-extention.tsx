@@ -103,13 +103,13 @@ const ReasonForAreaExtention = (props: IProps) => {
                 as="textarea"
                 type="text"
                 placeholder=""
-                name="buildingName"
+                name="reason"
                 ref={register}
-                isValid={formState.touched.buildingName && !errors.buildingName}
-                isInvalid={errors.buildingName}
+                isValid={formState.touched.reason && !errors.reason}
+                isInvalid={errors.reason}
               />
-              {errors.buildingName ? (
-                <span className="text-danger">{t(`${errors.buildingName?.message}`)}</span>
+              {errors.reason ? (
+                <span className="text-danger">{t(`${errors.reason?.message}`)}</span>
               ) : null}
             </Form.Group>
           </Form.Row>
