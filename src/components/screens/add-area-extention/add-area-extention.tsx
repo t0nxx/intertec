@@ -14,7 +14,7 @@ import checked from "../../../assets/checked.svg";
 import checkImage from "../../../assets/check.svg";
 import checkImageWhite from "../../../assets/check-white.svg";
 
-import LocationInformationComponent from "./reason-for-area-extention/reason-for-area-extention";
+import ReasonForAreaExtention from "./reason-for-area-extention/reason-for-area-extention";
 import SelfEvaluationComponent from "../pharamaceutical-establishment/self-evaluation/self-evaluation";
 import RequestInformation from "../../request-information/request-information";
 
@@ -56,7 +56,7 @@ const AddAreaExtention = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-              <LocationInformationComponent isForReviewPage={false} />
+              <ReasonForAreaExtention isForReviewPage={false} />
             </Accordion.Collapse>
           </Card>
           <div className="divider" />

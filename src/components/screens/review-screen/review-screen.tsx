@@ -15,6 +15,7 @@ import LocationInformationComponent from "../pharamaceutical-establishment/locat
 import OwnerDetailComponent from "../pharamaceutical-establishment/owner-detail/owner-detail";
 import PartnerDetailsComponent from "../pharamaceutical-establishment/partner-details/partner-details";
 import AddPartnerComponent from "../pharamaceutical-establishment/partner-details/add-partner/add-partner";
+import ReasonForAreaExtention from "../add-area-extention/reason-for-area-extention/reason-for-area-extention";
 
 import file from "../../../assets/file.svg";
 import del from "../../../assets/delete.svg";
@@ -74,6 +75,41 @@ export default function ReviewScreenComponent() {
             </Row>
           </div>
           {/* Screen Head */}
+
+          {/* Start Reason for area extention */}
+          <div className="block">
+            <Accordion defaultActiveKey={collapseAllState}>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
+                  <h1>Reason for area extention</h1>
+                  <Image src={upArrow4Collaps} />
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey={collapseAllState}>
+                  {isEditEstablish ? (
+                    <ReasonForAreaExtention
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image
+                        src={editPen}
+                        className="edit"
+                        onClick={() => setIsEditEstablish(!isEditEstablish)}
+                      />
+                      <Row>
+                        <Col md="12" sm="12">
+                          <p>Reason for area extention</p>
+                          <span>Reason for area extention</span>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </div>
+          {/* End Reason for area extention */}
 
           {/* Start Establishment Information */}
           <div className="block">

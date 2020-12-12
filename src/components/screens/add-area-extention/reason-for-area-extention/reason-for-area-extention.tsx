@@ -15,7 +15,7 @@ import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../buttons/next-button/next-button";
 
-const LocationInformationComponent = (props: IProps) => {
+const ReasonForAreaExtention = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.locationInformationsReducer
@@ -121,4 +121,4 @@ const LocationInformationComponent = (props: IProps) => {
   );
 };
 
-export default LocationInformationComponent;
+export default ReasonForAreaExtention;
