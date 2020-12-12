@@ -3,15 +3,14 @@ import { useSelector } from "react-redux";
 import "./footer.scss";
 import { Navbar, Image, ProgressBar, Row, Col } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { StateSelectorInterface } from "../../redux/reducers/helper";
+import InfoComponent from "../sticky-info/sticky-info";
 
 // Import images
 import applicationIc from "../../assets/applicationIc.svg";
 import attachmentIc from "../../assets/attachmentIc.svg";
 import previewIc from "../../assets/previewIc.svg";
-import info from "../../assets/info.svg";
-// import flag from "../../assets/flag.svg";
-import { StateSelectorInterface } from "../../redux/reducers/helper";
-import InfoComponent from "../sticky-info/sticky-info";
+import back from "../../assets/back.svg";
 
 export default function FooterComponent() {
   const { t } = useTranslation();
@@ -23,6 +22,9 @@ export default function FooterComponent() {
     <Navbar expand="lg" fixed="bottom" className="footer">
       <div className="flagIc"> </div>
       <InfoComponent />
+      <div className="stickyBack">
+        <Image src={back} />
+      </div>
       <ProgressBar variant="success" now={progressPersentage} className="progress" />
       <Row className="statistics-container">
         {/* <div>
