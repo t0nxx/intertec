@@ -15,6 +15,7 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
 
   const [nextButtonText, setNextButtonText] = useState("Go To Preview");
   const [nextButtonToGoRoute, setNextButtonToGoRoute] = useState("/review");
+  const openWithSliderCarosel = location.state?.withslidercarosel || false;
 
   const decidedToGoHandler = () => {
     history.push(nextButtonToGoRoute);
@@ -26,13 +27,13 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
       setNextButtonText("Go To Payment");
       setNextButtonToGoRoute(location.state.wherToGo);
     }
-  }, [location.state?.wherToGo]);
+  }, [location.state?.wherToGo, location.state?.withslidercarosel]);
 
   return (
     <Container fluid>
       <Row>
         <div className="contentContainer">
-          <AttachmentComponent withslidercarosel={location.state.withslidercarosel} />
+          <AttachmentComponent withslidercarosel={openWithSliderCarosel} />
           <Row className="justify-content-center" onClick={decidedToGoHandler}>
             <NextButton customText={t(`Buttons.${nextButtonText}`)} />
           </Row>

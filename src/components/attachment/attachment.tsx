@@ -22,6 +22,8 @@ export default function AttachmentComponent({ withslidercarosel }) {
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
 
+  const [showWarning, setShowWarning] = useState(false);
+
   const [withSliderCarosel, setWithSliderCarosel] = useState(withslidercarosel || false);
 
   const handleSelect = (selectedIndex: number) => {
@@ -255,13 +257,13 @@ export default function AttachmentComponent({ withslidercarosel }) {
         </Carousel.Item>
       </Carousel>
       {/* Eng slider  */}
-      <div className="warning" hidden={true}>
+      <div className="warning" hidden={!showWarning}>
         <Image src={warning} />
         <p>
           Your staff criteria needs to be fulfilled to continue submitting the application. <br />
           Kindly refer to email sent for staff criteria or view the online service card
         </p>
-        <Button>Close</Button>
+        <Button onClick={() => setShowWarning(!showWarning)}>Close</Button>
       </div>
     </div>
   );
