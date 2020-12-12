@@ -1,4 +1,12 @@
-html[lang="ar"] {
+html[lang=ar] {
+  .stickyInfo .infoContent .card .card-body .showMore{
+    flex-direction: row-reverse;
+  }
+
+  .stickyInfo .infoIcon.opened{
+    left: auto;
+    right: 4%;
+  }
 }
 
 .stickyInfo {
@@ -7,6 +15,10 @@ html[lang="ar"] {
   left: 10px;
   width: fit-content;
   z-index: 9;
+  .content{
+    position: relative;
+    background-color: transparent;
+  }
   .infoIcon {
     width: 40px;
     height: 40px;
@@ -16,6 +28,9 @@ html[lang="ar"] {
     cursor: pointer;
     // transition: width 0.5s ease-in-out;
     &:hover {
+      .infoContent{
+        background-color: transparent;
+      }
       //   transition: width 0.5s ease-in-out;
       background-image: url(../../assets/infoHover.svg);
       width: 200px;
@@ -24,6 +39,9 @@ html[lang="ar"] {
       background-image: url(../../assets/closeInfo.svg);
       width: 45px;
       height: 45px;
+      position: absolute;
+      bottom: 0;
+      left: 4%;
     }
   }
   .infoContent {
@@ -37,6 +55,12 @@ html[lang="ar"] {
     margin-left: 14px;
     margin-bottom: -25px;
     padding: 20px;
+    .arrow{
+      width: 30px;
+    }
+    .arrow.rotate{
+      transform: rotate(180deg);
+    }
     .card {
       border: 2pt solid #dbdbdb;
       border-radius: 5px;

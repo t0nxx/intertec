@@ -121,18 +121,16 @@
     "Google Map URL": "رابط خريطه جوجل",
     "Go to workspace": "اذهب إلى مساحة العمل",
     "Process For Payment": "عملية الدفع",
-    "Go To Payment": "اذهب الي الدفع"
+    "Go To Payment": "اذهب الي الدفع",
+    "Close" : "قريب"
   },
   "Error": {
     "Requird": "هذا الحقل مطلوب",
     "MustBeValidEmail": "يجب أن يكون بريدًا إلكترونيًا صالحًا"
   },
-  "Texts": {
-    "if you still have any inquiries": " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين",
-    "Initial Licence Number": "رقم الترخيص المبدأي",
-    "Area": "المكان",
-    "Expiry Date": "تاريخ الانتهاء",
-    "Issue Date": "تاريخ الاصدار",
-    "Reason For Area Extention": "سبب توسيع المكان"
+  "Texts" : {
+    "if you still have any inquiries" : " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين",
+    "Your staff criteria needs to be fulfilled to continue submitting the application" : "يجب استيفاء معايير موظفيك لمواصلة تقديم الطلب.",
+    "Kindly refer to email sent for staff criteria or view the online service card" : "يرجى الرجوع إلى البريد الإلكتروني المرسل لمعايير الموظفين أو عرض بطاقة الخدمة عبر الإنترنت"
   }
 }

@@ -83,12 +83,12 @@ const ReasonForAreaExtention = (props: IProps) => {
                   </Row>
                   <Row>
                     <Col md="4" sm="6" xs="12">
-                      <p>{t("Texts.Issue Date")}</p>
-                      <span>{t("Texts.Issue Date")}</span>
+                      <p>{t("Forms.Issue date")}</p>
+                      <span>Issue date</span>
                     </Col>
                     <Col md="4" sm="6" xs="12">
-                      <p>{t("Texts.Expiry Date")}</p>
-                      <span>{t("Texts.Expiry Date")}</span>
+                      <p>{t("Forms.Expiry date")}</p>
+                      <span>Expiry date</span>
                     </Col>
                     <Col> </Col>
                   </Row>
@@ -97,12 +97,12 @@ const ReasonForAreaExtention = (props: IProps) => {
             </Form.Group>
             <Form.Group as={Col} md="12" sm="12" controlId="establishmentName">
               <Form.Label>
-                {t("Texts.Reason For Area Extention")} <span className="required">*</span>
+                {t("Titles.Reason For Area Extension")} <span className="required">*</span>
               </Form.Label>
               <Form.Control
                 as="textarea"
                 type="text"
-                placeholder=""
+                placeholder={t("Forms.Write the reason")}
                 name="reason"
                 ref={register}
                 isValid={formState.touched.reason && !errors.reason}
