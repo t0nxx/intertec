@@ -156,7 +156,8 @@
     "Go to workspace": "Go to workspace",
     "Process For Payment": "Process For Payment",
     "Close": "Close",
-    "See All": "See All"
+    "See All": "See All",
+    "Attachments" : "Attachments"
   },
   "Error": {
     "Requird": "This is required",

@@ -30,10 +30,8 @@ export default function ReviewScreenComponent() {
   const [isEditLocation, setIsEditLocation] = useState(false);
   const [isEditOwner, setIsEditOwner] = useState(false);
   const [isEditPartner, setIsEditPartner] = useState(true);
-  const [isAddPartner, setIsAddPartner] = useState(false);
-  const [showAddPartnerModal, setShowAddPartnerModal] = useState(false);
-
-  const onCloseAddPartnerModal = () => setShowAddPartnerModal(false);
+  const [isEditArea, setIsEditArea] = useState(false);
+  const [isEditSpeciallity, setIsEditSpeciallity] = useState(false);
 
   const { t } = useTranslation();
 
@@ -559,17 +557,17 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
-                  {isEditEstablish ? (
+                  {isEditArea ? (
                     <ReasonForAreaExtention
                       isForReviewPage={true}
-                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
+                      onSubmitOrCancelEvent={() => setIsEditArea(!isEditArea)}
                     />
                   ) : (
                     <Card.Body>
                       <Image
                         src={editPen}
                         className="edit"
-                        onClick={() => setIsEditEstablish(!isEditEstablish)}
+                        onClick={() => setIsEditArea(!isEditArea)}
                       />
                       <Row>
                         <Col md="12" sm="12">
@@ -594,17 +592,17 @@ export default function ReviewScreenComponent() {
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
-                  {isEditEstablish ? (
+                  {isEditSpeciallity ? (
                     <RemoveSpeciality
                       isForReviewPage={true}
-                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
+                      onSubmitOrCancelEvent={() => setIsEditSpeciallity(!isEditSpeciallity)}
                     />
                   ) : (
                     <Card.Body>
                       <Image
                         src={editPen}
                         className="edit"
-                        onClick={() => setIsEditEstablish(!isEditEstablish)}
+                        onClick={() => setIsEditSpeciallity(!isEditSpeciallity)}
                       />
                       <Row>
                         <Col md="12" sm="12">
