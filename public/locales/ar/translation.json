@@ -130,7 +130,9 @@
     "rehabilitation": "إعادة تأهيل",
     "Psychiatry": "الطب النفسي",
     "Surgery": "جراحة",
-    "Urology": "جراحة المسالك البولية"
+    "Urology": "جراحة المسالك البولية",
+    "Remove Speciality" : "حذف التخصصات",
+    "Specialities Removed" : "التخصصات المحذوفة"
   },
   "Buttons": {
     "Next": "التالي",

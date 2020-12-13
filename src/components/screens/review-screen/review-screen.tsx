@@ -80,7 +80,7 @@ export default function ReviewScreenComponent() {
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1> Remove Speciality</h1>
+                  <h1> {t("Forms.Remove Speciality")}</h1>
                   <Image src={upArrow4Collaps} />
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey={collapseAllState}>
@@ -98,23 +98,23 @@ export default function ReviewScreenComponent() {
                       />
                       <Row>
                         <Col md="12" sm="12">
-                          <p>Specialities Removed</p>
+                          <p>{t("Forms.Specialities Removed")}</p>
                           <div className="removedSpecialities">
                             <ul>
                               <li>
-                                <Image src={minus} /> Gynecology
+                                <Image src={minus} /> {t("Forms.Gynecology")}
                               </li>
                               <li>
-                                <Image src={minus} /> immunology
+                                <Image src={minus} /> {t("Forms.immunology")}
                               </li>
                               <li>
-                                <Image src={minus} /> Dermatology
+                                <Image src={minus} /> {t("Forms.Dermatology")}
                               </li>
                               <li>
-                                <Image src={minus} /> Neurology
+                                <Image src={minus} /> {t("Forms.Neurology")}
                               </li>
                               <li>
-                                <Image src={minus} /> rehabilitation
+                                <Image src={minus} /> {t("Forms.rehabilitation")}
                               </li>
                             </ul>
                           </div>
@@ -122,7 +122,7 @@ export default function ReviewScreenComponent() {
                       </Row>
                       <Row>
                         <Col md="12" sm="12">
-                          <p>Total Number of Specialties</p>
+                          <p>{t("Forms.Total Number of Specialties")}</p>
                           <span>10</span>
                         </Col>
                       </Row>

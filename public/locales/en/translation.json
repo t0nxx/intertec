@@ -51,6 +51,7 @@
     "Amount": "Amount",
     "Select payment method": "Select payment method",
     "Accept terms and condition": "Accept terms and condition",
+    "Payment successfully": "Payment successful",
     "Services Description": "Services Description",
     "show More": "show More",
     "Service fees": "Service fees",
@@ -65,12 +66,12 @@
     "Internal Medicine": "Internal Medicine",
     "Orthopedics": "Orthopedics",
     "Pediatrics": "Pediatrics",
-    "Relocation License Pharmaceutical" : "Relocation License Pharmaceutical",
-    "you have new request under review" : "you have new request under review",
-    "Relocation License Pharamaceutical" : "Relocation License Pharamaceutical",
-    "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request" : "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request",
-    "Send Back!" : "Send Back!",
-    "Request needs update Kindly use below link to view reviewer comments Complete Request" : "Request needs update. Kindly use below link to view reviewer comments Complete Request"
+    "Relocation License Pharmaceutical": "Relocation License Pharmaceutical",
+    "you have new request under review": "you have new request under review",
+    "Relocation License Pharamaceutical": "Relocation License Pharamaceutical",
+    "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request": "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request",
+    "Send Back!": "Send Back!",
+    "Request needs update Kindly use below link to view reviewer comments Complete Request": "Request needs update. Kindly use below link to view reviewer comments Complete Request"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -134,7 +135,9 @@
     "rehabilitation": "rehabilitation",
     "Psychiatry": "Psychiatry",
     "Surgery": "Surgery",
-    "Urology": "Urology"
+    "Urology": "Urology",
+    "Remove Speciality":"Remove Speciality",
+    "Specialities Removed" : "Specialities Removed"
   },
   "Buttons": {
     "Next": "Next",
@@ -153,7 +156,7 @@
     "Go to workspace": "Go to workspace",
     "Process For Payment": "Process For Payment",
     "Close": "Close",
-    "See All" : "See All"
+    "See All": "See All"
   },
   "Error": {
     "Requird": "This is required",
