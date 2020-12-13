@@ -76,100 +76,6 @@ export default function ReviewScreenComponent() {
           </div>
           {/* Screen Head */}
 
-          {/* Start Remove Speciality  */}
-          <div className="block">
-            <Accordion defaultActiveKey={collapseAllState}>
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1> {t("Forms.Remove Speciality")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey={collapseAllState}>
-                  {isEditEstablish ? (
-                    <RemoveSpeciality
-                      isForReviewPage={true}
-                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
-                    />
-                  ) : (
-                    <Card.Body>
-                      <Image
-                        src={editPen}
-                        className="edit"
-                        onClick={() => setIsEditEstablish(!isEditEstablish)}
-                      />
-                      <Row>
-                        <Col md="12" sm="12">
-                          <p>{t("Forms.Specialities Removed")}</p>
-                          <div className="removedSpecialities">
-                            <ul>
-                              <li>
-                                <Image src={minus} /> {t("Forms.Gynecology")}
-                              </li>
-                              <li>
-                                <Image src={minus} /> {t("Forms.immunology")}
-                              </li>
-                              <li>
-                                <Image src={minus} /> {t("Forms.Dermatology")}
-                              </li>
-                              <li>
-                                <Image src={minus} /> {t("Forms.Neurology")}
-                              </li>
-                              <li>
-                                <Image src={minus} /> {t("Forms.rehabilitation")}
-                              </li>
-                            </ul>
-                          </div>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col md="12" sm="12">
-                          <p>{t("Forms.Total Number of Specialties")}</p>
-                          <span>10</span>
-                        </Col>
-                      </Row>
-                    </Card.Body>
-                  )}
-                </Accordion.Collapse>
-              </Card>
-            </Accordion>
-          </div>
-          {/* End Remove Speciality */}
-
-          {/* Start Reason for area extention */}
-          <div className="block">
-            <Accordion defaultActiveKey={collapseAllState}>
-              <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1> {t("Texts.Reason For Area Extention")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey={collapseAllState}>
-                  {isEditEstablish ? (
-                    <ReasonForAreaExtention
-                      isForReviewPage={true}
-                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
-                    />
-                  ) : (
-                    <Card.Body>
-                      <Image
-                        src={editPen}
-                        className="edit"
-                        onClick={() => setIsEditEstablish(!isEditEstablish)}
-                      />
-                      <Row>
-                        <Col md="12" sm="12">
-                          <p>{t("Texts.Reason For Area Extention")}</p>
-                          <span>{t("Texts.Reason For Area Extention")}</span>
-                        </Col>
-                      </Row>
-                    </Card.Body>
-                  )}
-                </Accordion.Collapse>
-              </Card>
-            </Accordion>
-          </div>
-          {/* End Reason for area extention */}
-
           {/* Start Establishment Information */}
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
@@ -641,7 +547,102 @@ export default function ReviewScreenComponent() {
               </Card>
             </Accordion>
           </div>
+
           {/* End Attachment */}
+
+          {/* Start Reason for area extention */}
+          <div className="block">
+            <Accordion defaultActiveKey={collapseAllState}>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
+                  <h1> {t("Texts.Reason For Area Extention")}</h1>
+                  <Image src={upArrow4Collaps} />
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey={collapseAllState}>
+                  {isEditEstablish ? (
+                    <ReasonForAreaExtention
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image
+                        src={editPen}
+                        className="edit"
+                        onClick={() => setIsEditEstablish(!isEditEstablish)}
+                      />
+                      <Row>
+                        <Col md="12" sm="12">
+                          <p>{t("Texts.Reason For Area Extention")}</p>
+                          <span>{t("Texts.Reason For Area Extention")}</span>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </div>
+          {/* End Reason for area extention */}
+
+          {/* Start Remove Speciality  */}
+          <div className="block">
+            <Accordion defaultActiveKey={collapseAllState}>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
+                  <h1> {t("Forms.Remove Speciality")}</h1>
+                  <Image src={upArrow4Collaps} />
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey={collapseAllState}>
+                  {isEditEstablish ? (
+                    <RemoveSpeciality
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image
+                        src={editPen}
+                        className="edit"
+                        onClick={() => setIsEditEstablish(!isEditEstablish)}
+                      />
+                      <Row>
+                        <Col md="12" sm="12">
+                          <p>{t("Forms.Specialities Removed")}</p>
+                          <div className="removedSpecialities">
+                            <ul>
+                              <li>
+                                <Image src={minus} /> {t("Forms.Gynecology")}
+                              </li>
+                              <li>
+                                <Image src={minus} /> {t("Forms.immunology")}
+                              </li>
+                              <li>
+                                <Image src={minus} /> {t("Forms.Dermatology")}
+                              </li>
+                              <li>
+                                <Image src={minus} /> {t("Forms.Neurology")}
+                              </li>
+                              <li>
+                                <Image src={minus} /> {t("Forms.rehabilitation")}
+                              </li>
+                            </ul>
+                          </div>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col md="12" sm="12">
+                          <p>{t("Forms.Total Number of Specialties")}</p>
+                          <span>10</span>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </div>
+          {/* End Remove Speciality */}
 
           {/* Submit */}
           <div className="submit">
