@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./nav-bar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,6 +25,7 @@ import notiicon3 from "../../assets/notiicon3.svg";
 
 export default function NavBarComponent() {
   const { t } = useTranslation();
+  const history = useHistory();
   const changeDirection = (lang: string) => {
     document.getElementsByTagName("html")[0].setAttribute("lang", lang);
     document.getElementsByTagName("body")[0].setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
@@ -42,9 +44,9 @@ export default function NavBarComponent() {
       variant="light"
       bg="light"
       className="top-nav"
-    // onToggle={() => {
-    //   show = !show;
-    // }}
+      // onToggle={() => {
+      //   show = !show;
+      // }}
     >
       <Navbar.Brand href="/">
         <img
@@ -141,9 +143,13 @@ export default function NavBarComponent() {
                       <Image src={notiicon2} />
                     </div>
                   </Col>
-                  <Col md="10">
+                  <Col md="10" onClick={() => history.push("/payment")}>
                     <h6> {t("Titles.Relocation License Pharamaceutical")}</h6>
-                    <p>{t("Titles.on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request")}</p>
+                    <p>
+                      {t(
+                        "Titles.on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request"
+                      )}
+                    </p>
                   </Col>
                 </Row>
               </Dropdown.Item>
@@ -157,7 +163,11 @@ export default function NavBarComponent() {
                   </Col>
                   <Col md="10">
                     <h6> {t("Titles.Send Back!")}</h6>
-                    <p>{t("Titles.Request needs update Kindly use below link to view reviewer comments Complete Request")} </p>
+                    <p>
+                      {t(
+                        "Titles.Request needs update Kindly use below link to view reviewer comments Complete Request"
+                      )}{" "}
+                    </p>
                   </Col>
                 </Row>
               </Dropdown.Item>
