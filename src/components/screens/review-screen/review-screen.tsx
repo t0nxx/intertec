@@ -69,7 +69,7 @@ export default function ReviewScreenComponent() {
                 </div>
               </Col>
               <Col className="submit">
-                <Button>{t("Buttons.Submit")}</Button>
+                <Button onClick={() => history.push("/success")}>{t("Buttons.Submit")}</Button>
               </Col>
             </Row>
           </div>
