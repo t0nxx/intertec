@@ -64,7 +64,13 @@
     "General Surgery": "General Surgery",
     "Internal Medicine": "Internal Medicine",
     "Orthopedics": "Orthopedics",
-    "Pediatrics": "Pediatrics"
+    "Pediatrics": "Pediatrics",
+    "Relocation License Pharmaceutical" : "Relocation License Pharmaceutical",
+    "you have new request under review" : "you have new request under review",
+    "Relocation License Pharamaceutical" : "Relocation License Pharamaceutical",
+    "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request" : "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request",
+    "Send Back!" : "Send Back!",
+    "Request needs update Kindly use below link to view reviewer comments Complete Request" : "Request needs update. Kindly use below link to view reviewer comments Complete Request"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -146,7 +152,8 @@
     "Submit": "Submit",
     "Go to workspace": "Go to workspace",
     "Process For Payment": "Process For Payment",
-    "Close": "Close"
+    "Close": "Close",
+    "See All" : "See All"
   },
   "Error": {
     "Requird": "This is required",

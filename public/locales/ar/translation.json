@@ -60,7 +60,13 @@
     "General Surgery" : "الجراحة العامة",
     "Internal Medicine" : "الطب الباطني",
     "Orthopedics" : "طب العظام",
-    "Pediatrics" : "طب الأطفال"
+    "Pediatrics" : "طب الأطفال",
+    "Relocation License Pharmaceutical" : "رخصة نقل صيدلانية",
+    "you have new request under review" : "لديك طلب جديد قيد المراجعة",
+    "Relocation License Pharamaceutical" : "رخصة نقل صيدلانية",
+    "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request" : "نيابة عن وزارة الصحة ووقاية المجتمع ، نشكرك على تقديم طلب جديد",
+    "Send Back!" : "أرسل مرة أخرى!",
+    "Request needs update Kindly use below link to view reviewer comments Complete Request" : "طلب يحتاج إلى تحديث. يرجى استخدام الرابط أدناه لعرض تعليقات المراجعين إكمال الطلب"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
@@ -144,7 +150,8 @@
     "Go to workspace": "اذهب إلى مساحة العمل",
     "Process For Payment": "عملية الدفع",
     "Go To Payment": "اذهب الي الدفع",
-    "Close" : "قريب"
+    "Close" : "قريب",
+    "See All" : "اظهار الكل"
   },
   "Error": {
     "Requird": "هذا الحقل مطلوب",
