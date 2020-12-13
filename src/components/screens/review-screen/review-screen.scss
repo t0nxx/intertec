@@ -1,20 +1,19 @@
-
-html[lang=ar]{
-  .accordion > .card{
+html[lang="ar"] {
+  .accordion > .card {
     text-align: right;
   }
 
-  .container-fluid .screenContent .block .card .card-body img.edit{
+  .container-fluid .screenContent .block .card .card-body img.edit {
     left: 40px;
     right: auto;
   }
 
-  .container-fluid .screenContent .block .card .card-body .row span.mapBtn img{
+  .container-fluid .screenContent .block .card .card-body .row span.mapBtn img {
     margin-right: 0;
     margin-left: 10px;
   }
 
-  .container-fluid .screenContent .screenHead .btnsContainer button img{
+  .container-fluid .screenContent .screenHead .btnsContainer button img {
     margin-right: 0;
     margin-left: 5px;
   }
@@ -93,6 +92,32 @@ html[lang=ar]{
         .card-body {
           padding: 0 40px;
           position: relative;
+          .removedSpecialities {
+            ul {
+              padding: 0 !important;
+              margin: 10px 0 0 0 !important;
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              li {
+                list-style: none;
+                display: inline-block;
+                border-radius: 20px;
+                border: 1pt solid #9e9e9e;
+                color: #9e9e9e;
+                cursor: pointer;
+                padding: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 5px 0 0;
+                img {
+                  width: 15px;
+                  margin: 2px;
+                }
+              }
+            }
+          }
           img.edit {
             position: absolute;
             top: 0;

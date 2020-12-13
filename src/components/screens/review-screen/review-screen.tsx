@@ -14,16 +14,15 @@ import ContactInformationComponent from "../pharamaceutical-establishment/contac
 import LocationInformationComponent from "../pharamaceutical-establishment/location-inforamtion/location-information";
 import OwnerDetailComponent from "../pharamaceutical-establishment/owner-detail/owner-detail";
 import PartnerDetailsComponent from "../pharamaceutical-establishment/partner-details/partner-details";
-import AddPartnerComponent from "../pharamaceutical-establishment/partner-details/add-partner/add-partner";
 import ReasonForAreaExtention from "../add-area-extention/reason-for-area-extention/reason-for-area-extention";
+import RemoveSpeciality from "../speciality/remove-speciality/remove-speciality";
 
 import file from "../../../assets/file.svg";
 import del from "../../../assets/delete.svg";
-import addMore from "../../../assets/addMore.svg";
 import userPhoto from "../../../assets/userPhoto.svg";
 import collaps from "../../../assets/collaps.svg";
 import expand from "../../../assets/expand.svg";
-import leftArrow from "../../../assets/leftArrow.svg";
+import minus from "../../../assets/minus-circle-solid.svg";
 
 export default function ReviewScreenComponent() {
   const [isEditEstablish, setIsEditEstablish] = useState(false);
@@ -75,6 +74,65 @@ export default function ReviewScreenComponent() {
             </Row>
           </div>
           {/* Screen Head */}
+
+          {/* Start Remove Speciality  */}
+          <div className="block">
+            <Accordion defaultActiveKey={collapseAllState}>
+              <Card>
+                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
+                  <h1> Remove Speciality</h1>
+                  <Image src={upArrow4Collaps} />
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey={collapseAllState}>
+                  {isEditEstablish ? (
+                    <RemoveSpeciality
+                      isForReviewPage={true}
+                      onSubmitOrCancelEvent={() => setIsEditEstablish(!isEditEstablish)}
+                    />
+                  ) : (
+                    <Card.Body>
+                      <Image
+                        src={editPen}
+                        className="edit"
+                        onClick={() => setIsEditEstablish(!isEditEstablish)}
+                      />
+                      <Row>
+                        <Col md="12" sm="12">
+                          <p>Specialities Removed</p>
+                          <div className="removedSpecialities">
+                            <ul>
+                              <li>
+                                <Image src={minus} /> Gynecology
+                              </li>
+                              <li>
+                                <Image src={minus} /> immunology
+                              </li>
+                              <li>
+                                <Image src={minus} /> Dermatology
+                              </li>
+                              <li>
+                                <Image src={minus} /> Neurology
+                              </li>
+                              <li>
+                                <Image src={minus} /> rehabilitation
+                              </li>
+                            </ul>
+                          </div>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col md="12" sm="12">
+                          <p>Total Number of Specialties</p>
+                          <span>10</span>
+                        </Col>
+                      </Row>
+                    </Card.Body>
+                  )}
+                </Accordion.Collapse>
+              </Card>
+            </Accordion>
+          </div>
+          {/* End Remove Speciality */}
 
           {/* Start Reason for area extention */}
           <div className="block">

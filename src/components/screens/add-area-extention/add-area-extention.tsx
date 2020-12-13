@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./add-area-extention.scss";
-import "./shared/shared.scss";
+import "../pharamaceutical-establishment/shared/shared.scss";
 
 // Import images
 import expand from "../../../assets/expand-arrows-alt-solid.svg";

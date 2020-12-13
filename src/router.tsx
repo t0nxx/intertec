@@ -8,6 +8,7 @@ import PaymentScreenComponent from "./components/screens/payment-screen/payment-
 import AddPartnerComponent from "./components/screens/pharamaceutical-establishment/partner-details/add-partner/add-partner";
 import RelocationLicenseScreen from "./components/screens/relocation-license-screen/relocation-license-screen";
 import AddAreaExtention from "./components/screens/add-area-extention/add-area-extention";
+import Speciality from "./components/screens/speciality/speciality";
 
 function Routes() {
   return (
@@ -20,6 +21,7 @@ function Routes() {
       <Route path="/add-partner" component={AddPartnerComponent} />
       <Route path="/sr3/home" component={RelocationLicenseScreen} />
       <Route path="/sr4/home" component={AddAreaExtention} />
+      <Route path="/sr5/home" component={Speciality} />
     </Switch>
   );
 }
