@@ -79,3 +79,10 @@ html[lang=ar]{
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
+@media only screen and (max-width: 510px) 
+{
+  img.checked{
+    right: 0 !important;
+  }
+}
