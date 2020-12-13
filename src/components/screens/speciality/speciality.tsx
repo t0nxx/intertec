@@ -50,7 +50,7 @@ const Speciality = () => {
               <Row>
                 <Image src={ownerImage} className="ml-3 mr-4 greenIc" />
                 <Image src={ownerImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success"> Remove Speciality</h3>
+                <h3 className="text-success">  {t("Titles.Remove Specialty")}</h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
                   {t("Buttons.Start")}

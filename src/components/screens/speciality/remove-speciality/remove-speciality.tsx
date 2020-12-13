@@ -71,25 +71,25 @@ const RemoveSpeciality = (props: IProps) => {
               controlId="formGridPassword"
               className="checkBoxesList"
             >
-              <Form.Label>Please select Specialities</Form.Label>
-              <Form.Check type="checkbox" name="test" id="h1" label="Gynecology" custom />
-              <Form.Check type="checkbox" name="test" id="h2" label="immunology" custom />
-              <Form.Check type="checkbox" name="test" id="h3" label="Dermatology" custom />
-              <Form.Check type="checkbox" name="test" id="h4" label="Neurology" custom />
-              <Form.Check type="checkbox" name="test" id="h5" label="rehabilitation" custom />
-              <Form.Check type="checkbox" name="test" id="h6" label="Psychiatry" custom />
-              <Form.Check type="checkbox" name="test" id="h7" label="Surgery" custom checked />
-              <Form.Check type="checkbox" name="test" id="h8" label="Urology" custom />
+              <Form.Label> {t("Titles.Please select Specialities")}</Form.Label>
+              <Form.Check type="checkbox" name="test" id="h1" label={t("Forms.Gynecology")} custom />
+              <Form.Check type="checkbox" name="test" id="h2" label={t("Forms.immunology")} custom />
+              <Form.Check type="checkbox" name="test" id="h3" label={t("Forms.Dermatology")} custom />
+              <Form.Check type="checkbox" name="test" id="h4" label={t("Forms.Neurology")} custom />
+              <Form.Check type="checkbox" name="test" id="h5" label={t("Forms.rehabilitation")} custom />
+              <Form.Check type="checkbox" name="test" id="h6" label={t("Forms.Psychiatry")} custom />
+              <Form.Check type="checkbox" name="test" id="h7" label={t("Forms.Surgery")} custom checked />
+              <Form.Check type="checkbox" name="test" id="h8" label={t("Forms.Urology")} custom />
             </Form.Group>
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
               <Form.Label>
-                Total Number of Specialties <span className="required">*</span>
+                {t("Forms.Total Number of Specialties")}<span className="required">*</span>
               </Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Total Number of Specialties"
+                placeholder={t("Forms.Total Number of Specialties")}
                 name="area"
                 ref={register}
                 isValid={formState.touched.area && !errors.area}
@@ -101,7 +101,7 @@ const RemoveSpeciality = (props: IProps) => {
             </Form.Group>
             <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
               <Form.Label>
-                Number of Beds <span className="required">*</span>
+                {t("Forms.Number of Beds")}<span className="required">*</span>
               </Form.Label>
               <Form.Control
                 as="select"
@@ -111,7 +111,7 @@ const RemoveSpeciality = (props: IProps) => {
                 isInvalid={errors.emirate}
               >
                 <option disabled selected value="">
-                  Number of Beds
+                  {t("Forms.Number of Beds")}
                 </option>
                 <option> Type 1</option>
                 <option> Type 2</option>
@@ -124,24 +124,24 @@ const RemoveSpeciality = (props: IProps) => {
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md="12" sm="12" controlId="establishmentName">
-              <Form.Label>Current Specialties of your Establishment</Form.Label>
+              <Form.Label>{t("Forms.Current Specialties of your Establishment")}</Form.Label>
               <div className="staticData">
                 <div className="staticDataContent">
                   <Row>
                     <Col md="3" sm="6" xs="12">
-                      <p>General Surgery</p>
+                      <p>{t("Titles.General Surgery")}</p>
                       <span>Added on DD/MM/YY</span>
                     </Col>
                     <Col md="3" sm="6" xs="12">
-                      <p>Internal Medicine</p>
+                      <p>{t("Titles.Internal Medicine")}</p>
                       <span>Added on DD/MM/YY</span>
                     </Col>
                     <Col md="3" sm="6" xs="12">
-                      <p>Orthopedics</p>
+                      <p>{t("Titles.Orthopedics")}</p>
                       <span>Added on DD/MM/YY</span>
                     </Col>
                     <Col md="3" sm="6" xs="12">
-                      <p>Pediatrics</p>
+                      <p>{t("Titles.Pediatrics")}</p>
                       <span>Added on DD/MM/YY</span>
                     </Col>
                   </Row>

@@ -52,7 +52,15 @@
     "Select payment method": "اختار طريقة الدفع",
     "Accept terms and condition": "اقبل الشروط والأحكام",
     "Payment successfully": "تمت عملية الدفع بنجاح",
-    "New Location Information": "تفاصيل العنوان الجديد"
+    "New Location Information": "تفاصيل العنوان الجديد",
+    "Reason For Area Extension" : "سبب تمديد المنطقة",
+    "self evaluation" : "التقييم الذاتي",
+    "Remove Specialty" : "إزالة التخصص",
+    "Please select Specialities" : "الرجاء تحديد التخصصات",
+    "General Surgery" : "الجراحة العامة",
+    "Internal Medicine" : "الطب الباطني",
+    "Orthopedics" : "طب العظام",
+    "Pediatrics" : "طب الأطفال"
   },
   "Forms": {
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
@@ -105,7 +113,18 @@
     "Alternative Contact No": "رقم جهة اتصال بديلة",
     "Expiry Date": "تاريخ الانتهاء",
     "Issue Date": "تاريخ الاصدار",
-    "Write the reason" : "اكتب السبب"
+    "Write the reason" : "اكتب السبب",
+    "Total Number of Specialties" : "إجمالي عدد التخصصات",
+    "Number of Beds" : "عدد الأسرة",
+    "Current Specialties of your Establishment" : "التخصصات الحالية لمؤسستك",
+    "Gynecology": "أمراض النساء",
+    "immunology": "علم المناعة",
+    "Dermatology": "الجلدية",
+    "Neurology": "علم الأعصاب",
+    "rehabilitation": "إعادة تأهيل",
+    "Psychiatry": "الطب النفسي",
+    "Surgery": "جراحة",
+    "Urology": "جراحة المسالك البولية"
   },
   "Buttons": {
     "Next": "التالي",
