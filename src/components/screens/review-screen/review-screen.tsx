@@ -34,6 +34,7 @@ export default function ReviewScreenComponent() {
   const [showAddPartnerModal, setShowAddPartnerModal] = useState(false);
 
   const onCloseAddPartnerModal = () => setShowAddPartnerModal(false);
+
   const { t } = useTranslation();
 
   // the logic here ... acordation take active key as string number
@@ -157,8 +158,8 @@ export default function ReviewScreenComponent() {
                       />
                       <Row>
                         <Col md="12" sm="12">
-                          <p>Reason for area extention</p>
-                          <span>Reason for area extention</span>
+                          <p>{t("Texts.Reason For Area Extention")}</p>
+                          <span>{t("Texts.Reason For Area Extention")}</span>
                         </Col>
                       </Row>
                     </Card.Body>
