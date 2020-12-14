@@ -3,25 +3,23 @@ import { Accordion, Card, Container, Row, Image, Button } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
-import "./relocation-license-screen.scss";
-import "./shared/shared.scss";
+import "./add-area-extention.scss";
+import "../pharamaceutical-establishment-screen/shared/shared.scss";
 
 // Import images
-import locationImage from "../../../assets/location.svg";
-import locationImageWhite from "../../../assets/location-white.svg";
+import expand from "../../../assets/expand-arrows-alt-solid.svg";
+// import locationImageWhite from "../../../assets/location-white.svg";
 
-import contactImage from "../../../assets/contact.svg";
-import contactImageWhite from "../../../assets/contact-white.svg";
 import checked from "../../../assets/checked.svg";
 import checkImage from "../../../assets/check.svg";
 import checkImageWhite from "../../../assets/check-white.svg";
 
-import LocationInformationComponent from "./location-inforamtion/location-information";
+import ReasonForAreaExtention from "./reason-for-area-extention/reason-for-area-extention";
 import SelfEvaluationComponent from "../pharamaceutical-establishment-screen/self-evaluation/self-evaluation";
 import RequestInformation from "../../request-information/request-information";
 
-const RelocationLicenseScreen = () => {
-  const { t } = useTranslation();
+const AddAreaExtention = () => {
+  const { t }: { t: any } = useTranslation();
   const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const dispatch = useDispatch();
@@ -48,9 +46,9 @@ const RelocationLicenseScreen = () => {
               onClick={() => setCurrentStep("0")}
             >
               <Row>
-                <Image src={locationImage} className="ml-3 mr-4 greenIc" />
-                <Image src={locationImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">{t("Titles.New Location Information")}</h3>
+                <Image src={expand} className="ml-3 mr-4 greenIc" />
+                <Image src={expand} className="ml-3 mr-4 whiteIc" />
+                <h3 className="text-success"> {t("Titles.Reason For Area Extension")}</h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
                   {t("Buttons.Start")}
@@ -58,7 +56,7 @@ const RelocationLicenseScreen = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
-              <LocationInformationComponent isForReviewPage={false} />
+              <ReasonForAreaExtention isForReviewPage={false} />
             </Accordion.Collapse>
           </Card>
           <div className="divider" />
@@ -72,7 +70,7 @@ const RelocationLicenseScreen = () => {
               <Row>
                 <Image src={checkImage} className="ml-3 mr-4 greenIc" />
                 <Image src={checkImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">{t("Titles.Self Evaluation")} </h3>
+                <h3 className="text-success">{t("Titles.self evaluation")} </h3>
                 <Image src={checked} className="checked" />
               </Row>
             </Accordion.Toggle>
@@ -86,4 +84,4 @@ const RelocationLicenseScreen = () => {
   );
 };
 
-export default RelocationLicenseScreen;
+export default AddAreaExtention;

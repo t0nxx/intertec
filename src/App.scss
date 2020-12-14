@@ -8,16 +8,15 @@
   background-color: black;
 }
 
-html[lang=ar]{
-  body{
+html[lang="ar"] {
+  body {
     font-family: DroidKufi-Regular;
   }
 }
-html[lang=en]{
-  body{
-    font-family: HelveticaNeueMedium;
+html[lang="en"] {
+  body {
+    // font-family: HelveticaNeueMedium;
   }
-
 }
 
 @font-face {

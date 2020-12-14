@@ -1,14 +1,13 @@
-html[lang=ar]{
-  .container-fluid{
-    .accordion{
-      .card.headCard{
+html[lang="ar"] {
+  .container-fluid {
+    .accordion {
+      .card.headCard {
         .start {
           left: 20px;
           right: auto !important;
         }
       }
     }
-
   }
 }
 
@@ -31,6 +30,7 @@ html[lang=ar]{
       border-radius: 10px;
       box-shadow: 0px 6px 15px -15px #363333;
       .card-header {
+        position: relative;
         cursor: pointer;
         display: flex;
         align-items: center;

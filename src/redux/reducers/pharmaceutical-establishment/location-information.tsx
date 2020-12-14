@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 
-import { locationInformationInitialState } from "../../../components/pages/pharamaceutical-establishment-screen/location-inforamtion/location-information-helper";
+import { locationInformationInitialState } from "../../../components/screens/pharamaceutical-establishment-screen/location-inforamtion/location-information-helper";
 import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */

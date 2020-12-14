@@ -201,33 +201,33 @@ const LocationInformationComponent = (props: IProps) => {
             </Form.Group>
 
             <Form.Group as={Col} md="12" sm="12" controlId="establishmentName">
-              <Form.Label>Old building information</Form.Label>
+              <Form.Label> {t("Titles.Old building information")}</Form.Label>
 
               <div className="oldData">
                 <div className="oldDataContent">
                   <Col>
                     <Row>
                       <Col md="4" sm="6" xs="12">
-                        <p>Building Name</p>
+                        <p> {t("Forms.Building Name")}</p>
                         <span>Building Name</span>
                       </Col>
                       <Col md="4" sm="6" xs="12">
-                        <p>Street</p>
+                        <p> {t("Forms.Street")}</p>
                         <span>Street</span>
                       </Col>
                       <Col> </Col>
                     </Row>
                     <Row>
                       <Col md="4" sm="6" xs="12">
-                        <p>Emirate</p>
+                        <p> {t("Forms.Emirate")}</p>
                         <span>Emirate</span>
                       </Col>
                       <Col md="4" sm="6" xs="12">
-                        <p>Area</p>
+                        <p> {t("Forms.Area")}</p>
                         <span>Area</span>
                       </Col>
                       <Col md="4" sm="6" xs="12">
-                        <p>Building NO</p>
+                        <p> {t("Forms.Building No")}</p>
                         <span>Building NO</span>
                       </Col>
                     </Row>

@@ -52,7 +52,26 @@
     "Select payment method": "Select payment method",
     "Accept terms and condition": "Accept terms and condition",
     "Payment successfully": "Payment successful",
-    "New Location Information": "New Location Information"
+    "Services Description": "Services Description",
+    "show More": "show More",
+    "Service fees": "Service fees",
+    "New Location Information": "New Location Information",
+    "self evaluation": "self evaluation",
+    "Old building information": "Old building information",
+    "Reason For Area Extension": "Reason For Area Extension",
+    "Initial licence number": "Initial licence number",
+    "Remove Specialty": "Remove Specialty",
+    "Please select Specialities": "Please select Specialities",
+    "General Surgery": "General Surgery",
+    "Internal Medicine": "Internal Medicine",
+    "Orthopedics": "Orthopedics",
+    "Pediatrics": "Pediatrics",
+    "Relocation License Pharmaceutical": "Relocation License Pharmaceutical",
+    "you have new request under review": "you have new request under review",
+    "Relocation License Pharamaceutical": "Relocation License Pharamaceutical",
+    "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request": "on behalf of the Ministry of Health and Prevention we would thank you for submitting a new request",
+    "Send Back!": "Send Back!",
+    "Request needs update Kindly use below link to view reviewer comments Complete Request": "Request needs update. Kindly use below link to view reviewer comments Complete Request"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -102,7 +121,23 @@
     "No": "No",
     "N/A": "N/A",
     "Disclaimer": "Disclaimer",
-    "Alternative Contact No": "Alternative Contact No"
+    "Alternative Contact No": "Alternative Contact No",
+    "Issue date": "Issue date",
+    "Expiry date": "Expiry date",
+    "Write the reason": "Write the reason",
+    "Total Number of Specialties": "Total Number of Specialties",
+    "Number of Beds": "Number of Beds",
+    "Current Specialties of your Establishment": "Current Specialties of your Establishment",
+    "Gynecology": "Gynecology",
+    "immunology": "immunology",
+    "Dermatology": "Dermatology",
+    "Neurology": "Neurology",
+    "rehabilitation": "rehabilitation",
+    "Psychiatry": "Psychiatry",
+    "Surgery": "Surgery",
+    "Urology": "Urology",
+    "Remove Speciality":"Remove Speciality",
+    "Specialities Removed" : "Specialities Removed"
   },
   "Buttons": {
     "Next": "Next",
@@ -120,14 +155,22 @@
     "Submit": "Submit",
     "Go to workspace": "Go to workspace",
     "Process For Payment": "Process For Payment",
-    "Go To Payment": "Go To Payment",
-    "Attachments": "Attachments"
+    "Close": "Close",
+    "See All": "See All",
+    "Attachments" : "Attachments"
   },
   "Error": {
     "Requird": "This is required",
     "MustBeValidEmail": "Must be valid email"
   },
   "Texts": {
-    "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center"
+    "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center",
+    "Your staff criteria needs to be fulfilled to continue submitting the application.": "Your staff criteria needs to be fulfilled to continue submitting the application.",
+    "Kindly refer to email sent for staff criteria or view the online service card": "Kindly refer to email sent for staff criteria or view the online service card",
+    "Initial Licence Number": "Initial Licence Number",
+    "Area": "Area",
+    "Expiry Date": "Expiry Date",
+    "Issue Date": "Issue Date",
+    "Reason For Area Extention": "Reason For Area Extention"
   }
 }

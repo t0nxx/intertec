@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 
-import { contactInformationInitailState } from "../../../components/pages/pharamaceutical-establishment-screen/contact-inforamtion/contact-information-helper";
+import { contactInformationInitailState } from "../../../components/screens/pharamaceutical-establishment-screen/contact-inforamtion/contact-information-helper";
 import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */

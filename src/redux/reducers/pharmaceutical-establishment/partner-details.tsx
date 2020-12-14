@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
-import { partnerDetailInitialState } from "../../../components/pages/pharamaceutical-establishment-screen/partner-details/add-partner/add-partner-helper";
+import { partnerDetailInitialState } from "../../../components/screens/pharamaceutical-establishment-screen/partner-details/add-partner/add-partner-helper";
 import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
 
 const initalState = {
