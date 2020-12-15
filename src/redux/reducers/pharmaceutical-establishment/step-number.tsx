@@ -12,7 +12,7 @@ const stepNumberReducer = (state = initalState, action: { type: string; payload:
     case PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER:
       // 0 check the collapse is closed when screen entered , 6 for maximum number of steps
       if (state < 0 || state < 6) {
-        return state + 1;
+        return parseInt((state + 1).toString(), 10);
       }
       return state;
     case PharmaceuticalEstablishmentActionTypes.SET_STEP_NUMBER:
