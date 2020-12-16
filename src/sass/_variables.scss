@@ -44,3 +44,11 @@ $breadcrumb-divider: quote(">");
   --gray25: #ebebeb;
   --gray26: #909db4;
 }
+
+// overwrite bootstrap colors
+
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #d02239,
+  "success": #127f46,
+);
