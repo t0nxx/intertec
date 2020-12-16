@@ -1,0 +1,64 @@
+@import "../../../sass/variables";
+
+@import "reviewerComment";
+@import "attachment-file";
+
+.label-preview-large {
+  font-size: large;
+}
+
+.label-light {
+  font-weight: bold;
+  font-size: medium;
+  color: $table-head-color-light-gray;
+}
+.licence-info-box-element {
+  padding: 30px;
+  border: 1px solid $text-gray-color;
+  height: 140px;
+}
+
+.licence-info-box {
+  padding: 30px;
+}
+
+.header-info {
+  .arrow {
+    width: 30px;
+  }
+  .arrow.rotate {
+    transform: rotate(180deg);
+  }
+}
+
+.btn-red {
+  background: #d02239 0% 0% no-repeat padding-box;
+  border: 1px solid #d02239;
+  opacity: 1;
+  color: #fff;
+
+  &:hover {
+    background: #d02239 0% 0% no-repeat padding-box;
+    border: 1px solid #d02239;
+    opacity: 1;
+    color: #fff;
+  }
+}
+
+.left-icon-holder {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: -12px;
+  bottom: 176px;
+  height: 62px;
+  line-height: 52px;
+  width: 93px;
+  img {
+    cursor: pointer;
+  }
+}
+
+.width-auto {
+  width: auto !important;
+}
