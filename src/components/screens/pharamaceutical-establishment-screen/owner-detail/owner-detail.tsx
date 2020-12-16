@@ -19,6 +19,8 @@ import AttachmentComponent from "../../../templates/attachment/attachment";
 import { IProps } from "../shared/components-props";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
+import { RadioButtonsComponent } from "../../../molecules/forms/radioButtonInput";
+import { FormInputComponent } from "../../../molecules/forms/formInput";
 
 const OwnerDetailComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
@@ -71,42 +73,14 @@ const OwnerDetailComponent = (props: IProps) => {
         <Card.Body>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
-              <Form.Group as={Col}>
-                <Form.Label>
-                  {t("Titles.Retrieve information contact from your profile")}
-                </Form.Label>
-                <div className="radioButtons">
-                  <div className="form-check">
-                    <label htmlFor="getContactData">
-                      <input
-                        name="getInfoFromProfile"
-                        type="radio"
-                        id="getContactData"
-                        className="form-check-input"
-                        value="yes"
-                        ref={register}
-                        defaultChecked
-                      />
-                      {t("Forms.Yes")}
-                      <i className="checkMark"> </i>
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <label htmlFor="getContactData2">
-                      <input
-                        name="getInfoFromProfile"
-                        type="radio"
-                        id="getContactData2"
-                        className="form-check-input"
-                        value="no"
-                        ref={register}
-                      />
-                      {t("Forms.No")}
-                      <i className="checkMark"> </i>
-                    </label>
-                  </div>
-                </div>
-              </Form.Group>
+              <RadioButtonsComponent
+                withLable={true}
+                label="Retrieve information contact from your profile"
+                name="getInfoFromProfile"
+                value1="Yes"
+                value2="No"
+                register={register}
+              />
             </Form.Row>
             <Row>
               <Col md={4}>
@@ -118,117 +92,69 @@ const OwnerDetailComponent = (props: IProps) => {
                 </Form.Group>
               </Col>
               <Col md={4}>
-                <Form.Group controlId="formGridEmail">
-                  <Form.Label>
-                    {t("Forms.Title")} <span className="required">*</span>
-                  </Form.Label>
-                  <Form.Control
-                    as="select"
-                    name="tite"
-                    ref={register}
-                    isValid={formState.touched.tite && !errors.tite}
-                    isInvalid={errors.tite}
-                  >
-                    <option disabled selected value="">
-                      {t("Forms.Title")}
-                    </option>
-                    <option>...</option>
-                    <option>...</option>
-                    <option>...</option>
-                  </Form.Control>
-                </Form.Group>
+                <FormInputComponent
+                  label="Title"
+                  type="select"
+                  as="select"
+                  name="tite"
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.tite}
+                >
+                  <option> title</option>
+                </FormInputComponent>
               </Col>
               <Col md={4}>
-                <Form.Group>
-                  <Form.Label>
-                    {t("Forms.Gender")} <span className="required">*</span>
-                  </Form.Label>
-                  <div className="radioButtons">
-                    <div className="form-check">
-                      <label htmlFor="gender">
-                        <input
-                          name="gender"
-                          type="radio"
-                          id="gender"
-                          className="form-check-input"
-                          value="male"
-                          ref={register}
-                        />
-                        {t("Forms.Male")}
-                        <i className="checkMark"> </i>
-                      </label>
-                    </div>
-                    <div className="form-check">
-                      <label htmlFor="gender2">
-                        <input
-                          name="gender"
-                          type="radio"
-                          id="gender2"
-                          className="form-check-input"
-                          value="female"
-                          ref={register}
-                          defaultChecked
-                        />
-                        {t("Forms.Female")}
-                        <i className="checkMark"> </i>
-                      </label>
-                    </div>
-                  </div>
-                </Form.Group>
+                <RadioButtonsComponent
+                  withLable={true}
+                  label="Gender"
+                  name="gender"
+                  value1="Male"
+                  value2="Female"
+                  register={register}
+                />
               </Col>
             </Row>
 
             <Form.Row>
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
-                <Form.Label>
-                  {t("Forms.First name")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
+              <Col md={4}>
+                <FormInputComponent
+                  label="First name"
                   type="text"
-                  placeholder={t("Forms.First name")}
                   name="fName"
-                  ref={register}
-                  isValid={formState.touched.fName && !errors.fName}
-                  isInvalid={errors.fName}
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.fName}
                 />
-                {errors.fName ? (
-                  <span className="text-danger">{t(`${errors.fName?.message}`)}</span>
-                ) : null}
-              </Form.Group>
-
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Middle name")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
+              </Col>
+              <Col md={4}>
+                <FormInputComponent
+                  label="Middle name"
                   type="text"
-                  placeholder={t("Forms.Middle name")}
                   name="mName"
-                  ref={register}
-                  isValid={formState.touched.mName && !errors.mName}
-                  isInvalid={errors.mName}
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.mName}
                 />
-                {errors.mName ? (
-                  <span className="text-danger">{t(`${errors.mName?.message}`)}</span>
-                ) : null}
-              </Form.Group>
-
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Last name")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
+              </Col>
+              <Col md={4}>
+                <FormInputComponent
+                  label="Last name"
                   type="text"
-                  placeholder={t("Forms.Last name")}
                   name="lName"
-                  ref={register}
-                  isValid={formState.touched.lName && !errors.lName}
-                  isInvalid={errors.lName}
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.lName}
                 />
-                {errors.lName ? (
-                  <span className="text-danger">{t(`${errors.lName?.message}`)}</span>
-                ) : null}
-              </Form.Group>
+              </Col>
             </Form.Row>
 
             <Form.Row>
