@@ -14,9 +14,6 @@ import NextButton from "../../../atoms/buttons/next-button/next-button";
 import { FormInputComponent } from "../../../molecules/forms/formInput";
 
 const EstablishmentInformationComponent = (props: IProps) => {
-  // the problem here is that placeholders can't accept tfunction , it accept strings only
-  const { t }: { t: any } = useTranslation();
-
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.establishmentInformationsReducer
   );
