@@ -12,6 +12,7 @@ import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
+import { FormInputComponent } from "../../../molecules/forms/formInput";
 
 const RemoveSpeciality = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
@@ -72,55 +73,75 @@ const RemoveSpeciality = (props: IProps) => {
               className="checkBoxesList"
             >
               <Form.Label> {t("Titles.Please select Specialities")}</Form.Label>
-              <Form.Check type="checkbox" name="test" id="h1" label={t("Forms.Gynecology")} custom />
-              <Form.Check type="checkbox" name="test" id="h2" label={t("Forms.immunology")} custom />
-              <Form.Check type="checkbox" name="test" id="h3" label={t("Forms.Dermatology")} custom />
+              <Form.Check
+                type="checkbox"
+                name="test"
+                id="h1"
+                label={t("Forms.Gynecology")}
+                custom
+              />
+              <Form.Check
+                type="checkbox"
+                name="test"
+                id="h2"
+                label={t("Forms.immunology")}
+                custom
+              />
+              <Form.Check
+                type="checkbox"
+                name="test"
+                id="h3"
+                label={t("Forms.Dermatology")}
+                custom
+              />
               <Form.Check type="checkbox" name="test" id="h4" label={t("Forms.Neurology")} custom />
-              <Form.Check type="checkbox" name="test" id="h5" label={t("Forms.rehabilitation")} custom />
-              <Form.Check type="checkbox" name="test" id="h6" label={t("Forms.Psychiatry")} custom />
-              <Form.Check type="checkbox" name="test" id="h7" label={t("Forms.Surgery")} custom checked />
+              <Form.Check
+                type="checkbox"
+                name="test"
+                id="h5"
+                label={t("Forms.rehabilitation")}
+                custom
+              />
+              <Form.Check
+                type="checkbox"
+                name="test"
+                id="h6"
+                label={t("Forms.Psychiatry")}
+                custom
+              />
+              <Form.Check
+                type="checkbox"
+                name="test"
+                id="h7"
+                label={t("Forms.Surgery")}
+                custom
+                checked
+              />
               <Form.Check type="checkbox" name="test" id="h8" label={t("Forms.Urology")} custom />
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-              <Form.Label>
-                {t("Forms.Total Number of Specialties")}<span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Total Number of Specialties")}
-                name="area"
-                ref={register}
-                isValid={formState.touched.area && !errors.area}
-                isInvalid={errors.area}
-              />
-              {errors.area ? (
-                <span className="text-danger">{t(`${errors.area?.message}`)}</span>
-              ) : null}
-            </Form.Group>
-            <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
-              <Form.Label>
-                {t("Forms.Number of Beds")}<span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                as="select"
-                name="emirate"
-                ref={register}
-                isValid={formState.touched.emirate && !errors.emirate}
-                isInvalid={errors.emirate}
-              >
-                <option disabled selected value="">
-                  {t("Forms.Number of Beds")}
-                </option>
-                <option> Type 1</option>
-                <option> Type 2</option>
-                <option> Type 3</option>
-              </Form.Control>
-              {errors.emirate ? (
-                <span className="text-danger">{t(`${errors.emirate?.message}`)}</span>
-              ) : null}
-            </Form.Group>
+            <FormInputComponent
+              label="Total Number of Specialties"
+              type="text"
+              name="area"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.area}
+            />
+            <FormInputComponent
+              label="Number of Beds"
+              type="select"
+              as="select"
+              name="emirate"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.emirate}
+            >
+              <option> emirate</option>
+            </FormInputComponent>
           </Form.Row>
           <Form.Row>
             <Form.Group as={Col} md="12" sm="12" controlId="establishmentName">

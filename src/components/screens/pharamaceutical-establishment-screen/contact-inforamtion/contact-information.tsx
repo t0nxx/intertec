@@ -16,6 +16,7 @@ import NextButton from "../../../atoms/buttons/next-button/next-button";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import { IProps } from "../shared/components-props";
 import { FormInputComponent } from "../../../molecules/forms/formInput";
+import { RadioButtonsComponent } from "../../../molecules/forms/radioButtonInput";
 
 const ContactInformationComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
@@ -70,32 +71,14 @@ const ContactInformationComponent = (props: IProps) => {
         <Container>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Row>
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>
-                  {t("Titles.Retrieve information contact from your profile")}
-                </Form.Label>
-                <div className="radioBtns">
-                  <Form.Check
-                    type="radio"
-                    name="retrieveInformation"
-                    label={t("Forms.Yes")}
-                    id="ri"
-                    value="yes"
-                    ref={register}
-                    custom
-                  />
-                  <Form.Check
-                    type="radio"
-                    name="retrieveInformation"
-                    label={t("Forms.No")}
-                    id="ri2"
-                    value="no"
-                    ref={register}
-                    custom
-                    defaultChecked
-                  />
-                </div>
-              </Form.Group>
+              <RadioButtonsComponent
+                withLable={true}
+                label="Retrieve information contact from your profile"
+                name="retrieveInformation"
+                value1="Yes"
+                value2="No"
+                register={register}
+              />
             </Form.Row>
             <Form.Row>
               <FormInputComponent

@@ -21,45 +21,7 @@ body {
       color: var(--gray16);
       font-size: 12px;
     }
-    .radioBtns {
-      display: flex;
-      align-items: center;
-      .custom-control {
-        height: 30px;
-        display: flex;
-        align-items: center;
-        input:checked ~ .custom-control-label::before,
-        input:checked ~ label::after,
-        input:active,
-        input:focus {
-          background-image: url(../../../../assets/checkedColored.svg) !important;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: cover;
-          border-color: transparent !important;
-          background-color: white !important;
-          border: 0 !important;
-          outline: 0 !important;
-          box-shadow: none !important;
-        }
-        label {
-          height: 30px;
-          display: flex;
-          align-items: center;
-          padding-left: 15px;
-          padding-right: 15px;
-          &::before,
-          &::after {
-            width: 30px;
-            height: 30px;
-            // background-color: white;
-            border: 1pt solid var(--success);
-            border-radius: 50%;
-            top: 0;
-          }
-        }
-      }
-    }
+
     .radioButtons {
       display: flex;
       align-items: center;
