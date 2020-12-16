@@ -20,8 +20,14 @@ export const establishmentInformationIntialState: FormInputsInterface = {
  * Validation Schema with  err msg en or ar..
  */
 export const formSchema = yup.object().shape({
-  establishmentName: yup.string().required(ValidationMsgEnum.Required),
-  establishmentNameArabic: yup.string().required(ValidationMsgEnum.Required),
+  establishmentName: yup
+    .string()
+    .matches(/^[a-zA-Z ]+$/, ValidationMsgEnum.MustBeOnlyCharachters)
+    .required(ValidationMsgEnum.Required),
+  establishmentNameArabic: yup
+    .string()
+    .matches(/^[ء-ي ]+$/, ValidationMsgEnum.MustBeOnlyArabicCharachters)
+    .required(ValidationMsgEnum.Required),
   establishmentType: yup.string().required(ValidationMsgEnum.Required),
   Category: yup.string().required(ValidationMsgEnum.Required),
 });

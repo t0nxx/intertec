@@ -31,11 +31,31 @@ export const contactInformationInitailState: FormInputsInterface = {
 export const formSchema = yup.object().shape({
   // i'm not setting validation for getInfoFromProfile cause it by default selected one from the 2 radio buttons
   getInfoFromProfile: yup.string().optional(),
-  contactName: yup.string().required(ValidationMsgEnum.Required),
-  designation: yup.string().required(ValidationMsgEnum.Required),
-  primaryEmail: yup.string().email(ValidationMsgEnum.MustBeValidEmail).required(ValidationMsgEnum.Required),
-  alternativeEmail: yup.string().email(ValidationMsgEnum.MustBeValidEmail).required(ValidationMsgEnum.Required),
-  contactNumber: yup.string().required(ValidationMsgEnum.Required),
-  alternativeContactNumber: yup.string().required(ValidationMsgEnum.Required),
+  contactName: yup
+    .string()
+    .matches(/^[a-zA-Z ]+$/, ValidationMsgEnum.MustBeOnlyCharachters)
+    .required(ValidationMsgEnum.Required),
+  designation: yup
+    .string()
+    .matches(/^[a-zA-Z ]+$/, ValidationMsgEnum.MustBeOnlyCharachters)
+    .required(ValidationMsgEnum.Required),
+  primaryEmail: yup
+    .string()
+    .email(ValidationMsgEnum.MustBeValidEmail)
+    .required(ValidationMsgEnum.Required),
+  alternativeEmail: yup
+    .string()
+    .email(ValidationMsgEnum.MustBeValidEmail)
+    .notOneOf([yup.ref("primaryEmail")], ValidationMsgEnum.AlternativeEmailCantBeSamePrimary)
+    .required(ValidationMsgEnum.Required),
+  contactNumber: yup
+    .string()
+    .matches(/\+971\-[0-9]{9}/, ValidationMsgEnum.PhoneNumberMustBeLike)
+    .required(ValidationMsgEnum.Required),
+  alternativeContactNumber: yup
+    .string()
+    .matches(/\+971\-[0-9]{9}/, ValidationMsgEnum.PhoneNumberMustBeLike)
+    .notOneOf([yup.ref("contactNumber")], ValidationMsgEnum.AlternativeEmailCantBeSamePrimary)
+    .required(ValidationMsgEnum.Required),
   fax: yup.string().optional(),
 });
