@@ -156,232 +156,144 @@ const OwnerDetailComponent = (props: IProps) => {
                 />
               </Col>
             </Form.Row>
-
             <Form.Row>
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
-                <Form.Label>
-                  {t("Forms.First name (Arabic)")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
+              <Col md={4}>
+                <FormInputComponent
+                  label="First name (Arabic)"
                   type="text"
-                  placeholder={t("Forms.First name (Arabic)")}
                   name="fNameAr"
-                  ref={register}
-                  isValid={formState.touched.fNameAr && !errors.fNameAr}
-                  isInvalid={errors.fNameAr}
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.fNameAr}
                 />
-                {errors.fNameAr ? (
-                  <span className="text-danger">{t(`${errors.fNameAr?.message}`)}</span>
-                ) : null}
-              </Form.Group>
+              </Col>
 
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Middle name (Arabic)")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
+              <Col md={4}>
+                <FormInputComponent
+                  label="Middle name (Arabic)"
                   type="text"
-                  placeholder={t("Forms.Middle name (Arabic)")}
                   name="mNameAr"
-                  ref={register}
-                  isValid={formState.touched.mNameAr && !errors.mNameAr}
-                  isInvalid={errors.mNameAr}
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.mNameAr}
                 />
-                {errors.mNameAr ? (
-                  <span className="text-danger">{t(`${errors.mNameAr?.message}`)}</span>
-                ) : null}
-              </Form.Group>
-
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Last Name (Arabic)")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
+              </Col>
+              <Col md={4}>
+                <FormInputComponent
+                  label="Last Name (Arabic)"
                   type="text"
-                  placeholder={t("Forms.Last Name (Arabic)")}
                   name="lNameAr"
-                  ref={register}
-                  isValid={formState.touched.lNameAr && !errors.lNameAr}
-                  isInvalid={errors.lNameAr}
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.lNameAr}
                 />
-                {errors.lNameAr ? (
-                  <span className="text-danger">{t(`${errors.lNameAr?.message}`)}</span>
-                ) : null}
-              </Form.Group>
+              </Col>
             </Form.Row>
 
             <Form.Row>
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Share Percentage")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
+              <Col md={8}>
+                <FormInputComponent
+                  label="Share Percentage"
                   type="number"
-                  min="1"
-                  placeholder="50%"
                   name="sharePercentage"
-                  ref={register}
-                  isValid={formState.touched.sharePercentage && !errors.sharePercentage}
-                  isInvalid={errors.sharePercentage}
+                  isRequird={true}
+                  takeFullRow={true}
+                  register={register}
+                  formState={formState}
+                  errors={errors.sharePercentage}
                 />
-                {errors.sharePercentage ? (
-                  <span className="text-danger">{t(`${errors.sharePercentage?.message}`)}</span>
-                ) : null}
-              </Form.Group>
-              <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.UAE Citzen")} <span className="required">*</span>
-                </Form.Label>
-                <div className="radioButtons">
-                  <div className="form-check">
-                    <label htmlFor="UAECitzen">
-                      <input
-                        name="uaeCitzen"
-                        type="radio"
-                        id="UAECitzen"
-                        className="form-check-input"
-                        value="yes"
-                        ref={register}
-                        defaultChecked
-                      />
-                      {t("Forms.Yes")}
-                      <i className="checkMark"> </i>
-                    </label>
-                  </div>
-                  <div className="form-check">
-                    <label htmlFor="UAECitzen2">
-                      <input
-                        name="uaeCitzen"
-                        type="radio"
-                        id="UAECitzen2"
-                        className="form-check-input"
-                        value="no"
-                        ref={register}
-                      />
-                      {t("Forms.No")}
-                      <i className="checkMark"> </i>
-                    </label>
-                  </div>
-                </div>
-              </Form.Group>
+              </Col>
+              <Col md={4}>
+                <RadioButtonsComponent
+                  withLable={true}
+                  label="UAE Citzen"
+                  name="uaeCitzen"
+                  value1="Yes"
+                  value2="No"
+                  register={register}
+                />
+              </Col>
             </Form.Row>
 
             <Form.Row>
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
-                <Form.Label>
-                  {t("Forms.Nationality")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
-                  as="select"
-                  name="nationality"
-                  ref={register}
-                  isValid={formState.touched.nationality && !errors.nationality}
-                  isInvalid={errors.nationality}
-                >
-                  <option disabled selected value="">
-                    {t("Forms.Nationality")}
-                  </option>
-                  <option>...</option>
-                  <option>...</option>
-                  <option>...</option>
-                </Form.Control>
-              </Form.Group>
+              <FormInputComponent
+                label="Nationality"
+                type="select"
+                as="select"
+                name="nationality"
+                isRequird={true}
+                register={register}
+                formState={formState}
+                errors={errors.nationality}
+              >
+                <option> nationality</option>
+              </FormInputComponent>
 
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Passport No")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder={t("Forms.No")}
-                  name="passportNo"
-                  ref={register}
-                  isValid={formState.touched.passportNo && !errors.passportNo}
-                  isInvalid={errors.passportNo}
-                />
-                {errors.passportNo ? (
-                  <span className="text-danger">{t(`${errors.passportNo?.message}`)}</span>
-                ) : null}
-              </Form.Group>
+              <FormInputComponent
+                label="Passport No"
+                type="select"
+                as="select"
+                name="passportNo"
+                isRequird={true}
+                register={register}
+                formState={formState}
+                errors={errors.passportNo}
+              >
+                <option> passportNo</option>
+              </FormInputComponent>
             </Form.Row>
             <Form.Row>
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Emirates ID")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder={t("Forms.Emirates ID")}
-                  name="emiratesId"
-                  ref={register}
-                  isValid={formState.touched.emiratesId && !errors.emiratesId}
-                  isInvalid={errors.emiratesId}
-                />
-                {errors.emiratesId ? (
-                  <span className="text-danger">{t(`${errors.emiratesId?.message}`)}</span>
-                ) : null}
-              </Form.Group>
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Family Book No")} <span className="required">*</span>
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder={t("Forms.No")}
-                  name="familyBookNo"
-                  ref={register}
-                  isValid={formState.touched.familyBookNo && !errors.familyBookNo}
-                  isInvalid={errors.familyBookNo}
-                />
-                {errors.familyBookNo ? (
-                  <span className="text-danger">{t(`${errors.familyBookNo?.message}`)}</span>
-                ) : null}
-              </Form.Group>
+              <FormInputComponent
+                label="Emirates ID"
+                type="text"
+                name="emiratesId"
+                isRequird={true}
+                register={register}
+                formState={formState}
+                errors={errors.emiratesId}
+              />
+              <FormInputComponent
+                label="Family Book No"
+                type="text"
+                name="familyBookNo"
+                isRequird={true}
+                register={register}
+                formState={formState}
+                errors={errors.familyBookNo}
+              />
             </Form.Row>
             <Form.Row className="splitTitle">
               <h5>{t("Forms.Contact information")} </h5>
             </Form.Row>
             <Form.Row>
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridEmail">
-                <Form.Label>
-                  {t("Forms.Contact Number")} <span className="required">*</span>
-                </Form.Label>
-                <div className="inputWithIcon">
-                  <Form.Control
-                    type="text"
-                    placeholder={t("Forms.Contact Number")}
-                    name="contactNo"
-                    ref={register}
-                    isValid={formState.touched.contactNo && !errors.contactNo}
-                    isInvalid={errors.contactNo}
-                  />
-                  {errors.contactNo ? (
-                    <span className="text-danger">{t(`${errors.contactNo?.message}`)}</span>
-                  ) : null}
-                  <Image src={phone} />
-                </div>
-              </Form.Group>
-
-              <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-                <Form.Label>
-                  {t("Forms.Primary Email")}
-                  <span className="required">*</span>
-                </Form.Label>
-                <div className="inputWithIcon">
-                  <Form.Control
-                    type="text"
-                    placeholder={t("Forms.Primary Email")}
-                    name="primaryEmail"
-                    ref={register}
-                    isValid={formState.touched.primaryEmail && !errors.primaryEmail}
-                    isInvalid={errors.primaryEmail}
-                  />
-                  {errors.primaryEmail ? (
-                    <span className="text-danger">{t(`${errors.primaryEmail?.message}`)}</span>
-                  ) : null}
-                  <Image src={email} />
-                </div>
-              </Form.Group>
+              <FormInputComponent
+                label="Contact Number"
+                type="text"
+                name="contactNo"
+                isRequird={true}
+                register={register}
+                formState={formState}
+                errors={errors.contactNo}
+                withImage={true}
+                imgSrc={phone}
+              />
+              <FormInputComponent
+                label="Primary Email"
+                type="text"
+                name="primaryEmail"
+                isRequird={true}
+                register={register}
+                formState={formState}
+                errors={errors.primaryEmail}
+                withImage={true}
+                imgSrc={email}
+              />
             </Form.Row>
             <Form.Row className="splitTitle">
               <h5>{t("Buttons.Attachments")}</h5>
