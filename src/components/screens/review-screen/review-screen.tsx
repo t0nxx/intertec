@@ -5,7 +5,7 @@ import "./review-screen.scss";
 import { Container, Accordion, Card, Image, Row, Col, Table, Button, Modal } from "react-bootstrap";
 
 // Import images
-import upArrow4Collaps from "../../../assets/upArrow4Collaps.svg";
+
 import editPen from "../../../assets/editPen.svg";
 import locationWhite from "../../../assets/location-white.svg";
 // screens to edit
@@ -24,6 +24,7 @@ import userPhoto from "../../../assets/userPhoto.svg";
 import collaps from "../../../assets/collaps.svg";
 import expand from "../../../assets/expand.svg";
 import minus from "../../../assets/minus-circle-solid.svg";
+import ReviewCardHead from "../../templates/review-card-head/review-card-head";
 
 export default function ReviewScreenComponent() {
   const [isEditEstablish, setIsEditEstablish] = useState(false);
@@ -79,10 +80,10 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>{t("Titles.Establishment Information")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead
+                  title="Titles.Establishment Information"
+                  eventKey={collapseAllState}
+                />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditEstablish ? (
                     <EstablishmentInformationComponent
@@ -128,10 +129,7 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>{t("Forms.Contact information")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead title="Forms.Contact information" eventKey={collapseAllState} />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditContact ? (
                     <ContactInformationComponent
@@ -193,10 +191,7 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>{t("Titles.Location Information")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead title="Titles.Location Information" eventKey={collapseAllState} />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditLocation ? (
                     <LocationInformationComponent
@@ -263,10 +258,7 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1>{t("Titles.Owner Details")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead title="Titles.Owner Details" eventKey={collapseAllState} />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditOwner ? (
                     <OwnerDetailComponent
@@ -374,10 +366,7 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1> {t("Titles.Partner Details")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead title="Titles.Partner Details" eventKey={collapseAllState} />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   <PartnerDetailsComponent
                     isForReviewPage={true}
@@ -495,10 +484,7 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1> {t("Titles.Attachment")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead title="Titles.Attachment" eventKey={collapseAllState} />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   <Card.Body>
                     <Row>
@@ -553,10 +539,10 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1> {t("Texts.Reason For Area Extention")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead
+                  title="Texts.Reason For Area Extention"
+                  eventKey={collapseAllState}
+                />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditArea ? (
                     <ReasonForAreaExtention
@@ -588,10 +574,7 @@ export default function ReviewScreenComponent() {
           <div className="block">
             <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey={collapseAllState}>
-                  <h1> {t("Forms.Remove Speciality")}</h1>
-                  <Image src={upArrow4Collaps} />
-                </Accordion.Toggle>
+                <ReviewCardHead title="Forms.Remove Speciality" eventKey={collapseAllState} />
                 <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditSpeciallity ? (
                     <RemoveSpeciality
