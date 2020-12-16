@@ -31,8 +31,8 @@ html[lang="ar"] {
   }
 }
 .pageHeader {
-  box-shadow: 0 0px 5px -2px #000000;
-  background-color: #ffffff !important;
+  box-shadow: 0 0px 5px -2px var(--black);
+  background-color: var(--white) !important;
   min-height: 70px;
   // position: relative;
   .saveOrCancel {
@@ -141,16 +141,16 @@ html[lang="ar"] {
           height: 53px;
           border-radius: 35px;
           border: 0;
-          color: #000000;
+          color: var(--black);
           font-size: 23px;
         }
 
         button:nth-child(1) {
           margin-bottom: 10px;
-          background-color: #e3e3e3;
+          background-color: var(--gray6);
         }
         button:nth-child(2) {
-          background-color: #c0c0bb;
+          background-color: var(--gray7);
         }
       }
     }

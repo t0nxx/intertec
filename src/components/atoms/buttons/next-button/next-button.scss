@@ -1,10 +1,10 @@
 .nextBtn {
   margin: 20px auto -40px auto;
-  border: 11pt solid #f7f7f7;
+  border: 11pt solid var(--gray);
   display: inline-block;
   border-radius: 50px;
   padding: 0 19px;
-  background: #f7f7f7;
+  background: var(--gray);
   position: relative;
   height: 70px;
   &::before,

@@ -1,6 +1,6 @@
 @import "../../../../sass/variables";
 body {
-  background-color: #f7f7f7 !important;
+  background-color: var(--gray) !important;
   padding-bottom: 200px;
 }
 .card {
@@ -18,7 +18,7 @@ body {
   .card-body {
     padding: 10px 25px;
     input::placeholder {
-      color: #9e9e9e;
+      color: var(--gray16);
       font-size: 12px;
     }
     .radioBtns {
@@ -53,7 +53,7 @@ body {
             width: 30px;
             height: 30px;
             // background-color: white;
-            border: 1pt solid #127f46;
+            border: 1pt solid var(--success);
             border-radius: 50%;
             top: 0;
           }
@@ -93,7 +93,7 @@ body {
             width: 30px;
             height: 30px;
             background-color: white;
-            border: 1pt solid #127f46;
+            border: 1pt solid var(--success);
             display: flex;
             top: 0;
             left: 0;
@@ -117,7 +117,7 @@ body {
         position: absolute;
         width: 99%;
         height: 2px;
-        background-color: #eeeeee;
+        background-color: var(--gray15);
         top: 50%;
         transform: translateY(-50%);
       }
@@ -158,7 +158,7 @@ body {
 }
 
 .done {
-  background: #127f46 !important;
+  background: var(--success) !important;
   border-radius: 10px !important;
   position: relative;
   .row {
@@ -195,7 +195,7 @@ body {
     tr {
       th {
         color: white;
-        background-color: #c0c0bb;
+        background-color: var(--gray7);
         border: 0;
         font-size: 12px;
         padding: 15px;
@@ -216,11 +216,11 @@ body {
         font-weight: bold;
         &:first-child {
           border-radius: 7px 0 0 7px;
-          border-left: 1px solid #e2e6ed;
+          border-left: 1px solid var(--gray20);
         }
         &:last-child {
           border-radius: 0 7px 7px 0;
-          border-right: 1px solid #e2e6ed;
+          border-right: 1px solid var(--gray20);
         }
         img {
           width: 15px;
@@ -229,7 +229,7 @@ body {
       }
       &:last-child {
         td {
-          border-bottom: 1px solid #e2e6ed;
+          border-bottom: 1px solid var(--gray20);
         }
       }
     }
@@ -249,7 +249,7 @@ body {
       .modal-header {
         border: 0;
         border-radius: 0;
-        box-shadow: 0px -7px 23px #00000066;
+        box-shadow: 0px -7px 23px var(--customBlack2);
         padding: 0;
         .modal-title {
           display: block;
@@ -260,7 +260,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            border-right: 1pt solid #e3e0e0;
+            border-right: 1pt solid var(--gray21);
             cursor: pointer;
             float: left;
             img {
@@ -293,7 +293,7 @@ body {
 }
 
 .required {
-  color: $custom-red;
+  color: var(--danger);
   margin-left: 10px;
 }
 
@@ -310,7 +310,7 @@ body {
 
 .custom-control.custom-checkbox {
   input:checked ~ label::after {
-    background-color: #127f46 !important;
+    background-color: var(--success) !important;
     background-image: url(../../../../assets/rightMark2.svg);
     background-repeat: no-repeat;
     background-size: 80%;
@@ -328,7 +328,7 @@ body {
       width: 20px;
       height: 20px;
       border-radius: 0;
-      border: 1pt solid #707070;
+      border: 1pt solid var(--gray22);
       box-shadow: none !important;
     }
     &::before {

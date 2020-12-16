@@ -27,13 +27,13 @@ html[lang="ar"] {
       width: 100%;
       margin: 0 0 15px 0;
       .btnsContainer {
-        background-color: #dbdbdb;
+        background-color: var(--gray2);
         border-radius: 5px;
         padding: 7px;
         display: flex;
         width: fit-content;
         button {
-          color: #000000;
+          color: var(--black);
           border: 0;
           box-shadow: none !important;
           text-transform: capitalize;
@@ -48,7 +48,7 @@ html[lang="ar"] {
             background-color: transparent;
           }
           &.expand {
-            background-color: #ffffff;
+            background-color: var(--white);
             border-radius: 3px;
           }
         }
@@ -61,7 +61,7 @@ html[lang="ar"] {
         Button:focus,
         Button:active {
           border-radius: 50px;
-          background-color: #127f46;
+          background-color: var(--success);
           padding: 10px 60px;
           box-shadow: none !important;
         }
@@ -103,8 +103,8 @@ html[lang="ar"] {
                 list-style: none;
                 display: inline-block;
                 border-radius: 20px;
-                border: 1pt solid #9e9e9e;
-                color: #9e9e9e;
+                border: 1pt solid var(--gray16);
+                color: var(--gray16);
                 cursor: pointer;
                 padding: 5px;
                 display: flex;
@@ -129,7 +129,7 @@ html[lang="ar"] {
           .row {
             margin-bottom: 25px;
             .grayBg {
-              background-color: #eeeeee;
+              background-color: var(--gray15);
               border-radius: 10px;
               padding: 15px 20px;
               .row {
@@ -160,9 +160,9 @@ html[lang="ar"] {
             span {
               font-size: 14px;
               display: block;
-              color: #646e76;
+              color: var(--gray13);
               &.mapBtn {
-                background-color: #d02239;
+                background-color: var(--danger);
                 display: inline-block;
                 color: white;
                 padding: 7px 20px;
@@ -178,7 +178,7 @@ html[lang="ar"] {
               width: 100%;
               .file {
                 width: 100%;
-                border: 1pt solid #eeeeee;
+                border: 1pt solid var(--gray15);
                 border-radius: 10px;
                 padding: 10px 15px;
                 display: flex;
@@ -199,7 +199,7 @@ html[lang="ar"] {
                       line-height: 18px;
                     }
                     span {
-                      color: #636467;
+                      color: var(--gray14);
                       display: block;
                       font-size: 11px;
                     }
@@ -226,7 +226,7 @@ html[lang="ar"] {
       Button:focus,
       Button:active {
         border-radius: 50px;
-        background-color: #127f46;
+        background-color: var(--success);
         padding: 6px 60px;
         box-shadow: none !important;
       }

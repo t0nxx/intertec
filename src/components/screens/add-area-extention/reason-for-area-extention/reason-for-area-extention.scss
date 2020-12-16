@@ -1,24 +1,20 @@
 .reLocationComponent {
   .card-header {
-    background-color: #fff;
+    background-color: var(--white);
     border-bottom: none;
   }
   .staticData {
     .staticDataContent {
-      background-color: #ffffff;
+      background-color: var(--white);
       min-height: 100px;
       width: 100%;
-      // border-radius: 10px;
-      // border: 1pt solid #ebebeb;
-      // box-shadow: 0px 0px 16px -7px #00000033;
-      // padding: 20px 25px;
       p {
         margin: 0;
         font-weight: bold;
-        color: #000000;
+        color: var(--black);
       }
       span {
-        color: #9e9e9e;
+        color: var(--gray16);
       }
     }
   }
