@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Form, FormGroup, Image } from "react-bootstrap";
+import { Col, Row, Form, FormGroup, Image } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import "./formInput.scss";
 
@@ -16,10 +16,11 @@ export const FormInputComponent = (props: {
   errors: any;
   formState: any;
   children?: any;
+  takeFullRow?: boolean;
 }) => {
   const { t }: any = useTranslation();
   return (
-    <FormGroup as={Col} md="6" sm="12">
+    <FormGroup as={Col} md={props.takeFullRow ? 12 : 6} sm="12">
       <Form.Label>
         {t(`Forms.${props.label}`)} {props.isRequird ? <span className="required">*</span> : null}
       </Form.Label>
