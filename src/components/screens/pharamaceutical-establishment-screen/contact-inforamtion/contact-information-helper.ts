@@ -55,7 +55,7 @@ export const formSchema = yup.object().shape({
   alternativeContactNumber: yup
     .string()
     .matches(/\+971\-[0-9]{9}/, ValidationMsgEnum.PhoneNumberMustBeLike)
-    .notOneOf([yup.ref("contactNumber")], ValidationMsgEnum.AlternativeEmailCantBeSamePrimary)
+    .notOneOf([yup.ref("contactNumber")], ValidationMsgEnum.AlternativeContactNumberBeSamePrimary)
     .required(ValidationMsgEnum.Required),
   fax: yup.string().optional(),
 });

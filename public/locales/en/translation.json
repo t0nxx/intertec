@@ -136,8 +136,8 @@
     "Psychiatry": "Psychiatry",
     "Surgery": "Surgery",
     "Urology": "Urology",
-    "Remove Speciality":"Remove Speciality",
-    "Specialities Removed" : "Specialities Removed"
+    "Remove Speciality": "Remove Speciality",
+    "Specialities Removed": "Specialities Removed"
   },
   "Buttons": {
     "Next": "Next",
@@ -157,11 +157,17 @@
     "Process For Payment": "Process For Payment",
     "Close": "Close",
     "See All": "See All",
-    "Attachments" : "Attachments"
+    "Attachments": "Attachments"
   },
   "Error": {
     "Requird": "This is required",
-    "MustBeValidEmail": "Must be valid email"
+    "MustBeValidEmail": "Must be valid email",
+    "AlternativeEmailCantBeSamePrimary": "Alternative email and primary cant be same",
+    "MustBeOnlyCharachters": "Must be only charachters",
+    "PhoneNumberMustBeLike": "Phone must be like +971-000000000",
+    "AlternativeContactNumberBeSamePrimary": "Alternative number and primary cant be same",
+    "MustBeOnlyArabicCharachters": "Must be only arabic charachters",
+    "MustBeValidGooglMapUrl": "Must be a valid google maps url"
   },
   "Texts": {
     "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center",
