@@ -1,0 +1,58 @@
+html[lang="ar"] {
+  .card.headCard {
+    .start {
+      left: 20px;
+      right: auto !important;
+    }
+  }
+}
+
+.card.headCard {
+  margin: 0 auto;
+  width: 60%;
+  // padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px -15px #363333;
+  .card-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    div.row {
+      display: flex;
+      align-items: center;
+      img {
+        width: 30px;
+        height: 30px;
+        &.whiteIc {
+          display: none;
+        }
+        &.checked {
+          display: none;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      h3 {
+        font-size: 26px;
+        font-weight: normal;
+        line-height: 40px;
+        margin: 0 10px;
+      }
+      .start {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #ebeaea;
+        border-radius: 45px;
+        width: 110px;
+        color: #696666;
+        box-shadow: none !important;
+        border: 0 !important;
+      }
+    }
+  }
+}
