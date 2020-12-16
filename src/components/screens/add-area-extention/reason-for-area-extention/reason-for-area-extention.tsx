@@ -14,6 +14,7 @@ import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
+import { FormInputComponent } from "../../../molecules/forms/formInput";
 
 const ReasonForAreaExtention = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
@@ -95,23 +96,17 @@ const ReasonForAreaExtention = (props: IProps) => {
                 </div>
               </div>
             </Form.Group>
-            <Form.Group as={Col} md="12" sm="12" controlId="establishmentName">
-              <Form.Label>
-                {t("Texts.Reason For Area Extention")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                as="textarea"
-                type="text"
-                placeholder={t("Forms.Write the reason")}
-                name="reason"
-                ref={register}
-                isValid={formState.touched.reason && !errors.reason}
-                isInvalid={errors.reason}
-              />
-              {errors.reason ? (
-                <span className="text-danger">{t(`${errors.reason?.message}`)}</span>
-              ) : null}
-            </Form.Group>
+            <FormInputComponent
+              label="Reason For Area Extention"
+              type="text"
+              as="textarea"
+              name="reason"
+              isRequird={true}
+              takeFullRow={true}
+              register={register}
+              formState={formState}
+              errors={errors.reason}
+            />
           </Form.Row>
 
           {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
