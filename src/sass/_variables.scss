@@ -52,3 +52,37 @@ $theme-colors: (
   "danger": #d02239,
   "success": #127f46,
 );
+/*
+* breadcrumber seperator
+*/
+$breadcrumb-divider: quote(">");
+
+/*
+* main colors here , from design guide line
+*/
+// grey-scale : #848683
+// grey-scale : #B4B5B4
+// grey-scale : #C0C0BB
+
+// black-grey : #454545
+// black : #000000
+
+// Font Family : Helvetica Neue
+// Droid Arabic Kufi
+
+$body-bg: #eeeeee;
+
+$custom-red: #d02239;
+$custom-green: #127f46;
+
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #d02239,
+  "success": #127f46,
+);
+
+$table-head-color-light-gray: #b4b5b4;
+
+$text-gray-color: #adb2b6;
+
+$font-size-12: 0.75rem !default;
