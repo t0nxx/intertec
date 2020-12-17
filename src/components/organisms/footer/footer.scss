@@ -5,14 +5,15 @@ html[lang="ar"] {
       text-align: right;
     }
 
-    .statistics-container .image1.prog p,.statistics-container .image1.prog span{
+    .statistics-container .image1.prog p,
+    .statistics-container .image1.prog span {
       text-align: right;
     }
   }
 }
 
 .footer {
-  background-color: #ffffff !important;
+  background-color: var(--white) !important;
   padding-top: 0px;
   box-shadow: none;
   height: 90px !important;
@@ -94,11 +95,11 @@ html[lang="ar"] {
         text-align: left;
       }
       p {
-        color: #596269;
+        color: var(--gray3);
         text-transform: capitalize;
       }
       span {
-        color: #127f46;
+        color: var(--success);
       }
     }
     .image1,
@@ -145,7 +146,7 @@ html[lang="ar"] {
     }
     span {
       &.active {
-        color: #127f46;
+        color: var(--success);
         font-weight: bold;
       }
     }
@@ -159,10 +160,10 @@ html[lang="ar"] {
       display: flex;
       flex-direction: column;
       span {
-        color: #596269;
+        color: var(--gray3);
       }
       strong {
-        color: #127f46;
+        color: var(--success);
       }
     }
   }

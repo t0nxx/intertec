@@ -203,7 +203,13 @@
     "MustBeValidEmail": "يجب أن يكون بريدًا إلكترونيًا صالحًا",
     "MustBeValidArabicName": "الرجاء إدخال اسم عربي صالح",
     "Required": "هذا الحقل مطلوب",
-    "MustBeValidEstablishName": "الرجاء إدخال اسم مؤسسة صالح!"
+    "MustBeValidEstablishName": "الرجاء إدخال اسم مؤسسة صالح!",
+    "AlternativeEmailCantBeSamePrimary": "البريد البديل لايمكن ان يكون كالبريد الاساسي",
+    "MustBeOnlyCharachters": "يجب ان يكون حروف انجليزية فقط",
+    "PhoneNumberMustBeLike": "+971-000000000 الهاتف يجب ان يكون على الشكل",
+    "AlternativeContactNumberBeSamePrimary": "الهاتف البديل لايمكن ان يكون كاالهاتف الاساسي",
+    "MustBeOnlyArabicCharachters": "يجب ان يكون حروفا عربية فقط",
+    "MustBeValidGooglMapUrl": "يجب ان يكون عنوان خرائط جوجل صحيح"
   },
   "Texts": {
     "if you still have any inquiries": " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين",

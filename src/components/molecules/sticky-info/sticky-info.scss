@@ -50,7 +50,7 @@ html[lang="ar"] {
     height: 300px;
     background-color: white;
     border-radius: 20px;
-    box-shadow: 0 0 46px #00000033;
+    box-shadow: 0 0 46px var(--black);
     border: 0;
     margin-left: 14px;
     margin-bottom: -25px;
@@ -62,7 +62,7 @@ html[lang="ar"] {
       transform: rotate(180deg);
     }
     .card {
-      border: 2pt solid #dbdbdb;
+      border: 2pt solid var(--gray2);
       border-radius: 5px;
       margin-bottom: 10px;
       .card-header {
@@ -75,7 +75,7 @@ html[lang="ar"] {
           justify-content: space-between;
           padding: 10px 15px;
           text-decoration: none;
-          color: #000000;
+          color: var(--black);
           font-size: 14px;
           box-shadow: none !important;
           img {

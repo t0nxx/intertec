@@ -4,6 +4,60 @@
 $breadcrumb-divider: quote(">");
 
 /*
+* All Colors used her
+*/
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --customBlack1: #00000033;
+  --customBlack2: #00000066;
+  --primary: #0074d9;
+  --danger: #d02239;
+  --red: #eb602d;
+  --success: #127f46;
+  --orange: #ff9001;
+  --orange2: #ab8439;
+  --gray: #f7f7f7;
+  --gray2: #dbdbdb;
+  --gray3: #596269;
+  --gray4: #666666;
+  --gray5: #2a2a2a;
+  --gray6: #e3e3e3;
+  --gray7: #c0c0bb;
+  --gray8: #bebebe;
+  --gray9: #b4b5b4;
+  --gray10: #f2f2f2;
+  --gray11: #aab5be;
+  --gray12: #262521;
+  --gray13: #646e76;
+  --gray14: #636467;
+  --gray15: #eeeeee;
+  --gray16: #9e9e9e;
+  --gray17: #ebeaea;
+  --gray18: #696666;
+  --gray19: #363333;
+  --gray20: #e2e6ed;
+  --gray21: #e3e0e0;
+  --gray22: #707070;
+  --gray23: #f0efef;
+  --gray24: #f4f4f4;
+  --gray25: #ebebeb;
+  --gray26: #909db4;
+}
+
+// overwrite bootstrap colors
+
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #d02239,
+  "success": #127f46,
+);
+/*
+* breadcrumber seperator
+*/
+$breadcrumb-divider: quote(">");
+
+/*
 * main colors here , from design guide line
 */
 // grey-scale : #848683
@@ -30,8 +84,9 @@ $theme-colors: (
 $table-head-color-light-gray: #b4b5b4;
 
 $text-gray-color: #adb2b6;
+
+$font-size-12: 0.75rem !default;
+
 $green-color: #127f46;
 $brown-color: #ab8439;
 $btn-red-normal: #d02239;
-
-$font-size-12: 0.75rem !default;

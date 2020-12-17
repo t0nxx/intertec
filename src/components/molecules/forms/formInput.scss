@@ -1,0 +1,13 @@
+.inputWithIcon {
+    position: relative;
+    input {
+      padding-left: 45px;
+    }
+    img {
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      transform: translateY(-50%);
+      left: 15px;
+    }
+  }

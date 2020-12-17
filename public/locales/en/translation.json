@@ -104,7 +104,7 @@
     "drag_and_drop_documents": "Drag and Drop Documents Here to Get Started!",
     "browse_from_computer": "Browse For Document On Your Computer",
     "supported_files_for_upload": "Use the button to upload your documents Supported File Types: pdf, docx, jpeg, File size: 10MB",
-    "Submit Success" : "Your application has been submitted successfully.",
+    "Submit Success": "Your application has been submitted successfully.",
     "Attachments": "Attachments"
   },
   "Forms": {
@@ -208,7 +208,13 @@
     "MustBeValidEmail": "Must be valid email",
     "MustBeValidArabicName": "Please enter valid arabic name",
     "Required": "This is required",
-    "MustBeValidEstablishName": "Please enter valid establishment name!"
+    "MustBeValidEstablishName": "Please enter valid establishment name!",
+    "AlternativeEmailCantBeSamePrimary": "Alternative email and primary cant be same",
+    "MustBeOnlyCharachters": "Must be only charachters",
+    "PhoneNumberMustBeLike": "Phone must be like +971-000000000",
+    "AlternativeContactNumberBeSamePrimary": "Alternative number and primary cant be same",
+    "MustBeOnlyArabicCharachters": "Must be only arabic charachters",
+    "MustBeValidGooglMapUrl": "Must be a valid google maps url"
   },
   "Texts": {
     "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center",
