@@ -1,6 +1,9 @@
 {
   "Titles": {
     "AppLanguage": "Eng",
+    "Collapse All": "طي الكل",
+    "Expand All": "توسيع الكل",
+    "The Reason Of Name Change": "سبب تغيير الاسم",
     "Services": "الخدمات",
     "New License Pharmaceutical Establishment": "الموافقة المبدئية على الترخيص الجديد للمنشأة الطبية",
     "Retrieve information contact from your profile": "إسترجاع البيانات من الصفحة الشخصية",
@@ -95,9 +98,12 @@
     "4of4": "4 من 4",
     "drag_and_drop_documents": "قم بسحب وإفلات المستندات هنا لتبدأ!",
     "browse_from_computer": " تصفح الملفات على جهاز الكومبيوتر الخاص بك",
-    "supported_files_for_upload": "استخدم الزر لتحميل المستندات الخاصة بك. أنواع الملفات المدعومة pdf، docx، jpeg، حجم الملف: 10 ميجابايت "
+    "supported_files_for_upload": "استخدم الزر لتحميل المستندات الخاصة بك. أنواع الملفات المدعومة pdf، docx، jpeg، حجم الملف: 10 ميجابايت ",
+    "Submit Success": "تم تقديم الطلب بنجاح.",
+    "Attachments": "المرفقات"
   },
   "Forms": {
+    "Preview Submit Message": "اسم المنشأة الجديد لا يتطابق مع قواعد ولوائح وزارة الصحة والسكان يرجى تحديث الاسم قبل تقديم الطلب.",
     "Establishment Name": "اسم المنشأة باللغة الإنجليزية ",
     "Establishment Name (Arabic)": "اسم المنشأة باللغة العربية ",
     "Establishment Name (English)": "اسم المنشأة باللغة الإنجليزية",

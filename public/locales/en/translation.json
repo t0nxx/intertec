@@ -1,6 +1,9 @@
 {
   "Titles": {
     "AppLanguage": "عربي",
+    "Collapse All": "Collapse All",
+    "Expand All": "Expand All",
+    "The Reason Of Name Change": "The Reason Of Name Change",
     "Services": "Services",
     "New License Pharmaceutical Establishment": "New License Pharmaceutical Establishment",
     "Retrieve information contact from your profile": "Retrieve information contact from your profile",
@@ -100,13 +103,16 @@
     "4of4": "4 of 4",
     "drag_and_drop_documents": "Drag and Drop Documents Here to Get Started!",
     "browse_from_computer": "Browse For Document On Your Computer",
-    "supported_files_for_upload": "Use the button to upload your documents Supported File Types: pdf, docx, jpeg, File size: 10MB"
+    "supported_files_for_upload": "Use the button to upload your documents Supported File Types: pdf, docx, jpeg, File size: 10MB",
+    "Submit Success" : "Your application has been submitted successfully.",
+    "Attachments": "Attachments"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
     "Establishment Name (Arabic)": "Establishment Name (Arabic)",
     "Establishment Name (English)": "Establishment Name (English)",
     "Establishment Type": "Establishment Type",
+    "Preview Submit Message": "The new facility name does not match MOHAP rules and regulations. kindly update the name before submitting the request.",
     "Category": "Category",
     "Contact Name": "Contact Name",
     "Designation": "Designation",

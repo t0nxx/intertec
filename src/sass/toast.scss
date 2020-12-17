@@ -1,0 +1,11 @@
+@import "variables";
+
+.Toastify__toast--success {
+  background: $green-color !important;
+}
+.Toastify__toast--info {
+  background: $brown-color !important;
+}
+.Toastify__toast--error {
+  background: $btn-red-normal !important;
+}

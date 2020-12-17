@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from "react";
-import { withTranslation } from "react-i18next";
-import { Accordion, Card, Image, Row, Table } from "react-bootstrap";
+import React, {Component, Fragment} from "react";
+import {withTranslation} from "react-i18next";
+import {Accordion, Card, Image, Row, Table} from "react-bootstrap";
 import ownerImage from "../../../../assets/owner.svg";
 import upArrow from "../../../../assets/upArrow4Collaps.svg";
 
@@ -46,7 +46,7 @@ class PartnerDetails extends Component {
                 <Image
                   src={upArrow}
                   className={
-                    isOpen ? "arrow rotate ml-3 mr-3" : "arrow ml-3 mr-3"
+                    isOpen ? "arrow rotate ml-auto mr-3" : "arrow ml-auto mr-3"
                   }
                 />
               </Row>
