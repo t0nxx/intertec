@@ -104,7 +104,8 @@
     "drag_and_drop_documents": "Drag and Drop Documents Here to Get Started!",
     "browse_from_computer": "Browse For Document On Your Computer",
     "supported_files_for_upload": "Use the button to upload your documents Supported File Types: pdf, docx, jpeg, File size: 10MB",
-    "Submit Success" : "Your application has been submitted successfully."
+    "Submit Success" : "Your application has been submitted successfully.",
+    "Attachments": "Attachments"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
