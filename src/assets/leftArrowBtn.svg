@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="144.001" viewBox="0 0 88 144.001">
+  <defs>
+    <filter id="Subtraction_1" x="0" y="0" width="88" height="144.001" filterUnits="userSpaceOnUse">
+      <feOffset dx="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5.5" result="blur"/>
+      <feFlood flood-opacity="0"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_4864" data-name="Group 4864" transform="translate(-447.501 -326.5)">
+    <g transform="matrix(1, 0, 0, 1, 447.5, 326.5)" filter="url(#Subtraction_1)">
+      <path id="Subtraction_1-2" data-name="Subtraction 1" d="M-78,6429h0V6318a54.227,54.227,0,0,1,21.408,4.361,54.808,54.808,0,0,1,17.482,11.895A55.343,55.343,0,0,1-27.322,6351.9,55.592,55.592,0,0,1-23,6373.5a55.586,55.586,0,0,1-4.322,21.6,55.343,55.343,0,0,1-11.787,17.641,54.794,54.794,0,0,1-17.482,11.895A54.229,54.229,0,0,1-78,6429Z" transform="translate(86.5 -6301.5)" fill="#eee"/>
+    </g>
+    <path id="Icon_awesome-chevron-left" data-name="Icon awesome-chevron-left" d="M2.427,16.807,16.092,3.142a1.688,1.688,0,0,1,2.386,0l1.594,1.594a1.688,1.688,0,0,1,0,2.384L9.245,18l10.83,10.881a1.687,1.687,0,0,1,0,2.384l-1.594,1.594a1.688,1.688,0,0,1-2.386,0L2.427,19.193A1.688,1.688,0,0,1,2.427,16.807Z" transform="translate(467.067 381.352)"/>
+  </g>
+</svg>

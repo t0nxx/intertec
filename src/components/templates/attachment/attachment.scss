@@ -1,0 +1,206 @@
+.content {
+  background-color: white;
+  .state {
+    width: 100%;
+    p {
+      display: block;
+      width: 100%;
+      text-align: right;
+      color: #646e76;
+      text-transform: capitalize;
+      font-size: 13px;
+      span {
+        color: #000000;
+      }
+    }
+  }
+  .steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    .carousel {
+      width: 100%;
+    }
+    .backRow {
+      position: absolute;
+      width: 75%;
+      height: 2px;
+      background-color: #eeeeee;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 auto;
+    }
+    .carousel-item {
+      .stepsContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+      }
+    }
+    .step,
+    .step:active,
+    .step:focus,
+    .step:hover {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1;
+      background-color: white;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      cursor: pointer;
+      span {
+        display: block;
+        font-size: 13px;
+        color: #262521;
+        min-height: 40px;
+      }
+      img {
+        width: 60px;
+        &.checked,
+        &.semiChecked {
+          display: none;
+        }
+      }
+      &.doneStep {
+        img.check,
+        img.semiChecked {
+          display: none !important;
+        }
+        img.checked {
+          display: inline;
+        }
+        span {
+          color: #127f46;
+          font-weight: bold;
+        }
+      }
+      &.currentStep {
+        img.check,
+        img.checked {
+          display: none !important;
+        }
+        img.semiChecked {
+          display: inline;
+        }
+        span {
+          color: #127f46;
+          font-weight: bold;
+        }
+      }
+    }
+    .leftNavigation,
+    .leftNavigation:hover,
+    .leftNavigation:focus,
+    .leftNavigation:active,
+    .rightNavigation,
+    .rightNavigation:hover,
+    .rightNavigation:focus,
+    .rightNavigation:active {
+      padding: 0;
+      position: absolute;
+      border: 0 !important;
+      outline: 0 !important;
+      box-shadow: none !important;
+      background-color: transparent;
+      img {
+        width: 50px;
+        cursor: pointer;
+      }
+    }
+    .leftNavigation {
+      left: -35px;
+    }
+    .rightNavigation {
+      right: -35px;
+    }
+  }
+  .files {
+    .file {
+      width: 100%;
+      border: 1pt solid #eeeeee;
+      border-radius: 10px;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      margin: 10px 0;
+      .leftData {
+        display: flex;
+        align-items: center;
+        img {
+          width: 70px;
+        }
+        .fileData {
+          padding: 0 10px;
+          p {
+            margin: 0;
+            line-height: 18px;
+          }
+          span {
+            color: #636467;
+            display: block;
+            font-size: 11px;
+          }
+        }
+      }
+      .rightData {
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+  .warning {
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 81px;
+    padding: 20px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    img {
+      margin-bottom: 10px;
+    }
+    p {
+      // width: 50%;
+      text-align: center;
+    }
+    button,
+    button:focus {
+      border-radius: 0;
+      background-color: #127f46;
+      outline: 0;
+      box-shadow: none !important;
+      padding: 5px 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .dragArea {
+    padding: 5px !important;
+  }
+  .dragArea p.hint1 {
+    font-size: 13px !important;
+  }
+  .dragArea p.hint2 {
+    font-size: 9px !important;
+  }
+  .dragArea button,
+  .dragArea button:hover,
+  .dragArea button:focus,
+  .dragArea button:active {
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+  }
+}

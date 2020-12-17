@@ -1,0 +1,49 @@
+html[lang="ar"] {
+  span.column {
+    right: 30% !important;
+    left: auto;
+  }
+
+  .form-row,
+  .form-group {
+    text-align: right;
+  }
+
+  img.checked {
+    left: 20px;
+    right: auto !important;
+  }
+
+  table {
+    text-align: right;
+  }
+
+  .table thead tr th:first-child {
+    border-radius: 0 7px 0 0;
+  }
+
+  .table thead tr th:last-child {
+    border-radius: 7px 0 0 0;
+  }
+
+  .table tbody tr td:first-child {
+    border-radius: 0 7px 7px 0;
+    border-right: 1px solid #e2e6ed;
+    border-left: 0;
+  }
+
+  .table tbody tr td:last-child {
+    border-radius: 7px 0 0 7px;
+    border-left: 1px solid #e2e6ed;
+    border-right: 0;
+}
+
+.card .card-body .radioButtons .form-check label i.checkMark{
+    right: 0;
+}
+
+.card .card-body .radioButtons .form-check label{
+    padding: 5px 40px 5px 0;
+    margin: 0 0 0 30px;
+}
+}

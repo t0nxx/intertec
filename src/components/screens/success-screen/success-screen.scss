@@ -1,0 +1,121 @@
+html[lang=ar]{
+  .successScreenFooter .rightContent{
+    text-align: left;
+  }
+
+  .successScreenFooter .leftContent{
+    text-align: right;
+  }
+
+  .successScreenFooter .leftContent img{
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+.succScreenContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 60px auto;
+  img {
+    width: 80px;
+    margin-bottom: 25px;
+  }
+  p {
+    text-align: center;
+    margin: 0;
+    &.successMsg {
+      font-size: 20px;
+      color: #596269;
+    }
+    &.appNum {
+      font-size: 18px;
+      color: #c0c0bb;
+      span {
+        color: #127f46;
+        font-weight: bold;
+      }
+    }
+  }
+  Button {
+    background-color: #127f46;
+    border-radius: 54px;
+    margin-top: 25px;
+  }
+}
+
+.successScreenFooter {
+  .line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #dbdbdb;
+  }
+  .leftContent {
+    padding-top: 10px;
+    img {
+      width: 40px;
+      margin-right: 10px;
+    }
+    p {
+      width: 300px;
+      margin: 15px 0 0 0;
+    }
+  }
+  .rightContent {
+    text-align: right;
+    img {
+      padding: 10px;
+    }
+  }
+}
+.happyRate {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex !important;
+  align-items: center;
+  // .smClose {
+  //   position: absolute;
+  //   right: -20px;
+  //   top: -20px;
+  //   img {
+  //     width: 35px;
+  //   }
+  // }
+  .modal-content {
+    border-radius: 15px;
+    border-radius: 15px;
+    background: transparent;
+    border: 0px;
+    // width: fit-content;
+
+    .modalBody {
+      //  padding: 65px !important;
+      .modal-body {
+        display: contents;
+        justify-content: center;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .happyRate {
+    .modalBody {
+      padding: 35px !important;
+      width: 80%;
+      margin: auto;
+      .modal-body {
+        display: contents;
+        justify-content: center;
+      }
+    }
+  }
+}

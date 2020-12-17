@@ -1,0 +1,225 @@
+html[lang=ar]{
+  .top-nav{
+    .user{
+      img{
+        margin-left: 0;
+        margin-right: 10px;
+      }
+      strong{
+        margin-left: 0;
+        margin-right: 20px;
+      }
+
+      &::after{
+        left: 0;
+        right: 12px;
+      }
+    }
+    .notification-list{
+      .dropdown-menu{
+        left: 0;
+        right: auto;
+        .dropdown-item{
+          text-align: right;
+        }
+    }
+   
+    }
+  }
+}
+
+.top-nav{
+  background-color: #ffffff !important;
+  box-shadow: 0 -2px 4px #000000;
+.user,
+.notifications {
+  position: relative;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-color: transparent !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  &:hover,
+  &:focus {
+    background-color: transparent !important;
+    border: 0 !important;
+    border-color: transparent !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+  &::after {
+    position: absolute;
+    left: 12px;
+    color: #dbdbdb;
+    background-image: url("../../../assets/arrow.svg");
+    border: 0;
+    width: 15px;
+    height: 10px;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+  }
+  strong {
+    margin-left: 20px;
+    color: black;
+  }
+  img {
+    background-color: #dbdbdb;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+  }
+}
+
+.notifications {
+  border: 2px solid #eeeeee !important;
+  border-radius: 7px;
+  padding: 0 2px;
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover,
+  &:focus {
+    border: 2px solid #eeeeee !important;
+    border-radius: 7px;
+    padding: 0 2px;
+  }
+  img {
+    width: 25px;
+    height: auto;
+    background-color: transparent;
+    margin-right: 17px;
+    margin-top: 10px;
+  }
+  span {
+    background-color: #eb602d;
+    position: absolute !important;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    top: 7px !important;
+    right: 10px;
+    border: 2px solid white;
+  }
+  &::after {
+    display: none;
+  }
+}
+
+.toggleLang {
+  display: flex;
+  align-items: center;
+  color: black !important;
+  font-weight: bold !important;
+  cursor: pointer;
+  background: inherit;
+  border: none;
+}
+
+.headerIcons {
+  margin-right: 30px;
+  margin-left: 30px;
+  div {
+    display: flex;
+    align-items: center;
+    a {
+      padding-left: 3px !important;
+      padding-right: 3px !important;
+      padding-top: 4px !important;
+      padding-bottom: 4px !important;
+      border-left: 2pt solid #f0efef;
+      svg {
+        color: #666666;
+      }
+    }
+    &:first-child {
+      a {
+        border-left: none;
+      }
+    }
+  }
+}
+
+.navbar-collapse.show,
+.navbar-collapse.collapsing {
+  .navbar-nav {
+    flex-direction: column-reverse;
+    .toggleLang {
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .headerIcons {
+      flex-direction: row;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    .notifications,
+    .user {
+      margin: 10px auto !important;
+    }
+  }
+}
+.dropdown{
+  z-index: 1030;
+}
+
+
+}
+.notification-list{
+  .dropdown-menu{
+    padding: 2.5rem 1.5rem 1rem 1.5rem;
+    width: 500px;
+    // height: 300px;
+    right: 0;
+    left: auto;
+
+    .dropdown-item{
+      padding: 0.25rem 0 20px 0;
+      white-space:normal;
+      cursor: pointer;
+      &:last-child{
+        padding-bottom: 0;
+      }
+      h6{
+        margin: 0;
+        color: #2A2A2A;
+        margin-bottom: 5px;
+      }
+
+      p{
+        margin: 0;
+        font-size: 13px;
+      }
+      .see-all{
+        text-align: center;
+        a{
+          font-weight: 500;
+          color: #2A2A2A;
+        }
+      }
+      .img-con{
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      &:hover, &:focus{
+        background: none ;
+      }
+    }
+}
+}
+
+

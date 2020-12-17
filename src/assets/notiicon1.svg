@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_5285" data-name="Group 5285" transform="translate(-904 -351)">
+    <circle id="Ellipse_116" data-name="Ellipse 116" cx="25" cy="25" r="25" transform="translate(904 351)" fill="#c0c0bb"/>
+    <g id="digital-signature" transform="translate(918.258 364.422)">
+      <path id="Path_8885" data-name="Path 8885" d="M2.43,15.67l13.688-13.7a.749.749,0,0,1,.531-.222h0a.747.747,0,0,1,.53.22l4.85,4.85a.75.75,0,0,1,0,1.061L8.33,21.571Z" transform="translate(0 -0.032)" fill="#fff"/>
+      <path id="Path_8886" data-name="Path 8886" d="M22.568,5.943l.493-.493a3.177,3.177,0,0,0,0-4.508,3.256,3.256,0,0,0-4.514,0l-.493.493Z" transform="translate(0 -0.032)" fill="#fff"/>
+      <path id="Path_8887" data-name="Path 8887" d="M2.024,16.678.034,23.026A.751.751,0,0,0,.75,24a.763.763,0,0,0,.225-.034l6.347-1.99Z" transform="translate(0 -0.032)" fill="#fff"/>
+      <path id="Path_8888" data-name="Path 8888" d="M6.97,8.788a.744.744,0,0,0,.53-.22l4.842-4.842a1.2,1.2,0,0,1,.944-.335L14.47,2.206a2.7,2.7,0,0,0-3.189.459L6.439,7.507A.751.751,0,0,0,6.97,8.788Z" transform="translate(0 -0.032)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

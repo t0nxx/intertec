@@ -1,0 +1,104 @@
+// reviewer comment
+
+@media screen and (min-device-width: 260px) and (max-device-width: 650px) {
+  // final approval attachment files
+  .align-me {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  // final approval attachment files
+}
+
+.cancel-btn-reviewer {
+  text-align: end;
+}
+.label-file-name {
+  text-align: initial;
+}
+.dragger-upload-button {
+  background: #848683 !important;
+}
+.display-reviewercomment-uploadFile-card {
+  border: 1px solid #dbdada !important;
+  border-radius: 10px !important;
+}
+.display-reviewercomment-card {
+  border: 1px solid #dbdada !important;
+  border-radius: 10px !important;
+}
+.whiteColor {
+  background-color: #ffffff;
+}
+.process-img {
+  width: 87px;
+}
+.border-bottom-reviewer {
+  border-bottom: 1px solid grey;
+}
+.border-left-reviewer {
+  border-left: 1px solid grey;
+}
+.user-img {
+  margin-right: 10px;
+}
+.direction-ltr {
+  direction: ltr !important;
+}
+.reviewer-card {
+  border-radius: 10px;
+}
+.reviewer-attachment-card {
+  border-radius: 10px;
+}
+//.border-left-reviewer:before {
+//  display: block;
+//  border-left: 1px solid grey !important;
+//}
+.button-upload-file {
+  margin-bottom: 5px;
+  background: #eeeeee !important;
+  border: none !important;
+  color: grey !important;
+}
+.image-file-upload {
+  text-align: center;
+  border-radius: 11px;
+  background: #eeeeee;
+  margin: 12px;
+}
+.profile-icon-name {
+  margin-left: 15px;
+  border-radius: 50px;
+  text-align: center;
+  background: #eeeeee;
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+}
+.grey-color {
+  color: grey;
+}
+
+.align-me {
+  align-items: center;
+  display: flex;
+  //justify-content: center;
+}
+
+.final_approval_file_upload {
+  border: 1px dashed #10703f;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  background: #fafafa;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  text-align: center;
+}

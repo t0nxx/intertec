@@ -1,0 +1,17 @@
+.addpartnerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px;
+  width: 100%;
+  img {
+    width: 100px;
+    cursor: pointer;
+  }
+  p {
+    font-size: 28px;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+}

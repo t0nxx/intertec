@@ -1,0 +1,17 @@
+<svg id="Component_30_12" data-name="Component 30 – 12" xmlns="http://www.w3.org/2000/svg" width="57" height="56" viewBox="0 0 57 56">
+  <g id="Component_27_1" data-name="Component 27 – 1">
+    <rect id="Rectangle_2683" data-name="Rectangle 2683" width="57" height="56" rx="28" fill="#e5d9d2"/>
+    <g id="flag" transform="translate(19.003 15)">
+      <g id="Group_4574" data-name="Group 4574" transform="translate(0 0)">
+        <g id="Group_4573" data-name="Group 4573">
+          <path id="Path_9077" data-name="Path 9077" d="M58.29,2.344H47.715V.857A.857.857,0,1,0,46,.857V28.41a.857.857,0,0,0,1.715,0V15.491H58.29a.857.857,0,0,0,.857-.857V3.2A.857.857,0,0,0,58.29,2.344Z" transform="translate(-46)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_4576" data-name="Group 4576" transform="translate(8.574 5.202)">
+        <g id="Group_4575" data-name="Group 4575">
+          <path id="Path_9078" data-name="Path 9078" d="M211.372,102.972l-2.159-5.4,2.159-5.4a.858.858,0,0,0-.8-1.176h-8.289v9.432A2.575,2.575,0,0,1,199.715,103H196v.286a.857.857,0,0,0,.857.857h13.719a.858.858,0,0,0,.8-1.176Z" transform="translate(-195.999 -91)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

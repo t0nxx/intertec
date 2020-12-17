@@ -1,0 +1,38 @@
+.uploadPhoto {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    img {
+      width: 11px;
+      margin: 0 2px;
+    }
+  }
+}
+
+.owner-details {
+  .inputWithIcon {
+    input.is-invalid ~ img {
+      top: 30%;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .uploadPhoto {
+    width: 200px;
+    margin: 0 auto;
+    img {
+      // width: 50% !important;
+    }
+  }
+}
