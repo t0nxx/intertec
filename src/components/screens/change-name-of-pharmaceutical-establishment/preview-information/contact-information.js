@@ -50,7 +50,7 @@ class ContactInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("tr_contact_name")}</strong>
+                      <strong>{t("Forms.Contact Name")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_contact_name_value")}
@@ -58,7 +58,7 @@ class ContactInformation extends Component {
                   </Col>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("tr_designation")}</strong>
+                      <strong>{t("Forms.Designation")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_designation_value")}</p>
                   </Col>
@@ -66,7 +66,7 @@ class ContactInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("tr_primary_email")}</strong>
+                      <strong>{t("Forms.Primary Email")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_primary_email_value")}
@@ -74,7 +74,7 @@ class ContactInformation extends Component {
                   </Col>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("tr_alternative_email")}</strong>
+                      <strong>{t("Forms.Alternative Email")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_alternative_email_value")}
@@ -84,13 +84,13 @@ class ContactInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("tr_contact_no")}</strong>
+                      <strong>{t("Forms.Contact Number")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_contact_no_value")}</p>
                   </Col>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("tr_alternate_contact_no")}</strong>
+                      <strong>{t("Forms.Alternative Contact Number")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_alternate_contact_no_value")}
@@ -100,7 +100,7 @@ class ContactInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("tr_fax")}</strong>
+                      <strong>{t("Forms.Fax")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_fax_value")}</p>
                   </Col>
