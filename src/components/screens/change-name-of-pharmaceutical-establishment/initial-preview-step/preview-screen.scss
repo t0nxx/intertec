@@ -1,0 +1,133 @@
+.cntrl-btn-div {
+  padding: 5px !important;
+  background-color: #e8e8e8 !important;
+  width: fit-content !important;
+  float: left !important;
+}
+
+.dark-btn-color {
+  background-color: #fff !important;
+  color: #127f46 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.no-color {
+  background-color: transparent !important;
+  color: black !important;
+  border: none !important;
+}
+
+.frm-sub-btn {
+  border-radius: 23px;
+  color: #fff !important;
+  background-color: #127f46 !important;
+  border: #127f46 !important;
+  cursor: pointer;
+  padding: 10px 50px;
+}
+
+.frm-sub-btn:hover {
+  color: #fff;
+  border: #127f46 !important;
+  background-color: #08532d;
+}
+
+.label-preview-info-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.label-preview-large {
+  font-size: 16px;
+}
+
+.block-card {
+  margin-top: 16px;
+}
+
+.border-card {
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 6px;
+}
+
+.doc-info p {
+  font-size: 14px;
+  color: #636467;
+}
+
+.doc-info span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.circle-close {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.label-our-light {
+  font-weight: bold;
+  font-size: medium;
+  color: #b4b5b4;
+}
+
+.header-info {
+  .arrow {
+    width: 30px;
+  }
+  .arrow.rotate {
+    transform: rotate(180deg);
+  }
+}
+
+.remove-weight {
+  font-weight: normal;
+}
+
+.popup {
+  padding: 30px;
+  background: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  text-align: center;
+  z-index: 200;
+  transition: all 2s ease-in-out;
+  h2 {
+    font-size: 40px;
+  }
+  .close {
+    button {
+      height: 40px !important;
+      border-radius: 5px !important;
+    }
+  }
+  .content {
+    max-height: 30%;
+    overflow: auto;
+    margin-bottom: 10px;
+    font: normal normal normal 25px Helvetica;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+  }
+}
+
+.round-btn-close {
+  padding: 5px 50px !important;
+  border-radius: 22px !important;
+  background-color: #127f46 !important;
+  border: #127f46 !important;
+}
+.round-btn-close:hover {
+  background-color: #08532d !important;
+  border: #08532d !important;
+}
+
+.redColor {
+  color: red;
+  font-size: small;
+}

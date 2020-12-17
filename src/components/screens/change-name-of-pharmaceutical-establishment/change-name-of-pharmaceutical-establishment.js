@@ -5,6 +5,7 @@ import leftArrow from "../../../assets/previewInfoArrowIcon.svg";
 import { Image } from "react-bootstrap";
 import { PreviewInformation } from "./index";
 import AttachmentFile from "./attachment-file/attachment-file";
+import PreviewScreenComponent from "./initial-preview-step/PreviewScreenComponent";
 
 const INITIAL_INFORMATION_SCREEN = "INITIAL_INFORMATION_SCREEN";
 const CHANGE_NAME_FORM_SCREEN = "CHANGE_NAME_FORM_SCREEN";
@@ -69,11 +70,6 @@ class ChangeNameOfPharmaceuticalEstablishment extends Component {
       },
       () => this.handleActiveComponent()
     );
-    // successToast(
-    //     formatMessage({
-    //       id: "App.submit.success",
-    //     })
-    // );
   };
 
   handleApprovalAttachmentSuccess = () => {
@@ -137,7 +133,7 @@ class ChangeNameOfPharmaceuticalEstablishment extends Component {
     this.setState({ ...updateState });
   };
 
-  handlePreviewSuccess = () => {
+  handleInitialPreviewSuccess = () => {
     this.setState(
       {
         activeComponent: CHANGE_NAME_FORM_SCREEN,
@@ -179,7 +175,7 @@ class ChangeNameOfPharmaceuticalEstablishment extends Component {
       <React.Fragment>
         {initialInfo && (
           <PreviewInformation
-            handlePreviewSuccess={this.handlePreviewSuccess}
+            handlePreviewSuccess={this.handleInitialPreviewSuccess}
           />
         )}
         {changeName && (
@@ -195,7 +191,14 @@ class ChangeNameOfPharmaceuticalEstablishment extends Component {
             handleOnlyAttachments={this.handleOnlyAttachments}
           />
         )}
-        {previewStep && <div>I am Preview Step</div>}
+        {previewStep && (
+          <PreviewScreenComponent
+            nameChangeFormData={nameChangeFormData}
+            attachmentFormData={attachmentFormData}
+            handleOnlyAttachments={this.handleOnlyAttachments}
+            handlePreviewSuccess={this.handlePreviewSuccess}
+          />
+        )}
         {isBackVisible && (
           <div className={"left-icon-holder"}>
             <Image

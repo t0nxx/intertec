@@ -38,7 +38,7 @@ class OwnerDetails extends Component {
                 <Image
                   src={upArrow}
                   className={
-                    isOpen ? "arrow rotate ml-3 mr-3" : "arrow ml-3 mr-3"
+                    isOpen ? "arrow rotate ml-auto mr-3" : "arrow ml-auto mr-3"
                   }
                 />
               </Row>

@@ -25,7 +25,6 @@ function Routes() {
       <Route path="/sr5/home" component={Speciality} />
       {[...changeNameOfPharmaceuticalEstablishmentRoutes].map(
         (routeDetails, index) => {
-          console.log("routeDetails >>", routeDetails);
           const { path, exact, Component } = routeDetails;
           return (
             <Route

@@ -36,6 +36,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-stepper-horizontal": "^1.0.11",
+    "react-toastify": "^6.2.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "styled-components": "^5.2.1",
