@@ -2,8 +2,6 @@
 @import "./sass/translate";
 @import "./sass/responsive";
 
-@import "./sass/toast";
-
 @import "~bootstrap/scss/bootstrap";
 
 .custom_btn {
@@ -17,7 +15,7 @@ html[lang="ar"] {
 }
 html[lang="en"] {
   body {
-    //font-family: HelveticaNeueMedium;
+    // font-family: HelveticaNeueMedium;
   }
 }
 

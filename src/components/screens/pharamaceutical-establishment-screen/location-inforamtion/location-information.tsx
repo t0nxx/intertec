@@ -14,6 +14,7 @@ import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
+import { FormInputComponent } from "../../../molecules/forms/formInput";
 
 const LocationInformationComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
@@ -66,139 +67,87 @@ const LocationInformationComponent = (props: IProps) => {
       <Card.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Row>
-            <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
-              <Form.Label>
-                {t("Forms.Emirate")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                as="select"
-                name="emirate"
-                ref={register}
-                isValid={formState.touched.emirate && !errors.emirate}
-                isInvalid={errors.emirate}
-              >
-                <option disabled selected value="">
-                  {t("Forms.Emirate")}
-                </option>
-                <option> Type 1</option>
-                <option> Type 2</option>
-                <option> Type 3</option>
-              </Form.Control>
-              {
-                errors.emirate ? <span className="text-danger">{t(`${errors.emirate?.message}`)}</span> : null
-              }
-            </Form.Group>
+            <FormInputComponent
+              label="Emirate"
+              type="select"
+              as="select"
+              name="emirate"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.emirate}
+            >
+              <option> emirate</option>
+            </FormInputComponent>
 
-            <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-              <Form.Label>
-                {t("Forms.Area")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Area")}
-                name="area"
-                ref={register}
-                isValid={formState.touched.area && !errors.area}
-                isInvalid={errors.area}
-              />
-              {
-                errors.area ? <span className="text-danger">{t(`${errors.area?.message}`)}</span> : null
-              }
-            </Form.Group>
+            <FormInputComponent
+              label="Area"
+              type="text"
+              name="area"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.area}
+            />
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} controlId="establishmentName">
-              <Form.Label>
-                {t("Forms.Street")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Street")}
-                name="street"
-                ref={register}
-                isValid={formState.touched.street && !errors.street}
-                isInvalid={errors.street}
-              />
-              {
-                errors.street ? <span className="text-danger">{t(`${errors.street?.message}`)}</span> : null
-              }
-            </Form.Group>
+            <FormInputComponent
+              label="Street"
+              type="text"
+              name="street"
+              isRequird={true}
+              takeFullRow={true}
+              register={register}
+              formState={formState}
+              errors={errors.street}
+            />
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
-              <Form.Label>
-                {t("Forms.Po Box")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Po Box")}
-                name="poBox"
-                ref={register}
-                isValid={formState.touched.poBox && !errors.poBox}
-                isInvalid={errors.poBox}
-              />
-              {
-                errors.poBox ? <span className="text-danger">{t(`${errors.poBox?.message}`)}</span> : null
-              }
-            </Form.Group>
-            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
-              <Form.Label>
-                {t("Forms.Building Name")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Building Name")}
-                name="buildingName"
-                ref={register}
-                isValid={formState.touched.buildingName && !errors.buildingName}
-                isInvalid={errors.buildingName}
-              />
-              {
-                errors.buildingName ? <span className="text-danger">{t(`${errors.buildingName?.message}`)}</span> : null
-              }
-            </Form.Group>
+            <FormInputComponent
+              label="Po Box"
+              type="text"
+              name="poBox"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.poBox}
+            />
+
+            <FormInputComponent
+              label="Building Name"
+              type="text"
+              name="buildingName"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.buildingName}
+            />
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
-              <Form.Label>
-                {t("Forms.Building No")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Building No")}
-                name="buildingNo"
-                ref={register}
-                isValid={formState.touched.buildingNo && !errors.buildingNo}
-                isInvalid={errors.buildingNo}
-              />
-              {
-                errors.buildingNo ? <span className="text-danger">{t(`${errors.buildingNo?.message}`)}</span> : null
-              }
-            </Form.Group>
+            <FormInputComponent
+              label="Building No"
+              type="text"
+              name="buildingNo"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.buildingNo}
+            />
 
-            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
-              <Form.Label>
-                {t("Forms.Google Map Url")} <span className="required">*</span>
-              </Form.Label>
-
-              <div className="inputWithIcon">
-                <Form.Control
-                  type="text"
-                  placeholder={t("Forms.Google Map Url")}
-                  name="mapUrl"
-                  ref={register}
-                  isValid={formState.touched.mapUrl && !errors.mapUrl}
-                  isInvalid={errors.mapUrl}
-                />
-                <Image src={map} />
-              </div>
-              {
-                errors.mapUrl ? <span className="text-danger">{t(`${errors.mapUrl?.message}`)}</span> : null
-              }
-            </Form.Group>
+            <FormInputComponent
+              label="Google Map Url"
+              type="text"
+              name="mapUrl"
+              isRequird={true}
+              withImage={true}
+              imgSrc={map}
+              register={register}
+              formState={formState}
+              errors={errors.mapUrl}
+            />
           </Form.Row>
           {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
         </Form>

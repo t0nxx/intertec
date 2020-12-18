@@ -233,7 +233,10 @@ class AttachmentFile extends Component {
                             </span>
                           </div>
                         </div>
-                        <div className="mb-5" style={{ display: "flex" }}>
+                        <div
+                          className="stepper      mb-5"
+                          style={{ display: "flex" }}
+                        >
                           <Col xl={1}>
                             {current > 0 && (
                               <div
@@ -248,7 +251,7 @@ class AttachmentFile extends Component {
                               </div>
                             )}
                           </Col>
-                          <Col xl={10} className={"stepper"}>
+                          <Col xl={10}>
                             <Stepper steps={steps} activeStep={current} />
                           </Col>
                           <Col xl={1}>

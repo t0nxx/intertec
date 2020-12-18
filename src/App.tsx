@@ -4,20 +4,13 @@ import { withRouter } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import {
-  faCheckSquare,
-  faCoffee,
-  faVolumeUp,
-} from "@fortawesome/free-solid-svg-icons";
-import { ToastContainer } from "react-toastify";
+import { faCheckSquare, faCoffee, faVolumeUp } from "@fortawesome/free-solid-svg-icons";
 
 import NavBarComponent from "./components/organisms/nav-bar/nav-bar";
 import PageHeaderComponent from "./components/organisms/page-header/page-header";
 import FooterComponent from "./components/organisms/footer/footer";
 import Routes from "./router";
 import { RoutesWithoutFooter } from "./ignored-from-header-footer-routes";
-
-import "react-toastify/dist/ReactToastify.css";
 
 library.add(fab, faCheckSquare, faCoffee, faVolumeUp);
 
@@ -31,7 +24,6 @@ function App({ location }) {
     <div className="App">
       <NavBarComponent />
       <PageHeaderComponent />
-      <ToastContainer />
       {/* here to remove footer from some screens dynamically */}
       {!RoutesWithoutFooter.includes(location.pathname) && <FooterComponent />}
       <Routes />

@@ -1,13 +1,13 @@
-html[lang=ar]{
-  .successScreenFooter .rightContent{
+html[lang="ar"] {
+  .successScreenFooter .rightContent {
     text-align: left;
   }
 
-  .successScreenFooter .leftContent{
+  .successScreenFooter .leftContent {
     text-align: right;
   }
 
-  .successScreenFooter .leftContent img{
+  .successScreenFooter .leftContent img {
     margin-right: 0;
     margin-left: 10px;
   }
@@ -28,19 +28,19 @@ html[lang=ar]{
     margin: 0;
     &.successMsg {
       font-size: 20px;
-      color: #596269;
+      color: var(--gray3);
     }
     &.appNum {
       font-size: 18px;
-      color: #c0c0bb;
+      color: var(--gray7);
       span {
-        color: #127f46;
+        color: var(--success);
         font-weight: bold;
       }
     }
   }
   Button {
-    background-color: #127f46;
+    background-color: var(--success);
     border-radius: 54px;
     margin-top: 25px;
   }
@@ -51,7 +51,7 @@ html[lang=ar]{
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #dbdbdb;
+    background-color: var(--gray2);
   }
   .leftContent {
     padding-top: 10px;

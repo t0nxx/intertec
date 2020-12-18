@@ -48,7 +48,7 @@ class LocationInformation extends Component {
                 <Image
                   src={upArrow}
                   className={
-                    isOpen ? "arrow rotate ml-auto mr-3" : "arrow ml-auto mr-3"
+                    isOpen ? "arrow rotate ml-3 mr-3" : "arrow ml-3 mr-3"
                   }
                 />
               </Row>
@@ -58,13 +58,13 @@ class LocationInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("Forms.Emirate")}</strong>
+                      <strong>{t("tr_emirate")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_emirate_value")}</p>
                   </Col>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("Forms.Area")}</strong>
+                      <strong>{t("tr_area")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_area_value")}</p>
                   </Col>
@@ -72,13 +72,13 @@ class LocationInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("Forms.Street")}</strong>
+                      <strong>{t("tr_street")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_street_value")}</p>
                   </Col>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("Forms.Building Name")}</strong>
+                      <strong>{t("tr_building_name")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_building_name_value")}
@@ -88,13 +88,13 @@ class LocationInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("Forms.Po Box")}</strong>
+                      <strong>{t("tr_po_box")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_po_box_value")}</p>
                   </Col>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("Forms.Google Map Url")}</strong>
+                      <strong>{t("tr_google_map_url")}</strong>
                     </Form.Label>
                     <br />
                     <a href={"#"} target="blank">
@@ -108,7 +108,7 @@ class LocationInformation extends Component {
                 <Row>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      <strong>{t("Forms.Fax")}</strong>
+                      <strong>{t("tr_fax")}</strong>
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_fax_value")}</p>
                   </Col>

@@ -33,5 +33,12 @@ export const formSchema = yup.object().shape({
   poBox: yup.string().required(ValidationMsgEnum.Required),
   buildingName: yup.string().required(ValidationMsgEnum.Required),
   buildingNo: yup.string().required(ValidationMsgEnum.Required),
-  mapUrl: yup.string().required(ValidationMsgEnum.Required),
+  mapUrl: yup
+    .string()
+    .matches(
+      /(https|http):\/\/(www\.|)google\.[a-z]+\/maps\/.*/,
+      ValidationMsgEnum.MustBeValidGooglMapUrl
+    )
+    .required(ValidationMsgEnum.Required),
+  // it should match also (https|http):\/\/(www\.|)goo.gl+\/maps\/.*
 });

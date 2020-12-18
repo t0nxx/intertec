@@ -38,7 +38,7 @@ class OwnerDetails extends Component {
                 <Image
                   src={upArrow}
                   className={
-                    isOpen ? "arrow rotate ml-auto mr-3" : "arrow ml-auto mr-3"
+                    isOpen ? "arrow rotate ml-3 mr-3" : "arrow ml-3 mr-3"
                   }
                 />
               </Row>
@@ -56,7 +56,7 @@ class OwnerDetails extends Component {
                   <Col xl={4} lg={"4"} sm={"4"}>
                     <div style={{ marginTop: 30 }}>
                       <h1>
-                        <b>{t("Forms.Gender")}</b>
+                        <b>{t("tr_gender")}</b>
                       </h1>
                       <p className={"label-light"}>{t("gender")}</p>
                     </div>
@@ -64,7 +64,7 @@ class OwnerDetails extends Component {
                   <Col xl={4} lg={"4"} sm={"4"}>
                     <div style={{ marginTop: 30 }}>
                       <h1>
-                        <b>{t("Forms.UAE Citzen")}</b>
+                        <b>{t("tr_uae_citizen")}</b>
                       </h1>
                       <p className={"label-light"}>
                         {t("tr_uae_citizen_value")}
@@ -76,19 +76,19 @@ class OwnerDetails extends Component {
                 <Row>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.First name")}
+                      {t("tr_first_name_en")}
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_first_name_ar")}</p>
                   </Col>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Middle name")}
+                      {t("tr_middle_name_en")}
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_middle_name_ar")}</p>
                   </Col>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Last name")}
+                      {t("tr_family_name_en")}
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_family_name_ar")}</p>
                   </Col>
@@ -96,19 +96,19 @@ class OwnerDetails extends Component {
                 <Row>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Nationality")}
+                      {t("tr_nationality")}
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_nationality_value")}</p>
                   </Col>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Passport No")}
+                      {t("tr_passport_no")}
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_passport_no_value")}</p>
                   </Col>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Emirates ID")}
+                      {t("tr_emirate_id")}
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_emirate_id_value")}</p>
                   </Col>
@@ -116,7 +116,7 @@ class OwnerDetails extends Component {
                 <Row>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Family Book No")}
+                      {t("tr_family_book_no")}
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_family_book_no_value")}
@@ -124,7 +124,7 @@ class OwnerDetails extends Component {
                   </Col>
                   <Col xl={"4"} lg={"4"} sm={"4"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Share Percentage")}
+                      {t("tr_share_percentage")}
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_share_percentage_value")}
@@ -134,13 +134,13 @@ class OwnerDetails extends Component {
                 <Row className={"ownerDetail"}>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Contact Number")}
+                      {t("tr_contact_no")}
                     </Form.Label>
                     <p className={"label-light"}>{t("tr_contact_no_value")}</p>
                   </Col>
                   <Col xl={"6"} lg={"6"} sm={"6"}>
                     <Form.Label className={"label-preview-large"}>
-                      {t("Forms.Primary Email")}
+                      {t("tr_primary_email")}
                     </Form.Label>
                     <p className={"label-light"}>
                       {t("tr_primary_email_value")}

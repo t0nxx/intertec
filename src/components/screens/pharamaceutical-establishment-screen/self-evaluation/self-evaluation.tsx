@@ -14,6 +14,7 @@ import "../shared/shared.scss";
 // Import images
 import { ActionTypes } from "../../../../redux/reducers/helper";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
+import { TrippleRadioButtonsComponent } from "../../../molecules/forms/trippleRadioButtonInput";
 
 const SelfEvaluationComponent = () => {
   const [checked, setChecked] = useState(false);
@@ -74,57 +75,14 @@ const SelfEvaluationComponent = () => {
                   reiciendis fugiat et esse enim, qui laborum dignissimos, saepe voluptas error
                   alias, possimus harum aut repellat. In, fugit delectus!
                 </td>
-                <td>
-                  <div className="radioButtons">
-                    <div className="form-check">
-                      <label className="noText" htmlFor="q1-y">
-                        <input
-                          name="q1"
-                          type="radio"
-                          id="q1-y"
-                          className="form-check-input"
-                          value="yes"
-                          ref={register}
-                        />
-                        <i className="checkMark"> </i>
-                      </label>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="radioButtons">
-                    <div className="form-check">
-                      <label className="noText" htmlFor="q1-no">
-                        <input
-                          name="q1"
-                          type="radio"
-                          id="q1-no"
-                          className="form-check-input"
-                          value="no"
-                          ref={register}
-                        />
-                        <i className="checkMark"> </i>
-                      </label>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className="radioButtons">
-                    <div className="form-check">
-                      <label className="noText" htmlFor="q1-na">
-                        <input
-                          name="q1"
-                          type="radio"
-                          id="q1-na"
-                          className="form-check-input"
-                          value="na"
-                          ref={register}
-                        />
-                        <i className="checkMark"> </i>
-                      </label>
-                    </div>
-                  </div>
-                </td>
+
+                <TrippleRadioButtonsComponent
+                  name="q1"
+                  value1="Yes"
+                  value2="No"
+                  value3="Na"
+                  register={register}
+                />
               </tr>
             </tbody>
           </Table>

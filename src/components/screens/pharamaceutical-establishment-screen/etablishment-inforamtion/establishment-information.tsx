@@ -11,11 +11,9 @@ import "./establishment-information.scss";
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
+import { FormInputComponent } from "../../../molecules/forms/formInput";
 
 const EstablishmentInformationComponent = (props: IProps) => {
-  // the problem here is that placeholders can't accept tfunction , it accept strings only
-  const { t }: { t: any } = useTranslation();
-
   const { data } = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.establishmentInformationsReducer
   );
@@ -67,93 +65,62 @@ const EstablishmentInformationComponent = (props: IProps) => {
       <Card.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Row>
-            <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
-              <Form.Label>
-                {t("Forms.Establishment Name")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Establishment Name")}
-                name="establishmentName"
-                ref={register}
-                isValid={formState.touched.establishmentName && !errors.establishmentName}
-                isInvalid={errors.establishmentName}
-              />
-              {errors.establishmentName ? (
-                <span className="text-danger">{t(`${errors.establishmentName?.message}`)}</span>
-              ) : null}
-            </Form.Group>
-
-            <Form.Group as={Col} md="6" sm="12" controlId="formGridPassword">
-              <Form.Label>
-                {t("Forms.Establishment Name (Arabic)")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                type="text"
-                placeholder={t("Forms.Establishment Name (Arabic)")}
-                name="establishmentNameArabic"
-                ref={register}
-                isValid={
-                  formState.touched.establishmentNameArabic && !errors.establishmentNameArabic
-                }
-                isInvalid={errors.establishmentNameArabic}
-              />
-              {errors.establishmentNameArabic ? (
-                <span className="text-danger">
-                  {t(`${errors.establishmentNameArabic?.message}`)}
-                </span>
-              ) : null}
-            </Form.Group>
+            <FormInputComponent
+              label="Establishment Name"
+              type="text"
+              name="establishmentName"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.establishmentName}
+            />
+            <FormInputComponent
+              label="Establishment Name (Arabic)"
+              type="text"
+              name="establishmentNameArabic"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.establishmentNameArabic}
+            />
           </Form.Row>
 
           <Form.Row>
-            <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
-              <Form.Label>
-                {t("Forms.Establishment Type")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                as="select"
-                name="establishmentType"
-                ref={register}
-                isValid={formState.touched.establishmentType && !errors.establishmentType}
-                isInvalid={errors.establishmentType}
-              >
-                <option disabled selected value="">
-                  {t("Forms.Establishment Type")}
-                </option>
-                <option> Establishment Type 1</option>
-                <option> Establishment Type 2</option>
-                <option> Establishment Type 3</option>
-              </Form.Control>
-              {errors.establishmentType ? (
-                <span className="text-danger">{t(`${errors.establishmentType?.message}`)}</span>
-              ) : null}
-            </Form.Group>
+            <FormInputComponent
+              label="Establishment Type"
+              type="select"
+              as="select"
+              name="establishmentType"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.establishmentType}
+            >
+              <option> Establishment Type 1</option>
+              <option> Establishment Type 2</option>
+              <option> Establishment Type 3</option>
+            </FormInputComponent>
 
-            <Form.Group as={Col} md="6" sm="12" controlId="formGridState">
-              <Form.Label>
-                {t("Forms.Category")} <span className="required">*</span>
-              </Form.Label>
-              <Form.Control
-                as="select"
-                name="Category"
-                ref={register}
-                isValid={formState.touched.Category && !errors.Category}
-                isInvalid={errors.Category}
-              >
-                <option disabled selected value="">
-                  {t("Forms.Category")}
-                </option>
-                <option>Category 1 </option>
-                <option>Category 2 </option>
-                <option>Category 3 </option>
-              </Form.Control>
-              {errors.Category ? (
-                <span className="text-danger">{t(`${errors.Category?.message}`)}</span>
-              ) : null}
-            </Form.Group>
+            <FormInputComponent
+              label="Category"
+              type="select"
+              as="select"
+              name="Category"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.Category}
+            >
+              <option>Category 1 </option>
+              <option>Category 2 </option>
+              <option>Category 3 </option>
+            </FormInputComponent>
           </Form.Row>
-          {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
+          {props.isForReviewPage ? (
+            <SaveAndCancel onCancel={onCancelHandler} />
+          ) : (
+            <NextButton onSubmit={onSubmit} />
+          )}
         </Form>
       </Card.Body>
     </Card>
