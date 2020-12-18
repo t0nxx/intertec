@@ -70,7 +70,7 @@ export default function ReviewScreenComponent() {
                 </div>
               </Col>
               <Col className="submit">
-                <Button onClick={() => history.push("/new-license-pharmaceutical-establishment/success")}>{t("Buttons.Submit")}</Button>
+                <Button onClick={() => history.push("/success")}>{t("Buttons.Submit")}</Button>
               </Col>
             </Row>
           </div>
@@ -78,13 +78,13 @@ export default function ReviewScreenComponent() {
 
           {/* Start Establishment Information */}
           <div className="block">
-            <Accordion defaultActiveKey="0">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <ReviewCardHead
                   title="Titles.Establishment Information"
-                  eventKey="0"
+                  eventKey={collapseAllState}
                 />
-                <Accordion.Collapse eventKey="0">
+                <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditEstablish ? (
                     <EstablishmentInformationComponent
                       isForReviewPage={true}
@@ -127,10 +127,10 @@ export default function ReviewScreenComponent() {
 
           {/* Start Contact information */}
           <div className="block">
-            <Accordion defaultActiveKey="1">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <ReviewCardHead title="Forms.Contact information" eventKey="1" />
-                <Accordion.Collapse eventKey="1">
+                <ReviewCardHead title="Forms.Contact information" eventKey={collapseAllState} />
+                <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditContact ? (
                     <ContactInformationComponent
                       isForReviewPage={true}
@@ -189,10 +189,10 @@ export default function ReviewScreenComponent() {
 
           {/* Start Location information */}
           <div className="block">
-            <Accordion defaultActiveKey="2">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <ReviewCardHead title="Titles.Location Information" eventKey="2" />
-                <Accordion.Collapse eventKey="2">
+                <ReviewCardHead title="Titles.Location Information" eventKey={collapseAllState} />
+                <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditLocation ? (
                     <LocationInformationComponent
                       isForReviewPage={true}
@@ -256,10 +256,10 @@ export default function ReviewScreenComponent() {
 
           {/* Start owner Details */}
           <div className="block">
-            <Accordion defaultActiveKey="3">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <ReviewCardHead title="Titles.Owner Details" eventKey="3" />
-                <Accordion.Collapse eventKey="3">
+                <ReviewCardHead title="Titles.Owner Details" eventKey={collapseAllState} />
+                <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditOwner ? (
                     <OwnerDetailComponent
                       isForReviewPage={true}
@@ -364,10 +364,10 @@ export default function ReviewScreenComponent() {
 
           {/* Start Partner Details */}
           <div className="block">
-            <Accordion defaultActiveKey="4">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <ReviewCardHead title="Titles.Partner Details" eventKey="4" />
-                <Accordion.Collapse eventKey="4">
+                <ReviewCardHead title="Titles.Partner Details" eventKey={collapseAllState} />
+                <Accordion.Collapse eventKey={collapseAllState}>
                   <PartnerDetailsComponent
                     isForReviewPage={true}
                     onSubmitOrCancelEvent={() => setIsEditPartner(!isEditPartner)}
@@ -482,10 +482,10 @@ export default function ReviewScreenComponent() {
 
           {/* Start Attachment */}
           <div className="block">
-            <Accordion defaultActiveKey="5">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <ReviewCardHead title="Titles.Attachment" eventKey="5" />
-                <Accordion.Collapse eventKey="5">
+                <ReviewCardHead title="Titles.Attachment" eventKey={collapseAllState} />
+                <Accordion.Collapse eventKey={collapseAllState}>
                   <Card.Body>
                     <Row>
                       <div className="files">
@@ -510,7 +510,7 @@ export default function ReviewScreenComponent() {
                             </div>
                           </div>
                           <div className="rightData">
-                            <Image src={del} onClick={() => history.push("/new-license-pharmaceutical-establishment/attachment")} />
+                            <Image src={del} onClick={() => history.push("/attachment")} />
                           </div>
                         </div>
                         <div className="file">
@@ -522,7 +522,7 @@ export default function ReviewScreenComponent() {
                             </div>
                           </div>
                           <div className="rightData">
-                            <Image src={del} onClick={() => history.push("/new-license-pharmaceutical-establishment/attachment")} />
+                            <Image src={del} onClick={() => history.push("/attachment")} />
                           </div>
                         </div>
                       </div>
@@ -537,13 +537,13 @@ export default function ReviewScreenComponent() {
 
           {/* Start Reason for area extention */}
           <div className="block">
-            <Accordion defaultActiveKey="6">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
                 <ReviewCardHead
                   title="Texts.Reason For Area Extention"
-                  eventKey="6"
+                  eventKey={collapseAllState}
                 />
-                <Accordion.Collapse eventKey="6">
+                <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditArea ? (
                     <ReasonForAreaExtention
                       isForReviewPage={true}
@@ -572,10 +572,10 @@ export default function ReviewScreenComponent() {
 
           {/* Start Remove Speciality  */}
           <div className="block">
-            <Accordion defaultActiveKey="7">
+            <Accordion defaultActiveKey={collapseAllState}>
               <Card>
-                <ReviewCardHead title="Forms.Remove Speciality" eventKey="7" />
-                <Accordion.Collapse eventKey="7">
+                <ReviewCardHead title="Forms.Remove Speciality" eventKey={collapseAllState} />
+                <Accordion.Collapse eventKey={collapseAllState}>
                   {isEditSpeciallity ? (
                     <RemoveSpeciality
                       isForReviewPage={true}
@@ -628,7 +628,7 @@ export default function ReviewScreenComponent() {
 
           {/* Submit */}
           <div className="submit">
-            <Button onClick={() => history.push("/new-license-pharmaceutical-establishment/success")}>{t("Buttons.Submit")}</Button>
+            <Button onClick={() => history.push("/success")}>{t("Buttons.Submit")}</Button>
           </div>
           {/* Submit */}
         </Row>
