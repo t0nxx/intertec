@@ -70,7 +70,7 @@ export default function ReviewScreenComponent() {
                 </div>
               </Col>
               <Col className="submit">
-                <Button onClick={() => history.push("/success")}>{t("Buttons.Submit")}</Button>
+                <Button onClick={() => history.push("/new-license-pharmaceutical-establishment/success")}>{t("Buttons.Submit")}</Button>
               </Col>
             </Row>
           </div>
@@ -510,7 +510,7 @@ export default function ReviewScreenComponent() {
                             </div>
                           </div>
                           <div className="rightData">
-                            <Image src={del} onClick={() => history.push("/attachment")} />
+                            <Image src={del} onClick={() => history.push("/new-license-pharmaceutical-establishment/attachment")} />
                           </div>
                         </div>
                         <div className="file">
@@ -522,7 +522,7 @@ export default function ReviewScreenComponent() {
                             </div>
                           </div>
                           <div className="rightData">
-                            <Image src={del} onClick={() => history.push("/attachment")} />
+                            <Image src={del} onClick={() => history.push("/new-license-pharmaceutical-establishment/attachment")} />
                           </div>
                         </div>
                       </div>
@@ -628,7 +628,7 @@ export default function ReviewScreenComponent() {
 
           {/* Submit */}
           <div className="submit">
-            <Button onClick={() => history.push("/success")}>{t("Buttons.Submit")}</Button>
+            <Button onClick={() => history.push("/new-license-pharmaceutical-establishment/success")}>{t("Buttons.Submit")}</Button>
           </div>
           {/* Submit */}
         </Row>
