@@ -16,14 +16,14 @@ function Routes() {
   return (
     <Switch>
       <Route exact path="/" component={PharamaceuticalEstablishmentScreen} />
-      {/* <Route path="/attachment" component={AttachmentScreenComponent} />
+      <Route path="/attachment" component={AttachmentScreenComponent} />
       <Route path="/review" component={ReviewScreenComponent} />
       <Route path="/success" component={SuccessScreenComponent} />
       <Route path="/payment" component={PaymentScreenComponent} />
       <Route path="/add-partner" component={AddPartnerComponent} />
       <Route path="/sr3/home" component={RelocationLicenseScreen} />
       <Route path="/sr4/home" component={AddAreaExtention} />
-      <Route path="/sr5/home" component={Speciality} /> */}
+      <Route path="/sr5/home" component={Speciality} />
       {[
         ...changeNameOfPharmaceuticalEstablishmentRoutes,
         ...NewLicensePharmaceuticalEstablishmentRoutes,
