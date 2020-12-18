@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
+import {
+  Image,
+  Card,
+  Col,
+  Container,
+  Form,
+  Row,
+  Button,
+} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -21,10 +29,14 @@ import AttachmentComponent from "../../../../templates/attachment/attachment";
 import { FormInputComponent } from "../../../../molecules/forms/formInput";
 import { RadioButtonsComponent } from "../../../../molecules/forms/radioButtonInput";
 
-const AddPartnerComponent = (props: { closeModal: any }) => {
+const AddPartnerComponent = (props: {
+  closeModal: any;
+  isEditingOne: boolean;
+  editingOneData?: any;
+}) => {
   const { t }: { t: any } = useTranslation();
   const history = useHistory();
-  const { register, handleSubmit, errors, formState } = useForm({
+  const { register, handleSubmit, reset, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
   });
@@ -32,10 +44,20 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
   const dispatch = useDispatch();
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
-      dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.Add_New_PARTNER,
-        payload: data,
-      });
+      if (props.isEditingOne) {
+        console.log("from edittttttttttttttttttt");
+        dispatch({
+          type: ActionTypes.PharmaceuticalEstablishmentActionTypes.EDIT_PARTNER,
+          payload: { id: props.editingOneData.id, ...data },
+        });
+      } else {
+        dispatch({
+          type:
+            ActionTypes.PharmaceuticalEstablishmentActionTypes.Add_New_PARTNER,
+          payload: data,
+        });
+      }
+
       props.closeModal();
     }
   };
@@ -43,10 +65,16 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
     // pass this event to parent to close the modal
     props.closeModal();
   };
+
+  useEffect(() => {
+    // this for use the same component for edit , add
+    if (props.isEditingOne) {
+      /// fill the form inputs with the one how want to edit
+      reset(props.editingOneData);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reset]);
   return (
-    /**
-     * this should be abstacted  . later i will bake a style for card only usin styled component
-     */
     <Container fluid>
       <Card className="add-partner">
         <Card.Body className="model-card">
@@ -269,7 +297,12 @@ const AddPartnerComponent = (props: { closeModal: any }) => {
             </Form.Row>
             <AttachmentComponent withslidercarosel={false} />
             <div className="model-fixed-footer">
-              <SaveAndCancel customText={t("Buttons.Add")} onCancel={closeModalHandler} />
+              <SaveAndCancel
+                customText={
+                  props.isEditingOne ? t("Buttons.Save And Edit") : t("Buttons.Add")
+                }
+                onCancel={closeModalHandler}
+              />
             </div>
           </Form>
         </Card.Body>

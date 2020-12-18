@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Image, Card, Table, Container, Row, Modal, Button, Form } from "react-bootstrap";
+import {
+  Image,
+  Card,
+  Table,
+  Container,
+  Row,
+  Modal,
+  Button,
+  Form,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
@@ -10,7 +19,10 @@ import AddPartnerComponent from "./add-partner/add-partner";
 // Import images
 import add from "../../../../assets/add.svg";
 import leftArrow from "../../../../assets/leftArrow.svg";
-import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../../redux/reducers/helper";
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
@@ -21,9 +33,12 @@ import remove from "../../../../assets/deleteIconInCircle.png";
 const PartnerDetailsComponent = (props: IProps) => {
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
+  const [isEditingOne, setIsEditingOne] = useState(false);
+  const [editingOneData, setEditingOneData] = useState({});
 
   const { data } = useSelector(
-    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.partnerDetailsReducer
+    (s: StateSelectorInterface) =>
+      s.pharmaceuticalEstablishment.partnerDetailsReducer
   );
 
   const changeParentToggleEvent = () => {
@@ -42,23 +57,32 @@ const PartnerDetailsComponent = (props: IProps) => {
   const onSubmit = () => {
     // set step is complete without add any data
     dispatch({
-      type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PARTNER_DETAILS,
+      type:
+        ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PARTNER_DETAILS,
     });
     // move to next step
     dispatch({
       type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
     });
     // set progress bar  +10 %
-    dispatch({
-      type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PROGRESS_PERSENTAGE,
-      payload: 10,
-    });
+    // dispatch({
+    //   type:
+    //     ActionTypes.PharmaceuticalEstablishmentActionTypes
+    //       .SET_PROGRESS_PERSENTAGE,
+    //   payload: 10,
+    // });
     changeParentToggleEvent();
   };
 
+  const onEditOneHandler = (data) => {
+    setIsEditingOne(true);
+    setEditingOneData(data);
+    setShow(!show);
+  };
   const removeFromTable = (index) => {
     dispatch({
-      type: ActionTypes.PharmaceuticalEstablishmentActionTypes.Remove_New_PARTNER,
+      type:
+        ActionTypes.PharmaceuticalEstablishmentActionTypes.Remove_New_PARTNER,
       payload: index,
     });
   };
@@ -73,7 +97,13 @@ const PartnerDetailsComponent = (props: IProps) => {
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row hidden={props.isForReviewPage}>
               <div className="addpartnerBtn">
-                <Image src={add} onClick={() => setShow(!show)} />
+                <Image
+                  src={add}
+                  onClick={() => {
+                    setShow(!show);
+                    setIsEditingOne(false);
+                  }}
+                />
                 <p> {t("Forms.Add Partner")}</p>
               </div>
             </Row>
@@ -96,7 +126,18 @@ const PartnerDetailsComponent = (props: IProps) => {
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <AddPartnerComponent closeModal={onCloseModal} />
+                {isEditingOne ? (
+                  <AddPartnerComponent
+                    isEditingOne={isEditingOne}
+                    editingOneData={editingOneData}
+                    closeModal={onCloseModal}
+                  />
+                ) : (
+                  <AddPartnerComponent
+                    isEditingOne={isEditingOne}
+                    closeModal={onCloseModal}
+                  />
+                )}
               </Modal.Body>
             </Modal>
 
@@ -115,17 +156,23 @@ const PartnerDetailsComponent = (props: IProps) => {
                 </thead>
                 <tbody>
                   {data.map((row) => (
-                    <tr key={row.passportNo}>
+                    <tr key={row.id}>
                       <td>{row.fName}</td>
                       <td> {row.fNameAr}</td>
                       <td> {row.emiratesId}</td>
                       <td> {row.passportNo}</td>
                       <td> {row.nationality}</td>
                       <td>
-                        <Image src={edit} />
+                        <Image
+                          src={edit}
+                          onClick={() => onEditOneHandler(row)}
+                        />
                       </td>
                       <td>
-                        <Image src={edit} onClick={(e) => removeFromTable(row.passportNo)} />
+                        <Image
+                          src={edit}
+                          onClick={(e) => removeFromTable(row.id)}
+                        />
                       </td>
                     </tr>
                   ))}
@@ -136,7 +183,7 @@ const PartnerDetailsComponent = (props: IProps) => {
             {props.isForReviewPage ? (
               // <SaveAndCancel onCancel={onCancelHandler} />
               <Row className="addMore" onClick={() => setShow(!show)}>
-                <Image src={addMore} />
+                <Image src={addMore} onClick={() => setIsEditingOne(false)} />
                 {t("Titles.Click here to add more Partner")}
               </Row>
             ) : (
