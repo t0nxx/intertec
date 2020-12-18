@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+// @ts-nocheck
+import React, { useEffect, useState } from "react";
 import "./attachment.scss";
 import { Image, Button, Carousel } from "react-bootstrap";
-
+import { useDropzone } from "react-dropzone";
 import { useTranslation } from "react-i18next";
 import DragAreaComponent from "./drag-area/drag-area";
 import UploadOptionsComponent from "./upload-options/upload-options";
@@ -24,7 +25,9 @@ export default function AttachmentComponent({ withslidercarosel }) {
 
   const [showWarning, setShowWarning] = useState(false);
 
-  const [withSliderCarosel, setWithSliderCarosel] = useState(withslidercarosel || false);
+  const [withSliderCarosel, setWithSliderCarosel] = useState(
+    withslidercarosel || false
+  );
 
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
@@ -37,6 +40,33 @@ export default function AttachmentComponent({ withslidercarosel }) {
   const nxtSteps = () => {
     setIndex2(1);
   };
+  // file uploader functions
+  const [files, setFiles] = useState([]);
+  const { getRootProps, getInputProps } = useDropzone({
+    maxFiles: 3,
+    accept: ["image/*", ".doc", ".docx", ".pdf"],
+    onDrop: (acceptedFiles) => {
+      const newfiles = acceptedFiles.map((file) =>
+        Object.assign(file, {
+          preview: URL.createObjectURL(file),
+        })
+      );
+      setFiles([...files, ...newfiles]);
+      console.log(files);
+    },
+  });
+
+  const handelRemoveFile = (fileName) => {
+    setFiles(files.filter((e) => e.name !== fileName));
+  };
+  useEffect(
+    () => () => {
+      // Make sure to revoke the data uris to avoid memory leaks
+      files.forEach((file) => URL.revokeObjectURL(file.preview));
+    },
+    [files]
+  );
+  /// end file uploaders functions
   return (
     <div className="content">
       <div className="state">
@@ -76,7 +106,10 @@ export default function AttachmentComponent({ withslidercarosel }) {
                 <Image src={semiChecked} className="semiChecked" />
                 <span>{t("Titles.Passport")}</span>
               </Button>
-              <Button className="step currentStep" onClick={() => handleSelect(1)}>
+              <Button
+                className="step currentStep"
+                onClick={() => handleSelect(1)}
+              >
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
                 <Image src={semiChecked} className="semiChecked" />
@@ -121,47 +154,31 @@ export default function AttachmentComponent({ withslidercarosel }) {
       {/* Start slider */}
       <Carousel controls={false} activeIndex={index}>
         <Carousel.Item>
-          <DragAreaComponent />
+          <div {...getRootProps({ className: "dropzone" })}>
+            <input {...getInputProps()} />
+            <DragAreaComponent />
+          </div>
           <UploadOptionsComponent />
-          <UploadingProcessing />
+          {/* <UploadingProcessing /> */}
           {/* Start Files List */}
           <div className="files">
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
+            {files.map((file, index) => (
+              <div className="file" key={file.name}>
+                <div className="leftData">
+                  <Image src={file.preview} />
+                  <div className="fileData">
+                    <p> Passport {index + 1}</p>
+                    <span>{file.size}</span>
+                  </div>
+                </div>
+                <div className="rightData">
+                  <Image
+                    src={del}
+                    onClick={() => handelRemoveFile(file.name)}
+                  />
                 </div>
               </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
-            </div>
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
-            </div>
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
-            </div>
+            ))}
           </div>
           {/* End Files List */}
         </Carousel.Item>
@@ -211,7 +228,10 @@ export default function AttachmentComponent({ withslidercarosel }) {
           {/* End Files List */}
         </Carousel.Item>
         <Carousel.Item>
-          <DragAreaComponent />
+          {/* <div {...getRootProps({ className: "dropzone" })}>
+            <input {...getInputProps()} />
+            <DragAreaComponent />
+          </div> */}
           <UploadOptionsComponent />
           <UploadingProcessing />
           {/* Start Files List */}
@@ -260,9 +280,13 @@ export default function AttachmentComponent({ withslidercarosel }) {
       <div className="warning" hidden={!showWarning}>
         <Image src={warning} />
         <p>
-          {t("Texts.Your staff criteria needs to be fulfilled to continue submitting the application")}
+          {t(
+            "Texts.Your staff criteria needs to be fulfilled to continue submitting the application"
+          )}
           <br />
-          {t("Texts.Kindly refer to email sent for staff criteria or view the online service card")}
+          {t(
+            "Texts.Kindly refer to email sent for staff criteria or view the online service card"
+          )}
         </p>
         <Button>{t("Buttons.Close")}</Button>
       </div>

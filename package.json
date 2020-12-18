@@ -32,6 +32,7 @@
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-dropbox-chooser": "^0.0.5",
+    "react-dropzone": "^11.2.4",
     "react-hook-form": "^6.12.2",
     "react-i18next": "^11.8.2",
     "react-redux": "^7.2.2",
