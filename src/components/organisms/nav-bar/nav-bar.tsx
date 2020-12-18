@@ -143,7 +143,7 @@ export default function NavBarComponent() {
                       <Image src={notiicon2} />
                     </div>
                   </Col>
-                  <Col md="10" onClick={() => history.push("/new-license-pharmaceutical-establishment/payment")}>
+                  <Col md="10" onClick={() => history.push("/payment")}>
                     <h6> {t("Titles.Relocation License Pharamaceutical")}</h6>
                     <p>
                       {t(

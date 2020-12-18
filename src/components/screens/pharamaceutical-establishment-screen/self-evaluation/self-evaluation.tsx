@@ -32,7 +32,7 @@ const SelfEvaluationComponent = () => {
     if (formState.isValid) {
       // should make sure here all steps are done
       history.push({
-        pathname: "/new-license-pharmaceutical-establishment/attachment",
+        pathname: "/attachment",
         state: {
           withslidercarosel: true,
         },

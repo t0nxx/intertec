@@ -14,7 +14,7 @@ export default function PaymentScreenComponent() {
   const history = useHistory();
   const handelSuccessPayment = () => {
     history.push({
-      pathname: "/new-license-pharmaceutical-establishment/success",
+      pathname: "/success",
       state: {
         successVariable: "payment",
       },

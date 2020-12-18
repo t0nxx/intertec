@@ -14,7 +14,7 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
   const location: any = useLocation();
 
   const [nextButtonText, setNextButtonText] = useState("Go To Preview");
-  const [nextButtonToGoRoute, setNextButtonToGoRoute] = useState("/new-license-pharmaceutical-establishment/review");
+  const [nextButtonToGoRoute, setNextButtonToGoRoute] = useState("/review");
   const openWithSliderCarosel = location.state?.withslidercarosel || false;
 
   const decidedToGoHandler = () => {
@@ -23,7 +23,7 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
 
   useEffect(() => {
     /// to handel multiple carosels or not it the attachement component
-    if (location.state?.wherToGo === "/new-license-pharmaceutical-establishment/payment") {
+    if (location.state?.wherToGo === "/payment") {
       setNextButtonText("Go To Payment");
       setNextButtonToGoRoute(location.state.wherToGo);
     }
