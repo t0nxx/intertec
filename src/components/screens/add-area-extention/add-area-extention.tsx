@@ -75,7 +75,7 @@ const AddAreaExtention = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
-              <SelfEvaluationComponent />
+              <SelfEvaluationComponent pathToGo="/new-license-pharmaceutical-establishment/attachment"/>
             </Accordion.Collapse>
           </Card>
         </Accordion>

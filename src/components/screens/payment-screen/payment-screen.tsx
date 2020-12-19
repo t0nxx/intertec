@@ -20,7 +20,7 @@ export default function PaymentScreenComponent() {
   const dispatch = useDispatch();
   const handelSuccessPayment = () => {
     history.push({
-      pathname: "/success",
+      pathname: "/new-license-pharmaceutical-establishment/success",
       state: {
         successVariable: "payment",
       },

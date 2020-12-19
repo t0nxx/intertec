@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Card, Col, Form, Row, Button, Table, ToggleButton } from "react-bootstrap";
+import {
+  Card,
+  Col,
+  Form,
+  Row,
+  Button,
+  Table,
+  ToggleButton,
+} from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from "react-router-dom";
@@ -16,7 +24,7 @@ import { ActionTypes } from "../../../../redux/reducers/helper";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
 import { TrippleRadioButtonsComponent } from "../../../molecules/forms/trippleRadioButtonInput";
 
-const SelfEvaluationComponent = () => {
+const SelfEvaluationComponent = ({ pathToGo }) => {
   const [checked, setChecked] = useState(false);
 
   const { register, handleSubmit, errors, formState } = useForm({
@@ -32,7 +40,7 @@ const SelfEvaluationComponent = () => {
     if (formState.isValid) {
       // should make sure here all steps are done
       history.push({
-        pathname: "/attachment",
+        pathname: pathToGo,
         state: {
           withslidercarosel: true,
         },
@@ -43,7 +51,8 @@ const SelfEvaluationComponent = () => {
       // });
       // move to next step
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
     }
   };
@@ -71,9 +80,10 @@ const SelfEvaluationComponent = () => {
             <tbody>
               <tr>
                 <td>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quod exercitationem
-                  reiciendis fugiat et esse enim, qui laborum dignissimos, saepe voluptas error
-                  alias, possimus harum aut repellat. In, fugit delectus!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                  quod exercitationem reiciendis fugiat et esse enim, qui
+                  laborum dignissimos, saepe voluptas error alias, possimus
+                  harum aut repellat. In, fugit delectus!
                 </td>
 
                 <TrippleRadioButtonsComponent

@@ -119,7 +119,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             isDone={state.selfEvaluationsReducer.isComplete}
             eventKey="5"
           >
-            <SelfEvaluationComponent />
+            <SelfEvaluationComponent pathToGo="/new-license-pharmaceutical-establishment/attachment"/>
           </CardWrapper>
         </Accordion>
       </Container>
