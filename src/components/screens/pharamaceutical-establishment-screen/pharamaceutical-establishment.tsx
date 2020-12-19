@@ -29,42 +29,24 @@ import {
   showFooterAction,
   showInfoAction,
 } from "../../../redux/actions/layout/layout";
-import { infoDescriptionAndFeesDataEndpoint } from "../../../api/services/stickyInfoDataApi";
-import { getCurrentLang } from "../../../utils/currentLang";
+import { GetInfoOfCurrentService } from "../../helpers/getInfoOfService";
 
 const PharamaceuticalEstablishmentScreen = () => {
-  const [infoDesc, setInfoDesc] = useState("");
-  const [infoFees, setInfoFees] = useState("");
-
-  const getInfoOfCurrentService = async () => {
-    const {
-      Data: { DescriptionTable },
-    } = await infoDescriptionAndFeesDataEndpoint("SRV-01.01.005");
-
-    console.log(DescriptionTable);
-    const currentLnag = getCurrentLang();
-    if (currentLnag === "en") {
-      setInfoDesc(DescriptionTable[0].DescriptionEN);
-      setInfoFees(DescriptionTable[0].RequiredFeeEn);
-    } else {
-      setInfoDesc(DescriptionTable[0].DescriptionAR);
-      setInfoFees(DescriptionTable[0].RequiredFeeAr);
-    }
-  };
   const state = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
   );
   const dispatch = useDispatch();
   useEffect(() => {
-    getInfoOfCurrentService();
     dispatch(
       setBreadCrumbTitleAction("New License Pharmaceutical Establishment")
     );
     dispatch(showFooterAction());
     dispatch(showInfoAction());
-    dispatch(setInfoDescriptionAction(infoDesc));
-    dispatch(setInfoFeesAction(infoFees));
-  }, [infoDesc, infoFees]);
+    GetInfoOfCurrentService("SRV-01.01.005").then((data) => {
+      dispatch(setInfoDescriptionAction(data.description));
+      dispatch(setInfoFeesAction(data.fees));
+    });
+  }, []);
   return (
     <div>
       <RequestInformation />
