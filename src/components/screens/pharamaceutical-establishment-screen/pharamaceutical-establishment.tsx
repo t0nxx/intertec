@@ -28,7 +28,7 @@ import {
   setInfoFeesAction,
   showFooterAction,
   showInfoAction,
-} from "../../../redux/actionTypes/layout/layout";
+} from "../../../redux/actions/layout/layout";
 
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector(

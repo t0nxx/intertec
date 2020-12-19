@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 
 import { establishmentInformationIntialState } from "../../../components/screens/pharamaceutical-establishment-screen/etablishment-inforamtion/establishment-information-helper";
-import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
+import { PharmaceuticalEstablishmentActionTypes } from "../../actionTypes/actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const initalState = {

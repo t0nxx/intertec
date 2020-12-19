@@ -1,5 +1,7 @@
-import { PharmaceuticalEstablishmentActionTypes } from "./pharmaceutical-establishment/actions-types";
-import { LookupsActionTypes } from "./lookups/actions-types";
+import {
+  PharmaceuticalEstablishmentActionTypes,
+  LookupsActionTypes,
+} from "../actionTypes/actions-types";
 
 /// this is global action type for all services ,
 /// it would be much easier since each item in it represent a whole service
@@ -31,7 +33,7 @@ export interface StateSelectorInterface {
   };
 
   // common lookups like emirates , countries , ...etc it will be in common folder
-  lookupsReducer: StateNode;
+  lookupsReducer: any;
 
   /// layout
   footerReducer: any;

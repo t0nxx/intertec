@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Container, Form, Image, Row, Col, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./home-screen.scss";
 
 import {
@@ -10,11 +10,16 @@ import {
   hideInfoAction,
   setBreadCrumbTitleAction,
   showBackButtonAction,
-} from "../../../redux/actionTypes/layout/layout";
+} from "../../../redux/actions/layout/layout";
+import { fetchLookUpsActionRequest } from "../../../redux/actions/lookupsActions";
+import { StateSelectorInterface } from "../../../redux/reducers/helper";
 
 export default function HomeScreenComponent() {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  const state = useSelector((s: StateSelectorInterface) => s.lookupsReducer);
+  console.log(state);
 
   /// going to routes
   const GoToNewLicensePharmaceuticalEstablishment = () => {
@@ -22,6 +27,7 @@ export default function HomeScreenComponent() {
   };
   useEffect(() => {
     // hide footer from this page
+    dispatch(fetchLookUpsActionRequest());
     dispatch(setBreadCrumbTitleAction("Home"));
     dispatch(hideFooterAction());
   }, []);

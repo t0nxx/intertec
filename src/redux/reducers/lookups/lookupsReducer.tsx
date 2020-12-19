@@ -1,4 +1,4 @@
-import { LookupsActionTypes } from "./actions-types";
+import { LookupsActionTypes } from "../../actionTypes/actions-types";
 
 const initalState = {
   data: {
@@ -15,10 +15,13 @@ const initalState = {
     AttachmentCategory: [],
   },
   isLoading: false,
-  error: null,
+  errors: null,
 };
 
-const lookupsReducer = (state = initalState, action: { type: string; payload: any }) => {
+const lookupsReducer = (
+  state = initalState,
+  action: { type: string; payload: any }
+) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -31,13 +34,13 @@ const lookupsReducer = (state = initalState, action: { type: string; payload: an
       return {
         ...state,
         isLoading: false,
-        data: payload,
+        data: payload.Data,
       };
     case LookupsActionTypes.FETCH_LOOKUPS_FAILURE:
       return {
         ...state,
-        loading: false,
-        error: payload,
+        isLoading: false,
+        errors: payload.errors,
       };
     default:
       return state;

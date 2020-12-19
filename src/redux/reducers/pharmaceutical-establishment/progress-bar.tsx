@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 
-import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
+import { PharmaceuticalEstablishmentActionTypes } from "../../actionTypes/actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const initalState = 8;

@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import pharmaceuticalEstablishment from "./pharmaceutical-establishment";
-import lookupsReducer from "./lookups/lookups";
+import lookupsReducer from "./lookups/lookupsReducer";
 import footerReducer from "../reducers/layout/footerReducer";
 import breadCrumbReducer from "./layout/breadcrumbReducer";
 

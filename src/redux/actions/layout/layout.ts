@@ -1,4 +1,4 @@
-import { LayoutActionTypes } from "../../reducers/layout/actions-types";
+import { LayoutActionTypes } from "../../actionTypes/actions-types";
 
 // export enum LayoutActionTypes {
 //   SET_FOOTER_CONTENT = "SET_FOOTER_CONTENT",

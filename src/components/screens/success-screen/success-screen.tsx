@@ -13,7 +13,7 @@ import happyRate from "../../../assets/happyRate.svg";
 import flag from "../../../assets/flag.svg";
 import smCloseButton from "../../../assets/smallCloseButton.svg";
 import bigHappyRate from "../../../assets/bigHappyRate.svg";
-import { hideFooterAction } from "../../../redux/actionTypes/layout/layout";
+import { hideFooterAction } from "../../../redux/actions/layout/layout";
 
 export default function SuccessScreenComponent() {
   const [show, setShow] = useState(true);

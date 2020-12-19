@@ -1,4 +1,4 @@
-import { LayoutActionTypes } from "./actions-types";
+import { LayoutActionTypes } from "../../actionTypes/actions-types";
 
 const initialState = {
   showFooter: true,

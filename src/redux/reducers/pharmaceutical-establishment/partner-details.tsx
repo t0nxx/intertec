@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 import { GenerateUUID } from "../../../components/helpers/createUUid";
 import { partnerDetailInitialState } from "../../../components/screens/pharamaceutical-establishment-screen/partner-details/add-partner/add-partner-helper";
-import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
+import { PharmaceuticalEstablishmentActionTypes } from "../../actionTypes/actions-types";
 
 const initalState = {
   data: [],

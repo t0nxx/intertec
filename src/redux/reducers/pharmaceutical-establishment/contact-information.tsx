@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 
 import { contactInformationInitailState } from "../../../components/screens/pharamaceutical-establishment-screen/contact-inforamtion/contact-information-helper";
-import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
+import { PharmaceuticalEstablishmentActionTypes } from "../../actionTypes/actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const initalState = {

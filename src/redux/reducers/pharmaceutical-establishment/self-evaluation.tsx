@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
 
 // import { selfEvaluationInitialState } from "../../../components/screens/pharamaceutical-establishment/partner-detail/partner-detail-helper";
-import { PharmaceuticalEstablishmentActionTypes } from "./actions-types";
+import { PharmaceuticalEstablishmentActionTypes } from "../../actionTypes/actions-types";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const initalState = {

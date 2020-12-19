@@ -12,7 +12,7 @@ import RequestInformation from "../../request-information/request-information";
 import {
   hideInfoAction,
   showBackButtonAction,
-} from "../../../redux/actionTypes/layout/layout";
+} from "../../../redux/actions/layout/layout";
 
 export default function PaymentScreenComponent() {
   const { t } = useTranslation();
