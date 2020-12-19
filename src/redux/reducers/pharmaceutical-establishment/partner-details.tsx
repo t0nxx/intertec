@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/comma-dangle */
-import { GenerateUUID } from "../../../components/helpers/createUUid";
+import { GenerateUUID } from "../../../utils/createUUid";
 import { partnerDetailInitialState } from "../../../components/screens/pharamaceutical-establishment-screen/partner-details/add-partner/add-partner-helper";
 import { PharmaceuticalEstablishmentActionTypes } from "../../actionTypes/actions-types";
 

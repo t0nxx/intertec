@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Accordion, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
@@ -29,21 +29,42 @@ import {
   showFooterAction,
   showInfoAction,
 } from "../../../redux/actions/layout/layout";
+import { infoDescriptionAndFeesDataEndpoint } from "../../../api/services/stickyInfoDataApi";
+import { getCurrentLang } from "../../../utils/currentLang";
 
 const PharamaceuticalEstablishmentScreen = () => {
+  const [infoDesc, setInfoDesc] = useState("");
+  const [infoFees, setInfoFees] = useState("");
+
+  const getInfoOfCurrentService = async () => {
+    const {
+      Data: { DescriptionTable },
+    } = await infoDescriptionAndFeesDataEndpoint("SRV-01.01.005");
+
+    console.log(DescriptionTable);
+    const currentLnag = getCurrentLang();
+    if (currentLnag === "en") {
+      setInfoDesc(DescriptionTable[0].DescriptionEN);
+      setInfoFees(DescriptionTable[0].RequiredFeeEn);
+    } else {
+      setInfoDesc(DescriptionTable[0].DescriptionAR);
+      setInfoFees(DescriptionTable[0].RequiredFeeAr);
+    }
+  };
   const state = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
   );
   const dispatch = useDispatch();
   useEffect(() => {
+    getInfoOfCurrentService();
     dispatch(
       setBreadCrumbTitleAction("New License Pharmaceutical Establishment")
     );
     dispatch(showFooterAction());
     dispatch(showInfoAction());
-    dispatch(setInfoDescriptionAction("dynamic descrition "));
-    dispatch(setInfoFeesAction("dynamic fees"));
-  }, []);
+    dispatch(setInfoDescriptionAction(infoDesc));
+    dispatch(setInfoFeesAction(infoFees));
+  }, [infoDesc, infoFees]);
   return (
     <div>
       <RequestInformation />
