@@ -1,6 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Image, Card, Col, Container, Form, Row, Button } from "react-bootstrap";
+import {
+  Image,
+  Card,
+  Col,
+  Container,
+  Form,
+  Row,
+  Button,
+} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -14,7 +22,10 @@ import upload from "../../../../assets/upload.svg";
 import email from "../../../../assets/mail.svg";
 import phone from "../../../../assets/phone.svg";
 import arrow from "../../../../assets/arrow-white.svg";
-import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../../redux/reducers/helper";
 import AttachmentComponent from "../../../templates/attachment/attachment";
 import { IProps } from "../shared/components-props";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
@@ -25,7 +36,8 @@ import { FormInputComponent } from "../../../molecules/forms/formInput";
 const OwnerDetailComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
-    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.ownerDetailsReducer
+    (s: StateSelectorInterface) =>
+      s.pharmaceuticalEstablishment.ownerDetailsReducer
   );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
@@ -49,18 +61,16 @@ const OwnerDetailComponent = (props: IProps) => {
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
         payload: values,
       });
       // move to next step
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
-      // set progress bar  +10 %
-      dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PROGRESS_PERSENTAGE,
-        payload: 10,
-      });
+
       changeParentToggleEvent();
     }
   };
@@ -299,7 +309,11 @@ const OwnerDetailComponent = (props: IProps) => {
               <h5>{t("Buttons.Attachments")}</h5>
             </Form.Row>
             <AttachmentComponent withslidercarosel={false} />
-            {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
+            {props.isForReviewPage ? (
+              <SaveAndCancel onCancel={onCancelHandler} />
+            ) : (
+              <NextButton />
+            )}
           </Form>
         </Card.Body>
       </Card>

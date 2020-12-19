@@ -11,6 +11,8 @@ import { LayoutActionTypes } from "../../actionTypes/actions-types";
 //   SHOW_FOOTER = "SHOW_FOOTER",
 //   HIDE_FOOTER = "HIDE_FOOTER",
 //   HIDE_FOOTER_WITH_INFO_AND_BACK_BUTTON = "HIDE_FOOTER_WITH_INFO_AND_BACK_BUTTON",
+//   SET_PROGRESS_PERSENTAGE = "SET_PROGRESS_PERSENTAGE",
+
 // }
 
 export const showBackButtonAction = () => {
@@ -58,6 +60,12 @@ export const hideFooterAction = () => {
 export const setFooterContentAction = (payload) => {
   return {
     type: LayoutActionTypes.SET_FOOTER_CONTENT,
+    payload,
+  };
+};
+export const setFooterProgressAction = (payload) => {
+  return {
+    type: LayoutActionTypes.SET_PROGRESS_PERSENTAGE,
     payload,
   };
 };

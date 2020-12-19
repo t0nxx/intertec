@@ -7,6 +7,7 @@ const initialState = {
   stickyInfoDescription: "",
   stickyInfoFees: "",
   customFooterContent: "",
+  progressBarPersentage: 8,
 };
 
 const footerReducer = (
@@ -43,6 +44,10 @@ const footerReducer = (
     case LayoutActionTypes.SET_FOOTER_CONTENT: {
       return { ...state, customFooterContent: payload };
     }
+
+    case LayoutActionTypes.SET_PROGRESS_PERSENTAGE:
+      return { ...state, progressBarPersentage: payload };
+
     case LayoutActionTypes.HIDE_FOOTER_WITH_INFO_AND_BACK_BUTTON: {
       return {
         ...state,

@@ -1,6 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Image,
+  Row,
+} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -10,7 +18,10 @@ import arrow from "../../../../assets/arrow-white.svg";
 import map from "../../../../assets/map.svg";
 
 import "./location-information.scss";
-import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../../redux/reducers/helper";
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
@@ -18,7 +29,8 @@ import NextButton from "../../../atoms/buttons/next-button/next-button";
 const LocationInformationComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
-    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.locationInformationsReducer
+    (s: StateSelectorInterface) =>
+      s.pharmaceuticalEstablishment.locationInformationsReducer
   );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
@@ -42,18 +54,17 @@ const LocationInformationComponent = (props: IProps) => {
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_LOACTION_INFORMATION,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes
+            .SET_LOACTION_INFORMATION,
         payload: values,
       });
       // move to next step
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
-      // set progress bar  +10 %
-      dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PROGRESS_PERSENTAGE,
-        payload: 10,
-      });
+
       changeParentToggleEvent();
     }
   };
@@ -85,7 +96,9 @@ const LocationInformationComponent = (props: IProps) => {
                 <option> Type 3</option>
               </Form.Control>
               {errors.emirate ? (
-                <span className="text-danger">{t(`${errors.emirate?.message}`)}</span>
+                <span className="text-danger">
+                  {t(`${errors.emirate?.message}`)}
+                </span>
               ) : null}
             </Form.Group>
 
@@ -102,7 +115,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isInvalid={errors.area}
               />
               {errors.area ? (
-                <span className="text-danger">{t(`${errors.area?.message}`)}</span>
+                <span className="text-danger">
+                  {t(`${errors.area?.message}`)}
+                </span>
               ) : null}
             </Form.Group>
           </Form.Row>
@@ -121,7 +136,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isInvalid={errors.street}
               />
               {errors.street ? (
-                <span className="text-danger">{t(`${errors.street?.message}`)}</span>
+                <span className="text-danger">
+                  {t(`${errors.street?.message}`)}
+                </span>
               ) : null}
             </Form.Group>
           </Form.Row>
@@ -140,7 +157,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isInvalid={errors.poBox}
               />
               {errors.poBox ? (
-                <span className="text-danger">{t(`${errors.poBox?.message}`)}</span>
+                <span className="text-danger">
+                  {t(`${errors.poBox?.message}`)}
+                </span>
               ) : null}
             </Form.Group>
             <Form.Group as={Col} md="6" sm="12" controlId="establishmentName">
@@ -156,7 +175,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isInvalid={errors.buildingName}
               />
               {errors.buildingName ? (
-                <span className="text-danger">{t(`${errors.buildingName?.message}`)}</span>
+                <span className="text-danger">
+                  {t(`${errors.buildingName?.message}`)}
+                </span>
               ) : null}
             </Form.Group>
           </Form.Row>
@@ -175,7 +196,9 @@ const LocationInformationComponent = (props: IProps) => {
                 isInvalid={errors.buildingNo}
               />
               {errors.buildingNo ? (
-                <span className="text-danger">{t(`${errors.buildingNo?.message}`)}</span>
+                <span className="text-danger">
+                  {t(`${errors.buildingNo?.message}`)}
+                </span>
               ) : null}
             </Form.Group>
 
@@ -196,7 +219,9 @@ const LocationInformationComponent = (props: IProps) => {
                 <Image src={map} />
               </div>
               {errors.mapUrl ? (
-                <span className="text-danger">{t(`${errors.mapUrl?.message}`)}</span>
+                <span className="text-danger">
+                  {t(`${errors.mapUrl?.message}`)}
+                </span>
               ) : null}
             </Form.Group>
 
@@ -236,7 +261,11 @@ const LocationInformationComponent = (props: IProps) => {
               </div>
             </Form.Group>
           </Form.Row>
-          {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
+          {props.isForReviewPage ? (
+            <SaveAndCancel onCancel={onCancelHandler} />
+          ) : (
+            <NextButton />
+          )}
         </Form>
       </Card.Body>
     </Card>

@@ -5,8 +5,14 @@ import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
-import { FormInputsInterface, formSchema } from "./establishment-information-helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../../redux/reducers/helper";
+import {
+  FormInputsInterface,
+  formSchema,
+} from "./establishment-information-helper";
 import "./establishment-information.scss";
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
@@ -15,7 +21,8 @@ import { FormInputComponent } from "../../../molecules/forms/formInput";
 
 const EstablishmentInformationComponent = (props: IProps) => {
   const { data } = useSelector(
-    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.establishmentInformationsReducer
+    (s: StateSelectorInterface) =>
+      s.pharmaceuticalEstablishment.establishmentInformationsReducer
   );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
@@ -41,18 +48,17 @@ const EstablishmentInformationComponent = (props: IProps) => {
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_ESTABLISHMENT_INFORMATION,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes
+            .SET_ESTABLISHMENT_INFORMATION,
         payload: values,
       });
       // move to next step
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
-      // set progress bar  +10 %
-      dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PROGRESS_PERSENTAGE,
-        payload: 10,
-      });
+
       changeParentToggleEvent();
     }
   };

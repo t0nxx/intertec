@@ -26,8 +26,7 @@ export default function FooterComponent() {
 
   // progress bar state
   const progressPersentage = useSelector(
-    (s: StateSelectorInterface) =>
-      s.pharmaceuticalEstablishment.progressBarPersentageReducer
+    (s: StateSelectorInterface) => s.footerReducer.progressBarPersentage
   );
   // sticky info description and fees
   const {

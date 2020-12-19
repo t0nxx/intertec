@@ -1,8 +1,18 @@
-import React from "react";
-import { Accordion, Card, Container, Row, Image, Button } from "react-bootstrap";
+import React, { useEffect } from "react";
+import {
+  Accordion,
+  Card,
+  Container,
+  Row,
+  Image,
+  Button,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../redux/reducers/helper";
 import "./relocation-license-screen.scss";
 import "../pharamaceutical-establishment-screen/shared/shared.scss";
 
@@ -19,11 +29,20 @@ import checkImageWhite from "../../../assets/check-white.svg";
 import LocationInformationComponent from "./location-inforamtion/location-information";
 import SelfEvaluationComponent from "../pharamaceutical-establishment-screen/self-evaluation/self-evaluation";
 import RequestInformation from "../../request-information/request-information";
+import {
+  setBreadCrumbTitleAction,
+  setInfoDescriptionAction,
+  setInfoFeesAction,
+  showFooterAction,
+  showInfoAction,
+} from "../../../redux/actions/layout/layout";
+import { GetInfoOfCurrentService } from "../../helpers/getInfoOfService";
 
 const RelocationLicenseScreen = () => {
   const { t } = useTranslation();
-  const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const state = useSelector(
+    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
+  );
   const dispatch = useDispatch();
   const setCurrentStep = (step: string) => {
     // set current step in global state
@@ -32,6 +51,17 @@ const RelocationLicenseScreen = () => {
       payload: step,
     });
   };
+  useEffect(() => {
+    dispatch(
+      setBreadCrumbTitleAction("Relocation License Pharmaceutical")
+    );
+    dispatch(showFooterAction());
+    dispatch(showInfoAction());
+    GetInfoOfCurrentService("SRV-01.02.007").then((data) => {
+      dispatch(setInfoDescriptionAction(data.description));
+      dispatch(setInfoFeesAction(data.fees));
+    });
+  }, []);
   return (
     <div>
       <RequestInformation />
@@ -43,14 +73,18 @@ const RelocationLicenseScreen = () => {
           <Card className="headCard">
             <Accordion.Toggle
               as={Card.Header}
-              className={state.establishmentInformationsReducer.isComplete ? "done" : ""}
+              className={
+                state.establishmentInformationsReducer.isComplete ? "done" : ""
+              }
               eventKey="0"
               onClick={() => setCurrentStep("0")}
             >
               <Row>
                 <Image src={locationImage} className="ml-3 mr-4 greenIc" />
                 <Image src={locationImageWhite} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success">{t("Titles.New Location Information")}</h3>
+                <h3 className="text-success">
+                  {t("Titles.New Location Information")}
+                </h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
                   {t("Buttons.Start")}
@@ -65,7 +99,9 @@ const RelocationLicenseScreen = () => {
           <Card className="headCard">
             <Accordion.Toggle
               as={Card.Header}
-              className={state.contactInformationsReducer.isComplete ? "done" : ""}
+              className={
+                state.contactInformationsReducer.isComplete ? "done" : ""
+              }
               eventKey="1"
               onClick={() => setCurrentStep("1")}
             >
@@ -77,7 +113,7 @@ const RelocationLicenseScreen = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
-              <SelfEvaluationComponent pathToGo="/new-license-pharmaceutical-establishment/payment"/>
+              <SelfEvaluationComponent pathToGo="/relocation-license-pharmaceutical/attachment" />
             </Accordion.Collapse>
           </Card>
         </Accordion>

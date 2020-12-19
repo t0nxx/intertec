@@ -29,7 +29,6 @@ export interface StateSelectorInterface {
     Add_New_PARTNER: StateNode;
     Remove_New_PARTNER: StateNode;
     stepNumberReducer: number;
-    progressBarPersentageReducer: number;
   };
 
   // common lookups like emirates , countries , ...etc it will be in common folder

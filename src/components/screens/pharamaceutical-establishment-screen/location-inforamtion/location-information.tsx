@@ -1,6 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Card, Col, Container, Form, Image, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Image,
+  Row,
+} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
@@ -10,7 +18,10 @@ import arrow from "../../../../assets/arrow-white.svg";
 import map from "../../../../assets/map.svg";
 
 import "./location-information.scss";
-import { ActionTypes, StateSelectorInterface } from "../../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../../redux/reducers/helper";
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
@@ -19,7 +30,8 @@ import { FormInputComponent } from "../../../molecules/forms/formInput";
 const LocationInformationComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
-    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.locationInformationsReducer
+    (s: StateSelectorInterface) =>
+      s.pharmaceuticalEstablishment.locationInformationsReducer
   );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
@@ -43,18 +55,17 @@ const LocationInformationComponent = (props: IProps) => {
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_LOACTION_INFORMATION,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes
+            .SET_LOACTION_INFORMATION,
         payload: values,
       });
       // move to next step
       dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
+        type:
+          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
       });
-      // set progress bar  +10 %
-      dispatch({
-        type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PROGRESS_PERSENTAGE,
-        payload: 10,
-      });
+
       changeParentToggleEvent();
     }
   };
@@ -149,7 +160,11 @@ const LocationInformationComponent = (props: IProps) => {
               errors={errors.mapUrl}
             />
           </Form.Row>
-          {props.isForReviewPage ? <SaveAndCancel onCancel={onCancelHandler} /> : <NextButton />}
+          {props.isForReviewPage ? (
+            <SaveAndCancel onCancel={onCancelHandler} />
+          ) : (
+            <NextButton />
+          )}
         </Form>
       </Card.Body>
     </Card>
