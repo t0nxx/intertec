@@ -105,7 +105,8 @@
     "browse_from_computer": "Browse For Document On Your Computer",
     "supported_files_for_upload": "Use the button to upload your documents Supported File Types: pdf, docx, jpeg, File size: 10MB",
     "Submit Success": "Your application has been submitted successfully.",
-    "Attachments": "Attachments"
+    "Attachments": "Attachments",
+    "Home": "Home"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",

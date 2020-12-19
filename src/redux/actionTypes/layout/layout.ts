@@ -61,3 +61,12 @@ export const setFooterContentAction = (payload) => {
     payload,
   };
 };
+
+//////////// breadcrumb
+
+export const setBreadCrumbTitleAction = (payload) => {
+  return {
+    type: LayoutActionTypes.SET_BREADCRUMB_TITLE,
+    payload,
+  };
+};

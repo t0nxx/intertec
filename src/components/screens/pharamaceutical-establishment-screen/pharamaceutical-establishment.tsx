@@ -23,8 +23,10 @@ import PartnerDetailsComponent from "./partner-details/partner-details";
 import RequestInformation from "../../request-information/request-information";
 import CardWrapper from "../../templates/card-wrapper/card-wrapper";
 import {
+  setBreadCrumbTitleAction,
   setInfoDescriptionAction,
   setInfoFeesAction,
+  showFooterAction,
   showInfoAction,
 } from "../../../redux/actionTypes/layout/layout";
 
@@ -34,6 +36,10 @@ const PharamaceuticalEstablishmentScreen = () => {
   );
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(
+      setBreadCrumbTitleAction("New License Pharmaceutical Establishment")
+    );
+    dispatch(showFooterAction());
     dispatch(showInfoAction());
     dispatch(setInfoDescriptionAction("dynamic descrition "));
     dispatch(setInfoFeesAction("dynamic fees"));
@@ -119,7 +125,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             isDone={state.selfEvaluationsReducer.isComplete}
             eventKey="5"
           >
-            <SelfEvaluationComponent pathToGo="/new-license-pharmaceutical-establishment/attachment"/>
+            <SelfEvaluationComponent pathToGo="/new-license-pharmaceutical-establishment/attachment" />
           </CardWrapper>
         </Accordion>
       </Container>

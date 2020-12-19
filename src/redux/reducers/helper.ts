@@ -33,5 +33,7 @@ export interface StateSelectorInterface {
   // common lookups like emirates , countries , ...etc it will be in common folder
   lookupsReducer: StateNode;
 
+  /// layout
   footerReducer: any;
+  breadCrumbReducer: any;
 }

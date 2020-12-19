@@ -18,11 +18,13 @@ import {
 import close from "../../../assets/close.svg";
 import smCloseButton from "../../../assets/smallCloseButton.svg";
 import { Link, withRouter } from "react-router-dom";
+import { StateSelectorInterface } from "../../../redux/reducers/helper";
+import { useSelector } from "react-redux";
 
 function PageHeaderComponent(props) {
-  console.log("from heaaaaaaaaader");
-  console.log(props);
-
+  const { title } = useSelector(
+    (s: StateSelectorInterface) => s.breadCrumbReducer
+  );
   const {
     history,
     location: { pathname },
@@ -74,7 +76,7 @@ function PageHeaderComponent(props) {
       <Container fluid>
         <Row className="">
           <Col lg="6" md="12" sm="12" className="d-inline-block align-top">
-            <h4> {t("Titles.New License Pharmaceutical Establishment")}</h4>
+            <h4> {t(`Titles.${title}`)}</h4>
           </Col>
           <Col lg="6" md="12" sm="12">
             <Breadcrumb className="breadcrumb">
@@ -90,12 +92,14 @@ function PageHeaderComponent(props) {
               {pathnames.map((name, index) => {
                 const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
                 const isLast = index === pathnames.length - 1;
+                /// here to remove - and make string to uppercase
+                const formatedName = name.replace(/-/g, " ");
                 return isLast ? (
                   // will not going to any route since its last
-                  <Breadcrumb.Item>{name}</Breadcrumb.Item>
+                  <Breadcrumb.Item>{formatedName}</Breadcrumb.Item>
                 ) : (
                   <Breadcrumb.Item onClick={() => history.push(routeTo)}>
-                    {name}
+                    {formatedName}
                   </Breadcrumb.Item>
                 );
               })}

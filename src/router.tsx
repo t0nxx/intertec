@@ -11,11 +11,12 @@ import AddAreaExtention from "./components/screens/add-area-extention/add-area-e
 import Speciality from "./components/screens/speciality/speciality";
 import { changeNameOfPharmaceuticalEstablishmentRoutes } from "./components/screens/change-name-of-pharmaceutical-establishment";
 import NewLicensePharmaceuticalEstablishmentRoutes from "./components/screens/routes";
+import HomeScreenComponent from "./components/screens/Home/home-screen";
 
 function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={PharamaceuticalEstablishmentScreen} />
+      <Route exact path="/" component={HomeScreenComponent} />
       <Route path="/attachment" component={AttachmentScreenComponent} />
       <Route path="/review" component={ReviewScreenComponent} />
       <Route path="/success" component={SuccessScreenComponent} />
