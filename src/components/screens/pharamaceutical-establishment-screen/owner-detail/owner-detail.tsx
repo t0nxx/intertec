@@ -32,6 +32,10 @@ import NextButton from "../../../atoms/buttons/next-button/next-button";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import { RadioButtonsComponent } from "../../../molecules/forms/radioButtonInput";
 import { FormInputComponent } from "../../../molecules/forms/formInput";
+import {
+  pharmaceuticalEstablishmentNextStepAction,
+  setOwnerDetailsAction,
+} from "../../../../redux/actions/pharmaceuticalEstablishmentActions";
 
 const OwnerDetailComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
@@ -60,16 +64,9 @@ const OwnerDetailComponent = (props: IProps) => {
   const dispatch = useDispatch();
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_OWNER_DETAILS,
-        payload: values,
-      });
+      dispatch(setOwnerDetailsAction(values));
       // move to next step
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-      });
+      dispatch(pharmaceuticalEstablishmentNextStepAction());
 
       changeParentToggleEvent();
     }

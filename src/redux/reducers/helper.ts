@@ -30,6 +30,11 @@ export interface StateSelectorInterface {
     Remove_New_PARTNER: StateNode;
     stepNumberReducer: number;
   };
+  relocationPharmaceutical: {
+    locationInformationsReducer: StateNode;
+    selfEvaluationsReducer: StateNode;
+    stepNumberReducer: number;
+  };
 
   // common lookups like emirates , countries , ...etc it will be in common folder
   lookupsReducer: any;

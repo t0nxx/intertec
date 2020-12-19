@@ -50,10 +50,10 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
       //   payload: data,
       // });
       // move to next step
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-      });
+      // dispatch({
+      //   type:
+      //     ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
+      // });
     }
   };
 

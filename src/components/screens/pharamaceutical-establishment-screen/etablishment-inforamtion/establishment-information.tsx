@@ -18,6 +18,10 @@ import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
 import { FormInputComponent } from "../../../molecules/forms/formInput";
+import {
+  setEstablishmentInformationAction,
+  pharmaceuticalEstablishmentNextStepAction,
+} from "../../../../redux/actions/pharmaceuticalEstablishmentActions";
 
 const EstablishmentInformationComponent = (props: IProps) => {
   const { data } = useSelector(
@@ -38,8 +42,6 @@ const EstablishmentInformationComponent = (props: IProps) => {
   const onCancelHandler = () => changeParentToggleEvent();
 
   useEffect(() => {
-    // bind inputs values with it's state
-    // this will be very helpfull when we want reuse the component with its values
     reset(data);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reset]);
@@ -47,17 +49,9 @@ const EstablishmentInformationComponent = (props: IProps) => {
   const dispatch = useDispatch();
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes
-            .SET_ESTABLISHMENT_INFORMATION,
-        payload: values,
-      });
+      dispatch(setEstablishmentInformationAction(values));
       // move to next step
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-      });
+      dispatch(pharmaceuticalEstablishmentNextStepAction());
 
       changeParentToggleEvent();
     }

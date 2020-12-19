@@ -28,6 +28,10 @@ import SaveAndCancel from "../../../../atoms/buttons/save-and-cancel/save-and-ca
 import AttachmentComponent from "../../../../templates/attachment/attachment";
 import { FormInputComponent } from "../../../../molecules/forms/formInput";
 import { RadioButtonsComponent } from "../../../../molecules/forms/radioButtonInput";
+import {
+  addPartnerAction,
+  editPartnerAction,
+} from "../../../../../redux/actions/pharmaceuticalEstablishmentActions";
 
 const AddPartnerComponent = (props: {
   closeModal: any;
@@ -45,17 +49,9 @@ const AddPartnerComponent = (props: {
   const onSubmit = (data: FormInputsInterface) => {
     if (formState.isValid) {
       if (props.isEditingOne) {
-        console.log("from edittttttttttttttttttt");
-        dispatch({
-          type: ActionTypes.PharmaceuticalEstablishmentActionTypes.EDIT_PARTNER,
-          payload: { id: props.editingOneData.id, ...data },
-        });
+        dispatch(editPartnerAction(props.editingOneData.id, data));
       } else {
-        dispatch({
-          type:
-            ActionTypes.PharmaceuticalEstablishmentActionTypes.Add_New_PARTNER,
-          payload: data,
-        });
+        dispatch(addPartnerAction(data));
       }
 
       props.closeModal();
@@ -299,7 +295,9 @@ const AddPartnerComponent = (props: {
             <div className="model-fixed-footer">
               <SaveAndCancel
                 customText={
-                  props.isEditingOne ? t("Buttons.Save And Edit") : t("Buttons.Add")
+                  props.isEditingOne
+                    ? t("Buttons.Save And Edit")
+                    : t("Buttons.Add")
                 }
                 onCancel={closeModalHandler}
               />

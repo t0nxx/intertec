@@ -17,7 +17,6 @@ export enum RelocationPharmaceuticaActionTypes {
   SET_SELF_EVALUATION = "SET_SELF_EVALUATION",
   SET_STEP_NUMBER = "SET_STEP_NUMBER",
   NEXT_STEP_NUMBER = "NEXT_STEP_NUMBER",
-  SET_PROGRESS_PERSENTAGE = "SET_PROGRESS_PERSENTAGE",
 }
 
 export enum LayoutActionTypes {

@@ -20,6 +20,10 @@ import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cance
 import { IProps } from "../shared/components-props";
 import { FormInputComponent } from "../../../molecules/forms/formInput";
 import { RadioButtonsComponent } from "../../../molecules/forms/radioButtonInput";
+import {
+  pharmaceuticalEstablishmentNextStepAction,
+  setContactInformationAction,
+} from "../../../../redux/actions/pharmaceuticalEstablishmentActions";
 
 const ContactInformationComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
@@ -50,17 +54,9 @@ const ContactInformationComponent = (props: IProps) => {
   const dispatch = useDispatch();
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes
-            .SET_CONTACT_INFORMATION,
-        payload: values,
-      });
+      dispatch(setContactInformationAction(values));
       // move to next step
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-      });
+      dispatch(pharmaceuticalEstablishmentNextStepAction());
 
       changeParentToggleEvent();
     }

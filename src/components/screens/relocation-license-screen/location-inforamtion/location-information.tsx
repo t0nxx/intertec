@@ -25,12 +25,16 @@ import {
 import { IProps } from "../shared/components-props";
 import SaveAndCancel from "../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
+import {
+  relocationPharmaceuticalNextStepAction,
+  setRelocationPharmaceuticalInformationAction,
+} from "../../../../redux/actions/relocationPharmaceuticalActions";
 
 const LocationInformationComponent = (props: IProps) => {
   const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) =>
-      s.pharmaceuticalEstablishment.locationInformationsReducer
+      s.relocationPharmaceutical.locationInformationsReducer
   );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
@@ -53,17 +57,9 @@ const LocationInformationComponent = (props: IProps) => {
   const dispatch = useDispatch();
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes
-            .SET_LOACTION_INFORMATION,
-        payload: values,
-      });
+      dispatch(setRelocationPharmaceuticalInformationAction(values));
       // move to next step
-      dispatch({
-        type:
-          ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-      });
+      dispatch(relocationPharmaceuticalNextStepAction());
 
       changeParentToggleEvent();
     }

@@ -29,6 +29,11 @@ import NextButton from "../../../atoms/buttons/next-button/next-button";
 import addMore from "../../../../assets/addMore.svg";
 import edit from "../../../../assets/editPen.svg";
 import remove from "../../../../assets/deleteIconInCircle.png";
+import {
+  pharmaceuticalEstablishmentNextStepAction,
+  removePartnerAction,
+  setPartnerDetailsAction,
+} from "../../../../redux/actions/pharmaceuticalEstablishmentActions";
 
 const PartnerDetailsComponent = (props: IProps) => {
   const { t } = useTranslation();
@@ -56,21 +61,9 @@ const PartnerDetailsComponent = (props: IProps) => {
 
   const onSubmit = () => {
     // set step is complete without add any data
-    dispatch({
-      type:
-        ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_PARTNER_DETAILS,
-    });
+    dispatch(setPartnerDetailsAction());
     // move to next step
-    dispatch({
-      type: ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-    });
-    // set progress bar  +10 %
-    // dispatch({
-    //   type:
-    //     ActionTypes.PharmaceuticalEstablishmentActionTypes
-    //       .SET_PROGRESS_PERSENTAGE,
-    //   payload: 10,
-    // });
+    dispatch(pharmaceuticalEstablishmentNextStepAction());
     changeParentToggleEvent();
   };
 
@@ -80,11 +73,7 @@ const PartnerDetailsComponent = (props: IProps) => {
     setShow(!show);
   };
   const removeFromTable = (index) => {
-    dispatch({
-      type:
-        ActionTypes.PharmaceuticalEstablishmentActionTypes.Remove_New_PARTNER,
-      payload: index,
-    });
+    dispatch(removePartnerAction(index));
   };
 
   return (
