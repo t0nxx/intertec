@@ -3,13 +3,31 @@ import { useTranslation } from "react-i18next";
 import "./page-header.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { Image, Breadcrumb, Col, Container, Row, Button, Modal, Navbar } from "react-bootstrap";
+import {
+  Image,
+  Breadcrumb,
+  Col,
+  Container,
+  Row,
+  Button,
+  Modal,
+  Navbar,
+} from "react-bootstrap";
 
 // Import images
 import close from "../../../assets/close.svg";
 import smCloseButton from "../../../assets/smallCloseButton.svg";
+import { Link, withRouter } from "react-router-dom";
 
-export default function PageHeaderComponent() {
+function PageHeaderComponent(props) {
+  console.log("from heaaaaaaaaader");
+  console.log(props);
+
+  const {
+    history,
+    location: { pathname },
+  } = props;
+  const pathnames = pathname.split("/").filter((x) => x);
   const { t } = useTranslation();
 
   const [show, setShow] = useState(false);
@@ -60,7 +78,28 @@ export default function PageHeaderComponent() {
           </Col>
           <Col lg="6" md="12" sm="12">
             <Breadcrumb className="breadcrumb">
-              <Breadcrumb.Item>
+              {pathnames.length > 0 ? (
+                /// first icon ... home page
+                <Breadcrumb.Item onClick={() => history.push("/")}>
+                  <FontAwesomeIcon icon={faHome} size="lg" color="black" />
+                </Breadcrumb.Item>
+              ) : (
+                /// if we already are in home
+                <FontAwesomeIcon icon={faHome} size="lg" color="black" />
+              )}
+              {pathnames.map((name, index) => {
+                const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
+                const isLast = index === pathnames.length - 1;
+                return isLast ? (
+                  // will not going to any route since its last
+                  <Breadcrumb.Item>{name}</Breadcrumb.Item>
+                ) : (
+                  <Breadcrumb.Item onClick={() => history.push(routeTo)}>
+                    {name}
+                  </Breadcrumb.Item>
+                );
+              })}
+              {/* <Breadcrumb.Item>
                 <FontAwesomeIcon icon={faHome} size="lg" color="black" />
               </Breadcrumb.Item>
 
@@ -69,7 +108,7 @@ export default function PageHeaderComponent() {
               <Breadcrumb.Item>
                 {" "}
                 {t("Titles.New License Pharmaceutical Establishment")}
-              </Breadcrumb.Item>
+              </Breadcrumb.Item> */}
             </Breadcrumb>
           </Col>
         </Row>
@@ -77,3 +116,4 @@ export default function PageHeaderComponent() {
     </Navbar>
   );
 }
+export default withRouter(PageHeaderComponent);
