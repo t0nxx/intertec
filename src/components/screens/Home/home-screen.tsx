@@ -28,6 +28,9 @@ export default function HomeScreenComponent() {
   const GoToNewLicensePharmaceuticalEstablishmentPayment = () => {
     history.push("/new-license-pharmaceutical-establishment/payment");
   };
+  const GoToNewRelocationsePharmaceutical = () => {
+    history.push("/relocation-license-pharmaceutical");
+  };
   useEffect(() => {
     // hide footer from this page
     dispatch(fetchLookUpsActionRequest());
@@ -50,6 +53,11 @@ export default function HomeScreenComponent() {
           onClick={GoToNewLicensePharmaceuticalEstablishmentPayment}
         >
           NewLicensePharmaceuticalEstablishment Payment
+        </Button>
+      </Row>
+      <Row className="justify-content-center mt-5">
+        <Button variant="success" onClick={GoToNewRelocationsePharmaceutical}>
+          relocation license-pharmaceutical
         </Button>
       </Row>
     </Container>
