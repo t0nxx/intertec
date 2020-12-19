@@ -4,7 +4,11 @@ import { withRouter } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { faCheckSquare, faCoffee, faVolumeUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheckSquare,
+  faCoffee,
+  faVolumeUp,
+} from "@fortawesome/free-solid-svg-icons";
 
 import NavBarComponent from "./components/organisms/nav-bar/nav-bar";
 import PageHeaderComponent from "./components/organisms/page-header/page-header";
@@ -25,7 +29,9 @@ function App({ location }) {
       <NavBarComponent />
       <PageHeaderComponent />
       {/* here to remove footer from some screens dynamically */}
-      {!RoutesWithoutFooter.includes(location.pathname) && <FooterComponent />}
+      {/* modified to be handled with redux state */}
+      {/* {!RoutesWithoutFooter.includes(location.pathname) && <FooterComponent />} */}
+      <FooterComponent />
       <Routes />
     </div>
   );

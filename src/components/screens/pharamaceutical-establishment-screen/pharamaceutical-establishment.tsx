@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Accordion, Container } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
 import penImage from "../../../assets/pen.svg";
@@ -22,9 +22,22 @@ import SelfEvaluationComponent from "./self-evaluation/self-evaluation";
 import PartnerDetailsComponent from "./partner-details/partner-details";
 import RequestInformation from "../../request-information/request-information";
 import CardWrapper from "../../templates/card-wrapper/card-wrapper";
+import {
+  setInfoDescriptionAction,
+  setInfoFeesAction,
+  showInfoAction,
+} from "../../../redux/actionTypes/layout/layout";
 
 const PharamaceuticalEstablishmentScreen = () => {
-  const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
+  const state = useSelector(
+    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
+  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(showInfoAction());
+    dispatch(setInfoDescriptionAction("dynamic descrition "));
+    dispatch(setInfoFeesAction("dynamic fees"));
+  }, []);
   return (
     <div>
       <RequestInformation />

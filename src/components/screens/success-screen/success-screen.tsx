@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Container, Image, Row, Col, Button, Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import "./success-screen.scss";
@@ -12,12 +13,14 @@ import happyRate from "../../../assets/happyRate.svg";
 import flag from "../../../assets/flag.svg";
 import smCloseButton from "../../../assets/smallCloseButton.svg";
 import bigHappyRate from "../../../assets/bigHappyRate.svg";
+import { hideFooterAction } from "../../../redux/actionTypes/layout/layout";
 
 export default function SuccessScreenComponent() {
   const [show, setShow] = useState(true);
   const { t } = useTranslation();
   const history = useHistory();
   const location: any = useLocation();
+  const dispatch = useDispatch();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -26,6 +29,9 @@ export default function SuccessScreenComponent() {
   );
 
   useEffect(() => {
+    // hide footer from this page
+    dispatch(hideFooterAction());
+
     if (location.state?.successVariable === "payment") {
       setSuccessText("Payment successfully");
     }
@@ -61,7 +67,9 @@ export default function SuccessScreenComponent() {
           <p className="appNum">
             {t("Titles.Application number")} : <span>#number</span>
           </p>
-          <Button onClick={goToWorkSapce}>{t("Buttons.Go to workspace")}</Button>
+          <Button onClick={goToWorkSapce}>
+            {t("Buttons.Go to workspace")}
+          </Button>
         </Col>
       </Row>
       <Container className="successScreenFooter">

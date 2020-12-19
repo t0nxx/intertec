@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Form, Image, Row, Col, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import "./payment-screen.scss";
 
@@ -8,10 +9,15 @@ import "./payment-screen.scss";
 import eD from "../../../assets/eD.svg";
 import visaAndMaster from "../../../assets/visaAndMaster.svg";
 import RequestInformation from "../../request-information/request-information";
+import {
+  hideInfoAction,
+  showBackButtonAction,
+} from "../../../redux/actionTypes/layout/layout";
 
 export default function PaymentScreenComponent() {
   const { t } = useTranslation();
   const history = useHistory();
+  const dispatch = useDispatch();
   const handelSuccessPayment = () => {
     history.push({
       pathname: "/success",
@@ -20,6 +26,12 @@ export default function PaymentScreenComponent() {
       },
     });
   };
+
+  useEffect(() => {
+    // hide info from this page
+    dispatch(hideInfoAction());
+    dispatch(showBackButtonAction());
+  }, []);
   return (
     <Container fluid className="topScreen">
       <Row>
@@ -35,11 +47,15 @@ export default function PaymentScreenComponent() {
                 <Col>
                   <Col>
                     <Row className="head">
-                      <Col className="left-align">{t("Titles.Fees Details")}</Col>
+                      <Col className="left-align">
+                        {t("Titles.Fees Details")}
+                      </Col>
                       <Col className="right-align">{t("Titles.Amount")}</Col>
                     </Row>
                     <Row className="child">
-                      <Col className="left-align">{t("Titles.application Fees")}</Col>
+                      <Col className="left-align">
+                        {t("Titles.application Fees")}
+                      </Col>
                       <Col className="right-align">500 AED</Col>
                     </Row>
                     <Row className="child">
@@ -48,7 +64,9 @@ export default function PaymentScreenComponent() {
                     </Row>
                     <Row className="head">
                       <Col className="left-align"> </Col>
-                      <Col className="right-align">{t("Titles.Total")} 510 AED</Col>
+                      <Col className="right-align">
+                        {t("Titles.Total")} 510 AED
+                      </Col>
                     </Row>
                   </Col>
                 </Col>

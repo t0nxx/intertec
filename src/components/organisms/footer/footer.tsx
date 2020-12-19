@@ -26,16 +26,37 @@ export default function FooterComponent() {
 
   // progress bar state
   const progressPersentage = useSelector(
-    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment.progressBarPersentageReducer
+    (s: StateSelectorInterface) =>
+      s.pharmaceuticalEstablishment.progressBarPersentageReducer
   );
+  // sticky info description and fees
+  const {
+    showFooter,
+    showBackButton,
+    showStickyInfo,
+    stickyInfoDescription,
+    stickyInfoFees,
+    customFooterContent,
+  } = useSelector((s: StateSelectorInterface) => s.footerReducer);
+
   return (
-    <Navbar expand="lg" fixed="bottom" className="footer">
+    <Navbar expand="lg" fixed="bottom" className="footer" hidden={!showFooter}>
       <div className="flagIc"> </div>
-      <InfoComponent />
-      <div className="stickyBack">
-        <Image src={back} onClick={() => history.goBack()} hidden={true} />
+      <InfoComponent
+        description={stickyInfoDescription}
+        fees={stickyInfoFees}
+        shown={showStickyInfo}
+      />
+      <div className="stickyBack" hidden={!showBackButton}>
+        <Image src={back} onClick={() => history.goBack()} />
       </div>
-      <ProgressBar variant="success" now={progressPersentage} className="progress" />
+
+      {/* this content should be dynamic */}
+      <ProgressBar
+        variant="success"
+        now={progressPersentage}
+        className="progress"
+      />
       <Row className="statistics-container">
         {/* <div>
           <Image src={applicationIc} />
@@ -76,7 +97,13 @@ export default function FooterComponent() {
         <Col xs={3}>
           <Row>
             <Col xs={12} sm={4}>
-              <Image src={isInAttachPage || isInPreviewPage ? attachmentIcGreen : attachmentIc} />
+              <Image
+                src={
+                  isInAttachPage || isInPreviewPage
+                    ? attachmentIcGreen
+                    : attachmentIc
+                }
+              />
             </Col>
             <Col xs={12} sm={8}>
               <span> {t("Titles.Attachment")}</span>
