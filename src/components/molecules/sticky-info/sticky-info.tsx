@@ -61,12 +61,13 @@ export default function InfoComponent({ description, fees, shown }) {
               </Card.Header>
               <Accordion.Collapse eventKey="1">
                 <Card.Body>
-                  <ul>
+                  <p dangerouslySetInnerHTML={{ __html: fees }} />
+                  {/* <ul>
                     {fees}
-                    {/* <li>Fee 1 (100 AED)</li>
+                    <li>Fee 1 (100 AED)</li>
                 <li>Fee 2 (1000 AED)</li>
-                <li>Fee 3 (500 AED)</li> */}
-                  </ul>
+                <li>Fee 3 (500 AED)</li>
+                  </ul> */}
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
