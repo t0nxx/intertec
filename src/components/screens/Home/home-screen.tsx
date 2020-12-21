@@ -11,15 +11,10 @@ import {
   setBreadCrumbTitleAction,
   showBackButtonAction,
 } from "../../../redux/actions/layout/layout";
-import { fetchLookUpsActionRequest } from "../../../redux/actions/lookupsActions";
-import { StateSelectorInterface } from "../../../redux/reducers/helper";
 
 export default function HomeScreenComponent() {
   const history = useHistory();
   const dispatch = useDispatch();
-
-  const state = useSelector((s: StateSelectorInterface) => s.lookupsReducer);
-  console.log(state);
 
   /// going to routes
   const GoToNewLicensePharmaceuticalEstablishment = () => {
@@ -33,7 +28,6 @@ export default function HomeScreenComponent() {
   };
   useEffect(() => {
     // hide footer from this page
-    dispatch(fetchLookUpsActionRequest());
     dispatch(setBreadCrumbTitleAction("Home"));
     dispatch(hideFooterAction());
   }, []);

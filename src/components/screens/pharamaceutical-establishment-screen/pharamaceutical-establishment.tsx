@@ -31,6 +31,8 @@ import {
 } from "../../../redux/actions/layout/layout";
 import { GetInfoOfCurrentService } from "../../helpers/getInfoOfService";
 import { ServicesCode } from "../../constants/services-code";
+import { setServiceCodeAction } from "../../../redux/actions/configActions";
+import { fetchLookUpsActionRequest } from "../../../redux/actions/lookupsActions";
 
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector(
@@ -43,7 +45,13 @@ const PharamaceuticalEstablishmentScreen = () => {
     dispatch(setInfoFeesAction(data.fees));
   });
   const dispatch = useDispatch();
+
   useEffect(() => {
+    /// set current service in global state to get
+    dispatch(
+      setServiceCodeAction(ServicesCode.NewLicensePharmaceuticalEstablishment)
+    );
+    dispatch(fetchLookUpsActionRequest());
     dispatch(
       setBreadCrumbTitleAction("New License Pharmaceutical Establishment")
     );

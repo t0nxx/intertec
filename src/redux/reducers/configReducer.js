@@ -10,6 +10,8 @@ const initialState = {
   show_custom_header: false,
   headerTitle: "",
   serviceName: "",
+  /// Very helpfull to get all lookups , attachementtypes .... any thing related to service automatic
+  serviceCode: "",
 };
 
 export default function (state = initialState, action) {
@@ -54,6 +56,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         serviceName: payload.serviceName,
+      };
+    }
+    case types.SET_SERVICE_CODE: {
+      return {
+        ...state,
+        serviceCode: payload.serviceCode,
       };
     }
     default:

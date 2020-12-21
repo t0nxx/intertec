@@ -29,6 +29,10 @@ const EstablishmentInformationComponent = (props: IProps) => {
       s.pharmaceuticalEstablishment.establishmentInformationsReducer
   );
 
+  const lookups = useSelector((s: StateSelectorInterface) => s.lookupsReducer);
+  const EstablishmentType = lookups.data.EstablishmentType || [];
+  console.log(lookups);
+
   const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -96,9 +100,11 @@ const EstablishmentInformationComponent = (props: IProps) => {
               formState={formState}
               errors={errors.establishmentType}
             >
-              <option> Establishment Type 1</option>
-              <option> Establishment Type 2</option>
-              <option> Establishment Type 3</option>
+              {EstablishmentType.map((type) => {
+                <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                  {type.NameEn}
+                </option>;
+              })}
             </FormInputComponent>
 
             <FormInputComponent

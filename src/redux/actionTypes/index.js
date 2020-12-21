@@ -47,6 +47,11 @@ export const SET_SUB_HEADER_TITLE = "subHeader/SetSubHeaderTitle";
  * @type {string}
  */
 export const SET_SERVICE_NAME = "subHeader/SetServiceName";
+/**
+ *This is action type for setting service code
+ * @type {string}
+ */
+export const SET_SERVICE_CODE = "SET_SERVICE_CODE";
 
 /**
  * This is action type for setting sub header view

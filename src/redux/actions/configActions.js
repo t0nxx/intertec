@@ -54,3 +54,13 @@ export const setServiceNameInCustomSubHeader = (serviceName) => ({
   type: types.SET_SERVICE_NAME,
   payload: { serviceName },
 });
+
+/**
+ * This will dispatch action for seting service code in lookups , attachement ...etc
+ * @param serviceName
+ * @returns {{payload: {serviceName: *}, type: string}}
+ */
+export const setServiceCodeAction = (serviceCode) => ({
+  type: types.SET_SERVICE_CODE,
+  payload: { serviceCode },
+});
