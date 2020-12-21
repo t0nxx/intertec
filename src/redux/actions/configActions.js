@@ -9,7 +9,9 @@ export const directionAction = (payload, history) => ({
 export const progressAction = (payload, history) => ({
   type: types.PROGRESS_ACTION,
   payload,
-  history,actionTypes
+  history,
+  // sorry for missing with your code but it gives us error cant run project , hope you fix it
+  // actionTypes,
 });
 
 export const commonAction = (payload, history) => ({

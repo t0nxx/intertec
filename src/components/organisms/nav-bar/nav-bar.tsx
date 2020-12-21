@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
 import i18n from "../../../i18n";
 import "./nav-bar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,22 +14,48 @@ import {
   faVolumeUp,
   faLowVision,
 } from "@fortawesome/free-solid-svg-icons";
-import { Badge, Dropdown, Nav, Navbar, Image, Container, Row, Col } from "react-bootstrap";
+import {
+  Badge,
+  Dropdown,
+  Nav,
+  Navbar,
+  Image,
+  Container,
+  Row,
+  Col,
+} from "react-bootstrap";
 import logo from "../../../logo.png";
 
 // Import images
-import name from"../../../assets/name.jpg";
+import name from "../../../assets/name.jpg";
 import bell from "../../../assets/bell.svg";
 import notiicon1 from "../../../assets/notiicon1.svg";
 import notiicon2 from "../../../assets/notiicon2.svg";
 import notiicon3 from "../../../assets/notiicon3.svg";
+import { directionAction } from "../../../redux/actions/configActions";
 
 export default function NavBarComponent() {
   const { t } = useTranslation();
   const history = useHistory();
+  const dispatch = useDispatch();
   const changeDirection = (lang: string) => {
-    document.getElementsByTagName("html")[0].setAttribute("lang", lang);
-    document.getElementsByTagName("body")[0].setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    let payload = {
+      direction: "ltr",
+      locale: "en",
+    };
+    if (lang === "ar") {
+      payload.direction = "rtl";
+      payload.locale = "ar";
+    }
+    document
+      .getElementsByTagName("html")[0]
+      .setAttribute("lang", payload.locale);
+    document
+      .getElementsByTagName("body")[0]
+      .setAttribute("dir", payload.direction);
+
+    // dispach action to state
+    dispatch(directionAction(payload, history));
   };
   const toggleLanguage = () => {
     const nextLang = i18n.language === "ar" ? "en" : "ar";
@@ -60,7 +87,10 @@ export default function NavBarComponent() {
 
       {show ? <DropDownUserComponent /> : null}
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
+      <Navbar.Collapse
+        className="justify-content-end"
+        id="responsive-navbar-nav"
+      >
         <Nav className="mr-auto" />
         <Nav>
           <button type="button" className="toggleLang" onClick={toggleLanguage}>
@@ -69,17 +99,32 @@ export default function NavBarComponent() {
           <Nav className="headerIcons">
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon icon={faVolumeUp} size="sm" color="black" className="mr-2 ml-2" />
+                <FontAwesomeIcon
+                  icon={faVolumeUp}
+                  size="sm"
+                  color="black"
+                  className="mr-2 ml-2"
+                />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon icon={faSitemap} size="sm" color="black" className="mr-2 ml-2" />
+                <FontAwesomeIcon
+                  icon={faSitemap}
+                  size="sm"
+                  color="black"
+                  className="mr-2 ml-2"
+                />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon icon={faPhoneAlt} size="sm" color="black" className="mr-2 ml-2" />
+                <FontAwesomeIcon
+                  icon={faPhoneAlt}
+                  size="sm"
+                  color="black"
+                  className="mr-2 ml-2"
+                />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -94,12 +139,22 @@ export default function NavBarComponent() {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon icon={faLowVision} size="sm" color="black" className="mr-2 ml-2" />
+                <FontAwesomeIcon
+                  icon={faLowVision}
+                  size="sm"
+                  color="black"
+                  className="mr-2 ml-2"
+                />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/home">
-                <FontAwesomeIcon icon={faSearch} size="sm" color="black" className="mr-2 ml-2" />
+                <FontAwesomeIcon
+                  icon={faSearch}
+                  size="sm"
+                  color="black"
+                  className="mr-2 ml-2"
+                />
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
@@ -115,7 +170,11 @@ export default function NavBarComponent() {
           </Nav>
           {/* Notifications drop menu */}
           <Dropdown className="notification-list">
-            <Dropdown.Toggle variant="success" id="dropdown-basic" className="notifications">
+            <Dropdown.Toggle
+              variant="success"
+              id="dropdown-basic"
+              className="notifications"
+            >
               <Image src={bell} />
               <Badge pill variant="danger">
                 4
