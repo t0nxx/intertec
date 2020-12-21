@@ -1,11 +1,14 @@
+import { useSelector } from "react-redux";
 import { infoDescriptionAndFeesDataEndpoint } from "../../api/services/stickyInfoDataApi";
-import { getCurrentLang } from "../../utils/currentLang";
+import { StateSelectorInterface } from "../../redux/reducers/helper";
 
-export async function GetInfoOfCurrentService(serviceCode) {
+export const GetInfoOfCurrentService = async (serviceCode) => {
+  const currentLnag = useSelector(
+    (s: StateSelectorInterface) => s.configReducer.locale
+  );
   const {
     Data: { DescriptionTable },
   } = await infoDescriptionAndFeesDataEndpoint(serviceCode);
-  const currentLnag = getCurrentLang();
   let description,
     fees = "";
   if (currentLnag === "en") {
@@ -17,4 +20,4 @@ export async function GetInfoOfCurrentService(serviceCode) {
   }
 
   return { description, fees };
-}
+};

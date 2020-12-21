@@ -30,11 +30,18 @@ import {
   showInfoAction,
 } from "../../../redux/actions/layout/layout";
 import { GetInfoOfCurrentService } from "../../helpers/getInfoOfService";
+import { ServicesCode } from "../../constants/services-code";
 
 const PharamaceuticalEstablishmentScreen = () => {
   const state = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
   );
+  GetInfoOfCurrentService(
+    ServicesCode.NewLicensePharmaceuticalEstablishment
+  ).then((data) => {
+    dispatch(setInfoDescriptionAction(data.description));
+    dispatch(setInfoFeesAction(data.fees));
+  });
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(
@@ -42,10 +49,6 @@ const PharamaceuticalEstablishmentScreen = () => {
     );
     dispatch(showFooterAction());
     dispatch(showInfoAction());
-    GetInfoOfCurrentService("SRV-01.01.005").then((data) => {
-      dispatch(setInfoDescriptionAction(data.description));
-      dispatch(setInfoFeesAction(data.fees));
-    });
   }, []);
   return (
     <div>

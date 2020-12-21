@@ -37,12 +37,19 @@ import {
   showInfoAction,
 } from "../../../redux/actions/layout/layout";
 import { GetInfoOfCurrentService } from "../../helpers/getInfoOfService";
+import { ServicesCode } from "../../constants/services-code";
 
 const RelocationLicenseScreen = () => {
   const { t } = useTranslation();
   const state = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
   );
+  GetInfoOfCurrentService(
+    ServicesCode.RelocationOfPharmaceuticalEstablishment
+  ).then((data) => {
+    dispatch(setInfoDescriptionAction(data.description));
+    dispatch(setInfoFeesAction(data.fees));
+  });
   const dispatch = useDispatch();
   const setCurrentStep = (step: string) => {
     // set current step in global state
@@ -52,15 +59,9 @@ const RelocationLicenseScreen = () => {
     });
   };
   useEffect(() => {
-    dispatch(
-      setBreadCrumbTitleAction("Relocation License Pharmaceutical")
-    );
+    dispatch(setBreadCrumbTitleAction("Relocation License Pharmaceutical"));
     dispatch(showFooterAction());
     dispatch(showInfoAction());
-    GetInfoOfCurrentService("SRV-01.02.007").then((data) => {
-      dispatch(setInfoDescriptionAction(data.description));
-      dispatch(setInfoFeesAction(data.fees));
-    });
   }, []);
   return (
     <div>
