@@ -76,7 +76,7 @@ export default function RequestInformation() {
                             <Col className="leftAppC" md="7" sm="7" xs="12">
                               <Image src={user} />
                               <div className="applicant">
-                                <h1>{t("Titles.Application name")}</h1>
+                                <h1>{t("Titles.Applicant Name")}</h1>
                                 <span>Samantha </span>
                               </div>
                             </Col>

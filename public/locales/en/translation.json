@@ -6,7 +6,6 @@
     "The Reason Of Name Change": "The Reason Of Name Change",
     "Services": "Services",
     "New License Pharmaceutical Establishment": "New License Pharmaceutical Establishment",
-    "Retrieve information contact from your profile": "Retrieve information contact from your profile",
     "Establishment Information": "Establishment Information",
     "Contact Information": "Contact Information",
     "Location Information": "Location Information",
@@ -26,7 +25,7 @@
     "PMOno": "PMO no",
     "Application no": "Application no",
     "Application Date": "Application Date",
-    "Application name": "Application name",
+    "Applicant Name": "Applicant Name",
     "Initial approval": "Initial approval",
     "Application status": "Application status",
     "Request initiated": "Request initiated",
@@ -106,7 +105,9 @@
     "supported_files_for_upload": "Use the button to upload your documents Supported File Types: pdf, docx, jpeg, File size: 10MB",
     "Submit Success": "Your application has been submitted successfully.",
     "Attachments": "Attachments",
-    "Home": "Home"
+    "Home": "Home",
+    "Remarks" : "Remarks",
+    "Write Remark" : "Write Remark"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -181,7 +182,8 @@
     "License Status": "License Status",
     "License No": "License No",
     "Issue Date": "Issue Date",
-    "License Information": "License Information"
+    "License Information": "License Information",
+    "Retrieve information contact from your profile": "Retrieve information contact from your profile"
   },
   "Buttons": {
     "Next": "Next",
@@ -202,7 +204,8 @@
     "Close": "Close",
     "See All": "See All",
     "Attachments": "Attachments",
-    "UploadFile": "Upload File"
+    "UploadFile": "Upload File",
+    "Save" : "Save"
   },
   "Error": {
     "Requird": "This is required",

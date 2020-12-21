@@ -16,6 +16,8 @@ import {
 
 // Import images
 import close from "../../../assets/close.svg";
+import headerarrow from "../../../assets/headerarrow.svg";
+import headerbredcru from "../../../assets/headerbredcru.svg";
 import smCloseButton from "../../../assets/smallCloseButton.svg";
 import { Link, withRouter } from "react-router-dom";
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
@@ -83,11 +85,11 @@ function PageHeaderComponent(props) {
               {pathnames.length > 0 ? (
                 /// first icon ... home page
                 <Breadcrumb.Item onClick={() => history.push("/")}>
-                  <FontAwesomeIcon icon={faHome} size="lg" color="black" />
+                  <Image src={headerbredcru} />
                 </Breadcrumb.Item>
               ) : (
                 /// if we already are in home
-                <FontAwesomeIcon icon={faHome} size="lg" color="black" />
+                <Image src={headerbredcru} />
               )}
               {pathnames.map((name, index) => {
                 const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
@@ -96,7 +98,7 @@ function PageHeaderComponent(props) {
                 const formatedName = name.replace(/-/g, " ");
                 return isLast ? (
                   // will not going to any route since its last
-                  <Breadcrumb.Item>{formatedName}</Breadcrumb.Item>
+                  <Breadcrumb.Item className="arrow">{formatedName}</Breadcrumb.Item>
                 ) : (
                   <Breadcrumb.Item onClick={() => history.push(routeTo)}>
                     {formatedName}

@@ -16,7 +16,7 @@ html[lang="ar"] {
   background-color: var(--white) !important;
   padding-top: 0px;
   box-shadow: none;
-  height: 90px !important;
+  min-height: 90px !important;
 
   .stickyBack {
     img {
@@ -130,19 +130,13 @@ html[lang="ar"] {
     }
   }
 
-  @media only screen and (max-width: 767px) {
-    .statistics-container {
-      .hideOnTaplet {
-        display: none !important;
-      }
-    }
-  }
+  
 
   div {
     // margin: 0 15px;
     img {
       // margin: 0 10px;
-      width: 60px;
+      width: 85px;
     }
     span {
       &.active {
@@ -165,6 +159,26 @@ html[lang="ar"] {
       strong {
         color: var(--success);
       }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .statistics-container {
+      .hideOnTaplet {
+        display: none !important;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .statistics-container {
+      .hideOnTaplet {
+        display: none !important;
+      }
+    }
+
+     div img{
+      width: 60px;
     }
   }
 }

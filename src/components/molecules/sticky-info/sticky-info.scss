@@ -1,11 +1,29 @@
 html[lang="ar"] {
-  .stickyInfo .infoContent .card .card-body .showMore {
-    flex-direction: row-reverse;
+  .stickyInfo {
+    left: auto;
+    right: 10px;
+    .infoContent .card .card-body .showMore {
+      flex-direction: row-reverse;
+    }
+
+    .infoContent{
+      margin-left: 0;
+      margin-right: 14px;
+    }
+
+    .infoIcon.opened {
+      right: -2px;
+      left: auto;
+    }
+
+    .infoIcon {
+      background-position: right;
+    }
   }
 
-  .stickyInfo .infoIcon.opened {
-    left: auto;
-    right: 4%;
+  .flagIc{
+    right: auto;
+    left: 10px;
   }
 }
 
@@ -40,8 +58,8 @@ html[lang="ar"] {
       width: 45px;
       height: 45px;
       position: absolute;
-      bottom: -2px;
-      left: -4px;
+      bottom: -17px;
+      left: -2px;
     }
   }
   .infoContent {

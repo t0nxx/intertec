@@ -6,7 +6,6 @@
     "The Reason Of Name Change": "سبب تغيير الاسم",
     "Services": "الخدمات",
     "New License Pharmaceutical Establishment": "الموافقة المبدئية على الترخيص الجديد للمنشأة الطبية",
-    "Retrieve information contact from your profile": "إسترجاع البيانات من الصفحة الشخصية",
     "Establishment Information": "معلومات المنشأة الأساسية ",
     "Contact Information": "معلومات الإتصال",
     "Location Information": "تفاصيل العنوان",
@@ -26,7 +25,7 @@
     "PMOno": "رقم PMO",
     "Application no": "رقم التطبيق",
     "Application Date": "تاريخ التقديم",
-    "Application name": "اسم التطبيق",
+    "Applicant Name": "اسم مقدم الطلب",
     "Initial approval": "موافقة مبدئية",
     "Application status": "حالة التطبيق",
     "Request initiated": "بدأ الطلب",
@@ -101,7 +100,12 @@
     "supported_files_for_upload": "استخدم الزر لتحميل المستندات الخاصة بك. أنواع الملفات المدعومة pdf، docx، jpeg، حجم الملف: 10 ميجابايت ",
     "Submit Success": "تم تقديم الطلب بنجاح.",
     "Attachments": "المرفقات",
-    "Home": "الرئيسية"
+    "Home": "الرئيسية",
+    "Services Description": "وصف الخدمات",
+    "Service fees" : "رسوم الخدمة",
+    "show More" : "أظهر المزيد",
+    "Remarks" : "ملاحظات",
+    "Write Remark" : "كتابه ملاحظه"
   },
   "Forms": {
     "Preview Submit Message": "اسم المنشأة الجديد لا يتطابق مع قواعد ولوائح وزارة الصحة والسكان يرجى تحديث الاسم قبل تقديم الطلب.",
@@ -175,7 +179,8 @@
     "Certificates": "الوثيقة",
     "License Status": "حالة الرخصة",
     "License No": "رقم الرخصة",
-    "License Information": "معلومات الرخصة"
+    "License Information": "معلومات الرخصة",
+    "Retrieve information contact from your profile": "إسترجاع البيانات من الصفحة الشخصية"
   },
   "Buttons": {
     "Next": "التالي",
@@ -197,7 +202,8 @@
     "Go To Payment": "اذهب الي الدفع",
     "Close": "قريب",
     "See All": "اظهار الكل",
-    "UploadFile": "رفع ملف"
+    "UploadFile": "رفع ملف",
+    "Save" : "احفظ"
   },
   "Error": {
     "Requird": "هذا الحقل مطلوب",

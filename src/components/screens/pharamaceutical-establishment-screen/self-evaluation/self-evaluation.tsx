@@ -8,6 +8,9 @@ import {
   Button,
   Table,
   ToggleButton,
+  Image,
+  Modal,
+  Container
 } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -15,6 +18,8 @@ import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import { FormInputsInterface, formSchema } from "./self-evaluation-helper";
+import pinwite from "../../../../assets/pinwite.svg";
+import smallCloseButton from "../../../../assets/smallCloseButton.svg";
 
 import "./self-evaluation.scss";
 import "../shared/shared.scss";
@@ -35,6 +40,10 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const history: any = useHistory();
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const onSubmit = () => {
     if (formState.isValid) {
@@ -66,6 +75,42 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
      * this should be abstacted  . later i will bake a style for card only usin styled component
      */
     <Card>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+        className="add_remark"
+      >
+        <div className="close_remark">
+          <Image src={smallCloseButton} onClick={handleClose} />
+        </div>
+
+        <div className="modalBody">
+
+
+
+          <Modal.Body>
+            <Container>
+              <Form>
+                <Form.Group controlId="exampleForm.ControlTextarea1">
+                  <Form.Label>{t("Titles.Write Remark")}</Form.Label>
+                  <Form.Control as="textarea" rows={6} />
+                </Form.Group>
+              </Form>
+              <Row className="modal_action">
+                <Button variant="light" size="lg" className="cancel-edit-btn" onClick={handleClose}>
+                  <strong>{t("Buttons.Cancel")}</strong>
+                </Button>
+                <Button variant="success" size="lg" className="save-edit-btn"  onClick={handleClose}>
+                  <strong> {t("Buttons.Save")}</strong>
+                </Button>
+              </Row>
+            </Container>
+
+          </Modal.Body>
+        </div>
+      </Modal>
       <Card.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Table>
@@ -97,7 +142,7 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
             </tbody>
           </Table>
           <Row>
-            <Col>
+            <Col className="disclaimer-check">
               <Form.Check
                 type="checkbox"
                 name="disclaimer"
@@ -106,6 +151,9 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
                 custom
                 onChange={(e) => setChecked(e.currentTarget.checked)}
               />
+            </Col>
+            <Col className="remarks">
+              <Button onClick={handleShow}><Image src={pinwite} /> {t("Titles.Remarks")} </Button>
             </Col>
           </Row>
           <NextButton customText={t("Buttons.Go To Attachment")} />

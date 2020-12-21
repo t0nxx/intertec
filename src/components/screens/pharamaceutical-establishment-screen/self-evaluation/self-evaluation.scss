@@ -1,0 +1,93 @@
+html[lang="ar"] {
+  .disclaimer-check {
+    .custom-control.custom-checkbox {
+      padding-right: 1.5rem;
+      padding-left: 0;
+    }
+    .custom-control-label::before {
+      left: auto;
+      right: -1.5rem;
+    }
+    .custom-control-label::after {
+      left: 0;
+      right: -1.5rem;
+    }
+    #disclaimer {
+      left: auto;
+      right: 0;
+    }
+
+    .custom-control.custom-checkbox label {
+      padding-right: 5px;
+      padding-left: 0;
+    }
+  }
+
+  .radioBtns .custom-control label {
+  }
+  .card .card-body .remarks button img {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+.card {
+  .card-body {
+    .remarks {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      button {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        height: 40px;
+        background-color: #127f46;
+        color: #ffffff;
+        border: 1px solid #127f46;
+        border-radius: 50px;
+        outline: none;
+        img {
+          width: 20px;
+          margin-right: 10px;
+        }
+
+        &:active {
+          background-color: #127f46;
+          border: 1px solid #127f46;
+        }
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgba(54, 146, 98, 0.5);
+        }
+      }
+    }
+  }
+}
+
+.add_remark{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .modal-content{
+    border-radius: 15px;
+    // width: fit-content;
+    .modalBody{
+      .modal_action{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  
+  }
+ 
+  .close_remark{
+    position: absolute;
+    right: -32px;
+    top: -32px;
+    img{
+      width: 35px;
+    }
+  }
+}

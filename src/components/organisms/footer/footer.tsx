@@ -73,7 +73,7 @@ export default function FooterComponent() {
           <span> {t("Titles.Complete progress")}</span>
           <strong>{progressPersentage} %</strong>
         </div> */}
-        <Col xs={3} className="hideOnTaplet">
+        <Col xs={2} className="hideOnTaplet">
           <Row xs={12} sm={12}>
             <Col className="image1 prog">
               <p>{t("Titles.Complete progress")}</p>
@@ -82,7 +82,10 @@ export default function FooterComponent() {
           </Row>
         </Col>
 
-        <Col xs={3}>
+        <Col xs={10} className="attachments">
+
+          <Row>
+          <Col xs={4}>
           <Row xs={12} sm={4}>
             <Col className="image1">
               <Image src={applicationIc} />
@@ -93,7 +96,7 @@ export default function FooterComponent() {
           </Row>
         </Col>
 
-        <Col xs={3}>
+        <Col xs={4}>
           <Row>
             <Col xs={12} sm={4}>
               <Image
@@ -109,7 +112,7 @@ export default function FooterComponent() {
             </Col>
           </Row>
         </Col>
-        <Col xs={3}>
+        <Col xs={4}>
           <Row>
             <Col xs={12} sm={4}>
               <Image src={isInPreviewPage ? previewIcGreen : previewIc} />
@@ -119,6 +122,11 @@ export default function FooterComponent() {
             </Col>
           </Row>
         </Col>
+          </Row>
+        
+        </Col>
+
+        
       </Row>
     </Navbar>
   );
