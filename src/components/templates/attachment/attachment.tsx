@@ -5,6 +5,8 @@ import { Image, Button, Carousel } from "react-bootstrap";
 import { useDropzone } from "react-dropzone";
 import { useTranslation } from "react-i18next";
 import countBy from "lodash/countBy";
+import chunk from "lodash/chunk";
+
 import DragAreaComponent from "./drag-area/drag-area";
 import UploadOptionsComponent from "./upload-options/upload-options";
 import UploadingProcessing from "./uploading-processing/uploading-processing";
@@ -35,22 +37,32 @@ export default function AttachmentComponent(props: {
     props.requireAttachmentsArray || []
   );
 
+  const mapAttachmentsToGroupsOf3Elements = chunk(
+    props.requireAttachmentsArray,
+    3
+  );
+
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
   };
 
   const prvSteps = () => {
-    setIndex2(0);
+    const prevIndex = index2 === 0 ? 0 : index2 - 1;
+    setIndex2(prevIndex);
   };
 
   const nxtSteps = () => {
-    setIndex2(1);
+    const nextIndex =
+      index2 === Math.round(props.requireAttachmentsArray?.length)
+        ? 3
+        : index2 + 1;
+    setIndex2(nextIndex);
   };
   // file uploader functions
   const [files, setFiles] = useState([]);
 
   /// if the require attachments not more than 3 . then we dont need navigation slider buttons from sides
-  const hideSliderButtons = useState(
+  const [hideSliderButtons, setHideSliderButtons] = useState(
     requireAttachmentsArray.length < 3 ? true : false
   );
   const { getRootProps, getInputProps } = useDropzone({
@@ -127,43 +139,26 @@ export default function AttachmentComponent(props: {
       </div> */}
       <div className="steps">
         <Carousel controls={false} interval={null} activeIndex={index2}>
-          <Carousel.Item>
-            <div className="stepsContainer">
-              <span className="backRow"> </span>
-              {props.requireAttachmentsArray?.map((att, index) => (
-                <Button
-                  className="step doneStep"
-                  onClick={() => handleSelect(index)}
-                >
-                  <Image src={stepCheck} className="check" />
-                  <Image src={stepChecked} className="checked" />
-                  <Image src={semiChecked} className="semiChecked" />
-                  <span>{att.AttachmentType}</span>
-                </Button>
-              ))}
-              {/* <Button className="step doneStep" onClick={() => handleSelect(0)}>
-                <Image src={stepCheck} className="check" />
-                <Image src={stepChecked} className="checked" />
-                <Image src={semiChecked} className="semiChecked" />
-                <span>{t("Titles.Passport")}</span>
-              </Button>
-              <Button
-                className="step currentStep"
-                onClick={() => handleSelect(1)}
-              >
-                <Image src={stepCheck} className="check" />
-                <Image src={stepChecked} className="checked" />
-                <Image src={semiChecked} className="semiChecked" />
-                <span>{t("Forms.Emirates ID")}</span>
-              </Button>
-              <Button className="step" onClick={() => handleSelect(2)}>
-                <Image src={stepCheck} className="check" />
-                <Image src={stepChecked} className="checked" />
-                <Image src={semiChecked} className="semiChecked" />
-                <span>{t("Titles.Family Book")}</span>
-              </Button> */}
-            </div>
-          </Carousel.Item>
+          {mapAttachmentsToGroupsOf3Elements.map((group) => (
+            <Carousel.Item>
+              <div className="stepsContainer">
+                <span className="backRow"> </span>
+                {group.map((att, index) => (
+                  <Button
+                    className="step doneStep"
+                    onClick={() => handleSelect(index)}
+                  >
+                    {/* className="step currentStep" */}
+                    {/* className="step" */}
+                    <Image src={stepCheck} className="check" />
+                    <Image src={stepChecked} className="checked" />
+                    <Image src={semiChecked} className="semiChecked" />
+                    <span>{att.AttachmentType}</span>
+                  </Button>
+                ))}
+              </div>
+            </Carousel.Item>
+          ))}
         </Carousel>
         <Button
           className="leftNavigation"

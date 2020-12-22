@@ -1,5 +1,6 @@
 import AttachmentScreenComponent from "./attachment-screen/attachment-screen";
 import PaymentScreenComponent from "./payment-screen/payment-screen";
+import PharmacedicalEstablishmentAttachmentComponent from "./pharamaceutical-establishment-screen/attachment/pharmacedical-establishment-attachment";
 import PharamaceuticalEstablishmentScreen from "./pharamaceutical-establishment-screen/pharamaceutical-establishment";
 import RelocationLicenseScreen from "./relocation-license-screen/relocation-license-screen";
 import ReviewScreenComponent from "./review-screen/review-screen";
@@ -24,7 +25,7 @@ const NewLicensePharmaceuticalEstablishmentRoutes = [
   {
     path: "/new-license-pharmaceutical-establishment/attachment",
     exact: true,
-    Component: AttachmentScreenComponent,
+    Component: PharmacedicalEstablishmentAttachmentComponent,
   },
   {
     path: "/new-license-pharmaceutical-establishment/success",

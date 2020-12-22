@@ -1,0 +1,18 @@
+.container-fluid {
+  .contentContainer {
+    background: white;
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 10px;
+    width: 50%;
+    .nextBtn {
+      margin-bottom: -60px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .contentContainer {
+    width: 90% !important;
+  }
+}

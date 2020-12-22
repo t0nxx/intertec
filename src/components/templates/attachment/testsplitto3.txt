@@ -1,0 +1,41 @@
+    {mapAttachmentsToGroupsOf3Elements.map((group) => (
+            <Carousel.Item>
+              <div className="stepsContainer">
+                <span className="backRow"> </span>
+                {group.map((att, index) => (
+                  <Button
+                    className="step doneStep"
+                    onClick={() => handleSelect(index)}
+                  >
+                    {/* className="step currentStep" */}
+                    {/* className="step" */}
+                    <Image src={stepCheck} className="check" />
+                    <Image src={stepChecked} className="checked" />
+                    <Image src={semiChecked} className="semiChecked" />
+                    <span>{att.AttachmentType}</span>
+                  </Button>
+                ))}
+              </div>
+            </Carousel.Item>
+          ))}
+
+          
+
+ <Carousel.Item>
+            <div className="stepsContainer">
+              <span className="backRow"> </span>
+              {props.requireAttachmentsArray?.map((att, index) => (
+                <Button
+                  className="step doneStep"
+                  onClick={() => handleSelect(index)}
+                >
+                  {/* className="step currentStep" */}
+                  {/* className="step" */}
+                  <Image src={stepCheck} className="check" />
+                  <Image src={stepChecked} className="checked" />
+                  <Image src={semiChecked} className="semiChecked" />
+                  <span>{att.AttachmentType}</span>
+                </Button>
+              ))}
+            </div>
+          </Carousel.Item>

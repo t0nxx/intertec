@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Accordion, Container, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 import { StateSelectorInterface } from "../../../redux/reducers/helper";
 import "./pharamaceutical-establishment.scss";
@@ -40,6 +41,8 @@ import NextButton from "../../atoms/buttons/next-button/next-button";
 
 const PharamaceuticalEstablishmentScreen = () => {
   const { t } = useTranslation();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const state = useSelector(
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
@@ -50,11 +53,12 @@ const PharamaceuticalEstablishmentScreen = () => {
     dispatch(setInfoDescriptionAction(data.description));
     dispatch(setInfoFeesAction(data.fees));
   });
-  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
+    ///// should validate each step is done . then navigate to attachement
     event.preventDefault();
     console.log("handle submit for phar - est screeeeeeeeeen");
+    history.push("/new-license-pharmaceutical-establishment/attachment");
   };
 
   useEffect(() => {
