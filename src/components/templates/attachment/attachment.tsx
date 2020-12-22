@@ -37,10 +37,15 @@ export default function AttachmentComponent(props: {
     props.requireAttachmentsArray || []
   );
 
-  const mapAttachmentsToGroupsOf3Elements = chunk(
-    props.requireAttachmentsArray,
-    3
+  /// this step because when spliting the big array to sub arrays of groups of 3
+  /// we need when click in any elemnt to set it's acually index in the big array
+  const addIndexToEachElemnt = props.requireAttachmentsArray?.map(
+    (e, index) => {
+      return { i: index, ...e };
+    }
   );
+  /// split the big array to arrays of length 3
+  const mapAttachmentsToGroupsOf3Elements = chunk(addIndexToEachElemnt, 3);
 
   const handleSelect = (selectedIndex: number) => {
     setIndex(selectedIndex);
@@ -52,11 +57,18 @@ export default function AttachmentComponent(props: {
   };
 
   const nxtSteps = () => {
+    console.log("before increase index 2");
+    console.log(index2);
+
     const nextIndex =
-      index2 === Math.round(props.requireAttachmentsArray?.length)
-        ? 3
+      // since steps start with 0 . we minus
+      // we divide to 3 case every slider hold 3 buttons
+      index2 === Math.round(props.requireAttachmentsArray?.length / 3) - 1
+        ? index2
         : index2 + 1;
     setIndex2(nextIndex);
+    console.log("after increase index 2");
+    console.log(nextIndex);
   };
   // file uploader functions
   const [files, setFiles] = useState([]);
@@ -143,10 +155,10 @@ export default function AttachmentComponent(props: {
             <Carousel.Item>
               <div className="stepsContainer">
                 <span className="backRow"> </span>
-                {group.map((att, index) => (
+                {group.map((att) => (
                   <Button
                     className="step doneStep"
-                    onClick={() => handleSelect(index)}
+                    onClick={() => handleSelect(att.i)}
                   >
                     {/* className="step currentStep" */}
                     {/* className="step" */}
