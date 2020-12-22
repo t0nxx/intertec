@@ -27,6 +27,7 @@ import RequestInformation from "../../request-information/request-information";
 import CardWrapper from "../../templates/card-wrapper/card-wrapper";
 import {
   setBreadCrumbTitleAction,
+  setFooterProgressAction,
   setInfoDescriptionAction,
   setInfoFeesAction,
   showFooterAction,
@@ -57,7 +58,7 @@ const PharamaceuticalEstablishmentScreen = () => {
   const handleSubmit = (event) => {
     ///// should validate each step is done . then navigate to attachement
     event.preventDefault();
-    console.log("handle submit for phar - est screeeeeeeeeen");
+    dispatch(setFooterProgressAction(50));
     history.push("/new-license-pharmaceutical-establishment/attachment");
   };
 
@@ -159,10 +160,7 @@ const PharamaceuticalEstablishmentScreen = () => {
             >
               <>
                 <SelfEvaluationComponent pathToGo="/new-license-pharmaceutical-establishment/attachment" />
-                <NextButton
-                  customText={t("Buttons.Go To Attachment")}
-                  onSubmit={handleSubmit}
-                />
+                <NextButton customText={t("Buttons.Go To Attachment")} />
               </>
             </CardWrapper>
           </Accordion>
