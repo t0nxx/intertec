@@ -14,8 +14,10 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
   const location: any = useLocation();
 
   const [nextButtonText, setNextButtonText] = useState("Go To Preview");
-  const [nextButtonToGoRoute, setNextButtonToGoRoute] = useState("/new-license-pharmaceutical-establishment/review");
-  const openWithSliderCarosel = location.state?.withslidercarosel || false;
+  const [nextButtonToGoRoute, setNextButtonToGoRoute] = useState(
+    "/new-license-pharmaceutical-establishment/review"
+  );
+  // const openWithSliderCarosel = location.state?.withslidercarosel || false;
 
   const decidedToGoHandler = () => {
     history.push(nextButtonToGoRoute);
@@ -23,17 +25,21 @@ const AttachmentScreenComponent = ({ whereToGo }) => {
 
   useEffect(() => {
     /// to handel multiple carosels or not it the attachement component
-    if (location.state?.wherToGo === "/new-license-pharmaceutical-establishment/payment") {
+    if (
+      location.state?.wherToGo ===
+      "/new-license-pharmaceutical-establishment/payment"
+    ) {
       setNextButtonText("Go To Payment");
       setNextButtonToGoRoute(location.state.wherToGo);
     }
-  }, [location.state?.wherToGo, location.state?.withslidercarosel]);
+    // location.state?.wherToGo, location.state?.withslidercarosel
+  }, []);
 
   return (
     <Container fluid>
       <Row>
         <div className="contentContainer">
-          <AttachmentComponent withslidercarosel={openWithSliderCarosel} />
+          <AttachmentComponent />
           <Row className="justify-content-center" onClick={decidedToGoHandler}>
             <NextButton customText={t(`Buttons.${nextButtonText}`)} />
           </Row>

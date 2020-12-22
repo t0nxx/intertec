@@ -106,8 +106,8 @@
     "Submit Success": "Your application has been submitted successfully.",
     "Attachments": "Attachments",
     "Home": "Home",
-    "Remarks" : "Remarks",
-    "Write Remark" : "Write Remark"
+    "Remarks": "Remarks",
+    "Write Remark": "Write Remark"
   },
   "Forms": {
     "Establishment Name": "Establishment Name",
@@ -205,7 +205,7 @@
     "See All": "See All",
     "Attachments": "Attachments",
     "UploadFile": "Upload File",
-    "Save" : "Save"
+    "Save": "Save"
   },
   "Error": {
     "Requird": "This is required",
@@ -218,7 +218,9 @@
     "PhoneNumberMustBeLike": "Phone must be like +971-000000000",
     "AlternativeContactNumberBeSamePrimary": "Alternative number and primary cant be same",
     "MustBeOnlyArabicCharachters": "Must be only arabic charachters",
-    "MustBeValidGooglMapUrl": "Must be a valid google maps url"
+    "MustBeValidGooglMapUrl": "Must be a valid google maps url",
+    "MaximumNumberOfFiles": "Maximum number of files for this document is {{number}}",
+    "MinimumNumberOfFiles": "Minimum number of files for this document is {{number}}"
   },
   "Texts": {
     "if you still have any inquiries": " if you still have any inquiries, you can call us on Hotline XXXX or using suggestion and improvement center",

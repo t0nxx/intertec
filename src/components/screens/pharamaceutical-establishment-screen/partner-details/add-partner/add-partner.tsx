@@ -46,6 +46,9 @@ const AddPartnerComponent = (props: {
   const lookups = useSelector(
     (s: StateSelectorInterface) => s.lookupsReducer.data
   );
+  const requireAttachments = useSelector(
+    (s: StateSelectorInterface) => s.attachmentsReducer.data.Partner
+  );
   const { register, handleSubmit, reset, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -304,7 +307,7 @@ const AddPartnerComponent = (props: {
             <Form.Row className="splitTitle">
               <h5>{t("Buttons.Attachments")}</h5>
             </Form.Row>
-            <AttachmentComponent withslidercarosel={false} />
+            <AttachmentComponent requireAttachmentsArray={requireAttachments} />
             <div className="model-fixed-footer">
               <SaveAndCancel
                 customText={

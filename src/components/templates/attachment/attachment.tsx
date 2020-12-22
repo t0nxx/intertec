@@ -4,9 +4,11 @@ import "./attachment.scss";
 import { Image, Button, Carousel } from "react-bootstrap";
 import { useDropzone } from "react-dropzone";
 import { useTranslation } from "react-i18next";
+import countBy from "lodash/countBy";
 import DragAreaComponent from "./drag-area/drag-area";
 import UploadOptionsComponent from "./upload-options/upload-options";
 import UploadingProcessing from "./uploading-processing/uploading-processing";
+import { errorToast, successToast } from "../../../utils";
 
 // Import images
 import file from "../../../assets/file.svg";
@@ -18,15 +20,19 @@ import rightArrowBtn from "../../../assets/rightArrowBtn.svg";
 import semiChecked from "../../../assets/semiChecked.svg";
 import warning from "../../../assets/warning.svg";
 
-export default function AttachmentComponent({ withslidercarosel }) {
+import { IRequireAttachmentsArray } from "../../constants/common-interfaces";
+
+export default function AttachmentComponent(props: {
+  requireAttachmentsArray?: IRequireAttachmentsArray[];
+}) {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
 
   const [showWarning, setShowWarning] = useState(false);
 
-  const [withSliderCarosel, setWithSliderCarosel] = useState(
-    withslidercarosel || false
+  const [requireAttachmentsArray, setRequireAttachmentsArray] = useState(
+    props.requireAttachmentsArray || []
   );
 
   const handleSelect = (selectedIndex: number) => {
@@ -42,15 +48,39 @@ export default function AttachmentComponent({ withslidercarosel }) {
   };
   // file uploader functions
   const [files, setFiles] = useState([]);
+
+  /// if the require attachments not more than 3 . then we dont need navigation slider buttons from sides
+  const hideSliderButtons = useState(
+    requireAttachmentsArray.length < 3 ? true : false
+  );
   const { getRootProps, getInputProps } = useDropzone({
-    maxFiles: 3,
+    maxFiles: 1,
     accept: ["image/*", ".doc", ".docx", ".pdf"],
     onDrop: (acceptedFiles) => {
       const newfiles = acceptedFiles.map((file) =>
         Object.assign(file, {
           preview: URL.createObjectURL(file),
+          /// push curent file to coresponding array category
+          AttachmentType: props.requireAttachmentsArray[index].AttachmentType,
         })
       );
+      /// check if this category allowd to upload more or not
+
+      if (
+        props.requireAttachmentsArray[index]?.AttachmentCountType === "Single"
+      ) {
+        const categoryCount = countBy(
+          files,
+          (file) =>
+            file.AttachmentType ===
+            props.requireAttachmentsArray[index].AttachmentType
+        ).true;
+        // then its already upload one file to this category
+        if (categoryCount === 1) {
+          errorToast(t("Error.MaximumNumberOfFiles", { number: 1 }));
+          return;
+        }
+      }
       setFiles([...files, ...newfiles]);
       console.log(files);
     },
@@ -59,22 +89,22 @@ export default function AttachmentComponent({ withslidercarosel }) {
   const handelRemoveFile = (fileName) => {
     setFiles(files.filter((e) => e.name !== fileName));
   };
-  useEffect(
-    () => () => {
-      // Make sure to revoke the data uris to avoid memory leaks
-      files.forEach((file) => URL.revokeObjectURL(file.preview));
-    },
-    [files]
-  );
+  useEffect(() => {
+    // Make sure to revoke the data uris to avoid memory leaks
+    files.forEach((file) => URL.revokeObjectURL(file.preview));
+  }, [files]);
   /// end file uploaders functions
   return (
     <div className="content">
       <div className="state">
         <p>
-          {t("Titles.completed")} <span>1 {t("Titles.of")} 3</span>
+          {t("Titles.completed")}
+          <span>
+            1 {t("Titles.of")} {props.requireAttachmentsArray?.length}
+          </span>
         </p>
       </div>
-      <div className="steps" hidden={withSliderCarosel}>
+      {/* <div className="steps" hidden={props.withSliderCarosel}>
         <span className="backRow"> </span>
         <Button className="step doneStep" onClick={() => handleSelect(0)}>
           <Image src={stepCheck} className="check" />
@@ -94,13 +124,24 @@ export default function AttachmentComponent({ withslidercarosel }) {
           <Image src={semiChecked} className="semiChecked" />
           <span> {t("Titles.Family Book")}</span>
         </Button>
-      </div>
-      <div className="steps" hidden={!withSliderCarosel}>
+      </div> */}
+      <div className="steps">
         <Carousel controls={false} interval={null} activeIndex={index2}>
           <Carousel.Item>
             <div className="stepsContainer">
               <span className="backRow"> </span>
-              <Button className="step doneStep" onClick={() => handleSelect(0)}>
+              {props.requireAttachmentsArray?.map((att, index) => (
+                <Button
+                  className="step doneStep"
+                  onClick={() => handleSelect(index)}
+                >
+                  <Image src={stepCheck} className="check" />
+                  <Image src={stepChecked} className="checked" />
+                  <Image src={semiChecked} className="semiChecked" />
+                  <span>{att.AttachmentType}</span>
+                </Button>
+              ))}
+              {/* <Button className="step doneStep" onClick={() => handleSelect(0)}>
                 <Image src={stepCheck} className="check" />
                 <Image src={stepChecked} className="checked" />
                 <Image src={semiChecked} className="semiChecked" />
@@ -120,161 +161,64 @@ export default function AttachmentComponent({ withslidercarosel }) {
                 <Image src={stepChecked} className="checked" />
                 <Image src={semiChecked} className="semiChecked" />
                 <span>{t("Titles.Family Book")}</span>
-              </Button>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div className="stepsContainer">
-              <span className="backRow"> </span>
-              <Button className="step doneStep" onClick={() => handleSelect(0)}>
-                <Image src={stepCheck} className="check" />
-                <Image src={stepChecked} className="checked" />
-                <span>1</span>
-              </Button>
-              <Button className="step" onClick={() => handleSelect(1)}>
-                <Image src={stepCheck} className="check" />
-                <Image src={stepChecked} className="checked" />
-                <span>{t("Forms.Emirates ID")}</span>
-              </Button>
-              <Button className="step" onClick={() => handleSelect(2)}>
-                <Image src={stepCheck} className="check" />
-                <Image src={stepChecked} className="checked" />
-                <span>{t("Titles.Family Book")}</span>
-              </Button>
+              </Button> */}
             </div>
           </Carousel.Item>
         </Carousel>
-        <Button className="leftNavigation" onClick={() => prvSteps()}>
+        <Button
+          className="leftNavigation"
+          onClick={() => prvSteps()}
+          hidden={hideSliderButtons}
+        >
           <Image src={leftArrowBtn} />
         </Button>
-        <Button className="rightNavigation" onClick={() => nxtSteps()}>
+        <Button
+          className="rightNavigation"
+          onClick={() => nxtSteps()}
+          hidden={hideSliderButtons}
+        >
           <Image src={rightArrowBtn} />
         </Button>
       </div>
       {/* Start slider */}
       <Carousel controls={false} activeIndex={index}>
-        <Carousel.Item>
-          <div {...getRootProps({ className: "dropzone" })}>
-            <input {...getInputProps()} />
-            <DragAreaComponent />
-          </div>
-          <UploadOptionsComponent />
-          {/* <UploadingProcessing /> */}
-          {/* Start Files List */}
-          <div className="files">
-            {files.map((file, index) => (
-              <div className="file" key={file.name}>
-                <div className="leftData">
-                  <Image src={file.preview} />
-                  <div className="fileData">
-                    <p> Passport {index + 1}</p>
-                    <span>{file.size}</span>
-                  </div>
-                </div>
-                <div className="rightData">
-                  <Image
-                    src={del}
-                    onClick={() => handelRemoveFile(file.name)}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* End Files List */}
-        </Carousel.Item>
-        <Carousel.Item>
-          <DragAreaComponent />
-          <UploadOptionsComponent />
-          <UploadingProcessing />
-          {/* Start Files List */}
-          <div className="files">
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
+        {props.requireAttachmentsArray?.map((att, index) => (
+          <Carousel.Item>
+            <div {...getRootProps({ className: "dropzone" })}>
+              <input {...getInputProps()} />
+              <DragAreaComponent />
             </div>
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
+            <UploadOptionsComponent />
+
+            <div className="files">
+              {files.map(
+                (file, index) =>
+                  /// show only files related to this category
+                  file.AttachmentType === att.AttachmentType && (
+                    <div className="file" key={file.name}>
+                      <div className="leftData">
+                        <Image src={file.preview} />
+                        <div className="fileData">
+                          <p>
+                            {" "}
+                            {att.AttachmentType} {index + 1}
+                          </p>
+                          <span>{file.size}</span>
+                        </div>
+                      </div>
+                      <div className="rightData">
+                        <Image
+                          src={del}
+                          onClick={() => handelRemoveFile(file.name)}
+                        />
+                      </div>
+                    </div>
+                  )
+              )}
             </div>
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
-            </div>
-          </div>
-          {/* End Files List */}
-        </Carousel.Item>
-        <Carousel.Item>
-          {/* <div {...getRootProps({ className: "dropzone" })}>
-            <input {...getInputProps()} />
-            <DragAreaComponent />
-          </div> */}
-          <UploadOptionsComponent />
-          <UploadingProcessing />
-          {/* Start Files List */}
-          <div className="files">
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
-            </div>
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
-            </div>
-            <div className="file">
-              <div className="leftData">
-                <Image src={file} />
-                <div className="fileData">
-                  <p>Passport</p>
-                  <span>65 Kb</span>
-                </div>
-              </div>
-              <div className="rightData">
-                <Image src={del} />
-              </div>
-            </div>
-          </div>
-          {/* End Files List */}
-        </Carousel.Item>
+            {/* End Files List */}
+          </Carousel.Item>
+        ))}
       </Carousel>
       {/* Eng slider  */}
       <div className="warning" hidden={!showWarning}>

@@ -102,10 +102,10 @@
     "Attachments": "المرفقات",
     "Home": "الرئيسية",
     "Services Description": "وصف الخدمات",
-    "Service fees" : "رسوم الخدمة",
-    "show More" : "أظهر المزيد",
-    "Remarks" : "ملاحظات",
-    "Write Remark" : "كتابه ملاحظه"
+    "Service fees": "رسوم الخدمة",
+    "show More": "أظهر المزيد",
+    "Remarks": "ملاحظات",
+    "Write Remark": "كتابه ملاحظه"
   },
   "Forms": {
     "Preview Submit Message": "اسم المنشأة الجديد لا يتطابق مع قواعد ولوائح وزارة الصحة والسكان يرجى تحديث الاسم قبل تقديم الطلب.",
@@ -203,7 +203,7 @@
     "Close": "قريب",
     "See All": "اظهار الكل",
     "UploadFile": "رفع ملف",
-    "Save" : "احفظ"
+    "Save": "احفظ"
   },
   "Error": {
     "Requird": "هذا الحقل مطلوب",
@@ -216,7 +216,9 @@
     "PhoneNumberMustBeLike": "+971-000000000 الهاتف يجب ان يكون على الشكل",
     "AlternativeContactNumberBeSamePrimary": "الهاتف البديل لايمكن ان يكون كاالهاتف الاساسي",
     "MustBeOnlyArabicCharachters": "يجب ان يكون حروفا عربية فقط",
-    "MustBeValidGooglMapUrl": "يجب ان يكون عنوان خرائط جوجل صحيح"
+    "MustBeValidGooglMapUrl": "يجب ان يكون عنوان خرائط جوجل صحيح",
+    "MaximumNumberOfFiles": "{{number}} اقصي عدد من الملفات لهذا المستند هو ",
+    "MinimumNumberOfFiles": "{{number}} اقل عدد من الملفات لهذا المستند هو "
   },
   "Texts": {
     "if you still have any inquiries": " إذا كان لا يزال لديك أي استفسارات ، يمكنك الاتصال بنا على الخط الساخن XXXX أو باستخدام مركز الاقتراحات والتحسين",

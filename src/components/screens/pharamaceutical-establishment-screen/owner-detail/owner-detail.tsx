@@ -46,6 +46,9 @@ const OwnerDetailComponent = (props: IProps) => {
   const lookups = useSelector(
     (s: StateSelectorInterface) => s.lookupsReducer.data
   );
+  const requireAttachments = useSelector(
+    (s: StateSelectorInterface) => s.attachmentsReducer.data.Owner
+  );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
@@ -58,12 +61,6 @@ const OwnerDetailComponent = (props: IProps) => {
   };
   const onCancelHandler = () => changeParentToggleEvent();
 
-  useEffect(() => {
-    // bind inputs values with it's state
-    // this will be very helpfull when we want reuse the component with its values
-    reset(data);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [reset]);
   const dispatch = useDispatch();
   const onSubmit = (values: FormInputsInterface) => {
     if (formState.isValid) {
@@ -74,6 +71,10 @@ const OwnerDetailComponent = (props: IProps) => {
       changeParentToggleEvent();
     }
   };
+  useEffect(() => {
+    reset(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reset]);
   return (
     /**
      * this should be abstacted  . later i will bake a style for card only usin styled component
@@ -315,7 +316,7 @@ const OwnerDetailComponent = (props: IProps) => {
             <Form.Row className="splitTitle">
               <h5>{t("Buttons.Attachments")}</h5>
             </Form.Row>
-            <AttachmentComponent withslidercarosel={false} />
+            <AttachmentComponent requireAttachmentsArray={requireAttachments} />
             {props.isForReviewPage ? (
               <SaveAndCancel onCancel={onCancelHandler} />
             ) : (

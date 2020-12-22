@@ -10,7 +10,7 @@ import {
   ToggleButton,
   Image,
   Modal,
-  Container
+  Container,
 } from "react-bootstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
@@ -87,9 +87,6 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
         </div>
 
         <div className="modalBody">
-
-
-
           <Modal.Body>
             <Container>
               <Form>
@@ -99,15 +96,24 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
                 </Form.Group>
               </Form>
               <Row className="modal_action">
-                <Button variant="light" size="lg" className="cancel-edit-btn" onClick={handleClose}>
+                <Button
+                  variant="light"
+                  size="lg"
+                  className="cancel-edit-btn"
+                  onClick={handleClose}
+                >
                   <strong>{t("Buttons.Cancel")}</strong>
                 </Button>
-                <Button variant="success" size="lg" className="save-edit-btn"  onClick={handleClose}>
+                <Button
+                  variant="success"
+                  size="lg"
+                  className="save-edit-btn"
+                  onClick={handleClose}
+                >
                   <strong> {t("Buttons.Save")}</strong>
                 </Button>
               </Row>
             </Container>
-
           </Modal.Body>
         </div>
       </Modal>
@@ -153,10 +159,13 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
               />
             </Col>
             <Col className="remarks">
-              <Button onClick={handleShow}><Image src={pinwite} /> {t("Titles.Remarks")} </Button>
+              <Button onClick={handleShow}>
+                <Image src={pinwite} /> {t("Titles.Remarks")}{" "}
+              </Button>
             </Col>
           </Row>
-          <NextButton customText={t("Buttons.Go To Attachment")} />
+          {/* next step should be handeld from parent screent itself not self evaluation */}
+          {/* <NextButton customText={t("Buttons.Go To Attachment")} /> */}
         </Form>
       </Card.Body>
     </Card>

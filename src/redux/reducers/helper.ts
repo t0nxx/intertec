@@ -38,6 +38,7 @@ export interface StateSelectorInterface {
 
   // common lookups like emirates , countries , ...etc it will be in common folder
   lookupsReducer: any;
+  attachmentsReducer: any;
 
   // config like lang , direction ... etc
   configReducer: any;

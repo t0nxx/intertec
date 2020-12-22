@@ -15,6 +15,8 @@ import PageHeaderComponent from "./components/organisms/page-header/page-header"
 import FooterComponent from "./components/organisms/footer/footer";
 import Routes from "./router";
 import { RoutesWithoutFooter } from "./ignored-from-header-footer-routes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 library.add(fab, faCheckSquare, faCoffee, faVolumeUp);
 
@@ -32,6 +34,7 @@ function App({ location }) {
       {/* modified to be handled with redux state */}
       {/* {!RoutesWithoutFooter.includes(location.pathname) && <FooterComponent />} */}
       <FooterComponent />
+      <ToastContainer />
       <Routes />
     </div>
   );

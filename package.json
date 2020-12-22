@@ -25,6 +25,7 @@
     "i18next": "^19.8.4",
     "i18next-browser-languagedetector": "^6.0.1",
     "i18next-http-backend": "^1.0.21",
+    "lodash": "^4.17.20",
     "node-sass": "4.14.1",
     "office-ui-fabric-react": "^7.154.0",
     "prop-types": "^15.7.2",
@@ -80,6 +81,7 @@
   },
   "devDependencies": {
     "@types/i18next-xhr-backend": "^1.4.2",
+    "@types/lodash": "^4.14.165",
     "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
