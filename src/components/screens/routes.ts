@@ -1,10 +1,10 @@
 import AttachmentScreenComponent from "./attachment-screen/attachment-screen";
-import PaymentScreenComponent from "./payment-screen/payment-screen";
+import PaymentScreenComponent from "./pharamaceutical-establishment-screen/payment-screen/payment-screen";
 import PharmacedicalEstablishmentAttachmentComponent from "./pharamaceutical-establishment-screen/attachment/pharmacedical-establishment-attachment";
 import PharamaceuticalEstablishmentScreen from "./pharamaceutical-establishment-screen/pharamaceutical-establishment";
-import RelocationLicenseScreen from "./relocation-license-screen/relocation-license-screen";
-import ReviewScreenComponent from "./review-screen/review-screen";
+import ReviewScreenComponent from "./pharamaceutical-establishment-screen/review-screen/review-screen";
 import SuccessScreenComponent from "./success-screen/success-screen";
+import RelocationLicenseScreen from "./relocation-license-screen/relocation-license-screen";
 
 const NewLicensePharmaceuticalEstablishmentRoutes = [
   {
@@ -13,9 +13,9 @@ const NewLicensePharmaceuticalEstablishmentRoutes = [
     Component: PharamaceuticalEstablishmentScreen,
   },
   {
-    path: "/new-license-pharmaceutical-establishment/payment",
+    path: "/new-license-pharmaceutical-establishment/attachment",
     exact: true,
-    Component: PaymentScreenComponent,
+    Component: PharmacedicalEstablishmentAttachmentComponent,
   },
   {
     path: "/new-license-pharmaceutical-establishment/review",
@@ -23,9 +23,9 @@ const NewLicensePharmaceuticalEstablishmentRoutes = [
     Component: ReviewScreenComponent,
   },
   {
-    path: "/new-license-pharmaceutical-establishment/attachment",
+    path: "/new-license-pharmaceutical-establishment/payment",
     exact: true,
-    Component: PharmacedicalEstablishmentAttachmentComponent,
+    Component: PaymentScreenComponent,
   },
   {
     path: "/new-license-pharmaceutical-establishment/success",

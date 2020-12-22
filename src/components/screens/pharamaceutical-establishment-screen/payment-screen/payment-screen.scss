@@ -1,0 +1,117 @@
+html[lang="ar"] {
+  .paymentScreenContent .paymentComponent .row.head .col.left-align,
+  .paymentScreenContent .paymentComponent .row.child .col.left-align {
+    text-align: right;
+  }
+  .paymentScreenContent .paymentComponent .row.head .col.right-align,
+  .paymentScreenContent .paymentComponent .row.child .col.right-align {
+    text-align: left;
+  }
+
+  .paymentScreenContent .paymentComponent .row.accept .custom-control {
+    padding-left: 0;
+    padding-right: 1.5rem;
+  }
+  .paymentScreenContent .paymentComponent .row.accept label::before,
+  .paymentScreenContent .paymentComponent .row.accept label::after {
+    right: -1.5rem;
+    left: auto;
+  }
+  .paymentScreenContent .paymentComponent .row.accept label {
+    padding-left: 0;
+    padding-right: 10px;
+  }
+}
+
+.topScreen {
+  margin-top: 30px;
+}
+.paymentScreenContent {
+  width: 60%;
+  margin: 0 auto;
+  .paymentComponent {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 8px;
+    background-color: var(--white);
+    border: 1pt solid var(--gray20);
+    padding: 25px 40px;
+    .row.head,
+    .row.child {
+      margin-bottom: 5px;
+      border-radius: 3px;
+      padding: 20px 10px;
+      .col {
+        text-transform: capitalize;
+        &.left-align {
+          text-align: left;
+        }
+        &.right-align {
+          text-align: right;
+        }
+      }
+    }
+    .row.head {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .row.child {
+      font-size: 18px;
+      background-color: var(--gray24);
+    }
+    .row.accept {
+      font-size: 18px;
+      color: var(--gray13);
+      label {
+        text-decoration: underline;
+        padding-left: 10px;
+        &::before,
+        &::after {
+          border: 1pt solid var(--success);
+          width: 22px;
+          height: 22px;
+          border-radius: 4px;
+        }
+      }
+    }
+    .row.selectPayment {
+      margin: 15px 0 0 0;
+      p {
+        margin: 0 0 10px 0;
+        text-align: left;
+      }
+      .methods {
+        .ed {
+          text-align: right;
+        }
+        .visa {
+          text-align: left;
+        }
+        img {
+          width: 100%;
+          cursor: pointer;
+          border-radius: 5px;
+          &.selected {
+            border: 1pt solid var(--success);
+          }
+        }
+      }
+    }
+
+    .row.proceed {
+      width: 100%;
+      margin-top: 20px;
+      text-align: center;
+      button {
+        border-radius: 50px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .paymentScreenContent {
+    width: 90% !important;
+  }
+}
