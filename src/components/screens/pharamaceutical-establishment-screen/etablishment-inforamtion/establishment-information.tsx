@@ -29,9 +29,9 @@ const EstablishmentInformationComponent = (props: IProps) => {
       s.pharmaceuticalEstablishment.establishmentInformationsReducer
   );
 
-  const lookups = useSelector((s: StateSelectorInterface) => s.lookupsReducer);
-  const EstablishmentType = lookups.data.EstablishmentType || [];
-  console.log(lookups);
+  const lookups = useSelector(
+    (s: StateSelectorInterface) => s.lookupsReducer.data
+  );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
@@ -62,9 +62,6 @@ const EstablishmentInformationComponent = (props: IProps) => {
   };
 
   return (
-    /**
-     * this should be abstacted  . later i will bake a style for card only usin styled component
-     */
     <Card className="estaplishmentInformation">
       <Card.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
@@ -100,11 +97,12 @@ const EstablishmentInformationComponent = (props: IProps) => {
               formState={formState}
               errors={errors.establishmentType}
             >
-              {EstablishmentType.map((type) => {
-                <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                  {type.NameEn}
-                </option>;
-              })}
+              {lookups.EstablishmentType &&
+                lookups.EstablishmentType.map((type) => (
+                  <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                    {type.NameEn}
+                  </option>
+                ))}
             </FormInputComponent>
 
             <FormInputComponent
@@ -117,9 +115,12 @@ const EstablishmentInformationComponent = (props: IProps) => {
               formState={formState}
               errors={errors.Category}
             >
-              <option>Category 1 </option>
-              <option>Category 2 </option>
-              <option>Category 3 </option>
+              {lookups.PharmaceuticalEstablishmentCategory &&
+                lookups.PharmaceuticalEstablishmentCategory.map((type) => (
+                  <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                    {type.NameEn}
+                  </option>
+                ))}
             </FormInputComponent>
           </Form.Row>
           {props.isForReviewPage ? (

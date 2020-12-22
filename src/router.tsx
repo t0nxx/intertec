@@ -29,7 +29,7 @@ function Routes() {
         ...changeNameOfPharmaceuticalEstablishmentRoutes,
         ...NewLicensePharmaceuticalEstablishmentRoutes,
       ].map((routeDetails, index) => {
-        console.log("routeDetails >>", routeDetails);
+        // console.log("routeDetails >>", routeDetails);
         const { path, exact, Component } = routeDetails;
         return (
           <Route path={path} key={index} exact={exact} component={Component} />

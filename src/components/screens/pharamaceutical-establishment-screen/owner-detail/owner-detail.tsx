@@ -43,6 +43,9 @@ const OwnerDetailComponent = (props: IProps) => {
     (s: StateSelectorInterface) =>
       s.pharmaceuticalEstablishment.ownerDetailsReducer
   );
+  const lookups = useSelector(
+    (s: StateSelectorInterface) => s.lookupsReducer.data
+  );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
@@ -110,7 +113,12 @@ const OwnerDetailComponent = (props: IProps) => {
                   formState={formState}
                   errors={errors.tite}
                 >
-                  <option> title</option>
+                  {lookups.OwnerTitle &&
+                    lookups.OwnerTitle.map((type) => (
+                      <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                        {type.NameEn}
+                      </option>
+                    ))}
                 </FormInputComponent>
               </Col>
               <Col md={4}>
@@ -239,21 +247,23 @@ const OwnerDetailComponent = (props: IProps) => {
                 formState={formState}
                 errors={errors.nationality}
               >
-                <option> nationality</option>
+                {lookups.Nationality &&
+                  lookups.Nationality.map((type) => (
+                    <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                      {type.NameEn}
+                    </option>
+                  ))}
               </FormInputComponent>
 
               <FormInputComponent
                 label="Passport No"
-                type="select"
-                as="select"
+                type="text"
                 name="passportNo"
                 isRequird={true}
                 register={register}
                 formState={formState}
                 errors={errors.passportNo}
-              >
-                <option> passportNo</option>
-              </FormInputComponent>
+              />
             </Form.Row>
             <Form.Row>
               <FormInputComponent

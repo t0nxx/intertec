@@ -32,10 +32,12 @@ import {
 } from "../../../../redux/actions/pharmaceuticalEstablishmentActions";
 
 const LocationInformationComponent = (props: IProps) => {
-  const { t }: { t: any } = useTranslation();
   const { data } = useSelector(
     (s: StateSelectorInterface) =>
       s.pharmaceuticalEstablishment.locationInformationsReducer
+  );
+  const lookups = useSelector(
+    (s: StateSelectorInterface) => s.lookupsReducer.data
   );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
@@ -50,8 +52,6 @@ const LocationInformationComponent = (props: IProps) => {
   const onCancelHandler = () => changeParentToggleEvent();
 
   useEffect(() => {
-    // bind inputs values with it's state
-    // this will be very helpfull when we want reuse the component with its values
     reset(data);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reset]);
@@ -83,7 +83,12 @@ const LocationInformationComponent = (props: IProps) => {
               formState={formState}
               errors={errors.emirate}
             >
-              <option> emirate</option>
+            {lookups.Emirates &&
+                lookups.Emirates.map((type) => (
+                  <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                    {type.NameEn}
+                  </option>
+                ))}
             </FormInputComponent>
 
             <FormInputComponent

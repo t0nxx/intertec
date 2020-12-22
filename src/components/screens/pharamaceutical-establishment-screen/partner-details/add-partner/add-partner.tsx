@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Image,
   Card,
@@ -23,7 +23,10 @@ import upload from "../../../../../assets/upload.svg";
 import email from "../../../../../assets/mail.svg";
 import phone from "../../../../../assets/phone.svg";
 import arrow from "../../../../../assets/arrow-white.svg";
-import { ActionTypes } from "../../../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../../../redux/reducers/helper";
 import SaveAndCancel from "../../../../atoms/buttons/save-and-cancel/save-and-cancel";
 import AttachmentComponent from "../../../../templates/attachment/attachment";
 import { FormInputComponent } from "../../../../molecules/forms/formInput";
@@ -40,6 +43,9 @@ const AddPartnerComponent = (props: {
 }) => {
   const { t }: { t: any } = useTranslation();
   const history = useHistory();
+  const lookups = useSelector(
+    (s: StateSelectorInterface) => s.lookupsReducer.data
+  );
   const { register, handleSubmit, reset, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -96,7 +102,12 @@ const AddPartnerComponent = (props: {
                   formState={formState}
                   errors={errors.tite}
                 >
-                  <option> title</option>
+                  {lookups.OwnerTitle &&
+                    lookups.OwnerTitle.map((type) => (
+                      <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                        {type.NameEn}
+                      </option>
+                    ))}
                 </FormInputComponent>
               </Col>
               <Col md={4}>
@@ -225,21 +236,23 @@ const AddPartnerComponent = (props: {
                 formState={formState}
                 errors={errors.nationality}
               >
-                <option> nationality</option>
+                {lookups.Nationality &&
+                  lookups.Nationality.map((type) => (
+                    <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                      {type.NameEn}
+                    </option>
+                  ))}
               </FormInputComponent>
 
               <FormInputComponent
                 label="Passport No"
-                type="select"
-                as="select"
+                type="text"
                 name="passportNo"
                 isRequird={true}
                 register={register}
                 formState={formState}
                 errors={errors.passportNo}
-              >
-                <option> passportNo</option>
-              </FormInputComponent>
+              />
             </Form.Row>
             <Form.Row>
               <FormInputComponent
