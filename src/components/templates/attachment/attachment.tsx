@@ -23,6 +23,7 @@ import semiChecked from "../../../assets/semiChecked.svg";
 import warning from "../../../assets/warning.svg";
 
 import { IRequireAttachmentsArray } from "../../constants/common-interfaces";
+import { convertToBase64 } from "../../../utils/convertToBase64";
 
 export default function AttachmentComponent(props: {
   requireAttachmentsArray?: IRequireAttachmentsArray[];
@@ -30,6 +31,8 @@ export default function AttachmentComponent(props: {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
   const [index2, setIndex2] = useState(0);
+
+  const [completedSteps, setCompletedSteps] = useState([]);
 
   const [showWarning, setShowWarning] = useState(false);
 
@@ -41,7 +44,7 @@ export default function AttachmentComponent(props: {
   /// we need when click in any elemnt to set it's acually index in the big array
   const addIndexToEachElemnt = props.requireAttachmentsArray?.map(
     (e, index) => {
-      return { i: index, ...e };
+      return { i: index, isComplete: false, ...e };
     }
   );
   /// split the big array to arrays of length 3
@@ -67,12 +70,24 @@ export default function AttachmentComponent(props: {
         ? index2
         : index2 + 1;
     setIndex2(nextIndex);
-    console.log("after increase index 2");
-    console.log(nextIndex);
   };
   // file uploader functions
   const [files, setFiles] = useState([]);
 
+  const getCategoryCountOfType = (type) => {
+    console.log("from tyyyyyyyyyyyyyyyypes count");
+    console.log(type);
+    const count = countBy(files, (file) => file.AttachmentType === type).true;
+    console.log(count);
+
+    return count;
+  };
+
+  const getMaximuxNumberOffilesForeCategory = (type) => {
+    let maximum = 50;
+    type === "Single" ? (maximum = 1) : (maximum = 50);
+    return maximum;
+  };
   /// if the require attachments not more than 3 . then we dont need navigation slider buttons from sides
   const [hideSliderButtons, setHideSliderButtons] = useState(
     requireAttachmentsArray.length < 3 ? true : false
@@ -81,29 +96,57 @@ export default function AttachmentComponent(props: {
     maxFiles: 1,
     accept: ["image/*", ".doc", ".docx", ".pdf"],
     onDrop: (acceptedFiles) => {
-      const newfiles = acceptedFiles.map((file) =>
-        Object.assign(file, {
+      const newfiles = acceptedFiles.map(async (file) => {
+        const base64String = await convertToBase64(file);
+        return Object.assign(file, {
           preview: URL.createObjectURL(file),
           /// push curent file to coresponding array category
+          /// this data should be added to each file to send it to backend
           AttachmentType: props.requireAttachmentsArray[index].AttachmentType,
-        })
-      );
+          BinaryStringBase64: base64String,
+          Description: props.requireAttachmentsArray[index].AttachmentType,
+          txt1: props.requireAttachmentsArray[index].AttachmentCategory,
+          txt2: props.requireAttachmentsArray[index].AttachmentCategoriesID,
+          txt3: props.requireAttachmentsArray[index].AttachmentType,
+          txt4: props.requireAttachmentsArray[index].AttachmentTypeID,
+          txt5: "",
+          txt6: file.type,
+          txt7: file.size,
+          txt8: "",
+          txt9: "",
+        });
+      });
       /// check if this category allowd to upload more or not
+      const categoryCount = getCategoryCountOfType(
+        props.requireAttachmentsArray[index]?.AttachmentType
+      );
 
+      console.log("firrrrrrrrrrst category count");
+      console.log(categoryCount);
+      // then its already upload one file to this category
       if (
-        props.requireAttachmentsArray[index]?.AttachmentCountType === "Single"
+        getMaximuxNumberOffilesForeCategory(
+          props.requireAttachmentsArray[index]?.AttachmentCountType
+        ) <= categoryCount
       ) {
-        const categoryCount = countBy(
-          files,
-          (file) =>
-            file.AttachmentType ===
-            props.requireAttachmentsArray[index].AttachmentType
-        ).true;
-        // then its already upload one file to this category
-        if (categoryCount === 1) {
-          errorToast(t("Error.MaximumNumberOfFiles", { number: 1 }));
-          return;
-        }
+        errorToast(t("Error.MaximumNumberOfFiles", { number: 1 }));
+        return;
+      } else if (
+        /// this condation for enforece single upload
+        getMaximuxNumberOffilesForeCategory(
+          props.requireAttachmentsArray[index]?.AttachmentCountType
+        ) === 1 &&
+        /// here mean thier is no items with this category which will always undefiend
+        !categoryCount
+      ) {
+        completedSteps.push(index);
+      } else if (
+        getMaximuxNumberOffilesForeCategory(
+          props.requireAttachmentsArray[index]?.AttachmentCountType
+        ) > categoryCount &&
+        categoryCount > 0
+      ) {
+        completedSteps.push(index);
       }
       setFiles([...files, ...newfiles]);
       console.log(files);
@@ -116,7 +159,7 @@ export default function AttachmentComponent(props: {
   useEffect(() => {
     // Make sure to revoke the data uris to avoid memory leaks
     files.forEach((file) => URL.revokeObjectURL(file.preview));
-  }, [files]);
+  }, [files, completedSteps]);
   /// end file uploaders functions
   return (
     <div className="content">
@@ -157,9 +200,16 @@ export default function AttachmentComponent(props: {
                 <span className="backRow"> </span>
                 {group.map((att) => (
                   <Button
-                    className="step doneStep"
+                    className={
+                      att.i === index
+                        ? "step currentStep"
+                        : completedSteps.includes(att.i)
+                        ? "step doneStep"
+                        : "step"
+                    }
                     onClick={() => handleSelect(att.i)}
                   >
+                    {/* "step doneStep" */}
                     {/* className="step currentStep" */}
                     {/* className="step" */}
                     <Image src={stepCheck} className="check" />

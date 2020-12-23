@@ -22,7 +22,7 @@ const attachmentsReducer = (
     case AttachmentsActionTypes.FETCH_ATTACHMENTS_SUCCESS:
       /// add files array in each object , this would be helpfull to put each file in category when uploading
       const attachWithEmptyFilesArray = payload.Data.Table.map((e) => {
-        return { ...e, files: [] };
+        return { ...e, isComplete: false, files: [] };
       });
       /// shape required attachment to key : {object} , it would be easy then to pass that object to attachement component
       const formatedAttachShape = groupBy(

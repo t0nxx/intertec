@@ -51,7 +51,7 @@ const PharamaceuticalEstablishmentScreen = () => {
     (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
   );
 
-  const [isFormNotComplete, setIsFormNotComplete] = useState(true);
+  const [isFormNotComplete, setIsFormNotComplete] = useState(false);
 
   GetInfoOfCurrentService(
     ServicesCode.NewLicensePharmaceuticalEstablishment

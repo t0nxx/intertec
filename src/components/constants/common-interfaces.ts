@@ -8,4 +8,5 @@ export interface IRequireAttachmentsArray {
   FileType: string;
   AttachmentFileSize: number;
   files: any[];
+  isComplete: false;
 }
