@@ -33,6 +33,10 @@ const EstablishmentInformationComponent = (props: IProps) => {
     (s: StateSelectorInterface) => s.lookupsReducer.data
   );
 
+  const langState = useSelector(
+    (s: StateSelectorInterface) => s.configReducer.locale
+  );
+
   const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -100,7 +104,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
               {lookups.EstablishmentType &&
                 lookups.EstablishmentType.map((type) => (
                   <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                    {type.NameEn}
+                    {langState === "ar" ? type.NameAr : type.NameEn}
                   </option>
                 ))}
             </FormInputComponent>
@@ -118,7 +122,7 @@ const EstablishmentInformationComponent = (props: IProps) => {
               {lookups.PharmaceuticalEstablishmentCategory &&
                 lookups.PharmaceuticalEstablishmentCategory.map((type) => (
                   <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                    {type.NameEn}
+                    {langState === "ar" ? type.NameAr : type.NameEn}
                   </option>
                 ))}
             </FormInputComponent>

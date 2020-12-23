@@ -39,6 +39,10 @@ const LocationInformationComponent = (props: IProps) => {
   const lookups = useSelector(
     (s: StateSelectorInterface) => s.lookupsReducer.data
   );
+  
+  const langState = useSelector(
+    (s: StateSelectorInterface) => s.configReducer.locale
+  );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
@@ -86,7 +90,7 @@ const LocationInformationComponent = (props: IProps) => {
             {lookups.Emirates &&
                 lookups.Emirates.map((type) => (
                   <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                    {type.NameEn}
+                    {langState === "ar" ? type.NameAr : type.NameEn}
                   </option>
                 ))}
             </FormInputComponent>

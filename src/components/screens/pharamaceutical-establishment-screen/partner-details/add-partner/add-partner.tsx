@@ -49,6 +49,10 @@ const AddPartnerComponent = (props: {
   const requireAttachments = useSelector(
     (s: StateSelectorInterface) => s.attachmentsReducer.data.Partner
   );
+  const langState = useSelector(
+    (s: StateSelectorInterface) => s.configReducer.locale
+  );
+
   const { register, handleSubmit, reset, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
     mode: "all",
@@ -108,7 +112,7 @@ const AddPartnerComponent = (props: {
                   {lookups.OwnerTitle &&
                     lookups.OwnerTitle.map((type) => (
                       <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                        {type.NameEn}
+                        {langState === "ar" ? type.NameAr : type.NameEn}
                       </option>
                     ))}
                 </FormInputComponent>
@@ -242,7 +246,7 @@ const AddPartnerComponent = (props: {
                 {lookups.Nationality &&
                   lookups.Nationality.map((type) => (
                     <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                      {type.NameEn}
+                      {langState === "ar" ? type.NameAr : type.NameEn}
                     </option>
                   ))}
               </FormInputComponent>

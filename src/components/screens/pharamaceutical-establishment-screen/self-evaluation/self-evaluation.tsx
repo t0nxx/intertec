@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Card,
   Col,
@@ -25,12 +25,24 @@ import "./self-evaluation.scss";
 import "../shared/shared.scss";
 
 // Import images
-import { ActionTypes } from "../../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../../redux/reducers/helper";
 import NextButton from "../../../atoms/buttons/next-button/next-button";
 import { TrippleRadioButtonsComponent } from "../../../molecules/forms/trippleRadioButtonInput";
+import { setSelfEvaluationAction } from "../../../../redux/actions/pharmaceuticalEstablishmentActions";
 
-const SelfEvaluationComponent = ({ pathToGo }) => {
+const SelfEvaluationComponent = () => {
   const [checked, setChecked] = useState(false);
+  const [tableValues, setTableValues] = useState([]);
+
+  const langState = useSelector(
+    (s: StateSelectorInterface) => s.configReducer.locale
+  );
+  const selfEvaluationArray = useSelector(
+    (s: StateSelectorInterface) => s.selfEvaluationReducer.data
+  );
 
   const { register, handleSubmit, errors, formState } = useForm({
     resolver: yupResolver(formSchema),
@@ -45,31 +57,20 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const onSubmit = () => {
+  const onSubmit = (values) => {
     if (formState.isValid) {
-      // should make sure here all steps are done
-      history.push({
-        pathname: pathToGo,
-        state: {
-          withslidercarosel: true,
-        },
-      });
-      // dispatch({
-      //   type: ActionTypes.PharmaceuticalEstablishmentActionTypes.SET_SELF_EVALUATION,
-      //   payload: data,
-      // });
-      // move to next step
-      // dispatch({
-      //   type:
-      //     ActionTypes.PharmaceuticalEstablishmentActionTypes.NEXT_STEP_NUMBER,
-      // });
+      console.log(values);
     }
   };
 
   function onSuccess(files) {
     console.log(files);
   }
-
+  useEffect(() => {
+    if (checked) {
+      dispatch(setSelfEvaluationAction(tableValues));
+    }
+  }, [checked]);
   return (
     /**
      * this should be abstacted  . later i will bake a style for card only usin styled component
@@ -126,25 +127,34 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
                 <th>{t("Forms.Yes")}</th>
                 <th>{t("Forms.No")}</th>
                 <th>{t("Forms.N/A")}</th>
+                <th>{t("Titles.Remarks")}</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                  quod exercitationem reiciendis fugiat et esse enim, qui
-                  laborum dignissimos, saepe voluptas error alias, possimus
-                  harum aut repellat. In, fugit delectus!
-                </td>
+              {selfEvaluationArray &&
+                selfEvaluationArray.map((question) => (
+                  <tr key={question.Id}>
+                    <td>
+                      {langState == "ar"
+                        ? question.SelfEvaluationNoteAr
+                        : question.SelfEvaluationNoteEn}
+                    </td>
 
-                <TrippleRadioButtonsComponent
-                  name="q1"
-                  value1="Yes"
-                  value2="No"
-                  value3="Na"
-                  register={register}
-                />
-              </tr>
+                    <TrippleRadioButtonsComponent
+                      name={question.Id}
+                      id={question.Id}
+                      value1="Yes"
+                      value2="No"
+                      value3="Na"
+                      register={register}
+                    />
+                    <td className="remarks">
+                      <Button onClick={handleShow}>
+                        <Image src={pinwite} /> {t("Titles.Remarks")}
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </Table>
           <Row>
@@ -158,11 +168,11 @@ const SelfEvaluationComponent = ({ pathToGo }) => {
                 onChange={(e) => setChecked(e.currentTarget.checked)}
               />
             </Col>
-            <Col className="remarks">
+            {/* <Col className="remarks">
               <Button onClick={handleShow}>
                 <Image src={pinwite} /> {t("Titles.Remarks")}{" "}
               </Button>
-            </Col>
+            </Col> */}
           </Row>
           {/* next step should be handeld from parent screent itself not self evaluation */}
           {/* <NextButton customText={t("Buttons.Go To Attachment")} /> */}

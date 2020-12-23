@@ -5,6 +5,7 @@ import "./radioButtonInput.scss";
 
 export const TrippleRadioButtonsComponent = (props: {
   name: string;
+  id: string;
   value1: string;
   value2: string;
   value3: string;
@@ -19,8 +20,7 @@ export const TrippleRadioButtonsComponent = (props: {
             type="radio"
             name={props.name}
             value={props.value1}
-            id={props.name + props.value1}
-            ref={props.register}
+            id={props.id + props.value1}
             custom
             defaultChecked
           />
@@ -32,8 +32,7 @@ export const TrippleRadioButtonsComponent = (props: {
             type="radio"
             name={props.name}
             value={props.value2}
-            id={props.name + props.value2}
-            ref={props.register}
+            id={props.id + props.value2}
             custom
           />
         </div>
@@ -44,8 +43,7 @@ export const TrippleRadioButtonsComponent = (props: {
             type="radio"
             name={props.name}
             value={props.value3}
-            id={props.name + props.value3}
-            ref={props.register}
+            id={props.id + props.value3}
             custom
           />
         </div>

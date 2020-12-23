@@ -1,8 +1,18 @@
 import React from "react";
-import { Accordion, Card, Container, Row, Image, Button } from "react-bootstrap";
+import {
+  Accordion,
+  Card,
+  Container,
+  Row,
+  Image,
+  Button,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { ActionTypes, StateSelectorInterface } from "../../../redux/reducers/helper";
+import {
+  ActionTypes,
+  StateSelectorInterface,
+} from "../../../redux/reducers/helper";
 import "./add-area-extention.scss";
 import "../pharamaceutical-establishment-screen/shared/shared.scss";
 
@@ -20,7 +30,9 @@ import RequestInformation from "../../request-information/request-information";
 
 const AddAreaExtention = () => {
   const { t }: { t: any } = useTranslation();
-  const state = useSelector((s: StateSelectorInterface) => s.pharmaceuticalEstablishment);
+  const state = useSelector(
+    (s: StateSelectorInterface) => s.pharmaceuticalEstablishment
+  );
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const dispatch = useDispatch();
   const setCurrentStep = (step: string) => {
@@ -41,14 +53,19 @@ const AddAreaExtention = () => {
           <Card className="headCard">
             <Accordion.Toggle
               as={Card.Header}
-              className={state.establishmentInformationsReducer.isComplete ? "done" : ""}
+              className={
+                state.establishmentInformationsReducer.isComplete ? "done" : ""
+              }
               eventKey="0"
               onClick={() => setCurrentStep("0")}
             >
               <Row>
                 <Image src={expand} className="ml-3 mr-4 greenIc" />
                 <Image src={expand} className="ml-3 mr-4 whiteIc" />
-                <h3 className="text-success"> {t("Titles.Reason For Area Extension")}</h3>
+                <h3 className="text-success">
+                  {" "}
+                  {t("Titles.Reason For Area Extension")}
+                </h3>
                 <Image src={checked} className="checked" />
                 <Button className="start" hidden={state.stepNumberReducer > 0}>
                   {t("Buttons.Start")}
@@ -63,7 +80,9 @@ const AddAreaExtention = () => {
           <Card className="headCard">
             <Accordion.Toggle
               as={Card.Header}
-              className={state.contactInformationsReducer.isComplete ? "done" : ""}
+              className={
+                state.contactInformationsReducer.isComplete ? "done" : ""
+              }
               eventKey="1"
               onClick={() => setCurrentStep("1")}
             >
@@ -75,7 +94,7 @@ const AddAreaExtention = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
-              <SelfEvaluationComponent pathToGo="/new-license-pharmaceutical-establishment/attachment"/>
+              <SelfEvaluationComponent />
             </Accordion.Collapse>
           </Card>
         </Accordion>

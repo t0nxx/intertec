@@ -5,7 +5,7 @@ import lookupsReducer from "./lookups/lookupsReducer";
 import footerReducer from "../reducers/layout/footerReducer";
 import breadCrumbReducer from "./layout/breadcrumbReducer";
 import attachmentsReducer from "./attachments/attachmentsReducer";
-
+import selfEvaluationReducer from "./self-evaluation/selfEvaluationReducer"
 /// here we will reuse config reducer from amnex
 import configReducer from "./configReducer";
 
@@ -14,6 +14,7 @@ const rootReducer = combineReducers({
   relocationPharmaceutical,
   lookupsReducer,
   attachmentsReducer,
+  selfEvaluationReducer,
   footerReducer,
   breadCrumbReducer,
   //////// from amnex code

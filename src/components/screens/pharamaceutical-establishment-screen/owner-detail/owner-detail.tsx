@@ -49,6 +49,9 @@ const OwnerDetailComponent = (props: IProps) => {
   const requireAttachments = useSelector(
     (s: StateSelectorInterface) => s.attachmentsReducer.data.Owner
   );
+  const langState = useSelector(
+    (s: StateSelectorInterface) => s.configReducer.locale
+  );
 
   const { register, handleSubmit, errors, formState, reset } = useForm({
     resolver: yupResolver(formSchema),
@@ -117,7 +120,7 @@ const OwnerDetailComponent = (props: IProps) => {
                   {lookups.OwnerTitle &&
                     lookups.OwnerTitle.map((type) => (
                       <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                        {type.NameEn}
+                        {langState === "ar" ? type.NameAr : type.NameEn}
                       </option>
                     ))}
                 </FormInputComponent>
@@ -251,7 +254,7 @@ const OwnerDetailComponent = (props: IProps) => {
                 {lookups.Nationality &&
                   lookups.Nationality.map((type) => (
                     <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
-                      {type.NameEn}
+                      {langState === "ar" ? type.NameAr : type.NameEn}
                     </option>
                   ))}
               </FormInputComponent>

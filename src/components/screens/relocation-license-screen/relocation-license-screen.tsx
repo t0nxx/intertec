@@ -114,7 +114,7 @@ const RelocationLicenseScreen = () => {
               </Row>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="1">
-              <SelfEvaluationComponent pathToGo="/relocation-license-pharmaceutical/attachment" />
+              <SelfEvaluationComponent />
             </Accordion.Collapse>
           </Card>
         </Accordion>

@@ -24,7 +24,7 @@ const PharmacedicalEstablishmentAttachmentComponent = () => {
     ///// should validate each step is done . then navigate to attachement
     event.preventDefault();
     dispatch(setFooterProgressAction(90));
-    history.push("/new-license-pharmaceutical-establishment/preview");
+    history.push("/new-license-pharmaceutical-establishment/review");
   };
 
   return (
