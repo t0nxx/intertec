@@ -127,6 +127,25 @@ const EstablishmentInformationComponent = (props: IProps) => {
                 ))}
             </FormInputComponent>
           </Form.Row>
+          <Form.Row>
+            <FormInputComponent
+              label="Classifications"
+              type="select"
+              as="select"
+              name="Classifications"
+              isRequird={true}
+              register={register}
+              formState={formState}
+              errors={errors.Classifications}
+            >
+              {lookups.PharmaceuticalEstablishmentClassification &&
+                lookups.PharmaceuticalEstablishmentClassification.map((type) => (
+                  <option key={type.OwnFamilyID} value={type.OwnFamilyID}>
+                    {langState === "ar" ? type.NameAr : type.NameEn}
+                  </option>
+                ))}
+            </FormInputComponent>
+          </Form.Row>
           {props.isForReviewPage ? (
             <SaveAndCancel onCancel={onCancelHandler} />
           ) : (
