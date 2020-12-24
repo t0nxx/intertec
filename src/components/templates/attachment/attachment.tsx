@@ -1,11 +1,12 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
 import "./attachment.scss";
-import { Image, Button, Carousel } from "react-bootstrap";
+import { Image, Button, Carousel, Form, Row } from "react-bootstrap";
 import { useDropzone } from "react-dropzone";
 import { useTranslation } from "react-i18next";
 import countBy from "lodash/countBy";
 import chunk from "lodash/chunk";
+import flatten from "lodash/flatten";
 
 import DragAreaComponent from "./drag-area/drag-area";
 import UploadOptionsComponent from "./upload-options/upload-options";
@@ -24,9 +25,11 @@ import warning from "../../../assets/warning.svg";
 
 import { IRequireAttachmentsArray } from "../../constants/common-interfaces";
 import { convertToBase64 } from "../../../utils/convertToBase64";
+import NextButton from "../../atoms/buttons/next-button/next-button";
 
 export default function AttachmentComponent(props: {
   requireAttachmentsArray?: IRequireAttachmentsArray[];
+  children?: any;
 }) {
   const { t } = useTranslation();
   const [index, setIndex] = useState(0);
@@ -93,7 +96,7 @@ export default function AttachmentComponent(props: {
     requireAttachmentsArray.length < 3 ? true : false
   );
   const { getRootProps, getInputProps } = useDropzone({
-    maxFiles: 1,
+    maxFiles: 3,
     accept: ["image/*", ".doc", ".docx", ".pdf"],
     onDrop: (acceptedFiles) => {
       const newfiles = [];
@@ -160,141 +163,141 @@ export default function AttachmentComponent(props: {
   const handelRemoveFile = (fileName) => {
     setFiles(files.filter((e) => e.name !== fileName));
   };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log("submision rom forrrrrrrrrrrm");
+
+    let flatedArrOfAttach = flatten(mapAttachmentsToGroupsOf3Elements);
+    const isComplete = flatedArrOfAttach.every((file) =>
+      completedSteps.includes(file.i)
+    );
+    isComplete
+      ? successToast("All Filles done")
+      : errorToast("please fill all files");
+  };
   useEffect(() => {
     // Make sure to revoke the data uris to avoid memory leaks
     files.forEach((file) => URL.revokeObjectURL(file.preview));
+    console.log(files);
   }, [files, completedSteps]);
   /// end file uploaders functions
   return (
-    <div className="content">
-      <div className="state">
-        <p>
-          {t("Titles.completed")}
-          <span>
-            1 {t("Titles.of")} {props.requireAttachmentsArray?.length}
-          </span>
-        </p>
-      </div>
-      {/* <div className="steps" hidden={props.withSliderCarosel}>
-        <span className="backRow"> </span>
-        <Button className="step doneStep" onClick={() => handleSelect(0)}>
-          <Image src={stepCheck} className="check" />
-          <Image src={stepChecked} className="checked" />
-          <Image src={semiChecked} className="semiChecked" />
-          <span> {t("Titles.Passport")}</span>
-        </Button>
-        <Button className="step currentStep" onClick={() => handleSelect(1)}>
-          <Image src={stepCheck} className="check" />
-          <Image src={stepChecked} className="checked" />
-          <Image src={semiChecked} className="semiChecked" />
-          <span> {t("Forms.Emirates ID")}</span>
-        </Button>
-        <Button className="step" onClick={() => handleSelect(2)}>
-          <Image src={stepCheck} className="check" />
-          <Image src={stepChecked} className="checked" />
-          <Image src={semiChecked} className="semiChecked" />
-          <span> {t("Titles.Family Book")}</span>
-        </Button>
-      </div> */}
-      <div className="steps">
-        <Carousel controls={false} interval={null} activeIndex={index2}>
-          {mapAttachmentsToGroupsOf3Elements.map((group) => (
+    <Form onSubmit={onSubmitHandler}>
+      <div className="content">
+        <div className="state">
+          <p>
+            {t("Titles.completed")}
+            <span>
+              1 {t("Titles.of")} {props.requireAttachmentsArray?.length}
+            </span>
+          </p>
+        </div>
+
+        <div className="steps">
+          <Carousel controls={false} interval={null} activeIndex={index2}>
+            {mapAttachmentsToGroupsOf3Elements.map((group) => (
+              <Carousel.Item>
+                <div className="stepsContainer">
+                  <span className="backRow"> </span>
+                  {group.map((att) => (
+                    <Button
+                      className={
+                        att.i === index
+                          ? "step currentStep"
+                          : completedSteps.includes(att.i)
+                          ? "step doneStep"
+                          : "step"
+                      }
+                      onClick={() => handleSelect(att.i)}
+                    >
+                      {/* "step doneStep" */}
+                      {/* className="step currentStep" */}
+                      {/* className="step" */}
+                      <Image src={stepCheck} className="check" />
+                      <Image src={stepChecked} className="checked" />
+                      <Image src={semiChecked} className="semiChecked" />
+                      <span>{att.AttachmentType}</span>
+                    </Button>
+                  ))}
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+          <Button
+            className="leftNavigation"
+            onClick={() => prvSteps()}
+            hidden={hideSliderButtons}
+          >
+            <Image src={leftArrowBtn} />
+          </Button>
+          <Button
+            className="rightNavigation"
+            onClick={() => nxtSteps()}
+            hidden={hideSliderButtons}
+          >
+            <Image src={rightArrowBtn} />
+          </Button>
+        </div>
+        {/* Start slider */}
+        <Carousel controls={false} activeIndex={index}>
+          {props.requireAttachmentsArray?.map((att, index) => (
             <Carousel.Item>
-              <div className="stepsContainer">
-                <span className="backRow"> </span>
-                {group.map((att) => (
-                  <Button
-                    className={
-                      att.i === index
-                        ? "step currentStep"
-                        : completedSteps.includes(att.i)
-                        ? "step doneStep"
-                        : "step"
-                    }
-                    onClick={() => handleSelect(att.i)}
-                  >
-                    {/* "step doneStep" */}
-                    {/* className="step currentStep" */}
-                    {/* className="step" */}
-                    <Image src={stepCheck} className="check" />
-                    <Image src={stepChecked} className="checked" />
-                    <Image src={semiChecked} className="semiChecked" />
-                    <span>{att.AttachmentType}</span>
-                  </Button>
-                ))}
+              <div {...getRootProps({ className: "dropzone" })}>
+                <input {...getInputProps()} />
+                <DragAreaComponent />
               </div>
+              <UploadOptionsComponent />
+
+              <div className="files">
+                {files.map(
+                  (file, index) =>
+                    /// show only files related to this category
+                    file.AttachmentType === att.AttachmentType && (
+                      <div className="file" key={file.name}>
+                        <div className="leftData">
+                          <Image src={file.preview} />
+                          <div className="fileData">
+                            <p>
+                              {" "}
+                              {att.AttachmentType} {index + 1}
+                            </p>
+                            <span>{file.size}</span>
+                          </div>
+                        </div>
+                        <div className="rightData">
+                          <Image
+                            src={del}
+                            onClick={() => handelRemoveFile(file.name)}
+                          />
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
+              {/* End Files List */}
             </Carousel.Item>
           ))}
         </Carousel>
-        <Button
-          className="leftNavigation"
-          onClick={() => prvSteps()}
-          hidden={hideSliderButtons}
-        >
-          <Image src={leftArrowBtn} />
-        </Button>
-        <Button
-          className="rightNavigation"
-          onClick={() => nxtSteps()}
-          hidden={hideSliderButtons}
-        >
-          <Image src={rightArrowBtn} />
-        </Button>
+        {/* Eng slider  */}
+        <div className="warning" hidden={!showWarning}>
+          <Image src={warning} />
+          <p>
+            {t(
+              "Texts.Your staff criteria needs to be fulfilled to continue submitting the application"
+            )}
+            <br />
+            {t(
+              "Texts.Kindly refer to email sent for staff criteria or view the online service card"
+            )}
+          </p>
+          <Button>{t("Buttons.Close")}</Button>
+        </div>
       </div>
-      {/* Start slider */}
-      <Carousel controls={false} activeIndex={index}>
-        {props.requireAttachmentsArray?.map((att, index) => (
-          <Carousel.Item>
-            <div {...getRootProps({ className: "dropzone" })}>
-              <input {...getInputProps()} />
-              <DragAreaComponent />
-            </div>
-            <UploadOptionsComponent />
-
-            <div className="files">
-              {files.map(
-                (file, index) =>
-                  /// show only files related to this category
-                  file.AttachmentType === att.AttachmentType && (
-                    <div className="file" key={file.name}>
-                      <div className="leftData">
-                        <Image src={file.preview} />
-                        <div className="fileData">
-                          <p>
-                            {" "}
-                            {att.AttachmentType} {index + 1}
-                          </p>
-                          <span>{file.size}</span>
-                        </div>
-                      </div>
-                      <div className="rightData">
-                        <Image
-                          src={del}
-                          onClick={() => handelRemoveFile(file.name)}
-                        />
-                      </div>
-                    </div>
-                  )
-              )}
-            </div>
-            {/* End Files List */}
-          </Carousel.Item>
-        ))}
-      </Carousel>
-      {/* Eng slider  */}
-      <div className="warning" hidden={!showWarning}>
-        <Image src={warning} />
-        <p>
-          {t(
-            "Texts.Your staff criteria needs to be fulfilled to continue submitting the application"
-          )}
-          <br />
-          {t(
-            "Texts.Kindly refer to email sent for staff criteria or view the online service card"
-          )}
-        </p>
-        <Button>{t("Buttons.Close")}</Button>
-      </div>
-    </div>
+      {/* test just for internal submit , it should be deleted */}
+      {/* <Row className="justify-content-center">
+        <NextButton customText={t(`Buttons.Go To Preview`)} />
+      </Row> */}
+    </Form>
   );
 }
