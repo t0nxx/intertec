@@ -95,6 +95,8 @@ const PharamaceuticalEstablishmentScreen = () => {
 
     dispatch(showFooterAction());
     dispatch(showInfoAction());
+    // set persent if the user click back button for ex   
+    dispatch(setFooterProgressAction(8));
     checkIfFormCompleted();
   }, [checkIfFormCompleted]);
   return (

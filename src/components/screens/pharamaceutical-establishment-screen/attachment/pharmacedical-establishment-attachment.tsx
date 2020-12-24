@@ -26,6 +26,10 @@ const PharmacedicalEstablishmentAttachmentComponent = () => {
     dispatch(setFooterProgressAction(90));
     history.push("/new-license-pharmaceutical-establishment/review");
   };
+  useEffect(() => {
+    // set persent if the user click back button for ex
+    dispatch(setFooterProgressAction(50));
+  }, []);
 
   return (
     <Container fluid>

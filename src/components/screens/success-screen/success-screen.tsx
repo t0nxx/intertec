@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Container, Image, Row, Col, Button, Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import "./success-screen.scss";
@@ -14,6 +14,8 @@ import flag from "../../../assets/flag.svg";
 import smCloseButton from "../../../assets/smallCloseButton.svg";
 import bigHappyRate from "../../../assets/bigHappyRate.svg";
 import { hideFooterAction } from "../../../redux/actions/layout/layout";
+import { LoadHappyMeterComponent } from "../../molecules/happy-meter/happy-meter";
+import { StateSelectorInterface } from "../../../redux/reducers/helper";
 
 export default function SuccessScreenComponent() {
   const [show, setShow] = useState(true);
@@ -23,10 +25,13 @@ export default function SuccessScreenComponent() {
   const dispatch = useDispatch();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const langState = useSelector(
+    (s: StateSelectorInterface) => s.configReducer.locale
+  );
   const [successText, setSuccessText] = useState(
     "Your application has been submitted successfully"
   );
+  LoadHappyMeterComponent(langState);
 
   useEffect(() => {
     // hide footer from this page
@@ -35,30 +40,31 @@ export default function SuccessScreenComponent() {
     if (location.state?.successVariable === "payment") {
       setSuccessText("Payment successfully");
     }
-  }, [location.state?.successVariable]);
+  }, [location.state?.successVariable, langState]);
 
   const goToWorkSapce = () => {
     history.push("/");
   };
   return (
     <Container fluid>
-      <Modal
+      {/* <Modal
         show={show}
         onHide={handleClose}
         backdrop="true"
         keyboard={false}
         className="happyRate"
-      >
-        {/* <div className="smClose">
+      > */}
+      {/* <div className="smClose">
           <Image src={smCloseButton} onClick={handleClose} />
         </div> */}
 
-        <div className="modalBody">
+      {/* <div className="modalBody">
           <Modal.Body>
             <Image src={bigHappyRate} />
           </Modal.Body>
         </div>
-      </Modal>
+      </Modal> */}
+      {/* <HappyMeterComponent/> */}
 
       <Row>
         <Col className="succScreenContent">
@@ -89,7 +95,11 @@ export default function SuccessScreenComponent() {
             </Row>
           </Col>
           <Col className="rightContent" md="6" sm="12">
-            <Image src={happyRate} onClick={handleShow} />
+            <Image
+              src={happyRate}
+              onClick={handleShow}
+              id="happiness-meter-widget-button"
+            />
           </Col>
         </Row>
       </Container>
