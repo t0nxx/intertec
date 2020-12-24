@@ -96,60 +96,64 @@ export default function AttachmentComponent(props: {
     maxFiles: 1,
     accept: ["image/*", ".doc", ".docx", ".pdf"],
     onDrop: (acceptedFiles) => {
-      const newfiles = acceptedFiles.map(async (file) => {
-        const base64String = await convertToBase64(file);
-        return Object.assign(file, {
-          preview: URL.createObjectURL(file),
-          /// push curent file to coresponding array category
-          /// this data should be added to each file to send it to backend
-          AttachmentType: props.requireAttachmentsArray[index].AttachmentType,
-          BinaryStringBase64: base64String,
-          Description: props.requireAttachmentsArray[index].AttachmentType,
-          txt1: props.requireAttachmentsArray[index].AttachmentCategory,
-          txt2: props.requireAttachmentsArray[index].AttachmentCategoriesID,
-          txt3: props.requireAttachmentsArray[index].AttachmentType,
-          txt4: props.requireAttachmentsArray[index].AttachmentTypeID,
-          txt5: "",
-          txt6: file.type,
-          txt7: file.size,
-          txt8: "",
-          txt9: "",
-        });
-      });
-      /// check if this category allowd to upload more or not
-      const categoryCount = getCategoryCountOfType(
-        props.requireAttachmentsArray[index]?.AttachmentType
-      );
+      const newfiles = [];
+      let file = acceptedFiles[0];
+      convertToBase64(file)
+        .then((base64String) => {
+          Object.assign(file, {
+            preview: URL.createObjectURL(file),
+            /// push curent file to coresponding array category
+            /// this data should be added to each file to send it to backend
+            AttachmentType: props.requireAttachmentsArray[index].AttachmentType,
+            BinaryStringBase64: base64String,
+            Description: props.requireAttachmentsArray[index].AttachmentType,
+            txt1: props.requireAttachmentsArray[index].AttachmentCategory,
+            txt2: props.requireAttachmentsArray[index].AttachmentCategoriesID,
+            txt3: props.requireAttachmentsArray[index].AttachmentType,
+            txt4: props.requireAttachmentsArray[index].AttachmentTypeID,
+            txt5: "",
+            txt6: file.type,
+            txt7: file.size,
+            txt8: "",
+            txt9: "",
+          });
+          newfiles.push(file);
+        })
+        .then(() => {
+          /// check if this category allowd to upload more or not
+          const categoryCount = getCategoryCountOfType(
+            props.requireAttachmentsArray[index]?.AttachmentType
+          );
 
-      console.log("firrrrrrrrrrst category count");
-      console.log(categoryCount);
-      // then its already upload one file to this category
-      if (
-        getMaximuxNumberOffilesForeCategory(
-          props.requireAttachmentsArray[index]?.AttachmentCountType
-        ) <= categoryCount
-      ) {
-        errorToast(t("Error.MaximumNumberOfFiles", { number: 1 }));
-        return;
-      } else if (
-        /// this condation for enforece single upload
-        getMaximuxNumberOffilesForeCategory(
-          props.requireAttachmentsArray[index]?.AttachmentCountType
-        ) === 1 &&
-        /// here mean thier is no items with this category which will always undefiend
-        !categoryCount
-      ) {
-        completedSteps.push(index);
-      } else if (
-        getMaximuxNumberOffilesForeCategory(
-          props.requireAttachmentsArray[index]?.AttachmentCountType
-        ) > categoryCount &&
-        categoryCount > 0
-      ) {
-        completedSteps.push(index);
-      }
-      setFiles([...files, ...newfiles]);
-      console.log(files);
+          console.log("firrrrrrrrrrst category count");
+          console.log(categoryCount);
+          // then its already upload one file to this category
+          if (
+            getMaximuxNumberOffilesForeCategory(
+              props.requireAttachmentsArray[index]?.AttachmentCountType
+            ) <= categoryCount
+          ) {
+            errorToast(t("Error.MaximumNumberOfFiles", { number: 1 }));
+            return;
+          } else if (
+            /// this condation for enforece single upload
+            getMaximuxNumberOffilesForeCategory(
+              props.requireAttachmentsArray[index]?.AttachmentCountType
+            ) === 1 &&
+            /// here mean thier is no items with this category which will always undefiend
+            !categoryCount
+          ) {
+            completedSteps.push(index);
+          } else if (
+            getMaximuxNumberOffilesForeCategory(
+              props.requireAttachmentsArray[index]?.AttachmentCountType
+            ) > categoryCount &&
+            categoryCount > 0
+          ) {
+            completedSteps.push(index);
+          }
+          setFiles([...files, ...newfiles]);
+        });
     },
   });
 
