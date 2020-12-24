@@ -5,7 +5,7 @@ import { ValidationMsgEnum } from "../../../../constants/errors/validation-msg";
  * Form interface for type def
  */
 export interface FormInputsInterface {
-  getInfoFromProfile: string;
+  image: string;
   tite: string;
   gender: string;
   fName: string;
@@ -25,7 +25,7 @@ export interface FormInputsInterface {
 }
 
 export const partnerDetailInitialState: FormInputsInterface = {
-  getInfoFromProfile: "",
+  image: "",
   tite: "",
   gender: "",
   fName: "",
@@ -47,22 +47,53 @@ export const partnerDetailInitialState: FormInputsInterface = {
  * Validation Schema with  err msg en or ar..
  */
 export const formSchema = yup.object().shape({
-  // i'm not setting validation for getInfoFromProfile cause it by default selected one from the 2 radio buttons
-  getInfoFromProfile: yup.string().optional(),
+  image: yup.string().optional(),
   tite: yup.string().required(ValidationMsgEnum.Required),
   gender: yup.string().required(ValidationMsgEnum.Required),
-  fName: yup.string().required(ValidationMsgEnum.Required),
-  mName: yup.string().required(ValidationMsgEnum.Required),
-  lName: yup.string().required(ValidationMsgEnum.Required),
-  fNameAr: yup.string().required(ValidationMsgEnum.Required),
-  mNameAr: yup.string().required(ValidationMsgEnum.Required),
-  lNameAr: yup.string().required(ValidationMsgEnum.Required),
+  fName: yup
+    .string()
+    .matches(/^[a-zA-Z ]+$/, ValidationMsgEnum.MustBeOnlyCharachters)
+    .required(ValidationMsgEnum.Required),
+  mName: yup
+    .string()
+    .matches(/^[a-zA-Z ]+$/, ValidationMsgEnum.MustBeOnlyCharachters)
+    .required(ValidationMsgEnum.Required),
+  lName: yup
+    .string()
+    .matches(/^[a-zA-Z ]+$/, ValidationMsgEnum.MustBeOnlyCharachters)
+    .required(ValidationMsgEnum.Required),
+  fNameAr: yup
+    .string()
+    .matches(/^[ء-ي ]+$/, ValidationMsgEnum.MustBeOnlyArabicCharachters)
+    .required(ValidationMsgEnum.Required),
+  mNameAr: yup
+    .string()
+    .matches(/^[ء-ي ]+$/, ValidationMsgEnum.MustBeOnlyArabicCharachters)
+    .required(ValidationMsgEnum.Required),
+  lNameAr: yup
+    .string()
+    .matches(/^[ء-ي ]+$/, ValidationMsgEnum.MustBeOnlyArabicCharachters)
+    .required(ValidationMsgEnum.Required),
   sharePercentage: yup.string().required(ValidationMsgEnum.Required),
   uaeCitzen: yup.string().required(ValidationMsgEnum.Required),
   nationality: yup.string().required(ValidationMsgEnum.Required),
   passportNo: yup.string().required(ValidationMsgEnum.Required),
-  emiratesId: yup.string().required(ValidationMsgEnum.Required),
-  familyBookNo: yup.string().required(ValidationMsgEnum.Required),
-  contactNo: yup.string().required(ValidationMsgEnum.Required),
-  primaryEmail: yup.string().email(ValidationMsgEnum.MustBeValidEmail).required(ValidationMsgEnum.Required),
+  emiratesId: yup
+    .string()
+    .matches(
+      /[0-9]{3}-[0-9]{4}-[0-9]{7}-[0-9]{1}/,
+      ValidationMsgEnum.EmirateIdMustBeLike
+    )
+    .required(ValidationMsgEnum.Required),
+  // optional if uae uaeCitzen is true
+
+  familyBookNo: yup.string().optional(),
+  contactNo: yup
+    .string()
+    .matches(/\+971\-[0-9]{9}/, ValidationMsgEnum.PhoneNumberMustBeLike)
+    .required(ValidationMsgEnum.Required),
+  primaryEmail: yup
+    .string()
+    .email(ValidationMsgEnum.MustBeValidEmail)
+    .required(ValidationMsgEnum.Required),
 });

@@ -16,7 +16,7 @@ export interface FormInputsInterface {
 }
 
 export const contactInformationInitailState: FormInputsInterface = {
-  getInfoFromProfile: "",
+  getInfoFromProfile: "Yes",
   contactName: "",
   designation: "",
   primaryEmail: "",

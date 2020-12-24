@@ -73,7 +73,7 @@ const ContactInformationComponent = (props: IProps) => {
               <RadioButtonsComponent
                 withLable={true}
                 label="Retrieve information contact from your profile"
-                name="retrieveInformation"
+                name="getInfoFromProfile"
                 value1="Yes"
                 value2="No"
                 register={register}

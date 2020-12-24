@@ -4,6 +4,7 @@ export enum ValidationMsgEnum {
   AlternativeEmailCantBeSamePrimary = "Error.AlternativeEmailCantBeSamePrimary",
   MustBeOnlyCharachters = "Error.MustBeOnlyCharachters",
   PhoneNumberMustBeLike = "Error.PhoneNumberMustBeLike",
+  EmirateIdMustBeLike = "Error.EmirateIdMustBeLike",
   AlternativeContactNumberBeSamePrimary = "Error.AlternativeContactNumberBeSamePrimary",
   MustBeOnlyArabicCharachters = "Error.MustBeOnlyArabicCharachters",
   MustBeValidGooglMapUrl= "Error.MustBeValidGooglMapUrl",
