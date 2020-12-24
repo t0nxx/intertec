@@ -25,19 +25,19 @@ const partnerDetailsReducer = (
       const id = GenerateUUID();
       return {
         data: [{ id, ...payload }, ...state.data],
-        isComplete: true,
+        isComplete: false,
       };
     case PharmaceuticalEstablishmentActionTypes.EDIT_PARTNER:
       // remove old one  from state
       state.data = state.data.filter((e: any) => e.id !== payload.id);
       return {
         data: [payload, ...state.data],
-        isComplete: true,
+        isComplete: false,
       };
     case PharmaceuticalEstablishmentActionTypes.Remove_New_PARTNER:
       return {
         data: state.data.filter((e: any) => e.id !== payload),
-        isComplete: true,
+        isComplete: false,
       };
     default:
       return state;

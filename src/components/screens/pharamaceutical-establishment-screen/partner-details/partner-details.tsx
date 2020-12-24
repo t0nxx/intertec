@@ -34,6 +34,7 @@ import {
   removePartnerAction,
   setPartnerDetailsAction,
 } from "../../../../redux/actions/pharmaceuticalEstablishmentActions";
+import NextButtonWithCustomHandler from "../../../atoms/buttons/next-button-without-submission/next-button-without-submission";
 
 const PartnerDetailsComponent = (props: IProps) => {
   const { t } = useTranslation();
@@ -77,109 +78,100 @@ const PartnerDetailsComponent = (props: IProps) => {
   };
 
   return (
-    /**
-     * this should be abstacted  . later i will bake a style for card only usin styled component
-     */
     <Container fluid>
       <Card>
         <Card.Body>
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Row hidden={props.isForReviewPage}>
-              <div className="addpartnerBtn">
-                <Image
-                  src={add}
-                  onClick={() => {
-                    setShow(!show);
-                    setIsEditingOne(false);
-                  }}
+          <Row hidden={props.isForReviewPage}>
+            <div className="addpartnerBtn">
+              <Image
+                src={add}
+                onClick={() => {
+                  setShow(!show);
+                  setIsEditingOne(false);
+                }}
+              />
+              <p> {t("Forms.Add Partner")}</p>
+            </div>
+          </Row>
+          <Modal
+            scrollable={true}
+            show={show}
+            onHide={() => setShow(!show)}
+            backdrop="static"
+            keyboard={false}
+            className="fullScreenModal"
+          >
+            <Modal.Header closeButton>
+              <Modal.Title>
+                <div className="back">
+                  <Image src={leftArrow} onClick={() => setShow(!show)} />
+                </div>
+                <div className="title">
+                  <h1> {t("Forms.Add New Partner")}</h1>
+                </div>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {isEditingOne ? (
+                <AddPartnerComponent
+                  isEditingOne={isEditingOne}
+                  editingOneData={editingOneData}
+                  closeModal={onCloseModal}
                 />
-                <p> {t("Forms.Add Partner")}</p>
-              </div>
-            </Row>
-            <Modal
-              scrollable={true}
-              show={show}
-              onHide={() => setShow(!show)}
-              backdrop="static"
-              keyboard={false}
-              className="fullScreenModal"
-            >
-              <Modal.Header closeButton>
-                <Modal.Title>
-                  <div className="back">
-                    <Image src={leftArrow} onClick={() => setShow(!show)} />
-                  </div>
-                  <div className="title">
-                    <h1> {t("Forms.Add New Partner")}</h1>
-                  </div>
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                {isEditingOne ? (
-                  <AddPartnerComponent
-                    isEditingOne={isEditingOne}
-                    editingOneData={editingOneData}
-                    closeModal={onCloseModal}
-                  />
-                ) : (
-                  <AddPartnerComponent
-                    isEditingOne={isEditingOne}
-                    closeModal={onCloseModal}
-                  />
-                )}
-              </Modal.Body>
-            </Modal>
+              ) : (
+                <AddPartnerComponent
+                  isEditingOne={isEditingOne}
+                  closeModal={onCloseModal}
+                />
+              )}
+            </Modal.Body>
+          </Modal>
 
-            <Row className="tableParent">
-              <Table>
-                <thead>
-                  <tr>
-                    <th>{t("Forms.Full Name_EN")}</th>
-                    <th>{t("Forms.Full Name_AR")}</th>
-                    <th>{t("Forms.Emirates ID")}</th>
-                    <th>{t("Forms.Passport NO")}</th>
-                    <th>{t("Forms.Nationality")}</th>
-                    <th> </th>
-                    <th> </th>
+          <Row className="tableParent">
+            <Table>
+              <thead>
+                <tr>
+                  <th>{t("Forms.Full Name_EN")}</th>
+                  <th>{t("Forms.Full Name_AR")}</th>
+                  <th>{t("Forms.Emirates ID")}</th>
+                  <th>{t("Forms.Passport NO")}</th>
+                  <th>{t("Forms.Nationality")}</th>
+                  <th> </th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.map((row) => (
+                  <tr key={row.id}>
+                    <td>{row.fName}</td>
+                    <td> {row.fNameAr}</td>
+                    <td> {row.emiratesId}</td>
+                    <td> {row.passportNo}</td>
+                    <td> {row.nationality}</td>
+                    <td>
+                      <Image src={edit} onClick={() => onEditOneHandler(row)} />
+                    </td>
+                    <td>
+                      <Image
+                        src={edit}
+                        onClick={(e) => removeFromTable(row.id)}
+                      />
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {data.map((row) => (
-                    <tr key={row.id}>
-                      <td>{row.fName}</td>
-                      <td> {row.fNameAr}</td>
-                      <td> {row.emiratesId}</td>
-                      <td> {row.passportNo}</td>
-                      <td> {row.nationality}</td>
-                      <td>
-                        <Image
-                          src={edit}
-                          onClick={() => onEditOneHandler(row)}
-                        />
-                      </td>
-                      <td>
-                        <Image
-                          src={edit}
-                          onClick={(e) => removeFromTable(row.id)}
-                        />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
-            </Row>
+                ))}
+              </tbody>
+            </Table>
+          </Row>
 
-            {props.isForReviewPage ? (
-              // <SaveAndCancel onCancel={onCancelHandler} />
-              <Row className="addMore" onClick={() => setShow(!show)}>
-                <Image src={addMore} onClick={() => setIsEditingOne(false)} />
-                {t("Titles.Click here to add more Partner")}
-              </Row>
-            ) : (
-              /// temp since submiss btn not has a click event
-              <NextButton />
-            )}
-          </Form>
+          {props.isForReviewPage ? (
+            // <SaveAndCancel onCancel={onCancelHandler} />
+            <Row className="addMore" onClick={() => setShow(!show)}>
+              <Image src={addMore} onClick={() => setIsEditingOne(false)} />
+              {t("Titles.Click here to add more Partner")}
+            </Row>
+          ) : (
+            <NextButtonWithCustomHandler disabled={false} onClick={onSubmit}/>
+          )}
         </Card.Body>
       </Card>
     </Container>
